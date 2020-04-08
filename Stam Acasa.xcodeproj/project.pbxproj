@@ -15,6 +15,7 @@
 		FA5524D4243CC220000B8DA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5524D2243CC220000B8DA8 /* LaunchScreen.storyboard */; };
 		FA5524DF243CC220000B8DA8 /* Stam_AcasaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5524DE243CC220000B8DA8 /* Stam_AcasaTests.swift */; };
 		FA5524EA243CC220000B8DA8 /* Stam_AcasaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5524E9243CC220000B8DA8 /* Stam_AcasaUITests.swift */; };
+		FA5524F8243DAEA3000B8DA8 /* MyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5524F7243DAEA3000B8DA8 /* MyData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		FA5524E5243CC220000B8DA8 /* Stam AcasaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stam AcasaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5524E9243CC220000B8DA8 /* Stam_AcasaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stam_AcasaUITests.swift; sourceTree = "<group>"; };
 		FA5524EB243CC220000B8DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA5524F7243DAEA3000B8DA8 /* MyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				FA5524D0243CC220000B8DA8 /* Assets.xcassets */,
 				FA5524D2243CC220000B8DA8 /* LaunchScreen.storyboard */,
 				FA5524D5243CC220000B8DA8 /* Info.plist */,
+				FA5524F7243DAEA3000B8DA8 /* MyData.swift */,
 			);
 			path = "Stam Acasa";
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				FA5524CC243CC21E000B8DA8 /* ViewController.swift in Sources */,
 				FA5524C8243CC21E000B8DA8 /* AppDelegate.swift in Sources */,
 				FA5524CA243CC21E000B8DA8 /* SceneDelegate.swift in Sources */,
+				FA5524F8243DAEA3000B8DA8 /* MyData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

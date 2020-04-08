@@ -12,6 +12,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+//        let data = 
+//        let decodedData = try JSONDecoder().decode(MyData.Data,from: data)
         // Do any additional setup after loading the view.
     }
 
