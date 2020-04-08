@@ -119,7 +119,7 @@ struct MyData: Decodable,Hashable,Encodable {
                         
                         struct AnswerDecision: Decodable,Hashable,Encodable{
                             var answer_input: String?
-                            var answer_question_id: String?
+                            var answer_question_id: Int?
                             var answer_hint: String?
                             
                             init(){

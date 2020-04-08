@@ -1,0 +1,511 @@
+{
+  "meta":{
+    "version":"1",
+    "success":"1",
+    "code":"0",
+    "message":""
+  },
+  "data":{
+    "flows":[
+      {
+        "flow_id":"registration",
+        "flow_name":"Registration",
+        "flow_sections":[
+          {
+            "section_id":"date_personale",
+            "section_name":"Date personale",
+            "section_text":"Te rugam sa introduci datele personale",
+            "section_next_id":"stare_sanatate"
+          },
+          {
+            "section_id":"stare_sanatate",
+            "section_name":"Date despre starea de sanatate",
+            "section_text":"Intrebarile de mai jos sunt relevante pentru a putea stabili daca ai afectiuni care pot creste gradul de risc de imbolnavire",
+            "section_next_id":"simptome",
+            "questions":[
+              {
+                "question_id":1,
+                "question_order":1,
+                "question_hidden":false,
+                "question_type":"single-choice",
+                "question_text":"Sunteti fumator?",
+                "question_answers":[
+                  {
+                    "answer_id":1,
+                    "answer_text":"Da",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":1,
+                    "answer_text":"Nu",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  }
+                ]
+              },
+              {
+                "question_id":2,
+                "question_order":2,
+                "question_hidden":false,
+                "question_type":"multiple-choice",
+                "question_text":"Ti-a spus vreun medic ca ai oricare dintre urmatorele afectiuni?",
+                "question_answers":[
+                  {
+                    "answer_id":1,
+                    "answer_text":"O boala de inima (boala cardiovasculara), inclusiv hipertensiune",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":2,
+                    "answer_text":"Diabet",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":3,
+                    "answer_text":"O boala a plamanilor",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":4,
+                    "answer_text":"Cancer (boala oncologica)",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":5,
+                    "answer_text":"Alta boala cronica",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "section_id":"simptome",
+            "section_name":"Evaluate Simptome",
+            "section_text":"Intrebarile de mai jos sunt relevante pentru a putea monitoriza starea ta de sanatate",
+            "section_next_id":"domiciliu",
+            "questions":[
+              {
+                "question_id":10,
+                "question_order":1,
+                "question_hidden":false,
+                "question_type":"multiple-choice",
+                "question_text":"Ati avut vreunul dintre simptomele de mai jos",
+                "question_answers":[
+                  {
+                    "answer_id":1,
+                    "answer_text":"Febra 38 sau mai mare",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":"question-activate",
+                      "answer_question_id":11
+                    }
+                  },
+                  {
+                    "answer_id":2,
+                    "answer_text":"Durere in gat si/sau dificultate in a inghiti",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":3,
+                    "answer_text":"Tuse intensa",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":4,
+                    "answer_text":"Dificultate in a respira",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":5,
+                    "answer_text":"Iti curge nasul",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":6,
+                    "answer_text":"Alte simptome",
+                    "answer_decision":{
+                      "answer_hint":"Ce simptome ati avut?",
+                      "answer_input":"text-area",
+                      "answer_question_id":null
+                    }
+                  }
+                ]
+              },
+              {
+                "question_id":11,
+                "question_order":1,
+                "question_hidden":true,
+                "question_type":"single-choice",
+                "question_text":"De cate zile ai febra",
+                "question_answers":[
+                  {
+                    "answer_id":1,
+                    "answer_text":"De azi",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":2,
+                    "answer_text":"De ieri",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":3,
+                    "answer_text":"De 2 zile",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":4,
+                    "answer_text":"De 3 sau 4 zile",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":5,
+                    "answer_text":"De 5 sau 6 zile",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":6,
+                    "answer_text":"De mai mult de 7 zile",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "section_id":"domiciuliu",
+            "section_name":"Date despre contextul in care te afli",
+            "section_text":"Intrebarile de mai jos sunt relevante pentru a putea stabili daca ...",
+            "section_next_id":"stop",
+            "questions":[
+              {
+                "question_id":100,
+                "question_order":1,
+                "question_hidden":false,
+                "question_type":"single-choice",
+                "question_text":"In momentul de fata te afli in evaluare la domiciliu?",
+                "question_answers":[
+                  {
+                    "answer_id":1,
+                    "answer_text":"Da, sunt in izolare, nu ies din locuinta",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":2,
+                    "answer_text":"Stau mai mult pe acasa, dar mai ies atunci cand este nevoie",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":3,
+                    "answer_text":"Nu sunt in izolare si ies din locuinta dupa program normal",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":4,
+                    "answer_text":"Alta situatie",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  }
+                ]
+              },
+              {
+                "question_id":101,
+                "question_order":2,
+                "question_hidden":false,
+                "question_type":"single-choice",
+                "question_text":"In momentul de fata imparti locuinta si cu alte persoane?",
+                "question_answers":[
+                  {
+                    "answer_id":1,
+                    "answer_text":"Da",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":"question-activate",
+                      "answer_question_id":102
+                    }
+                  },
+                  {
+                    "answer_id":2,
+                    "answer_text":"Nu",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  }
+                ]
+              },
+              {
+                "question_id":102,
+                "question_order":3,
+                "question_hidden":true,
+                "question_type":"single-choice",
+                "question_text":"",
+                "question_answers":[
+                  {
+                    "answer_id":1,
+                    "answer_text":"Da",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":2,
+                    "answer_text":"Nu",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flow_id":"evaluare",
+        "flow_name":"Evaluare",
+        "flow_sections":[
+          {
+            "section_id":"simptome",
+            "section_name":"Evaluate Simptome",
+            "section_text":"Intrebarile de mai jos sunt relevante pentru a putea monitoriza de la distanta starea ta de sanatate",
+            "section_next_id":"domiciliu",
+            "questions":[
+              {
+                "question_id":10,
+                "question_order":1,
+                "question_hidden":false,
+                "question_type":"multiple-choice",
+                "question_text":"Ati avut vreunul dintre simptomele de mai jos",
+                "question_answers":[
+                  {
+                    "answer_id":1,
+                    "answer_text":"Febra 38 sau mai mare",
+                    "answer_decision":{
+                      "answer_hint":"Ce temperatura ai avut?",
+                      "answer_input":"text-input-numeric",
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":2,
+                    "answer_text":"Durere in gat si/sau dificultate in a inghiti",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":3,
+                    "answer_text":"Tuse intensa",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":4,
+                    "answer_text":"Dificultate in a respira",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":5,
+                    "answer_text":"Iti curge nasul",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":6,
+                    "answer_text":"Alte simptome",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":"text-area",
+                      "answer_question_id":null
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "section_id":"domiciuliu",
+            "section_name":"Date despre contextul in care te afli",
+            "section_text":"Intrebarile de mai jos sunt relevante pentru a putea stabili daca ...",
+            "section_next_id":"stop",
+            "questions":[
+              {
+                "question_id":100,
+                "question_order":1,
+                "question_hidden":false,
+                "question_type":"single-choice",
+                "question_text":"In momentul de fata te afli in evaluare la domiciliu?",
+                "question_answers":[
+                  {
+                    "answer_id":1,
+                    "answer_text":"Da, sunt in izolare, nu ies din locuinta",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":2,
+                    "answer_text":"Stau mai mult pe acasa, dar mai ies atunci cand este nevoie",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":3,
+                    "answer_text":"Nu sunt in izolare si ies din locuinta dupa program normal",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":4,
+                    "answer_text":"Alta situatie",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  }
+                ]
+              },
+              {
+                "question_id":101,
+                "question_order":2,
+                "question_hidden":false,
+                "question_type":"single-choice",
+                "question_text":"In momentul de fata imparti locuinta si cu alte persoane?",
+                "question_answers":[
+                  {
+                    "answer_id":1,
+                    "answer_text":"Da",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":2,
+                    "answer_text":"Nu",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
