@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zI7-HF-e5b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zI7-HF-e5b">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,11 +52,11 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgL-5U-qMG">
                                                 <rect key="frame" x="20" y="343" width="374" height="345"/>
-                                                <mutableString key="text">Folosind cele trei optiuni de mai jos vei putea sa iti construiesti un profil pentru tine, respectiv membrii familiei tale sau alte persoane pe care le ai in grija, cu ajutorul unui set initial de intrebari.
+                                                <string key="text">Folosind cele trei optiuni de mai jos vei putea sa iti construiesti un profil pentru tine, respectiv membrii familiei tale sau alte persoane pe care le ai in grija, cu ajutorul unui set initial de intrebari.
 
 In fiecare zi vei primi notificare sa completezi un chestionar de evaluare menit sa te ajute sa monitorizezi riscul unei potentiale infectii. Vei putea de asemenea sa mentii un istoric al tuturor iesirilor din domiciliu ale tale sau ale membrilor familiei.
 
-Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate de Ministerul Sanatatii si Directiile de Sanatate Publica pentru a putea gestiona potentialele focare si pentru a te putea proteja mai bine de pericol.</mutableString>
+Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate de Ministerul Sanatatii si Directiile de Sanatate Publica pentru a putea gestiona potentialele focare si pentru a te putea proteja mai bine de pericol.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -218,6 +218,136 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="97.767857142857139"/>
         </scene>
+        <!--Flow Step View Controller-->
+        <scene sceneID="jaP-Zt-nje">
+            <objects>
+                <viewController id="9It-aT-AEh" customClass="FlowStepViewController" customModule="Stam_Acasa" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="de1-uC-tAZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="u80-oc-JWj">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPI-Fg-W63">
+                                        <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StamAcasa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dC-U3-Qcl">
+                                                <rect key="frame" x="20" y="38" width="108" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="7dC-U3-Qcl" firstAttribute="centerY" secondItem="tPI-Fg-W63" secondAttribute="centerY" id="P7C-AG-Ale"/>
+                                            <constraint firstAttribute="height" constant="100" id="ayl-EA-HNx"/>
+                                            <constraint firstItem="7dC-U3-Qcl" firstAttribute="leading" secondItem="tPI-Fg-W63" secondAttribute="leading" constant="20" id="t4F-Mn-htD"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="quj-sa-nGm">
+                                        <rect key="frame" x="0.0" y="144" width="414" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un proiect in parteneriat cu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ES-Wv-zRp">
+                                                <rect key="frame" x="185" y="14.5" width="209" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ri9-2R-Wb9">
+                                                <rect key="frame" x="0.0" y="49" width="414" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="Sio-cI-eOj"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Aff-Ln-rV1"/>
+                                            <constraint firstItem="7ES-Wv-zRp" firstAttribute="centerY" secondItem="quj-sa-nGm" secondAttribute="centerY" id="JTR-Or-Y04"/>
+                                            <constraint firstItem="ri9-2R-Wb9" firstAttribute="leading" secondItem="quj-sa-nGm" secondAttribute="leading" id="NtK-Ic-Yc7"/>
+                                            <constraint firstAttribute="trailing" secondItem="7ES-Wv-zRp" secondAttribute="trailing" constant="20" id="WZJ-oD-Lp7"/>
+                                            <constraint firstAttribute="bottom" secondItem="ri9-2R-Wb9" secondAttribute="bottom" id="ZWI-rO-yet"/>
+                                            <constraint firstAttribute="trailing" secondItem="ri9-2R-Wb9" secondAttribute="trailing" id="co9-oO-ALk"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44f-Kl-w8l">
+                                        <rect key="frame" x="0.0" y="194" width="414" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dezvoltat de" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sq-Na-4YB">
+                                                <rect key="frame" x="297" y="14.5" width="97" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N8m-dq-Amg">
+                                                <rect key="frame" x="0.0" y="49" width="414" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="8p2-dt-f70"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="xW4-wY-D1C"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="N8m-dq-Amg" firstAttribute="leading" secondItem="44f-Kl-w8l" secondAttribute="leading" id="2nL-N0-nXJ"/>
+                                            <constraint firstAttribute="height" constant="50" id="DC8-7y-4ck"/>
+                                            <constraint firstAttribute="bottom" secondItem="N8m-dq-Amg" secondAttribute="bottom" id="GWU-EV-keK"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Sq-Na-4YB" secondAttribute="trailing" constant="20" id="ZCR-CW-0hE"/>
+                                            <constraint firstAttribute="trailing" secondItem="N8m-dq-Amg" secondAttribute="trailing" id="khp-jm-S1u"/>
+                                            <constraint firstItem="1Sq-Na-4YB" firstAttribute="centerY" secondItem="44f-Kl-w8l" secondAttribute="centerY" id="srU-uA-tjk"/>
+                                        </constraints>
+                                    </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Pz-Ub-9tR">
+                                        <rect key="frame" x="0.0" y="244" width="414" height="618"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZV1-zv-vuN">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="618"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ZV1-zv-vuN" firstAttribute="width" secondItem="8Pz-Ub-9tR" secondAttribute="width" id="Cks-vy-3Ux"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZV1-zv-vuN" secondAttribute="trailing" id="EIg-bg-0dg"/>
+                                            <constraint firstItem="ZV1-zv-vuN" firstAttribute="height" secondItem="8Pz-Ub-9tR" secondAttribute="height" priority="249" id="TzJ-V2-yNT"/>
+                                            <constraint firstItem="ZV1-zv-vuN" firstAttribute="top" secondItem="8Pz-Ub-9tR" secondAttribute="top" id="jFq-ub-u5Q"/>
+                                            <constraint firstItem="ZV1-zv-vuN" firstAttribute="leading" secondItem="8Pz-Ub-9tR" secondAttribute="leading" id="jJ5-Ye-4uf"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZV1-zv-vuN" secondAttribute="bottom" id="jQP-D8-KQ1"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="tPI-Fg-W63" secondAttribute="trailing" id="4Ij-hs-mdJ"/>
+                                    <constraint firstItem="tPI-Fg-W63" firstAttribute="leading" secondItem="ezT-5W-fvR" secondAttribute="leading" id="4WN-ZY-nG4"/>
+                                    <constraint firstItem="ezT-5W-fvR" firstAttribute="trailing" secondItem="8Pz-Ub-9tR" secondAttribute="trailing" id="E0b-ZO-Dc6"/>
+                                    <constraint firstItem="44f-Kl-w8l" firstAttribute="leading" secondItem="ezT-5W-fvR" secondAttribute="leading" id="EuW-3j-HeV"/>
+                                    <constraint firstItem="quj-sa-nGm" firstAttribute="top" secondItem="tPI-Fg-W63" secondAttribute="bottom" id="Lei-lp-sIe"/>
+                                    <constraint firstItem="8Pz-Ub-9tR" firstAttribute="top" secondItem="44f-Kl-w8l" secondAttribute="bottom" id="Q3q-0u-nBb"/>
+                                    <constraint firstItem="ezT-5W-fvR" firstAttribute="bottom" secondItem="8Pz-Ub-9tR" secondAttribute="bottom" id="WXd-E6-OO6"/>
+                                    <constraint firstItem="44f-Kl-w8l" firstAttribute="top" secondItem="quj-sa-nGm" secondAttribute="bottom" id="XA3-jc-CLP"/>
+                                    <constraint firstItem="44f-Kl-w8l" firstAttribute="top" secondItem="quj-sa-nGm" secondAttribute="bottom" id="a0t-kL-pnP"/>
+                                    <constraint firstItem="quj-sa-nGm" firstAttribute="leading" secondItem="ezT-5W-fvR" secondAttribute="leading" id="bWb-ah-DvA"/>
+                                    <constraint firstItem="quj-sa-nGm" firstAttribute="trailing" secondItem="ezT-5W-fvR" secondAttribute="trailing" id="c84-oQ-Ycc"/>
+                                    <constraint firstItem="8Pz-Ub-9tR" firstAttribute="leading" secondItem="ezT-5W-fvR" secondAttribute="leading" id="dTZ-AL-eq8"/>
+                                    <constraint firstItem="44f-Kl-w8l" firstAttribute="trailing" secondItem="ezT-5W-fvR" secondAttribute="trailing" id="kJd-tE-vBK"/>
+                                    <constraint firstItem="tPI-Fg-W63" firstAttribute="top" secondItem="ezT-5W-fvR" secondAttribute="top" id="s0h-KE-4wH"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="ezT-5W-fvR"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="nx6-sm-2eQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JG3-wC-o0X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2112" y="100"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="wMX-EO-1CR">
             <objects>
@@ -312,14 +442,14 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Woc-Ly-wmO">
                                                 <rect key="frame" x="20" y="81" width="374" height="446.5"/>
-                                                <mutableString key="text">Iti multumim ca ai finalizat completarea profilului tau. Foloseste optiunile de mai jos pentru a adauga alte persoane pe care le ai in grijain aplicatie. Va trebui sa completezi si pentru ele profiluri similare.
+                                                <string key="text">Iti multumim ca ai finalizat completarea profilului tau. Foloseste optiunile de mai jos pentru a adauga alte persoane pe care le ai in grijain aplicatie. Va trebui sa completezi si pentru ele profiluri similare.
 
 Chiar daca nu locuiesti cu aceste persoane, dar tii legatura recurent cu ele, le poti ajuta monitorizandu-le sanatatea telefonic si marcand raspunsurile in aplicatie.
 
 Dupa ce finalizezi si acest pas vei putea sa completezi primul formular de evaluare al simptomelor si al activitatii tale, ceea ce va declansa mecanismul de notificariautomate pentru a-ti aminti sa completezi zilnic informatii in profil.
 
 Daca nu ai alte persoane in grija, poti intra in aplicatie. Poti oricand sa adaugi persoane noi in aplicatie.
-</mutableString>
+</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -494,7 +624,7 @@ Daca nu ai alte persoane in grija, poti intra in aplicatie. Poti oricand sa adau
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6i-bK-jf8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1815.9420289855075" y="89.732142857142847"/>
+            <point key="canvasLocation" x="3142" y="97"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="51o-E0-okP">
@@ -515,6 +645,6 @@ Daca nu ai alte persoane in grija, poti intra in aplicatie. Poti oricand sa adau
         </scene>
     </scenes>
     <resources>
-        <image name="checkmark.circle" catalog="system" width="64" height="60"/>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>

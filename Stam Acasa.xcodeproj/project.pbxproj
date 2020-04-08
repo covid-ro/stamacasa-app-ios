@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		927F4875243E0868009CFC40 /* FlowStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F4874243E0868009CFC40 /* FlowStepViewController.swift */; };
+		927F4879243E08FD009CFC40 /* FlowContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927F4878243E08FD009CFC40 /* FlowContentView.xib */; };
+		927F487B243E099C009CFC40 /* FlowContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F487A243E099C009CFC40 /* FlowContentView.swift */; };
 		FA02B466243DFEF200F47DC2 /* StamAcasaSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B465243DFEF200F47DC2 /* StamAcasaSingleton.swift */; };
 		FA02B46A243E00DA00F47DC2 /* json_stam_acasa_alternativa.json in Resources */ = {isa = PBXBuildFile; fileRef = FA02B469243E00DA00F47DC2 /* json_stam_acasa_alternativa.json */; };
 		FA5524C8243CC21E000B8DA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5524C7243CC21E000B8DA8 /* AppDelegate.swift */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		927F4874243E0868009CFC40 /* FlowStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowStepViewController.swift; sourceTree = "<group>"; };
+		927F4878243E08FD009CFC40 /* FlowContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlowContentView.xib; sourceTree = "<group>"; };
+		927F487A243E099C009CFC40 /* FlowContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowContentView.swift; sourceTree = "<group>"; };
 		FA02B465243DFEF200F47DC2 /* StamAcasaSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StamAcasaSingleton.swift; sourceTree = "<group>"; };
 		FA02B469243E00DA00F47DC2 /* json_stam_acasa_alternativa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = json_stam_acasa_alternativa.json; sourceTree = "<group>"; };
 		FA5524C4243CC21E000B8DA8 /* Stam Acasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stam Acasa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +72,9 @@
 				FA5524C9243CC21E000B8DA8 /* SceneDelegate.swift */,
 				FA5524CB243CC21E000B8DA8 /* ViewController.swift */,
 				FA5524CD243CC21E000B8DA8 /* Main.storyboard */,
+				927F4874243E0868009CFC40 /* FlowStepViewController.swift */,
+				927F4878243E08FD009CFC40 /* FlowContentView.xib */,
+				927F487A243E099C009CFC40 /* FlowContentView.swift */,
 				FA5524D0243CC220000B8DA8 /* Assets.xcassets */,
 				FA5524D2243CC220000B8DA8 /* LaunchScreen.storyboard */,
 				FA5524D5243CC220000B8DA8 /* Info.plist */,
@@ -134,6 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				927F4879243E08FD009CFC40 /* FlowContentView.xib in Resources */,
 				FA02B46A243E00DA00F47DC2 /* json_stam_acasa_alternativa.json in Resources */,
 				FA5524D4243CC220000B8DA8 /* LaunchScreen.storyboard in Resources */,
 				FA5524D1243CC220000B8DA8 /* Assets.xcassets in Resources */,
@@ -152,7 +162,9 @@
 				FA02B466243DFEF200F47DC2 /* StamAcasaSingleton.swift in Sources */,
 				FA5524C8243CC21E000B8DA8 /* AppDelegate.swift in Sources */,
 				FA5524CA243CC21E000B8DA8 /* SceneDelegate.swift in Sources */,
+				927F4875243E0868009CFC40 /* FlowStepViewController.swift in Sources */,
 				FA5524F8243DAEA3000B8DA8 /* MyData.swift in Sources */,
+				927F487B243E099C009CFC40 /* FlowContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
