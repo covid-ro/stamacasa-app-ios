@@ -16,10 +16,18 @@ class FlowStepViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        /*
         let flowContentView = Bundle.main.loadNibNamed("FlowContentView", owner: self, options: nil)?.first as! FlowContentView
         
         flowContentView.frame = CGRect(x: 20.0, y: 20.0, width: 50.0, height: 50.0)
         contentView.addSubview(flowContentView)
+        */
+        
+        
+        let datePersonale = Bundle.main.loadNibNamed("DatePersonale", owner: self, options: nil)?.first as! DatePersonale
+        
+        datePersonale.frame = CGRect(x: 0, y: 0.0, width: self.contentView.frame.size.width, height: 550)
+        contentView.addSubview(datePersonale)
         
         
     }
