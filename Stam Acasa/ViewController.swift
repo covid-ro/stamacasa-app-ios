@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     var decodedData: MyData?
+    @IBOutlet weak var profilulTauView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +29,17 @@ class ViewController: UIViewController {
         } catch var myJSONError {
             print(myJSONError)
         }
-        
+     
+        let profilulTauTapGesture = UITapGestureRecognizer(target: self, action: #selector(profilulTauTapped(sender:)))
+        profilulTauView.addGestureRecognizer(profilulTauTapGesture)
     }
     
+    @objc func profilulTauTapped(sender: UITapGestureRecognizer) {
+        let vc = UIStoryboard.Main.instantiateFlowStepVc()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+        
+        
 }
 

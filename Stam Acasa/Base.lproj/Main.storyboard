@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zI7-HF-e5b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zI7-HF-e5b">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -213,6 +213,9 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="U1A-X6-md5"/>
+                    <connections>
+                        <outlet property="profilulTauView" destination="8W7-hj-Ogo" id="u1j-wL-AbV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,7 +224,7 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
         <!--Flow Step View Controller-->
         <scene sceneID="jaP-Zt-nje">
             <objects>
-                <viewController id="9It-aT-AEh" customClass="FlowStepViewController" customModule="Stam_Acasa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="flowStepVc" id="9It-aT-AEh" customClass="FlowStepViewController" customModule="Stam_Acasa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="de1-uC-tAZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -343,6 +346,9 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="nx6-sm-2eQ"/>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="ZV1-zv-vuN" id="3tJ-6m-MUa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JG3-wC-o0X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -645,6 +651,6 @@ Daca nu ai alte persoane in grija, poti intra in aplicatie. Poti oricand sa adau
         </scene>
     </scenes>
     <resources>
-        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
+        <image name="checkmark.circle" catalog="system" width="64" height="60"/>
     </resources>
 </document>
