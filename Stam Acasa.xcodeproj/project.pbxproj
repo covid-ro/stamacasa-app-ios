@@ -15,27 +15,8 @@
 		FA5524CF243CC21E000B8DA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5524CD243CC21E000B8DA8 /* Main.storyboard */; };
 		FA5524D1243CC220000B8DA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5524D0243CC220000B8DA8 /* Assets.xcassets */; };
 		FA5524D4243CC220000B8DA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5524D2243CC220000B8DA8 /* LaunchScreen.storyboard */; };
-		FA5524DF243CC220000B8DA8 /* Stam_AcasaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5524DE243CC220000B8DA8 /* Stam_AcasaTests.swift */; };
-		FA5524EA243CC220000B8DA8 /* Stam_AcasaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5524E9243CC220000B8DA8 /* Stam_AcasaUITests.swift */; };
 		FA5524F8243DAEA3000B8DA8 /* MyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5524F7243DAEA3000B8DA8 /* MyData.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FA5524DB243CC220000B8DA8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA5524BC243CC21E000B8DA8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FA5524C3243CC21E000B8DA8;
-			remoteInfo = "Stam Acasa";
-		};
-		FA5524E6243CC220000B8DA8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA5524BC243CC21E000B8DA8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FA5524C3243CC21E000B8DA8;
-			remoteInfo = "Stam Acasa";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FA02B465243DFEF200F47DC2 /* StamAcasaSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StamAcasaSingleton.swift; sourceTree = "<group>"; };
@@ -48,31 +29,11 @@
 		FA5524D0243CC220000B8DA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA5524D3243CC220000B8DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA5524D5243CC220000B8DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA5524DA243CC220000B8DA8 /* Stam AcasaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stam AcasaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA5524DE243CC220000B8DA8 /* Stam_AcasaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stam_AcasaTests.swift; sourceTree = "<group>"; };
-		FA5524E0243CC220000B8DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA5524E5243CC220000B8DA8 /* Stam AcasaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stam AcasaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA5524E9243CC220000B8DA8 /* Stam_AcasaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stam_AcasaUITests.swift; sourceTree = "<group>"; };
-		FA5524EB243CC220000B8DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA5524F7243DAEA3000B8DA8 /* MyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FA5524C1243CC21E000B8DA8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA5524D7243CC220000B8DA8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA5524E2243CC220000B8DA8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -86,8 +47,6 @@
 			isa = PBXGroup;
 			children = (
 				FA5524C6243CC21E000B8DA8 /* Stam Acasa */,
-				FA5524DD243CC220000B8DA8 /* Stam AcasaTests */,
-				FA5524E8243CC220000B8DA8 /* Stam AcasaUITests */,
 				FA5524C5243CC21E000B8DA8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,8 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				FA5524C4243CC21E000B8DA8 /* Stam Acasa.app */,
-				FA5524DA243CC220000B8DA8 /* Stam AcasaTests.xctest */,
-				FA5524E5243CC220000B8DA8 /* Stam AcasaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,24 +74,6 @@
 				FA02B465243DFEF200F47DC2 /* StamAcasaSingleton.swift */,
 			);
 			path = "Stam Acasa";
-			sourceTree = "<group>";
-		};
-		FA5524DD243CC220000B8DA8 /* Stam AcasaTests */ = {
-			isa = PBXGroup;
-			children = (
-				FA5524DE243CC220000B8DA8 /* Stam_AcasaTests.swift */,
-				FA5524E0243CC220000B8DA8 /* Info.plist */,
-			);
-			path = "Stam AcasaTests";
-			sourceTree = "<group>";
-		};
-		FA5524E8243CC220000B8DA8 /* Stam AcasaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				FA5524E9243CC220000B8DA8 /* Stam_AcasaUITests.swift */,
-				FA5524EB243CC220000B8DA8 /* Info.plist */,
-			);
-			path = "Stam AcasaUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,42 +96,6 @@
 			productReference = FA5524C4243CC21E000B8DA8 /* Stam Acasa.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FA5524D9243CC220000B8DA8 /* Stam AcasaTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FA5524F1243CC220000B8DA8 /* Build configuration list for PBXNativeTarget "Stam AcasaTests" */;
-			buildPhases = (
-				FA5524D6243CC220000B8DA8 /* Sources */,
-				FA5524D7243CC220000B8DA8 /* Frameworks */,
-				FA5524D8243CC220000B8DA8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FA5524DC243CC220000B8DA8 /* PBXTargetDependency */,
-			);
-			name = "Stam AcasaTests";
-			productName = "Stam AcasaTests";
-			productReference = FA5524DA243CC220000B8DA8 /* Stam AcasaTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		FA5524E4243CC220000B8DA8 /* Stam AcasaUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FA5524F4243CC220000B8DA8 /* Build configuration list for PBXNativeTarget "Stam AcasaUITests" */;
-			buildPhases = (
-				FA5524E1243CC220000B8DA8 /* Sources */,
-				FA5524E2243CC220000B8DA8 /* Frameworks */,
-				FA5524E3243CC220000B8DA8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FA5524E7243CC220000B8DA8 /* PBXTargetDependency */,
-			);
-			name = "Stam AcasaUITests";
-			productName = "Stam AcasaUITests";
-			productReference = FA5524E5243CC220000B8DA8 /* Stam AcasaUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,14 +108,6 @@
 				TargetAttributes = {
 					FA5524C3243CC21E000B8DA8 = {
 						CreatedOnToolsVersion = 11.3.1;
-					};
-					FA5524D9243CC220000B8DA8 = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = FA5524C3243CC21E000B8DA8;
-					};
-					FA5524E4243CC220000B8DA8 = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = FA5524C3243CC21E000B8DA8;
 					};
 				};
 			};
@@ -230,8 +125,6 @@
 			projectRoot = "";
 			targets = (
 				FA5524C3243CC21E000B8DA8 /* Stam Acasa */,
-				FA5524D9243CC220000B8DA8 /* Stam AcasaTests */,
-				FA5524E4243CC220000B8DA8 /* Stam AcasaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -245,20 +138,6 @@
 				FA5524D4243CC220000B8DA8 /* LaunchScreen.storyboard in Resources */,
 				FA5524D1243CC220000B8DA8 /* Assets.xcassets in Resources */,
 				FA5524CF243CC21E000B8DA8 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA5524D8243CC220000B8DA8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA5524E3243CC220000B8DA8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,36 +156,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA5524D6243CC220000B8DA8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FA5524DF243CC220000B8DA8 /* Stam_AcasaTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA5524E1243CC220000B8DA8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FA5524EA243CC220000B8DA8 /* Stam_AcasaUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FA5524DC243CC220000B8DA8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FA5524C3243CC21E000B8DA8 /* Stam Acasa */;
-			targetProxy = FA5524DB243CC220000B8DA8 /* PBXContainerItemProxy */;
-		};
-		FA5524E7243CC220000B8DA8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FA5524C3243CC21E000B8DA8 /* Stam Acasa */;
-			targetProxy = FA5524E6243CC220000B8DA8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FA5524CD243CC21E000B8DA8 /* Main.storyboard */ = {
@@ -478,90 +328,6 @@
 			};
 			name = Release;
 		};
-		FA5524F2243CC220000B8DA8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X44C55F8K7;
-				INFOPLIST_FILE = "Stam AcasaTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.Stam-AcasaTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stam Acasa.app/Stam Acasa";
-			};
-			name = Debug;
-		};
-		FA5524F3243CC220000B8DA8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X44C55F8K7;
-				INFOPLIST_FILE = "Stam AcasaTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.Stam-AcasaTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stam Acasa.app/Stam Acasa";
-			};
-			name = Release;
-		};
-		FA5524F5243CC220000B8DA8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X44C55F8K7;
-				INFOPLIST_FILE = "Stam AcasaUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.Stam-AcasaUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Stam Acasa";
-			};
-			name = Debug;
-		};
-		FA5524F6243CC220000B8DA8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X44C55F8K7;
-				INFOPLIST_FILE = "Stam AcasaUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.Stam-AcasaUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Stam Acasa";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -579,24 +345,6 @@
 			buildConfigurations = (
 				FA5524EF243CC220000B8DA8 /* Debug */,
 				FA5524F0243CC220000B8DA8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FA5524F1243CC220000B8DA8 /* Build configuration list for PBXNativeTarget "Stam AcasaTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FA5524F2243CC220000B8DA8 /* Debug */,
-				FA5524F3243CC220000B8DA8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FA5524F4243CC220000B8DA8 /* Build configuration list for PBXNativeTarget "Stam AcasaUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FA5524F5243CC220000B8DA8 /* Debug */,
-				FA5524F6243CC220000B8DA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
