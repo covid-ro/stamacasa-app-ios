@@ -32,17 +32,8 @@ class FlowStepViewController: UIViewController {
 //        
 //        datePersonale.frame = CGRect(x: 0, y: 0.0, width: self.contentView.frame.size.width, height: 550)
 //        contentView.addSubview(datePersonale)
-        for i in 1...10{
-            let label = UILabel()
-            label.text = "test"
-            label.frame = CGRect(x: 0.0, y: yPositionOfAddingInContentView, width: 120.0, height: 20.0)
-            contentView.addSubview(label)
-            yPositionOfAddingInContentView += label.frame.size.height + 20.0
-            contentViewHeight.constant = yPositionOfAddingInContentView
-            contentView.frame.size.height = yPositionOfAddingInContentView
-        }
         
-        //populateScrollView(index: 1)
+        populateScrollView(index: 1)
     }
     
     func populateScrollView(index: Int){
