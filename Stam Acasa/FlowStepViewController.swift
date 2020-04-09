@@ -10,6 +10,7 @@ import UIKit
 
 class FlowStepViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
+    
     var decodedData: MyData?
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     var yPositionOfAddingInContentView: CGFloat = 20.0
