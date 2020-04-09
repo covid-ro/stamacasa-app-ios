@@ -14,65 +14,64 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nume si prenume" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAe-9W-76D">
-                    <rect key="frame" x="0.0" y="64" width="414" height="34"/>
+                    <rect key="frame" x="20" y="64" width="374" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="qlK-4R-I4V"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numar de telefon" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zpk-ee-Ace">
-                    <rect key="frame" x="0.0" y="118" width="414" height="34"/>
+                    <rect key="frame" x="20" y="118" width="374" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="dxt-Lr-b8t"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJ1-eq-oPF">
-                    <rect key="frame" x="0.0" y="388" width="414" height="70"/>
+                    <rect key="frame" x="20" y="388" width="374" height="70"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="CONTINUA">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Judet" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bz1-2I-MyK" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="172" width="414" height="34"/>
+                    <rect key="frame" x="20" y="172" width="374" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="Nif-zp-0RA"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Localitate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tg4-Hs-uN3" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="226" width="414" height="34"/>
+                    <rect key="frame" x="20" y="226" width="374" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="whg-0S-hXO"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gen" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RnU-TR-oWw" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="334" width="414" height="34"/>
+                    <rect key="frame" x="20" y="334" width="374" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="BRE-HP-fPU"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Varsta in ani impliniti" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dxq-DN-aG6" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="280" width="414" height="34"/>
+                    <rect key="frame" x="20" y="280" width="374" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="48O-Rz-pki"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
-            <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="DAe-9W-76D" firstAttribute="leading" secondItem="Zpk-ee-Ace" secondAttribute="leading" id="1iD-Ks-T0I"/>
-                <constraint firstItem="DAe-9W-76D" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1uH-oB-FHe"/>
                 <constraint firstItem="RnU-TR-oWw" firstAttribute="trailing" secondItem="VJ1-eq-oPF" secondAttribute="trailing" id="3jk-Lm-hZ8"/>
                 <constraint firstItem="Zpk-ee-Ace" firstAttribute="trailing" secondItem="Bz1-2I-MyK" secondAttribute="trailing" id="AIe-ia-uu9"/>
                 <constraint firstItem="tg4-Hs-uN3" firstAttribute="top" secondItem="Bz1-2I-MyK" secondAttribute="bottom" constant="20" id="Fhm-SG-UQX"/>
@@ -89,9 +88,10 @@
                 <constraint firstItem="Zpk-ee-Ace" firstAttribute="leading" secondItem="Bz1-2I-MyK" secondAttribute="leading" id="p4N-SM-fjA"/>
                 <constraint firstItem="Bz1-2I-MyK" firstAttribute="top" secondItem="Zpk-ee-Ace" secondAttribute="bottom" constant="20" id="sYh-VU-X6Y"/>
                 <constraint firstItem="Dxq-DN-aG6" firstAttribute="trailing" secondItem="RnU-TR-oWw" secondAttribute="trailing" id="tgH-Jo-OOA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DAe-9W-76D" secondAttribute="trailing" constant="20" id="uZb-dI-qZA"/>
                 <constraint firstItem="tg4-Hs-uN3" firstAttribute="leading" secondItem="Dxq-DN-aG6" secondAttribute="leading" id="ucP-FN-wku"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="VJ1-eq-oPF" secondAttribute="bottom" priority="999" constant="404" id="yFn-Wu-hhJ"/>
-                <constraint firstItem="DAe-9W-76D" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yQA-nA-ZjM"/>
+                <constraint firstItem="DAe-9W-76D" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="yQA-nA-ZjM"/>
                 <constraint firstItem="Zpk-ee-Ace" firstAttribute="top" secondItem="DAe-9W-76D" secondAttribute="bottom" constant="20" id="z2U-ae-AEm"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
