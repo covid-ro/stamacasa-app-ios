@@ -13,59 +13,68 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nume si prenume" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAe-9W-76D">
-                    <rect key="frame" x="20" y="64" width="374" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nume si prenume" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAe-9W-76D">
+                    <rect key="frame" x="20" y="124" width="374" height="60"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="34" id="qlK-4R-I4V"/>
+                        <constraint firstAttribute="height" constant="60" id="qlK-4R-I4V"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numar de telefon" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zpk-ee-Ace">
-                    <rect key="frame" x="20" y="118" width="374" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numar de telefon" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zpk-ee-Ace">
+                    <rect key="frame" x="20" y="204" width="374" height="60"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="34" id="dxt-Lr-b8t"/>
+                        <constraint firstAttribute="height" constant="60" id="dxt-Lr-b8t"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" textContentType="tel"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJ1-eq-oPF">
-                    <rect key="frame" x="20" y="388" width="374" height="70"/>
+                    <rect key="frame" x="20" y="604" width="374" height="60"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="q3A-oe-uSx"/>
+                    </constraints>
                     <state key="normal" title="CONTINUA">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Judet" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bz1-2I-MyK" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
-                    <rect key="frame" x="20" y="172" width="374" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Judet" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bz1-2I-MyK" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
+                    <rect key="frame" x="20" y="284" width="374" height="60"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="34" id="Nif-zp-0RA"/>
+                        <constraint firstAttribute="height" constant="60" id="Nif-zp-0RA"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Localitate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tg4-Hs-uN3" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
-                    <rect key="frame" x="20" y="226" width="374" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Localitate" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tg4-Hs-uN3" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
+                    <rect key="frame" x="20" y="364" width="374" height="60"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="34" id="whg-0S-hXO"/>
+                        <constraint firstAttribute="height" constant="60" id="whg-0S-hXO"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gen" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RnU-TR-oWw" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
-                    <rect key="frame" x="20" y="334" width="374" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gen" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RnU-TR-oWw" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
+                    <rect key="frame" x="20" y="524" width="374" height="60"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="34" id="BRE-HP-fPU"/>
+                        <constraint firstAttribute="height" constant="60" id="BRE-HP-fPU"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Varsta in ani impliniti" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dxq-DN-aG6" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
-                    <rect key="frame" x="20" y="280" width="374" height="34"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Varsta in ani impliniti" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dxq-DN-aG6" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
+                    <rect key="frame" x="20" y="444" width="374" height="60"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="34" id="48O-Rz-pki"/>
+                        <constraint firstAttribute="height" constant="60" id="48O-Rz-pki"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </subviews>
@@ -79,7 +88,7 @@
                 <constraint firstItem="Bz1-2I-MyK" firstAttribute="leading" secondItem="tg4-Hs-uN3" secondAttribute="leading" id="Hlz-rZ-OLK"/>
                 <constraint firstItem="RnU-TR-oWw" firstAttribute="leading" secondItem="VJ1-eq-oPF" secondAttribute="leading" id="Lu0-Aa-889"/>
                 <constraint firstItem="tg4-Hs-uN3" firstAttribute="trailing" secondItem="Dxq-DN-aG6" secondAttribute="trailing" id="P73-c1-I0f"/>
-                <constraint firstItem="DAe-9W-76D" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="TvK-QI-U0X"/>
+                <constraint firstItem="DAe-9W-76D" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="80" id="TvK-QI-U0X"/>
                 <constraint firstItem="DAe-9W-76D" firstAttribute="trailing" secondItem="Zpk-ee-Ace" secondAttribute="trailing" id="U7e-iA-2JU"/>
                 <constraint firstItem="VJ1-eq-oPF" firstAttribute="top" secondItem="RnU-TR-oWw" secondAttribute="bottom" constant="20" id="VtX-nC-fRD"/>
                 <constraint firstItem="Bz1-2I-MyK" firstAttribute="trailing" secondItem="tg4-Hs-uN3" secondAttribute="trailing" id="W8D-df-Aux"/>
