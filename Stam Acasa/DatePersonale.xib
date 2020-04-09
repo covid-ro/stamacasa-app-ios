@@ -13,60 +13,95 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nume si prenume" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAe-9W-76D">
-                    <rect key="frame" x="0.0" y="62" width="414" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nume si prenume" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAe-9W-76D">
+                    <rect key="frame" x="0.0" y="64" width="414" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="qlK-4R-I4V"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numar de telefon" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zpk-ee-Ace">
-                    <rect key="frame" x="0.0" y="115" width="414" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numar de telefon" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zpk-ee-Ace">
+                    <rect key="frame" x="0.0" y="118" width="414" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="dxt-Lr-b8t"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Varsta in ani impliniti" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3SI-TQ-4Gh">
-                    <rect key="frame" x="0.0" y="284" width="414" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bz1-2I-MyK" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="171" width="414" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tg4-Hs-uN3" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="228" width="414" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RnU-TR-oWw" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="345" width="414" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJ1-eq-oPF">
-                    <rect key="frame" x="0.0" y="407" width="414" height="57"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJ1-eq-oPF">
+                    <rect key="frame" x="0.0" y="388" width="414" height="70"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="CONTINUA">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
                 </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Judet" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bz1-2I-MyK" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="172" width="414" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="Nif-zp-0RA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Localitate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tg4-Hs-uN3" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="226" width="414" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="whg-0S-hXO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gen" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RnU-TR-oWw" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="334" width="414" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="BRE-HP-fPU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Varsta in ani impliniti" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dxq-DN-aG6" customClass="DropDown" customModule="Stam_Acasa" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="280" width="414" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="48O-Rz-pki"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DAe-9W-76D" firstAttribute="leading" secondItem="Zpk-ee-Ace" secondAttribute="leading" id="1iD-Ks-T0I"/>
+                <constraint firstItem="DAe-9W-76D" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1uH-oB-FHe"/>
+                <constraint firstItem="RnU-TR-oWw" firstAttribute="trailing" secondItem="VJ1-eq-oPF" secondAttribute="trailing" id="3jk-Lm-hZ8"/>
+                <constraint firstItem="Zpk-ee-Ace" firstAttribute="trailing" secondItem="Bz1-2I-MyK" secondAttribute="trailing" id="AIe-ia-uu9"/>
+                <constraint firstItem="tg4-Hs-uN3" firstAttribute="top" secondItem="Bz1-2I-MyK" secondAttribute="bottom" constant="20" id="Fhm-SG-UQX"/>
+                <constraint firstItem="RnU-TR-oWw" firstAttribute="top" secondItem="Dxq-DN-aG6" secondAttribute="bottom" constant="20" id="Gku-kx-K4i"/>
+                <constraint firstItem="Bz1-2I-MyK" firstAttribute="leading" secondItem="tg4-Hs-uN3" secondAttribute="leading" id="Hlz-rZ-OLK"/>
+                <constraint firstItem="RnU-TR-oWw" firstAttribute="leading" secondItem="VJ1-eq-oPF" secondAttribute="leading" id="Lu0-Aa-889"/>
+                <constraint firstItem="tg4-Hs-uN3" firstAttribute="trailing" secondItem="Dxq-DN-aG6" secondAttribute="trailing" id="P73-c1-I0f"/>
+                <constraint firstItem="DAe-9W-76D" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="TvK-QI-U0X"/>
+                <constraint firstItem="DAe-9W-76D" firstAttribute="trailing" secondItem="Zpk-ee-Ace" secondAttribute="trailing" id="U7e-iA-2JU"/>
+                <constraint firstItem="VJ1-eq-oPF" firstAttribute="top" secondItem="RnU-TR-oWw" secondAttribute="bottom" constant="20" id="VtX-nC-fRD"/>
+                <constraint firstItem="Bz1-2I-MyK" firstAttribute="trailing" secondItem="tg4-Hs-uN3" secondAttribute="trailing" id="W8D-df-Aux"/>
+                <constraint firstItem="Dxq-DN-aG6" firstAttribute="top" secondItem="tg4-Hs-uN3" secondAttribute="bottom" constant="20" id="aPg-Ub-YIb"/>
+                <constraint firstItem="Dxq-DN-aG6" firstAttribute="leading" secondItem="RnU-TR-oWw" secondAttribute="leading" id="iQS-oP-hZl"/>
+                <constraint firstItem="Zpk-ee-Ace" firstAttribute="leading" secondItem="Bz1-2I-MyK" secondAttribute="leading" id="p4N-SM-fjA"/>
+                <constraint firstItem="Bz1-2I-MyK" firstAttribute="top" secondItem="Zpk-ee-Ace" secondAttribute="bottom" constant="20" id="sYh-VU-X6Y"/>
+                <constraint firstItem="Dxq-DN-aG6" firstAttribute="trailing" secondItem="RnU-TR-oWw" secondAttribute="trailing" id="tgH-Jo-OOA"/>
+                <constraint firstItem="tg4-Hs-uN3" firstAttribute="leading" secondItem="Dxq-DN-aG6" secondAttribute="leading" id="ucP-FN-wku"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="VJ1-eq-oPF" secondAttribute="bottom" priority="999" constant="404" id="yFn-Wu-hhJ"/>
+                <constraint firstItem="DAe-9W-76D" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yQA-nA-ZjM"/>
+                <constraint firstItem="Zpk-ee-Ace" firstAttribute="top" secondItem="DAe-9W-76D" secondAttribute="bottom" constant="20" id="z2U-ae-AEm"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="dropDownGen" destination="RnU-TR-oWw" id="FSN-Yc-iJf"/>
                 <outlet property="dropDownJudet" destination="Bz1-2I-MyK" id="0WJ-cI-dmv"/>
                 <outlet property="dropDownLocalitate" destination="tg4-Hs-uN3" id="ENt-bm-hSD"/>
+                <outlet property="dropDownVarsta" destination="Dxq-DN-aG6" id="XGs-c1-Y58"/>
                 <outlet property="textNumarTelefon" destination="Zpk-ee-Ace" id="zeR-IC-s01"/>
                 <outlet property="textNumePrenume" destination="DAe-9W-76D" id="O2E-OC-uyM"/>
-                <outlet property="textVarsta" destination="3SI-TQ-4Gh" id="DxT-aZ-1y7"/>
             </connections>
             <point key="canvasLocation" x="8.6956521739130448" y="207.58928571428569"/>
         </view>
