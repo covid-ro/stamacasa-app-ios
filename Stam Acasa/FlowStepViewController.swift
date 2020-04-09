@@ -23,12 +23,12 @@ class FlowStepViewController: UIViewController {
         contentView.addSubview(flowContentView)
         */
         
-        
+        /*
         let datePersonale = Bundle.main.loadNibNamed("DatePersonale", owner: self, options: nil)?.first as! DatePersonale
         
         datePersonale.frame = CGRect(x: 0, y: 0.0, width: self.contentView.frame.size.width, height: 550)
         contentView.addSubview(datePersonale)
-        
+        */
         
     }
     
