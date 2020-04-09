@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,48 +13,83 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nume si prenume" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAe-9W-76D">
-                    <rect key="frame" x="33" y="91" width="348" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nume si prenume" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAe-9W-76D">
+                    <rect key="frame" x="0.0" y="91" width="414" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="RNx-Lk-b0q"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numar de telefon" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zpk-ee-Ace">
-                    <rect key="frame" x="33" y="156" width="348" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numar de telefon" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zpk-ee-Ace">
+                    <rect key="frame" x="0.0" y="156" width="414" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="HcJ-jd-a6E"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Varsta in ani impliniti" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3SI-TQ-4Gh">
-                    <rect key="frame" x="33" y="331" width="348" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Varsta in ani impliniti" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3SI-TQ-4Gh">
+                    <rect key="frame" x="0.0" y="331" width="414" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="Zxr-jN-qxz"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z4i-xf-je1">
-                    <rect key="frame" x="33" y="198" width="348" height="48"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4i-xf-je1">
+                    <rect key="frame" x="0.0" y="198" width="414" height="48"/>
                     <accessibility key="accessibilityConfiguration" hint="Judet"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="GGD-kk-Emt"/>
+                    </constraints>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhw-uB-1fv">
-                    <rect key="frame" x="33" y="261" width="348" height="62"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhw-uB-1fv">
+                    <rect key="frame" x="0.0" y="261" width="414" height="62"/>
                     <accessibility key="accessibilityConfiguration" hint="Localitate"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="62" id="IMf-2S-Qe5"/>
+                    </constraints>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z1v-3j-22k">
-                    <rect key="frame" x="33" y="397" width="348" height="74"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1v-3j-22k">
+                    <rect key="frame" x="0.0" y="397" width="414" height="74"/>
                 </pickerView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJ1-eq-oPF">
-                    <rect key="frame" x="33" y="489" width="348" height="57"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJ1-eq-oPF">
+                    <rect key="frame" x="0.0" y="489" width="78" height="57"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="57" id="2kh-e3-r5X"/>
+                    </constraints>
                     <state key="normal" title="CONTINUA">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="lhw-uB-1fv" firstAttribute="top" secondItem="Z4i-xf-je1" secondAttribute="bottom" constant="15" id="0dE-xX-6YV"/>
+                <constraint firstItem="lhw-uB-1fv" firstAttribute="trailing" secondItem="Z4i-xf-je1" secondAttribute="trailing" id="1wb-IC-2Ki"/>
+                <constraint firstItem="DAe-9W-76D" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="4KC-VG-wpY"/>
+                <constraint firstItem="3SI-TQ-4Gh" firstAttribute="leading" secondItem="z1v-3j-22k" secondAttribute="leading" id="5Vw-00-ZoV"/>
+                <constraint firstItem="lhw-uB-1fv" firstAttribute="leading" secondItem="3SI-TQ-4Gh" secondAttribute="leading" id="9PN-wH-yV2"/>
+                <constraint firstItem="Zpk-ee-Ace" firstAttribute="top" secondItem="DAe-9W-76D" secondAttribute="bottom" constant="31" id="CC2-56-Z65"/>
+                <constraint firstItem="DAe-9W-76D" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="IjX-jK-jWv"/>
+                <constraint firstItem="DAe-9W-76D" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="NHg-tu-7t8"/>
+                <constraint firstItem="z1v-3j-22k" firstAttribute="leading" secondItem="VJ1-eq-oPF" secondAttribute="leading" id="NnQ-bj-xkm"/>
+                <constraint firstItem="VJ1-eq-oPF" firstAttribute="top" secondItem="z1v-3j-22k" secondAttribute="bottom" constant="18" id="Ofo-DO-Lfe"/>
+                <constraint firstItem="z1v-3j-22k" firstAttribute="top" secondItem="3SI-TQ-4Gh" secondAttribute="bottom" constant="32" id="QEH-XN-0Bb"/>
+                <constraint firstItem="Z4i-xf-je1" firstAttribute="leading" secondItem="lhw-uB-1fv" secondAttribute="leading" id="QVE-iM-bVS"/>
+                <constraint firstItem="Zpk-ee-Ace" firstAttribute="trailing" secondItem="DAe-9W-76D" secondAttribute="trailing" id="U1q-ni-5gF"/>
+                <constraint firstItem="3SI-TQ-4Gh" firstAttribute="trailing" secondItem="lhw-uB-1fv" secondAttribute="trailing" id="VG9-3E-x6m"/>
+                <constraint firstItem="z1v-3j-22k" firstAttribute="trailing" secondItem="3SI-TQ-4Gh" secondAttribute="trailing" id="WCi-gu-CWO"/>
+                <constraint firstItem="DAe-9W-76D" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="47" id="XOC-YP-7H7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="VJ1-eq-oPF" secondAttribute="bottom" constant="316" id="Z50-IF-VnI"/>
+                <constraint firstItem="3SI-TQ-4Gh" firstAttribute="top" secondItem="lhw-uB-1fv" secondAttribute="bottom" constant="8" id="fnQ-M6-PVs"/>
+                <constraint firstItem="DAe-9W-76D" firstAttribute="leading" secondItem="Zpk-ee-Ace" secondAttribute="leading" id="gDH-YH-zCX"/>
+                <constraint firstItem="Z4i-xf-je1" firstAttribute="trailing" secondItem="Zpk-ee-Ace" secondAttribute="trailing" id="lzE-Lb-toj"/>
+                <constraint firstItem="Z4i-xf-je1" firstAttribute="top" secondItem="Zpk-ee-Ace" secondAttribute="bottom" constant="8" id="swd-33-8lp"/>
+                <constraint firstItem="Zpk-ee-Ace" firstAttribute="leading" secondItem="Z4i-xf-je1" secondAttribute="leading" id="vif-p1-NkK"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="genPicker" destination="z1v-3j-22k" id="KqJ-GK-YDu"/>
