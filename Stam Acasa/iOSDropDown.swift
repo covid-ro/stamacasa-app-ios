@@ -14,7 +14,8 @@ open class DropDown : UITextField{
     var table : UITableView!
     var shadow : UIView!
     public  var selectedIndex: Int?
-    public var scrollToSelectedIndex:Bool = false
+    public var scrollToSelectedIndex:Bool = true
+    public var scrollToMiddle:Bool = false
     public var selectedTextColor: UIColor = UIColor(red: 2/255, green: 2/255, blue: 2/255, alpha: 1)
     var defaultTextColor = UIColor(red: 2/255, green: 2/255, blue: 2/255, alpha: 1)
     //MARK: IBInspectable
@@ -223,6 +224,10 @@ open class DropDown : UITextField{
         table.layer.cornerRadius = 3
         table.backgroundColor = rowBackgroundColor
         table.rowHeight = rowHeight
+        if scrollToMiddle{
+            self.table.scrollToRow(at: IndexPath(row: self.dataArray.count/2, section: 0), at: .middle, animated: true)
+            self.table.reloadData()
+        }
         if scrollToSelectedIndex{
             if let selectedIndex = selectedIndex {
                 let indexPath = IndexPath(row: selectedIndex, section: 0)

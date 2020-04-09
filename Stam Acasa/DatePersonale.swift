@@ -60,7 +60,8 @@ class DatePersonale: UIView {
         genData.append("Barbat")
         genData.append("Femeie")
         
-        
+        dropDownVarsta.scrollToMiddle = true
+        dropDownVarsta.selectedRowColor = UIColor(red: 242/255, green: 201/255, blue: 76/255, alpha: 1)
         dropDownVarsta.optionArray = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100"]
         dropDownVarsta.isSearchEnable = false
         dropDownVarsta.listDidAppear {
@@ -75,6 +76,7 @@ class DatePersonale: UIView {
         })
 
         dropDownJudet.optionArray = judetData
+        dropDownJudet.selectedRowColor = UIColor(red: 242/255, green: 201/255, blue: 76/255, alpha: 1)
         dropDownJudet.isSearchEnable = false
         dropDownJudet.didSelect{(selectedText , index ,id) in
             print("Selected Judet: \(selectedText) \n index: \(index)")
@@ -93,6 +95,7 @@ class DatePersonale: UIView {
         })
         
         dropDownLocalitate.optionArray = []
+        dropDownLocalitate.selectedRowColor = UIColor(red: 242/255, green: 201/255, blue: 76/255, alpha: 1)
         dropDownLocalitate.isSearchEnable = false
         dropDownLocalitate.didSelect{(selectedText , index ,id) in
             print( "Selected Localitate: \(selectedText) \n index: \(index)")
@@ -103,6 +106,7 @@ class DatePersonale: UIView {
         })
         
         dropDownGen.optionArray = genData
+        dropDownGen.selectedRowColor = UIColor(red: 242/255, green: 201/255, blue: 76/255, alpha: 1)
         dropDownGen.isSearchEnable = false
         dropDownGen.didSelect{(selectedText , index ,id) in
             print( "Selected Gen: \(selectedText) \n index: \(index)")
