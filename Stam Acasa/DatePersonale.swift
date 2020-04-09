@@ -11,28 +11,56 @@ import UIKit
 
 class DatePersonale: UIView, UIPickerViewDelegate,UIPickerViewDataSource {
     
-    @IBOutlet weak var judet: UIPickerView!
+    @IBOutlet weak var judetPicker: UIPickerView!
     
-    @IBOutlet weak var localitate: UIPickerView!
-    
+    @IBOutlet weak var localitatePicker: UIPickerView!  
+  
+    @IBOutlet weak var genPicker: UIPickerView!
+
     var judetData: [String] = [String]()
     
     var localitateData: [String] = [String]()
+    
+    var genData: [String] = [String]()
+    
+    var decodedData: LocalitatiStruct?
     
     override func awakeFromNib() {
 
         print("loaded date personale")
         
-        judetData = ["Bucuresti", "Alba", "Arad", "Argeș", "Bacău", "Bihor", "Bistrița-Năsăud", "Botoșani", "Brașov", "Brăila", "Buzău", "Caraș-Severin", "Călărași", "Cluj", "Constanța", "Covasna", "Dâmbovița", "Dolj", "Galați", "Giurgiu", "Gorj", "Harghita", "Hunedoara", "Ialomița", "Iași", "Ilfov", "Maramureș", "Mehedinți", "Mureș", "Neamț", "Olt", "Prahova", "Satu Mare", "Sălaj", "Sibiu", "Suceava", "Teleorman", "Timiș", "Tulcea", "Vaslui", "Vâlcea", "Vrancea"]
+        let json = StamAcasaSingleton.sharedInstance.readJSONFromFile(fileName: "localitati")
         
-        localitateData =  ["loc 1", "loc 2", "loc 3", "loc 4", "loc 5", "loc 6"]
+        do {
+            let data = try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
+            do{
+                decodedData = try JSONDecoder().decode(LocalitatiStruct.self,from: data)
+                }
+//                completion(decodedData)
+            catch let jsonError{
+                print(jsonError)
+            }
+        } catch var myJSONError {
+            print(myJSONError)
+        }
         
-        self.judet.delegate = self
-        self.judet.dataSource = self
+        var jdt = decodedData?.judete as [LocalitatiStruct.Judet]?
         
-        self.localitate.delegate = self
-        self.localitate.dataSource = self
+        for i in jdt!{
+            judetData.append(i.nume!)
+        }
         
+        genData.append("Barbat")
+        genData.append("Femeie")
+        
+        self.judetPicker.delegate = self
+        self.judetPicker.dataSource = self
+        
+        self.localitatePicker.delegate = self
+        self.localitatePicker.dataSource = self
+        
+        self.genPicker.delegate = self
+        self.genPicker.dataSource = self
     }
     
     // Number of columns of data
@@ -42,10 +70,12 @@ class DatePersonale: UIView, UIPickerViewDelegate,UIPickerViewDataSource {
     
     // The number of rows of data
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView==judet {
+        if pickerView==judetPicker {
             return judetData.count
-        } else if pickerView==localitate {
+        } else if pickerView==localitatePicker {
             return localitateData.count
+        } else if pickerView==genPicker {
+            return 2
         } else {
             return 0
         }
@@ -53,13 +83,34 @@ class DatePersonale: UIView, UIPickerViewDelegate,UIPickerViewDataSource {
     
     // The data to return fopr the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView==judet {
+        if pickerView==judetPicker {
             return judetData[row]
-        } else if pickerView==localitate {
+        } else if pickerView==localitatePicker {
             return localitateData[row]
+        } else if pickerView==genPicker {
+            return genData[row]
         } else {
             return ""
         }
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        if pickerView==judetPicker {
+            localitateData.removeAll()
+            
+            var jdt = decodedData?.judete as [LocalitatiStruct.Judet]?
+            for i in jdt!{
+                if i.nume!==judetData[row] {
+                    var x = (jdt?[row])! as LocalitatiStruct.Judet
+                    var lct = x.localitati as [LocalitatiStruct.Judet.Localitate]?
+                    for j in lct!{
+                        if j.comuna == nil {
+                            localitateData.append(j.nume!)
+                        }
+                    }
+                }
+            }
+            localitatePicker.reloadAllComponents()
+        }
+    }
 }
