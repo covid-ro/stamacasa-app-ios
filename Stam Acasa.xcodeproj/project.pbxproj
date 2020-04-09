@@ -14,6 +14,7 @@
 		927F487F243E1425009CFC40 /* DatePersonale.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927F487E243E1425009CFC40 /* DatePersonale.xib */; };
 		927F4881243E4282009CFC40 /* localitati.json in Resources */ = {isa = PBXBuildFile; fileRef = 927F4880243E4282009CFC40 /* localitati.json */; };
 		927F4883243E4639009CFC40 /* LocalitatiStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F4882243E4639009CFC40 /* LocalitatiStruct.swift */; };
+		927F48A9243F436D009CFC40 /* iOSDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F48A8243F436D009CFC40 /* iOSDropDown.swift */; };
 		FA02B466243DFEF200F47DC2 /* StamAcasaSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B465243DFEF200F47DC2 /* StamAcasaSingleton.swift */; };
 		FA02B46A243E00DA00F47DC2 /* json_stam_acasa_alternativa.json in Resources */ = {isa = PBXBuildFile; fileRef = FA02B469243E00DA00F47DC2 /* json_stam_acasa_alternativa.json */; };
 		FA02B46C243E0CEE00F47DC2 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */; };
@@ -40,6 +41,7 @@
 		927F487E243E1425009CFC40 /* DatePersonale.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePersonale.xib; sourceTree = "<group>"; };
 		927F4880243E4282009CFC40 /* localitati.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = localitati.json; sourceTree = "<group>"; };
 		927F4882243E4639009CFC40 /* LocalitatiStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalitatiStruct.swift; sourceTree = "<group>"; };
+		927F48A8243F436D009CFC40 /* iOSDropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSDropDown.swift; sourceTree = "<group>"; };
 		FA02B465243DFEF200F47DC2 /* StamAcasaSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StamAcasaSingleton.swift; sourceTree = "<group>"; };
 		FA02B469243E00DA00F47DC2 /* json_stam_acasa_alternativa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = json_stam_acasa_alternativa.json; sourceTree = "<group>"; };
 		FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		FA5524C6243CC21E000B8DA8 /* Stam Acasa */ = {
 			isa = PBXGroup;
 			children = (
+				927F48A8243F436D009CFC40 /* iOSDropDown.swift */,
 				927F4882243E4639009CFC40 /* LocalitatiStruct.swift */,
 				927F4880243E4282009CFC40 /* localitati.json */,
 				FA5524C7243CC21E000B8DA8 /* AppDelegate.swift */,
@@ -208,6 +211,7 @@
 				FA02B466243DFEF200F47DC2 /* StamAcasaSingleton.swift in Sources */,
 				FA1E0581243F35A4008B276E /* AnswerView.swift in Sources */,
 				FA1E057D243F3487008B276E /* SectionView.swift in Sources */,
+				927F48A9243F436D009CFC40 /* iOSDropDown.swift in Sources */,
 				927F4883243E4639009CFC40 /* LocalitatiStruct.swift in Sources */,
 				FA5524C8243CC21E000B8DA8 /* AppDelegate.swift in Sources */,
 				927F487D243E13FE009CFC40 /* DatePersonale.swift in Sources */,

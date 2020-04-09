@@ -9,13 +9,20 @@
 import Foundation
 import UIKit
 
-class DatePersonale: UIView, UIPickerViewDelegate,UIPickerViewDataSource {
+class DatePersonale: UIView {
     
-    @IBOutlet weak var judetPicker: UIPickerView!
+    @IBOutlet weak var textNumePrenume: UITextField!
     
-    @IBOutlet weak var localitatePicker: UIPickerView!  
-  
-    @IBOutlet weak var genPicker: UIPickerView!
+    @IBOutlet weak var textNumarTelefon: UITextField!
+    
+    @IBOutlet weak var dropDownJudet: DropDown!
+    
+    @IBOutlet weak var dropDownLocalitate: DropDown!
+    
+    @IBOutlet weak var dropDownVarsta: DropDown!
+    
+    @IBOutlet weak var dropDownGen: DropDown!
+
 
     var judetData: [String] = [String]()
     
@@ -53,64 +60,51 @@ class DatePersonale: UIView, UIPickerViewDelegate,UIPickerViewDataSource {
         genData.append("Barbat")
         genData.append("Femeie")
         
-        self.judetPicker.delegate = self
-        self.judetPicker.dataSource = self
         
-        self.localitatePicker.delegate = self
-        self.localitatePicker.dataSource = self
+        dropDownVarsta.optionArray = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100"]
+        dropDownVarsta.isSearchEnable = false
+        dropDownVarsta.listDidAppear {
+            print("Selected Varsta:r")
+        }
+        dropDownVarsta.didSelect{(selectedText , index ,id) in
+            print("Selected Varsta: \(selectedText) \n index: \(index)")
+        }
         
-        self.genPicker.delegate = self
-        self.genPicker.dataSource = self
-    }
-    
-    // Number of columns of data
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    // The number of rows of data
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView==judetPicker {
-            return judetData.count
-        } else if pickerView==localitatePicker {
-            return localitateData.count
-        } else if pickerView==genPicker {
-            return 2
-        } else {
-            return 0
-        }
-    }
-    
-    // The data to return fopr the row and component (column) that's being passed in
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView==judetPicker {
-            return judetData[row]
-        } else if pickerView==localitatePicker {
-            return localitateData[row]
-        } else if pickerView==genPicker {
-            return genData[row]
-        } else {
-            return ""
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
-        if pickerView==judetPicker {
-            localitateData.removeAll()
-            
-            var jdt = decodedData?.judete as [LocalitatiStruct.Judet]?
-            for i in jdt!{
-                if i.nume!==judetData[row] {
-                    var x = (jdt?[row])! as LocalitatiStruct.Judet
-                    var lct = x.localitati as [LocalitatiStruct.Judet.Localitate]?
-                    for j in lct!{
-                        if j.comuna == nil {
-                            localitateData.append(j.nume!)
-                        }
-                    }
+
+        dropDownJudet.optionArray = judetData
+        dropDownJudet.isSearchEnable = false
+        dropDownJudet.didSelect{(selectedText , index ,id) in
+            print("Selected Judet: \(selectedText) \n index: \(index)")
+            var x = (self.decodedData?.judete?[index])!  as LocalitatiStruct.Judet
+            var loca = x.localitati as [LocalitatiStruct.Judet.Localitate]?
+            for j in loca!{
+                if j.comuna == nil {
+                    self.localitateData.append(j.nume!)
                 }
             }
-            localitatePicker.reloadAllComponents()
+            self.dropDownLocalitate.optionArray = self.localitateData
         }
+        
+        dropDownLocalitate.optionArray = []
+        dropDownLocalitate.isSearchEnable = false
+        dropDownLocalitate.didSelect{(selectedText , index ,id) in
+            print( "Selected Localitate: \(selectedText) \n index: \(index)")
+        }
+        
+        dropDownGen.optionArray = genData
+        dropDownGen.isSearchEnable = false
+        dropDownGen.didSelect{(selectedText , index ,id) in
+            print( "Selected Gen: \(selectedText) \n index: \(index)")
+        }
+        
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:))))
+        
     }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        self.textNumePrenume.resignFirstResponder()
+        self.textNumarTelefon.resignFirstResponder()
+    }
+    
+   
 }
