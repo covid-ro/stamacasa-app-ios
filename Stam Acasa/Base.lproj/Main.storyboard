@@ -349,6 +349,7 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
                     <connections>
                         <outlet property="contentView" destination="ZV1-zv-vuN" id="3tJ-6m-MUa"/>
                         <outlet property="contentViewHeight" destination="TzJ-V2-yNT" id="GCM-x4-Evc"/>
+                        <outlet property="scrollView" destination="8Pz-Ub-9tR" id="2QT-qU-Npb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JG3-wC-o0X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
