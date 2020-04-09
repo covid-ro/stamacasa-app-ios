@@ -17,6 +17,10 @@
 		FA02B466243DFEF200F47DC2 /* StamAcasaSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B465243DFEF200F47DC2 /* StamAcasaSingleton.swift */; };
 		FA02B46A243E00DA00F47DC2 /* json_stam_acasa_alternativa.json in Resources */ = {isa = PBXBuildFile; fileRef = FA02B469243E00DA00F47DC2 /* json_stam_acasa_alternativa.json */; };
 		FA02B46C243E0CEE00F47DC2 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */; };
+		FA1E057B243F3469008B276E /* SectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1E057A243F3469008B276E /* SectionView.xib */; };
+		FA1E057D243F3487008B276E /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E057C243F3487008B276E /* SectionView.swift */; };
+		FA1E057F243F358E008B276E /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1E057E243F358E008B276E /* AnswerView.xib */; };
+		FA1E0581243F35A4008B276E /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E0580243F35A4008B276E /* AnswerView.swift */; };
 		FA5524C8243CC21E000B8DA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5524C7243CC21E000B8DA8 /* AppDelegate.swift */; };
 		FA5524CA243CC21E000B8DA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5524C9243CC21E000B8DA8 /* SceneDelegate.swift */; };
 		FA5524CC243CC21E000B8DA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5524CB243CC21E000B8DA8 /* ViewController.swift */; };
@@ -24,6 +28,8 @@
 		FA5524D1243CC220000B8DA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5524D0243CC220000B8DA8 /* Assets.xcassets */; };
 		FA5524D4243CC220000B8DA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5524D2243CC220000B8DA8 /* LaunchScreen.storyboard */; };
 		FA5524F8243DAEA3000B8DA8 /* MyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5524F7243DAEA3000B8DA8 /* MyData.swift */; };
+		FADC4FBD243F39D400F37D4E /* PageControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADC4FBC243F39D400F37D4E /* PageControlView.xib */; };
+		FADC4FBF243F39DC00F37D4E /* PageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC4FBE243F39DC00F37D4E /* PageControlView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,10 @@
 		FA02B465243DFEF200F47DC2 /* StamAcasaSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StamAcasaSingleton.swift; sourceTree = "<group>"; };
 		FA02B469243E00DA00F47DC2 /* json_stam_acasa_alternativa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = json_stam_acasa_alternativa.json; sourceTree = "<group>"; };
 		FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
+		FA1E057A243F3469008B276E /* SectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionView.xib; sourceTree = "<group>"; };
+		FA1E057C243F3487008B276E /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
+		FA1E057E243F358E008B276E /* AnswerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerView.xib; sourceTree = "<group>"; };
+		FA1E0580243F35A4008B276E /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
 		FA5524C4243CC21E000B8DA8 /* Stam Acasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stam Acasa.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5524C7243CC21E000B8DA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA5524C9243CC21E000B8DA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +56,8 @@
 		FA5524D3243CC220000B8DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA5524D5243CC220000B8DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA5524F7243DAEA3000B8DA8 /* MyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyData.swift; sourceTree = "<group>"; };
+		FADC4FBC243F39D400F37D4E /* PageControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageControlView.xib; sourceTree = "<group>"; };
+		FADC4FBE243F39DC00F37D4E /* PageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +71,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA1E0575243F3276008B276E /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				FA1E057A243F3469008B276E /* SectionView.xib */,
+				FA1E057C243F3487008B276E /* SectionView.swift */,
+				FA1E057E243F358E008B276E /* AnswerView.xib */,
+				FA1E0580243F35A4008B276E /* AnswerView.swift */,
+				FADC4FBC243F39D400F37D4E /* PageControlView.xib */,
+				FADC4FBE243F39DC00F37D4E /* PageControlView.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
 		FA5524BB243CC21E000B8DA8 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +111,7 @@
 				FA5524CD243CC21E000B8DA8 /* Main.storyboard */,
 				927F4874243E0868009CFC40 /* FlowStepViewController.swift */,
 				927F4878243E08FD009CFC40 /* FlowContentView.xib */,
+				FA1E0575243F3276008B276E /* Layouts */,
 				927F487A243E099C009CFC40 /* FlowContentView.swift */,
 				FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */,
 				FA5524D0243CC220000B8DA8 /* Assets.xcassets */,
@@ -158,10 +184,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1E057B243F3469008B276E /* SectionView.xib in Resources */,
+				FADC4FBD243F39D400F37D4E /* PageControlView.xib in Resources */,
 				927F4881243E4282009CFC40 /* localitati.json in Resources */,
 				927F4879243E08FD009CFC40 /* FlowContentView.xib in Resources */,
 				FA02B46A243E00DA00F47DC2 /* json_stam_acasa_alternativa.json in Resources */,
 				FA5524D4243CC220000B8DA8 /* LaunchScreen.storyboard in Resources */,
+				FA1E057F243F358E008B276E /* AnswerView.xib in Resources */,
 				927F487F243E1425009CFC40 /* DatePersonale.xib in Resources */,
 				FA5524D1243CC220000B8DA8 /* Assets.xcassets in Resources */,
 				FA5524CF243CC21E000B8DA8 /* Main.storyboard in Resources */,
@@ -177,10 +206,13 @@
 			files = (
 				FA5524CC243CC21E000B8DA8 /* ViewController.swift in Sources */,
 				FA02B466243DFEF200F47DC2 /* StamAcasaSingleton.swift in Sources */,
+				FA1E0581243F35A4008B276E /* AnswerView.swift in Sources */,
+				FA1E057D243F3487008B276E /* SectionView.swift in Sources */,
 				927F4883243E4639009CFC40 /* LocalitatiStruct.swift in Sources */,
 				FA5524C8243CC21E000B8DA8 /* AppDelegate.swift in Sources */,
 				927F487D243E13FE009CFC40 /* DatePersonale.swift in Sources */,
 				FA5524CA243CC21E000B8DA8 /* SceneDelegate.swift in Sources */,
+				FADC4FBF243F39DC00F37D4E /* PageControlView.swift in Sources */,
 				FA02B46C243E0CEE00F47DC2 /* UIStoryboard.swift in Sources */,
 				927F4875243E0868009CFC40 /* FlowStepViewController.swift in Sources */,
 				FA5524F8243DAEA3000B8DA8 /* MyData.swift in Sources */,

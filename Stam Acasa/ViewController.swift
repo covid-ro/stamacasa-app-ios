@@ -36,6 +36,7 @@ class ViewController: UIViewController {
     
     @objc func profilulTauTapped(sender: UITapGestureRecognizer) {
         let vc = UIStoryboard.Main.instantiateFlowStepVc()
+        vc.decodedData = decodedData
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
