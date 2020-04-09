@@ -9,13 +9,20 @@
 import Foundation
 import UIKit
 
-class DatePersonale: UIView, UIPickerViewDelegate,UIPickerViewDataSource {
+class DatePersonale: UIView {
     
-    @IBOutlet weak var judetPicker: UIPickerView!
+    @IBOutlet weak var textNumePrenume: UITextField!
     
-    @IBOutlet weak var localitatePicker: UIPickerView!  
-  
-    @IBOutlet weak var genPicker: UIPickerView!
+    @IBOutlet weak var textNumarTelefon: UITextField!
+    
+    @IBOutlet weak var dropDownJudet: DropDown!
+    
+    @IBOutlet weak var dropDownLocalitate: DropDown!
+    
+    @IBOutlet weak var textVarsta: UITextField!
+    
+    @IBOutlet weak var dropDownGen: DropDown!
+
 
     var judetData: [String] = [String]()
     
@@ -53,16 +60,44 @@ class DatePersonale: UIView, UIPickerViewDelegate,UIPickerViewDataSource {
         genData.append("Barbat")
         genData.append("Femeie")
         
-        self.judetPicker.delegate = self
-        self.judetPicker.dataSource = self
         
-        self.localitatePicker.delegate = self
-        self.localitatePicker.dataSource = self
         
-        self.genPicker.delegate = self
-        self.genPicker.dataSource = self
+        
+        
+        
+        
+
+        dropDownJudet.optionArray = judetData
+        dropDownJudet.isSearchEnable = false
+        dropDownJudet.didSelect{(selectedText , index ,id) in
+            print( "Selected Judet: \(selectedText) \n index: \(index)")
+            var jdt = self.decodedData?.judete as [LocalitatiStruct.Judet]?
+            var x = (jdt?[index])! as LocalitatiStruct.Judet
+            var lct = x.localitati as [LocalitatiStruct.Judet.Localitate]?
+            for j in lct!{
+                if j.comuna == nil {
+                    self.localitateData.append(j.nume!)
+                }
+            }
+            self.dropDownLocalitate.optionArray = self.localitateData
+        }
+        
+        dropDownLocalitate.optionArray = []
+        dropDownLocalitate.isSearchEnable = false
+        dropDownLocalitate.didSelect{(selectedText , index ,id) in
+            print( "Selected Localitate: \(selectedText) \n index: \(index)")
+        }
+        
+        dropDownGen.optionArray = genData
+        dropDownGen.isSearchEnable = false
+        dropDownGen.didSelect{(selectedText , index ,id) in
+            print( "Selected Gen: \(selectedText) \n index: \(index)")
+        }
+        
+        
     }
     
+    /*
     // Number of columns of data
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -112,5 +147,5 @@ class DatePersonale: UIView, UIPickerViewDelegate,UIPickerViewDataSource {
             }
             localitatePicker.reloadAllComponents()
         }
-    }
+    }*/
 }
