@@ -69,7 +69,10 @@ class DatePersonale: UIView {
         dropDownVarsta.didSelect{(selectedText , index ,id) in
             print("Selected Varsta: \(selectedText) \n index: \(index)")
         }
-        
+        dropDownVarsta.listWillAppear(completion: {
+            self.textNumePrenume.resignFirstResponder()
+            self.textNumarTelefon.resignFirstResponder()
+        })
 
         dropDownJudet.optionArray = judetData
         dropDownJudet.isSearchEnable = false
@@ -84,18 +87,30 @@ class DatePersonale: UIView {
             }
             self.dropDownLocalitate.optionArray = self.localitateData
         }
+        dropDownJudet.listWillAppear(completion: {
+            self.textNumePrenume.resignFirstResponder()
+            self.textNumarTelefon.resignFirstResponder()
+        })
         
         dropDownLocalitate.optionArray = []
         dropDownLocalitate.isSearchEnable = false
         dropDownLocalitate.didSelect{(selectedText , index ,id) in
             print( "Selected Localitate: \(selectedText) \n index: \(index)")
         }
+        dropDownLocalitate.listWillAppear(completion: {
+            self.textNumePrenume.resignFirstResponder()
+            self.textNumarTelefon.resignFirstResponder()
+        })
         
         dropDownGen.optionArray = genData
         dropDownGen.isSearchEnable = false
         dropDownGen.didSelect{(selectedText , index ,id) in
             print( "Selected Gen: \(selectedText) \n index: \(index)")
         }
+        dropDownGen.listWillAppear(completion: {
+            self.textNumePrenume.resignFirstResponder()
+            self.textNumarTelefon.resignFirstResponder()
+        })
         
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:))))
         
