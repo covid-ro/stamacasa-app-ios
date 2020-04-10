@@ -13,7 +13,7 @@ class FlowStepViewController: UIViewController {
     
     var decodedData: MyData?
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
-    var yPositionOfAddingInContentView: CGFloat = 20.0
+    //var yPositionOfAddingInContentView: CGFloat = 20.0
     @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
@@ -34,11 +34,19 @@ class FlowStepViewController: UIViewController {
 //        datePersonale.frame = CGRect(x: 0, y: 0.0, width: self.contentView.frame.size.width, height: 550)
 //        contentView.addSubview(datePersonale)
         
-        populateScrollView(index: 1)
+        //populateScrollView(index: 1)
+        
+        
+        populateScrollViewWithFlowSection(flowId: "registration", sectionId: "stare_sanatate")
     }
+    
+    
+    
     
     func populateScrollView(index: Int){
         let pageControlView = Bundle.main.loadNibNamed("PageControlView", owner: self, options: nil)?.first as! PageControlView
+
+        var yPositionOfAddingInContentView: CGFloat = 20.0
         
         pageControlView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.contentView.frame.size.width - 40.0, height: 50.0)
         contentView.addSubview(pageControlView)
@@ -54,21 +62,7 @@ class FlowStepViewController: UIViewController {
         }
         if flows.count > index {
             for section in flows[index].flow_sections ?? []{
-                /*
-                let sectionView = Bundle.main.loadNibNamed("SectionView", owner: self, options: nil)?.first as! SectionView
-                
-                sectionView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.contentView.frame.size.width - 40.0, height: 100.0)
-                sectionView.textLabel.text = section.section_text
-                
-                
-                contentView.addSubview(sectionView)
-                yPositionOfAddingInContentView += sectionView.frame.size.height + 20.0
-                if yPositionOfAddingInContentView > contentView.frame.size.height{
-                    //scrollView.contentSize.height = yPositionOfAddingInContentView
-                    //contentViewHeight.constant = yPositionOfAddingInContentView
-                    //contentView.frame.size.height = yPositionOfAddingInContentView
-                }
-                */
+               
                 
                 
                 for question in section.questions ?? []{
@@ -108,6 +102,74 @@ class FlowStepViewController: UIViewController {
             }
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    func populateScrollViewWithFlowSection(flowId: String,sectionId: String){
+        let pageControlView = Bundle.main.loadNibNamed("PageControlView", owner: self, options: nil)?.first as! PageControlView
+        
+        var yPositionOfAddingInContentView: CGFloat = 20.0
+        
+        var index: Int
+        index=1
+        
+        
+        guard let flows = decodedData?.data?.flows else {
+            return
+        }
+        
+        for flow in flows ?? []{
+            if(flow.flow_id == flowId){
+                for section in flow.flow_sections ?? []{
+                    if(section.section_id == sectionId){
+                        
+                        for question in section.questions ?? []{
+                            let questionView = Bundle.main.loadNibNamed("SectionView", owner: self, options: nil)?.first as! SectionView
+
+                            questionView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.contentView.frame.size.width - 40.0, height: 50.0)
+                            questionView.textLabel.text = question.question_text
+                            
+                            
+                            questionView.textLabel.numberOfLines = 0
+                            let hlbl = questionView.textLabel.frame.size.height
+                            
+                            questionView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.contentView.frame.size.width - 40.0, height: hlbl+20)
+                            
+                            contentView.addSubview(questionView)
+                            yPositionOfAddingInContentView += questionView.frame.size.height + 20.0
+
+                            
+                            
+                            
+
+                            for answer in question.question_answers ?? [] {
+                                let answerView = Bundle.main.loadNibNamed("AnswerView", owner: self, options: nil)?.first as! AnswerView
+
+                                answerView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.contentView.frame.size.width - 40.0, height: 50.0)
+                                answerView.textLabel.text = answer.answer_text
+                                contentView.addSubview(answerView)
+                                yPositionOfAddingInContentView += answerView.frame.size.height + 20.0
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        if yPositionOfAddingInContentView > contentView.frame.size.height{
+
+            contentViewHeight.constant = yPositionOfAddingInContentView
+            contentView.frame.size.height = yPositionOfAddingInContentView
+            scrollView.contentSize.height = yPositionOfAddingInContentView
+        }
+        
+    }
+    
+    
     
     
 
