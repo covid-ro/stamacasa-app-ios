@@ -68,7 +68,7 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TeW-UK-9xE">
-                                                                <rect key="frame" x="22.666666666666664" y="23.333333333333258" width="15" height="13.666666666666671"/>
+                                                                <rect key="frame" x="22.666666666666664" y="23.666666666666629" width="15" height="13.666666666666671"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="15" id="BNU-HG-HBf"/>
@@ -84,7 +84,7 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profilul Tau" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXM-Q5-gXD">
-                                                        <rect key="frame" x="90" y="20" width="84.666666666666686" height="19.666666666666671"/>
+                                                        <rect key="frame" x="90" y="20.333333333333258" width="84.666666666666686" height="19.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -524,7 +524,7 @@ Daca nu ai alte persoane in grija, poti intra in aplicatie. Poti oricand sa adau
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xvm-dS-ugI">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xvm-dS-ugI" userLabel="StamAcasaView">
                                 <rect key="frame" x="0.0" y="44" width="375" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StamAcasa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXF-Yn-xx5">
@@ -541,66 +541,11 @@ Daca nu ai alte persoane in grija, poti intra in aplicatie. Poti oricand sa adau
                                     <constraint firstAttribute="height" constant="100" id="oGf-DT-q64"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdk-xe-WRx">
-                                <rect key="frame" x="0.0" y="144" width="375" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Un proiect in parteneriat cu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zd1-Fb-U7d">
-                                        <rect key="frame" x="146" y="14.666666666666657" width="209" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oI6-3J-Feh">
-                                        <rect key="frame" x="0.0" y="49" width="375" height="1"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="ljq-V3-EbR"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="oI6-3J-Feh" secondAttribute="bottom" id="4Sm-5D-BxK"/>
-                                    <constraint firstItem="oI6-3J-Feh" firstAttribute="leading" secondItem="vdk-xe-WRx" secondAttribute="leading" id="9yA-vp-F6y"/>
-                                    <constraint firstAttribute="trailing" secondItem="zd1-Fb-U7d" secondAttribute="trailing" constant="20" id="HTW-sF-RHf"/>
-                                    <constraint firstAttribute="height" constant="50" id="NoV-gg-BzZ"/>
-                                    <constraint firstItem="zd1-Fb-U7d" firstAttribute="centerY" secondItem="vdk-xe-WRx" secondAttribute="centerY" id="ZzV-0I-Oqq"/>
-                                    <constraint firstAttribute="trailing" secondItem="oI6-3J-Feh" secondAttribute="trailing" id="ys8-mC-EqY"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afO-aZ-6jc">
-                                <rect key="frame" x="0.0" y="194" width="375" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dezvoltat de" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEB-rS-TV6">
-                                        <rect key="frame" x="258" y="14.666666666666657" width="97" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkH-5E-8ej">
-                                        <rect key="frame" x="0.0" y="49" width="375" height="1"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="kG9-H9-uwr"/>
-                                            <constraint firstAttribute="height" constant="1" id="ufE-i8-4Ac"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="lkH-5E-8ej" secondAttribute="bottom" id="3sb-2I-cei"/>
-                                    <constraint firstAttribute="trailing" secondItem="lkH-5E-8ej" secondAttribute="trailing" id="O5F-G9-C2v"/>
-                                    <constraint firstItem="lkH-5E-8ej" firstAttribute="leading" secondItem="afO-aZ-6jc" secondAttribute="leading" id="UWM-TC-f1w"/>
-                                    <constraint firstItem="vEB-rS-TV6" firstAttribute="centerY" secondItem="afO-aZ-6jc" secondAttribute="centerY" id="aRT-Md-TDf"/>
-                                    <constraint firstAttribute="height" constant="50" id="duo-zo-RuG"/>
-                                    <constraint firstAttribute="trailing" secondItem="vEB-rS-TV6" secondAttribute="trailing" constant="20" id="h03-yJ-dKB"/>
-                                </constraints>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9U8-e5-Wvn">
-                                <rect key="frame" x="0.0" y="244" width="375" height="534"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="634"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJl-a6-YtD">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="534"/>
+                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJl-a6-YtD">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="634"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
@@ -616,20 +561,13 @@ Daca nu ai alte persoane in grija, poti intra in aplicatie. Poti oricand sa adau
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="afO-aZ-6jc" firstAttribute="top" secondItem="vdk-xe-WRx" secondAttribute="bottom" id="2ep-lU-Ghy"/>
-                            <constraint firstItem="vdk-xe-WRx" firstAttribute="top" secondItem="xvm-dS-ugI" secondAttribute="bottom" id="9eB-mN-mER"/>
-                            <constraint firstItem="afO-aZ-6jc" firstAttribute="leading" secondItem="uwS-Xp-SxV" secondAttribute="leading" id="Ehk-uQ-I9D"/>
-                            <constraint firstItem="vdk-xe-WRx" firstAttribute="leading" secondItem="uwS-Xp-SxV" secondAttribute="leading" id="KYd-t5-U1t"/>
-                            <constraint firstItem="vdk-xe-WRx" firstAttribute="trailing" secondItem="uwS-Xp-SxV" secondAttribute="trailing" id="Mcr-4s-iLO"/>
+                            <constraint firstItem="9U8-e5-Wvn" firstAttribute="top" secondItem="xvm-dS-ugI" secondAttribute="bottom" id="MWN-g1-AsE"/>
                             <constraint firstItem="uwS-Xp-SxV" firstAttribute="bottom" secondItem="9U8-e5-Wvn" secondAttribute="bottom" id="Tye-a2-rvW"/>
-                            <constraint firstItem="9U8-e5-Wvn" firstAttribute="top" secondItem="afO-aZ-6jc" secondAttribute="bottom" id="Wzo-XP-MYt"/>
                             <constraint firstItem="9U8-e5-Wvn" firstAttribute="leading" secondItem="uwS-Xp-SxV" secondAttribute="leading" id="X4Z-ek-MFj"/>
                             <constraint firstItem="xvm-dS-ugI" firstAttribute="top" secondItem="uwS-Xp-SxV" secondAttribute="top" id="Zhd-QW-Wwn"/>
                             <constraint firstItem="xvm-dS-ugI" firstAttribute="leading" secondItem="uwS-Xp-SxV" secondAttribute="leading" id="aHz-bQ-ffy"/>
                             <constraint firstItem="uwS-Xp-SxV" firstAttribute="trailing" secondItem="9U8-e5-Wvn" secondAttribute="trailing" id="fVZ-lI-rQA"/>
                             <constraint firstAttribute="trailing" secondItem="xvm-dS-ugI" secondAttribute="trailing" id="fWG-z0-zGV"/>
-                            <constraint firstItem="afO-aZ-6jc" firstAttribute="top" secondItem="vdk-xe-WRx" secondAttribute="bottom" id="iax-Fa-aFr"/>
-                            <constraint firstItem="afO-aZ-6jc" firstAttribute="trailing" secondItem="uwS-Xp-SxV" secondAttribute="trailing" id="kZD-G8-92b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uwS-Xp-SxV"/>
                     </view>
@@ -641,7 +579,7 @@ Daca nu ai alte persoane in grija, poti intra in aplicatie. Poti oricand sa adau
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJf-A7-UyZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2093" y="96"/>
+            <point key="canvasLocation" x="2092" y="95.320197044334975"/>
         </scene>
     </scenes>
     <resources>
