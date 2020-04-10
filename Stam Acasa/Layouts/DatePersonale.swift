@@ -32,6 +32,8 @@ class DatePersonale: UIView {
     
     var decodedData: LocalitatiStruct?
     
+    var delegate: DateNecesareContinue?
+    
     override func awakeFromNib() {
 
         print("loaded date personale")
@@ -125,5 +127,8 @@ class DatePersonale: UIView {
         self.textNumarTelefon.resignFirstResponder()
     }
     
-   
+    @IBAction func continuaTapped(_ sender: Any) {
+        delegate?.dateNecesareContinueTapped()
+    }
+    
 }

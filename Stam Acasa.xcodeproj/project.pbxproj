@@ -27,6 +27,7 @@
 		FA5524D1243CC220000B8DA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5524D0243CC220000B8DA8 /* Assets.xcassets */; };
 		FA5524D4243CC220000B8DA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5524D2243CC220000B8DA8 /* LaunchScreen.storyboard */; };
 		FA5524F8243DAEA3000B8DA8 /* MyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5524F7243DAEA3000B8DA8 /* MyData.swift */; };
+		FAB926CC2440EED300862313 /* ProfilCompletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB926CB2440EED300862313 /* ProfilCompletViewController.swift */; };
 		FADC4FBD243F39D400F37D4E /* PageControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADC4FBC243F39D400F37D4E /* PageControlView.xib */; };
 		FADC4FBF243F39DC00F37D4E /* PageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC4FBE243F39DC00F37D4E /* PageControlView.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		FA5524D3243CC220000B8DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA5524D5243CC220000B8DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA5524F7243DAEA3000B8DA8 /* MyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyData.swift; sourceTree = "<group>"; };
+		FAB926CB2440EED300862313 /* ProfilCompletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilCompletViewController.swift; sourceTree = "<group>"; };
 		FADC4FBC243F39D400F37D4E /* PageControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageControlView.xib; sourceTree = "<group>"; };
 		FADC4FBE243F39DC00F37D4E /* PageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +80,8 @@
 				FA1E0580243F35A4008B276E /* AnswerView.swift */,
 				FADC4FBC243F39D400F37D4E /* PageControlView.xib */,
 				FADC4FBE243F39DC00F37D4E /* PageControlView.swift */,
+				927F487E243E1425009CFC40 /* DatePersonale.xib */,
+				927F487C243E13FE009CFC40 /* DatePersonale.swift */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -116,8 +120,6 @@
 				FA5524F7243DAEA3000B8DA8 /* MyData.swift */,
 				FA02B469243E00DA00F47DC2 /* json_stam_acasa_alternativa.json */,
 				FA02B465243DFEF200F47DC2 /* StamAcasaSingleton.swift */,
-				927F487E243E1425009CFC40 /* DatePersonale.xib */,
-				927F487C243E13FE009CFC40 /* DatePersonale.swift */,
 			);
 			path = "Stam Acasa";
 			sourceTree = "<group>";
@@ -127,6 +129,7 @@
 			children = (
 				927F4874243E0868009CFC40 /* FlowStepViewController.swift */,
 				FA5524CB243CC21E000B8DA8 /* ViewController.swift */,
+				FAB926CB2440EED300862313 /* ProfilCompletViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				FA1E0581243F35A4008B276E /* AnswerView.swift in Sources */,
 				FA1E057D243F3487008B276E /* SectionView.swift in Sources */,
 				927F48A9243F436D009CFC40 /* iOSDropDown.swift in Sources */,
+				FAB926CC2440EED300862313 /* ProfilCompletViewController.swift in Sources */,
 				927F4883243E4639009CFC40 /* LocalitatiStruct.swift in Sources */,
 				FA5524C8243CC21E000B8DA8 /* AppDelegate.swift in Sources */,
 				927F487D243E13FE009CFC40 /* DatePersonale.swift in Sources */,

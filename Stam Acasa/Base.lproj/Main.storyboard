@@ -230,10 +230,10 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="97.767857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Profil Complet View Controller-->
         <scene sceneID="wMX-EO-1CR">
             <objects>
-                <viewController id="Xga-lg-Em8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profilCompletVc" id="Xga-lg-Em8" customClass="ProfilCompletViewController" customModule="Stam_Acasa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o9F-2r-Noe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -713,7 +713,7 @@ STAM ACASA</string>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9U8-e5-Wvn">
                                 <rect key="frame" x="0.0" y="144" width="375" height="634"/>
                                 <subviews>
-                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJl-a6-YtD">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJl-a6-YtD">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="634"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
