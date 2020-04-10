@@ -114,18 +114,6 @@ class FlowStepViewController: UIViewController {
         var index: Int
         index=1
         
-        let pageControlView = Bundle.main.loadNibNamed("PageControlView", owner: self, options: nil)?.first as! PageControlView
-               
-               pageControlView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.contentView.frame.size.width - 40.0, height: 50.0)
-               contentView.addSubview(pageControlView)
-               yPositionOfAddingInContentView += pageControlView.frame.size.height + 20.0
-               for step in pageControlView.controlSteps{
-                   step.backgroundColor = UIColor.gray
-               }
-               
-        pageControlView.controlSteps?[index].backgroundColor = UIColor(red: 79.0/255.0, green: 59.0/255.0, blue: 100.0/255.0, alpha: 1.0)
-        
-        
         guard let flows = decodedData?.data?.flows else {
             return
         }
@@ -135,6 +123,53 @@ class FlowStepViewController: UIViewController {
                 for section in flow.flow_sections ?? []{
                     if(section.section_id == sectionId){
                         
+                        
+                        //flow title
+                        let labelFlow = UILabel(frame: CGRect(x: 30, y: yPositionOfAddingInContentView, width: self.contentView.frame.size.width - 60.0, height: 60))
+                        labelFlow.textAlignment = .left
+                        labelFlow.font = labelFlow.font.withSize(24)
+                        labelFlow.text = flow.flow_name
+                        labelFlow.numberOfLines = 0
+                        let hlblF = labelFlow.frame.size.height
+                        
+                        yPositionOfAddingInContentView += hlblF + 20.0
+                        contentView.addSubview(labelFlow)
+                        
+                        
+                        //section info text
+                        let labelInfo = UILabel(frame: CGRect(x: 30, y: yPositionOfAddingInContentView, width: self.contentView.frame.size.width - 60.0, height: 80))
+                        labelInfo.textAlignment = .center
+                        labelInfo.text = section.section_text
+                        labelInfo.numberOfLines = 0
+                        let hlblN = labelInfo.frame.size.height
+                        
+                        yPositionOfAddingInContentView += hlblN + 20.0
+                        contentView.addSubview(labelInfo)
+                        
+                        
+                        //position indicator
+                        let pageControlView = Bundle.main.loadNibNamed("PageControlView", owner: self, options: nil)?.first as! PageControlView
+                        pageControlView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.contentView.frame.size.width - 40.0, height: 50.0)
+                        contentView.addSubview(pageControlView)
+                        yPositionOfAddingInContentView += pageControlView.frame.size.height + 20.0
+                        for step in pageControlView.controlSteps{
+                           step.backgroundColor = UIColor.gray
+                        }
+                        pageControlView.controlSteps?[index].backgroundColor = UIColor(red: 79.0/255.0, green: 59.0/255.0, blue: 100.0/255.0, alpha: 1.0)
+                        
+                        
+                        //section name
+                        let sectionNameView = Bundle.main.loadNibNamed("SectionView", owner: self, options: nil)?.first as! SectionView
+                        sectionNameView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.contentView.frame.size.width - 40.0, height: 30.0)
+                        sectionNameView.textLabel.text = section.section_name
+                        sectionNameView.textLabel.numberOfLines = 0
+                        let hlblS = sectionNameView.textLabel.frame.size.height
+                        sectionNameView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.contentView.frame.size.width - 40.0, height: hlblS)
+                        contentView.addSubview(sectionNameView)
+                        yPositionOfAddingInContentView += sectionNameView.frame.size.height + 20.0
+
+                        
+                        //questions
                         for question in section.questions ?? []{
                             let questionView = Bundle.main.loadNibNamed("SectionView", owner: self, options: nil)?.first as! SectionView
 
