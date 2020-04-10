@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		927F4875243E0868009CFC40 /* FlowStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F4874243E0868009CFC40 /* FlowStepViewController.swift */; };
-		927F4879243E08FD009CFC40 /* FlowContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927F4878243E08FD009CFC40 /* FlowContentView.xib */; };
-		927F487B243E099C009CFC40 /* FlowContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F487A243E099C009CFC40 /* FlowContentView.swift */; };
 		927F487D243E13FE009CFC40 /* DatePersonale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F487C243E13FE009CFC40 /* DatePersonale.swift */; };
 		927F487F243E1425009CFC40 /* DatePersonale.xib in Resources */ = {isa = PBXBuildFile; fileRef = 927F487E243E1425009CFC40 /* DatePersonale.xib */; };
 		927F4881243E4282009CFC40 /* localitati.json in Resources */ = {isa = PBXBuildFile; fileRef = 927F4880243E4282009CFC40 /* localitati.json */; };
@@ -35,8 +33,6 @@
 
 /* Begin PBXFileReference section */
 		927F4874243E0868009CFC40 /* FlowStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowStepViewController.swift; sourceTree = "<group>"; };
-		927F4878243E08FD009CFC40 /* FlowContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlowContentView.xib; sourceTree = "<group>"; };
-		927F487A243E099C009CFC40 /* FlowContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowContentView.swift; sourceTree = "<group>"; };
 		927F487C243E13FE009CFC40 /* DatePersonale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePersonale.swift; sourceTree = "<group>"; };
 		927F487E243E1425009CFC40 /* DatePersonale.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePersonale.xib; sourceTree = "<group>"; };
 		927F4880243E4282009CFC40 /* localitati.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = localitati.json; sourceTree = "<group>"; };
@@ -105,18 +101,15 @@
 		FA5524C6243CC21E000B8DA8 /* Stam Acasa */ = {
 			isa = PBXGroup;
 			children = (
+				FADC4FC02440CF5100F37D4E /* Controllers */,
 				927F48A8243F436D009CFC40 /* iOSDropDown.swift */,
 				927F4882243E4639009CFC40 /* LocalitatiStruct.swift */,
 				927F4880243E4282009CFC40 /* localitati.json */,
 				FA5524C7243CC21E000B8DA8 /* AppDelegate.swift */,
 				FA5524C9243CC21E000B8DA8 /* SceneDelegate.swift */,
-				FA5524CB243CC21E000B8DA8 /* ViewController.swift */,
 				FA5524CD243CC21E000B8DA8 /* Main.storyboard */,
-				927F4874243E0868009CFC40 /* FlowStepViewController.swift */,
-				927F4878243E08FD009CFC40 /* FlowContentView.xib */,
+				FADC4FC12440CF6300F37D4E /* Extensions */,
 				FA1E0575243F3276008B276E /* Layouts */,
-				927F487A243E099C009CFC40 /* FlowContentView.swift */,
-				FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */,
 				FA5524D0243CC220000B8DA8 /* Assets.xcassets */,
 				FA5524D2243CC220000B8DA8 /* LaunchScreen.storyboard */,
 				FA5524D5243CC220000B8DA8 /* Info.plist */,
@@ -127,6 +120,23 @@
 				927F487C243E13FE009CFC40 /* DatePersonale.swift */,
 			);
 			path = "Stam Acasa";
+			sourceTree = "<group>";
+		};
+		FADC4FC02440CF5100F37D4E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				927F4874243E0868009CFC40 /* FlowStepViewController.swift */,
+				FA5524CB243CC21E000B8DA8 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FADC4FC12440CF6300F37D4E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +200,6 @@
 				FA1E057B243F3469008B276E /* SectionView.xib in Resources */,
 				FADC4FBD243F39D400F37D4E /* PageControlView.xib in Resources */,
 				927F4881243E4282009CFC40 /* localitati.json in Resources */,
-				927F4879243E08FD009CFC40 /* FlowContentView.xib in Resources */,
 				FA02B46A243E00DA00F47DC2 /* json_stam_acasa_alternativa.json in Resources */,
 				FA5524D4243CC220000B8DA8 /* LaunchScreen.storyboard in Resources */,
 				FA1E057F243F358E008B276E /* AnswerView.xib in Resources */,
@@ -220,7 +229,6 @@
 				FA02B46C243E0CEE00F47DC2 /* UIStoryboard.swift in Sources */,
 				927F4875243E0868009CFC40 /* FlowStepViewController.swift in Sources */,
 				FA5524F8243DAEA3000B8DA8 /* MyData.swift in Sources */,
-				927F487B243E099C009CFC40 /* FlowContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
