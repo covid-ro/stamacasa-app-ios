@@ -17,5 +17,11 @@ extension UIStoryboard {
             let controller = storyboard.instantiateViewController(withIdentifier: "flowStepVc") as! FlowStepViewController
             return controller
         }
+        
+        static func instantiateProfilCompletVc() -> ProfilCompletViewController{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "profilCompletVc") as! ProfilCompletViewController
+            return controller
+        }
     }
 }

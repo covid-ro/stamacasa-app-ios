@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FlowStepViewController: UIViewController {
+class FlowStepViewController: UIViewController , DateNecesareContinue{
     @IBOutlet weak var contentView: UIView!
     
     var decodedData: MyData?
@@ -20,15 +20,15 @@ class FlowStepViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        //        let datePersonale = Bundle.main.loadNibNamed("DatePersonale", owner: self, options: nil)?.first as! DatePersonale
-        //
-        //        datePersonale.frame = CGRect(x: 0, y: 0.0, width: self.contentView.frame.size.width, height: 550)
-        //        contentView.addSubview(datePersonale)
-
-        populateScrollViewWithFlowSectionByDaniel(flowId: "registration", sectionId: "stare_sanatate")
+        let datePersonale = Bundle.main.loadNibNamed("DatePersonale", owner: self, options: nil)?.first as! DatePersonale
+        
+        datePersonale.frame = CGRect(x: 0, y: 0.0, width: self.contentView.frame.size.width, height: 550)
+        datePersonale.delegate = self
+        contentView.addSubview(datePersonale)
+        
     }
     var index: Int = 0
-    func populateScrollViewWithFlowSectionByDaniel(flowId: String,sectionId: String){
+    func populateScrollViewWithFlowSection(flowId: String,sectionId: String){
         var yPositionOfAddingInContentView: CGFloat = 20.0
 
         guard let flows = decodedData?.data?.flows else {
@@ -101,8 +101,6 @@ class FlowStepViewController: UIViewController {
                             questionView.translatesAutoresizingMaskIntoConstraints = true
 
 
-
-
                             for answer in question.question_answers ?? [] {
                                 let answerView = Bundle.main.loadNibNamed("AnswerView", owner: self, options: nil)?.first as! AnswerView
 
@@ -115,6 +113,11 @@ class FlowStepViewController: UIViewController {
                                 contentView.addSubview(answerView)
                                 yPositionOfAddingInContentView += answerView.frame.size.height + 20.0
                                 answerView.translatesAutoresizingMaskIntoConstraints = true
+                                
+                                answerView.accessibilityIdentifier = String(sectionId)
+                                
+                                let tapTouchUpInside = UITapGestureRecognizer(target: self, action: #selector(answerViewTapped(_:)))
+                                answerView.addGestureRecognizer(tapTouchUpInside)
                             }
                         }
                         }
@@ -142,6 +145,27 @@ class FlowStepViewController: UIViewController {
         index += 1
     }
     
+    
+    @objc func answerViewTapped(_ sender: Any){
+        let view = (sender as? UITapGestureRecognizer)?.view as? AnswerView
+        let questionText = view?.accessibilityIdentifier
+        
+        //for question in decodedData?.data?.flows
+        
+        if view?.backgroundColor == UIColor.white{
+            view?.backgroundColor = UIColor.gray
+        } else {
+            view?.backgroundColor = UIColor.white
+        }
+    }
+    
+    func dateNecesareContinueTapped(){
+        for view in contentView.subviews{
+            view.removeFromSuperview()
+        }
+        populateScrollViewWithFlowSection(flowId: "registration", sectionId: "stare_sanatate")
+    }
+    
     @objc func continueButtonTapped(_ sender: Any){
         let sectionId = (sender as! UIButton).accessibilityIdentifier ?? ""
         for view in contentView.subviews{
@@ -149,6 +173,15 @@ class FlowStepViewController: UIViewController {
         }
         
         scrollView.setContentOffset(CGPoint.zero, animated: false)
-        populateScrollViewWithFlowSectionByDaniel(flowId: "registration", sectionId: sectionId)
+        if sectionId != "stop"{
+        populateScrollViewWithFlowSection(flowId: "registration", sectionId: sectionId)
+        } else {
+            let vc = UIStoryboard.Main.instantiateProfilCompletVc()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
+}
+
+protocol DateNecesareContinue{
+    func dateNecesareContinueTapped()
 }
