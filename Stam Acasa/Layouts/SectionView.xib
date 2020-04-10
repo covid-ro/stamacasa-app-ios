@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +14,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdn-Gq-Hik">
-                    <rect key="frame" x="20" y="0.0" width="374" height="100"/>
+                    <rect key="frame" x="20" y="39.5" width="374" height="21.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -22,10 +22,8 @@
             </subviews>
             <color key="backgroundColor" red="0.31099456549999999" green="0.2309500277" blue="0.39243170620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Rdn-Gq-Hik" secondAttribute="bottom" id="Bh6-xX-qaA"/>
-                <constraint firstItem="Rdn-Gq-Hik" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="C8s-JL-8uI"/>
+                <constraint firstItem="Rdn-Gq-Hik" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="EXY-ep-11G"/>
                 <constraint firstItem="Rdn-Gq-Hik" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="XvE-7O-Drz"/>
-                <constraint firstItem="Rdn-Gq-Hik" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="hE1-16-l3o"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Rdn-Gq-Hik" secondAttribute="trailing" constant="20" id="iqL-ev-SLz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
