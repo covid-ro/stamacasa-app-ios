@@ -110,12 +110,20 @@ class FlowStepViewController: UIViewController {
     
     
     func populateScrollViewWithFlowSection(flowId: String,sectionId: String){
-        let pageControlView = Bundle.main.loadNibNamed("PageControlView", owner: self, options: nil)?.first as! PageControlView
-        
         var yPositionOfAddingInContentView: CGFloat = 20.0
-        
         var index: Int
         index=1
+        
+        let pageControlView = Bundle.main.loadNibNamed("PageControlView", owner: self, options: nil)?.first as! PageControlView
+               
+               pageControlView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.contentView.frame.size.width - 40.0, height: 50.0)
+               contentView.addSubview(pageControlView)
+               yPositionOfAddingInContentView += pageControlView.frame.size.height + 20.0
+               for step in pageControlView.controlSteps{
+                   step.backgroundColor = UIColor.gray
+               }
+               
+        pageControlView.controlSteps?[index].backgroundColor = UIColor(red: 79.0/255.0, green: 59.0/255.0, blue: 100.0/255.0, alpha: 1.0)
         
         
         guard let flows = decodedData?.data?.flows else {
@@ -165,6 +173,7 @@ class FlowStepViewController: UIViewController {
             contentViewHeight.constant = yPositionOfAddingInContentView
             contentView.frame.size.height = yPositionOfAddingInContentView
             scrollView.contentSize.height = yPositionOfAddingInContentView
+            contentView.layoutSubviews()
         }
         
     }
