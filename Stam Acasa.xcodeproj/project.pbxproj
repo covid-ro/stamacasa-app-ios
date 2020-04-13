@@ -26,6 +26,7 @@
 		FA02B466243DFEF200F47DC2 /* StamAcasaSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B465243DFEF200F47DC2 /* StamAcasaSingleton.swift */; };
 		FA02B46A243E00DA00F47DC2 /* json_stam_acasa_alternativa.json in Resources */ = {isa = PBXBuildFile; fileRef = FA02B469243E00DA00F47DC2 /* json_stam_acasa_alternativa.json */; };
 		FA02B46C243E0CEE00F47DC2 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */; };
+		FA08248A2444519200F2AACD /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0824892444519200F2AACD /* Answer.swift */; };
 		FA1E057B243F3469008B276E /* SectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1E057A243F3469008B276E /* SectionView.xib */; };
 		FA1E057D243F3487008B276E /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E057C243F3487008B276E /* SectionView.swift */; };
 		FA1E057F243F358E008B276E /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1E057E243F358E008B276E /* AnswerView.xib */; };
@@ -62,6 +63,7 @@
 		FA02B465243DFEF200F47DC2 /* StamAcasaSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StamAcasaSingleton.swift; sourceTree = "<group>"; };
 		FA02B469243E00DA00F47DC2 /* json_stam_acasa_alternativa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = json_stam_acasa_alternativa.json; sourceTree = "<group>"; };
 		FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
+		FA0824892444519200F2AACD /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		FA1E057A243F3469008B276E /* SectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionView.xib; sourceTree = "<group>"; };
 		FA1E057C243F3487008B276E /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		FA1E057E243F358E008B276E /* AnswerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerView.xib; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 			path = CAPSPageMenu;
 			sourceTree = "<group>";
 		};
+		FA0824882444515800F2AACD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA0824892444519200F2AACD /* Answer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FA1E0575243F3276008B276E /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				922CCDDD2442EB3D00BCE4FA /* CAPSPageMenu */,
+				FA0824882444515800F2AACD /* Models */,
 				FADC4FC02440CF5100F37D4E /* Controllers */,
 				927F48A8243F436D009CFC40 /* iOSDropDown.swift */,
 				927F4882243E4639009CFC40 /* LocalitatiStruct.swift */,
@@ -267,6 +278,7 @@
 				927F48A9243F436D009CFC40 /* iOSDropDown.swift in Sources */,
 				922CCDDF2444A52500BCE4FA /* FormulareleMeleViewController.swift in Sources */,
 				925D250E24425B7D00521E4E /* CAPSPageMenu+Options.swift in Sources */,
+				FA08248A2444519200F2AACD /* Answer.swift in Sources */,
 				FAB926CC2440EED300862313 /* ProfilCompletViewController.swift in Sources */,
 				927F4883243E4639009CFC40 /* LocalitatiStruct.swift in Sources */,
 				FA5524C8243CC21E000B8DA8 /* AppDelegate.swift in Sources */,
