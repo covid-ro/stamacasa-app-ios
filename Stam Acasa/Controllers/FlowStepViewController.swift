@@ -15,6 +15,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     //var yPositionOfAddingInContentView: CGFloat = 20.0
     @IBOutlet weak var scrollView: UIScrollView!
+    var answers: [Answer] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,7 +115,10 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                                 yPositionOfAddingInContentView += answerView.frame.size.height + 20.0
                                 answerView.translatesAutoresizingMaskIntoConstraints = true
                                 
-                                answerView.accessibilityIdentifier = String(sectionId)
+                                var ids = (flow.flow_id ?? "flow_id_null") + " " + (section.section_id ?? "section_id_null") + " "
+                                ids += "\((question.question_id ?? 0))" + " "
+                                ids += "\(answer.answer_id ?? 0)"
+                                answerView.accessibilityIdentifier = ids
                                 
                                 let tapTouchUpInside = UITapGestureRecognizer(target: self, action: #selector(answerViewTapped(_:)))
                                 answerView.addGestureRecognizer(tapTouchUpInside)
@@ -169,6 +173,17 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     @objc func continueButtonTapped(_ sender: Any){
         let sectionId = (sender as! UIButton).accessibilityIdentifier ?? ""
         for view in contentView.subviews{
+            if view is AnswerView{
+                if view.backgroundColor == UIColor.gray{
+                    let answer = Answer()
+                    let ids = view.accessibilityIdentifier?.components(separatedBy: " ")
+                    answer.flow_id = ids![0]
+                    answer.section_id = ids![1]
+                    answer.question_id = Int(ids![2])
+                    answer.answer_id = Int(ids![3])
+                    answers.append(answer)
+                }
+            }
             view.removeFromSuperview()
         }
         
@@ -176,6 +191,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         if sectionId != "stop"{
         populateScrollViewWithFlowSection(flowId: "registration", sectionId: sectionId)
         } else {
+            StamAcasaSingleton.sharedInstance.questionAnswers = answers
             let vc = UIStoryboard.Main.instantiateProfilCompletVc()
             self.navigationController?.pushViewController(vc, animated: true)
         }
