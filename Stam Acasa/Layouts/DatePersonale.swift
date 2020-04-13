@@ -128,7 +128,58 @@ class DatePersonale: UIView {
     }
     
     @IBAction func continuaTapped(_ sender: Any) {
-        delegate?.dateNecesareContinueTapped()
+        var formValidated = true
+        if textNumePrenume.text == ""{
+            textNumePrenume.backgroundColor = UIColor.red
+            delegate?.validationFormAlert()
+            formValidated = false
+        } else{
+            textNumePrenume.backgroundColor = UIColor.white
+        }
+        
+        if textNumarTelefon.text == ""{
+            textNumarTelefon.backgroundColor = UIColor.red
+            delegate?.validationFormAlert()
+            formValidated = false
+        }else{
+            textNumarTelefon.backgroundColor = UIColor.white
+        }
+        
+        if dropDownJudet.text == ""{
+            dropDownJudet.backgroundColor = UIColor.red
+            delegate?.validationFormAlert()
+            formValidated = false
+        }else{
+            dropDownJudet.backgroundColor = UIColor.white
+        }
+        
+        if dropDownLocalitate.text == ""{
+            dropDownLocalitate.backgroundColor = UIColor.red
+            delegate?.validationFormAlert()
+            formValidated = false
+        }else{
+            dropDownLocalitate.backgroundColor = UIColor.white
+        }
+        
+        if dropDownVarsta.text == ""{
+            dropDownVarsta.backgroundColor = UIColor.red
+            delegate?.validationFormAlert()
+            formValidated = false
+        }else{
+            dropDownVarsta.backgroundColor = UIColor.white
+        }
+        
+        if dropDownGen.text == ""{
+            dropDownGen.backgroundColor = UIColor.red
+            delegate?.validationFormAlert()
+            formValidated = false
+        }else{
+            dropDownGen.backgroundColor = UIColor.white
+        }
+        
+        if formValidated{
+            delegate?.dateNecesareContinueTapped()
+        }
     }
     
 }

@@ -15,7 +15,9 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     //var yPositionOfAddingInContentView: CGFloat = 20.0
     @IBOutlet weak var scrollView: UIScrollView!
-    var answers: [Answer] = []
+    var answersToStore: [Answer] = []
+    var questionDataAnswersViewsDictionary: [MyData.Data.Flow.FlowSection.Question : [AnswerView]] = [:]
+    var questionsViews: [SectionView] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,7 +103,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                             yPositionOfAddingInContentView += questionView.frame.size.height + 20.0
                             questionView.translatesAutoresizingMaskIntoConstraints = true
 
-
+                            var totalAnswersPerQuestion: [AnswerView] = []
                             for answer in question.question_answers ?? [] {
                                 let answerView = Bundle.main.loadNibNamed("AnswerView", owner: self, options: nil)?.first as! AnswerView
 
@@ -119,10 +121,14 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                                 ids += "\((question.question_id ?? 0))" + " "
                                 ids += "\(answer.answer_id ?? 0)"
                                 answerView.accessibilityIdentifier = ids
+                                totalAnswersPerQuestion.append(answerView)
                                 
                                 let tapTouchUpInside = UITapGestureRecognizer(target: self, action: #selector(answerViewTapped(_:)))
                                 answerView.addGestureRecognizer(tapTouchUpInside)
                             }
+                                questionDataAnswersViewsDictionary[question] = totalAnswersPerQuestion
+                                questionView.accessibilityIdentifier = "\((question.question_id ?? 0))"
+                                questionsViews.append(questionView)
                         }
                         }
                         let continueButton = UIButton()
@@ -152,15 +158,29 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     
     @objc func answerViewTapped(_ sender: Any){
         let view = (sender as? UITapGestureRecognizer)?.view as? AnswerView
-        let questionText = view?.accessibilityIdentifier
         
-        //for question in decodedData?.data?.flows
+        var answeredForThisQuestion = MyData.Data.Flow.FlowSection.Question()
+        for (question,answers) in questionDataAnswersViewsDictionary{
+            for answer in answers{
+                if answer.accessibilityIdentifier == view?.accessibilityIdentifier{
+                    answeredForThisQuestion = question
+                    break
+                }
+            }
+        }
+        
+        if answeredForThisQuestion.question_type == "single-choice"{
+            for answer in questionDataAnswersViewsDictionary[answeredForThisQuestion] ?? []{
+                answer.backgroundColor = UIColor.white
+            }
+        }
         
         if view?.backgroundColor == UIColor.white{
             view?.backgroundColor = UIColor.gray
-        } else {
+        } else{
             view?.backgroundColor = UIColor.white
         }
+        
     }
     
     func dateNecesareContinueTapped(){
@@ -170,34 +190,72 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         populateScrollViewWithFlowSection(flowId: "registration", sectionId: "stare_sanatate")
     }
     
+    func validationFormAlert(){
+        let alert = UIAlertController(title: "EROARE", message: "Formularul nu este valid", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_: UIAlertAction) in
+            self.navigationController?.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @objc func continueButtonTapped(_ sender: Any){
-        let sectionId = (sender as! UIButton).accessibilityIdentifier ?? ""
-        for view in contentView.subviews{
-            if view is AnswerView{
-                if view.backgroundColor == UIColor.gray{
-                    let answer = Answer()
-                    let ids = view.accessibilityIdentifier?.components(separatedBy: " ")
-                    answer.flow_id = ids![0]
-                    answer.section_id = ids![1]
-                    answer.question_id = Int(ids![2])
-                    answer.answer_id = Int(ids![3])
-                    answers.append(answer)
+        var formValidated = true
+        
+        for (question,answers) in questionDataAnswersViewsDictionary{
+            var isQuestionAnswered = false
+            for answer in answers{
+                if answer.backgroundColor == UIColor.gray{
+                    isQuestionAnswered = true
+                    break
                 }
             }
-            view.removeFromSuperview()
-        }
+            
+            for questionView in questionsViews{
+                if question.question_id == Int(questionView.accessibilityIdentifier ?? "0"){
+
+                    if !isQuestionAnswered {
+                        questionView.backgroundColor = UIColor.red
+                        formValidated = false
+                        validationFormAlert()
+                    } else{
+                        questionView.backgroundColor = UIColor(red: 79.0/255.0, green: 59.0/255.0, blue: 100.0/255.0, alpha: 1.0)
+                    }
+                }
+            }
+        }     // validate that questions have been answered
         
-        scrollView.setContentOffset(CGPoint.zero, animated: false)
-        if sectionId != "stop"{
-        populateScrollViewWithFlowSection(flowId: "registration", sectionId: sectionId)
-        } else {
-            StamAcasaSingleton.sharedInstance.questionAnswers = answers
-            let vc = UIStoryboard.Main.instantiateProfilCompletVc()
-            self.navigationController?.pushViewController(vc, animated: true)
+        if formValidated{
+            
+            let sectionId = (sender as! UIButton).accessibilityIdentifier ?? ""
+            for view in contentView.subviews{
+                if view is AnswerView{
+                    if view.backgroundColor == UIColor.gray{
+                        let answer = Answer()
+                        let ids = view.accessibilityIdentifier?.components(separatedBy: " ")
+                        answer.flow_id = ids![0]
+                        answer.section_id = ids![1]
+                        answer.question_id = Int(ids![2])
+                        answer.answer_id = Int(ids![3])
+                        answersToStore.append(answer)
+                    }
+                }
+                view.removeFromSuperview()
+            }
+            
+            scrollView.setContentOffset(CGPoint.zero, animated: false)
+            if sectionId != "stop"{
+                populateScrollViewWithFlowSection(flowId: "registration", sectionId: sectionId)
+            } else {
+                StamAcasaSingleton.sharedInstance.questionAnswers = answersToStore
+                let vc = UIStoryboard.Main.instantiateProfilCompletVc()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
     }
 }
 
 protocol DateNecesareContinue{
     func dateNecesareContinueTapped()
+    func validationFormAlert()
 }
