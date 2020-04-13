@@ -801,61 +801,118 @@ STAM ACASA</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGn-Aa-oP9">
-                                <rect key="frame" x="20" y="30" width="335" height="115"/>
-                                <string key="text">Urmatorul formular te ajuta sa mentii un istoric a simptomelor sau al absentei acestora in perioada in care stai in izolare. Parcurge intrebarile si raspunde cu atentie. Pe masura ce completezi, acesta pagina se va popula cu istoricul raspunsurilor tale.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5v-jN-OFo">
-                                <rect key="frame" x="20" y="255" width="335" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.74117647060000003" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVb-WH-7cU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ov-DP-atK">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1403.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGn-Aa-oP9">
+                                                <rect key="frame" x="20" y="30" width="335" height="115"/>
+                                                <string key="text">Urmatorul formular te ajuta sa mentii un istoric a simptomelor sau al absentei acestora in perioada in care stai in izolare. Parcurge intrebarile si raspunde cu atentie. Pe masura ce completezi, acesta pagina se va popula cu istoricul raspunsurilor tale.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5v-jN-OFo">
+                                                <rect key="frame" x="20" y="255" width="335" height="60"/>
+                                                <color key="backgroundColor" red="1" green="0.74117647060000003" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="01p-LY-YO8"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="G14-os-b4i"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Formular deplasari">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0b-x4-Ul8">
+                                                <rect key="frame" x="20" y="335" width="335" height="60"/>
+                                                <color key="backgroundColor" red="1" green="0.74117647060000003" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="5vU-gf-aSf"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="HGJ-Fq-ZlP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Istoric complet">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTk-ur-agp">
+                                                <rect key="frame" x="20" y="175" width="335" height="60"/>
+                                                <color key="backgroundColor" red="1" green="0.74117647058823533" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="MrZ-Oh-Wpt"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="k35-Ok-sh2"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Formular evaluare">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LP8-tG-3Ie">
+                                                <rect key="frame" x="20" y="415" width="335" height="60"/>
+                                                <color key="backgroundColor" red="1" green="0.74117647060000003" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="6kq-Dg-Ce1"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="DD3-b1-3nT"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="k3n-Z5-Plk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="optiunea 4">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YH-iF-gNa">
+                                                <rect key="frame" x="20" y="495" width="335" height="878.5"/>
+                                                <mutableString key="text">Urmatorul formular te ajuta sa mentii un istoric a simptomelor sau al absentei acestora in perioada in care stai in izolare. Parcurge intrebarile si raspunde cu atentie. Pe masura ce completezi, acesta pagina se va popula cu istoricul raspunsurilor tale.
+Urmatorul formular te ajuta sa mentii un istoric a simptomelor sau al absentei acestora in perioada in care stai in izolare. Parcurge intrebarile si raspunde cu atentie. Pe masura ce completezi, acesta pagina se va popula cu istoricul raspunsurilor tale.Urmatorul formular te ajuta sa mentii un istoric a simptomelor sau al absentei acestora in perioada in care stai in izolare. Parcurge intrebarile si raspunde cu atentie. Pe masura ce completezi, acesta pagina se va popula cu istoricul raspunsurilor tale.Urmatorul formular te ajuta sa mentii un istoric a simptomelor sau al absentei acestora in perioada in care stai in izolare. Parcurge intrebarile si raspunde cu atentie. Pe masura ce completezi, acesta pagina se va popula cu istoricul raspunsurilor tale. Urmatorul formular te ajuta sa mentii un istoric a simptomelor sau al absentei acestora in perioada in care stai in izolare. Parcurge intrebarile si raspunde cu atentie. Pe masura ce completezi, acesta pagina se va popula cu istoricul raspunsurilor tale.
+Urmatorul formular te ajuta sa mentii un istoric a simptomelor sau al absentei acestora in perioada in care stai in izolare. Parcurge intrebarile si raspunde cu atentie. Pe masura ce completezi, acesta pagina se va popula cu istoricul raspunsurilor tale.Urmatorul formular te ajuta sa mentii un istoric a simptomelor sau al absentei acestora in perioada in care stai in izolare. Parcurge intrebarile si raspunde cu atentie. Pe masura ce completezi, acesta pagina se va popula cu istoricul raspunsurilor tale.Urmatorul formular te ajuta sa mentii un istoric a simptomelor sau al absentei acestora in perioada in care stai in izolare. Parcurge intrebarile si raspunde cu atentie. Pe masura ce completezi, acesta pagina se va popula cu istoricul raspunsurilor tale.</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.97226566079999999" green="0.96864122149999998" blue="0.97280269860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="g0b-x4-Ul8" firstAttribute="leading" secondItem="2Ov-DP-atK" secondAttribute="leading" constant="20" id="1qA-TW-QZD"/>
+                                            <constraint firstAttribute="trailing" secondItem="gGn-Aa-oP9" secondAttribute="trailing" constant="20" id="3ZZ-p5-tcG"/>
+                                            <constraint firstAttribute="trailing" secondItem="z5v-jN-OFo" secondAttribute="trailing" constant="20" id="8yA-5u-a4M"/>
+                                            <constraint firstItem="gGn-Aa-oP9" firstAttribute="leading" secondItem="2Ov-DP-atK" secondAttribute="leading" constant="20" id="ANs-PO-PXv"/>
+                                            <constraint firstItem="g0b-x4-Ul8" firstAttribute="top" secondItem="z5v-jN-OFo" secondAttribute="bottom" constant="20" id="C3P-aZ-bk2"/>
+                                            <constraint firstItem="3YH-iF-gNa" firstAttribute="top" secondItem="LP8-tG-3Ie" secondAttribute="bottom" constant="20" id="Ig1-9a-agn"/>
+                                            <constraint firstItem="z5v-jN-OFo" firstAttribute="leading" secondItem="2Ov-DP-atK" secondAttribute="leading" constant="20" id="J7R-fY-2Nz"/>
+                                            <constraint firstAttribute="trailing" secondItem="LP8-tG-3Ie" secondAttribute="trailing" constant="20" id="Jeq-Em-dYq"/>
+                                            <constraint firstAttribute="trailing" secondItem="g0b-x4-Ul8" secondAttribute="trailing" constant="20" id="Ju7-n6-Cfb"/>
+                                            <constraint firstItem="3YH-iF-gNa" firstAttribute="leading" secondItem="2Ov-DP-atK" secondAttribute="leading" constant="20" id="QWO-Df-O8j"/>
+                                            <constraint firstAttribute="bottom" secondItem="3YH-iF-gNa" secondAttribute="bottom" constant="30" id="YLj-Wm-zw5"/>
+                                            <constraint firstItem="z5v-jN-OFo" firstAttribute="top" secondItem="TTk-ur-agp" secondAttribute="bottom" constant="20" id="be2-6e-bbw"/>
+                                            <constraint firstItem="LP8-tG-3Ie" firstAttribute="leading" secondItem="2Ov-DP-atK" secondAttribute="leading" constant="20" id="bkC-3V-LHJ"/>
+                                            <constraint firstItem="TTk-ur-agp" firstAttribute="top" secondItem="gGn-Aa-oP9" secondAttribute="bottom" constant="30" id="eo6-nW-iA5"/>
+                                            <constraint firstItem="gGn-Aa-oP9" firstAttribute="top" secondItem="2Ov-DP-atK" secondAttribute="top" constant="30" id="pjI-Ah-wT1"/>
+                                            <constraint firstItem="LP8-tG-3Ie" firstAttribute="top" secondItem="g0b-x4-Ul8" secondAttribute="bottom" constant="20" id="qhl-H7-o9o"/>
+                                            <constraint firstAttribute="trailing" secondItem="3YH-iF-gNa" secondAttribute="trailing" constant="20" id="xHq-YX-t6G"/>
+                                            <constraint firstItem="TTk-ur-agp" firstAttribute="leading" secondItem="2Ov-DP-atK" secondAttribute="leading" constant="20" id="zgt-5L-G7K"/>
+                                            <constraint firstAttribute="trailing" secondItem="TTk-ur-agp" secondAttribute="trailing" constant="20" id="zy7-gB-rA8"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="01p-LY-YO8"/>
+                                    <constraint firstItem="2Ov-DP-atK" firstAttribute="leading" secondItem="UVb-WH-7cU" secondAttribute="leading" id="Chi-gK-rCx"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Ov-DP-atK" secondAttribute="trailing" id="Hfm-Te-dNk"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Ov-DP-atK" secondAttribute="bottom" id="P7a-NL-ZMc"/>
+                                    <constraint firstItem="2Ov-DP-atK" firstAttribute="top" secondItem="UVb-WH-7cU" secondAttribute="top" id="VGT-wj-fs0"/>
+                                    <constraint firstItem="2Ov-DP-atK" firstAttribute="width" secondItem="UVb-WH-7cU" secondAttribute="width" id="WGF-V7-38x"/>
+                                    <constraint firstItem="2Ov-DP-atK" firstAttribute="height" secondItem="UVb-WH-7cU" secondAttribute="height" priority="249" id="XCo-j7-eoS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Formular deplasari">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0b-x4-Ul8">
-                                <rect key="frame" x="20" y="335" width="335" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.74117647060000003" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="5vU-gf-aSf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Istoric complet">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTk-ur-agp">
-                                <rect key="frame" x="20" y="175" width="335" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.74117647058823533" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="MrZ-Oh-Wpt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Formular evaluare">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="z5v-jN-OFo" firstAttribute="leading" secondItem="NMN-Uw-qpl" secondAttribute="leading" constant="20" id="0G3-5d-mED"/>
-                            <constraint firstItem="gGn-Aa-oP9" firstAttribute="leading" secondItem="NMN-Uw-qpl" secondAttribute="leading" constant="20" id="AZh-yX-9XQ"/>
-                            <constraint firstItem="NMN-Uw-qpl" firstAttribute="trailing" secondItem="TTk-ur-agp" secondAttribute="trailing" constant="20" id="K31-hY-VJ5"/>
-                            <constraint firstItem="TTk-ur-agp" firstAttribute="top" secondItem="gGn-Aa-oP9" secondAttribute="bottom" constant="30" id="OIN-eP-Bha"/>
-                            <constraint firstItem="NMN-Uw-qpl" firstAttribute="trailing" secondItem="g0b-x4-Ul8" secondAttribute="trailing" constant="20" id="OpZ-dy-VUI"/>
-                            <constraint firstAttribute="trailing" secondItem="gGn-Aa-oP9" secondAttribute="trailing" constant="20" id="Ql4-wU-u7j"/>
-                            <constraint firstItem="g0b-x4-Ul8" firstAttribute="leading" secondItem="NMN-Uw-qpl" secondAttribute="leading" constant="20" id="UJL-Ty-eLR"/>
-                            <constraint firstItem="NMN-Uw-qpl" firstAttribute="trailing" secondItem="z5v-jN-OFo" secondAttribute="trailing" constant="20" id="VtW-eM-EEp"/>
-                            <constraint firstItem="gGn-Aa-oP9" firstAttribute="top" secondItem="NMN-Uw-qpl" secondAttribute="top" constant="30" id="arr-vx-hCH"/>
-                            <constraint firstItem="TTk-ur-agp" firstAttribute="leading" secondItem="NMN-Uw-qpl" secondAttribute="leading" constant="20" id="nr7-bf-zYu"/>
-                            <constraint firstItem="z5v-jN-OFo" firstAttribute="top" secondItem="TTk-ur-agp" secondAttribute="bottom" constant="20" id="wam-lx-VgC"/>
-                            <constraint firstItem="g0b-x4-Ul8" firstAttribute="top" secondItem="z5v-jN-OFo" secondAttribute="bottom" constant="20" id="ywx-0B-IGV"/>
+                            <constraint firstItem="NMN-Uw-qpl" firstAttribute="bottom" secondItem="UVb-WH-7cU" secondAttribute="bottom" id="0F6-2O-59U"/>
+                            <constraint firstItem="UVb-WH-7cU" firstAttribute="trailing" secondItem="NMN-Uw-qpl" secondAttribute="trailing" id="4ai-jc-B4E"/>
+                            <constraint firstItem="UVb-WH-7cU" firstAttribute="leading" secondItem="NMN-Uw-qpl" secondAttribute="leading" id="iLh-6Z-Nqu"/>
+                            <constraint firstItem="UVb-WH-7cU" firstAttribute="top" secondItem="NMN-Uw-qpl" secondAttribute="top" id="y1j-pg-Boe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NMN-Uw-qpl"/>
                     </view>
@@ -1023,7 +1080,7 @@ STAM ACASA</string>
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.97226566076278687" green="0.96864122152328491" blue="0.97280269861221313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0Cf-cq-cNF" firstAttribute="leading" secondItem="hbJ-Cv-tJS" secondAttribute="leading" constant="20" id="Jt4-0u-3VL"/>
                             <constraint firstItem="vgH-sV-ve2" firstAttribute="top" secondItem="hbJ-Cv-tJS" secondAttribute="top" constant="30" id="Wo3-s5-X99"/>
