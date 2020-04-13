@@ -23,5 +23,17 @@ extension UIStoryboard {
             let controller = storyboard.instantiateViewController(withIdentifier: "profilCompletVc") as! ProfilCompletViewController
             return controller
         }
+        
+        static func instantiateFormulareleMeleVC() -> FormulareleMeleViewController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "formulareleMeleVc") as! FormulareleMeleViewController
+            return controller
+        }
+        
+        static func instantiateAltePersoaneVc() -> AltePersoaneViewController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "altePersoaneVc") as! AltePersoaneViewController
+            return controller
+        }
     }
 }

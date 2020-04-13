@@ -14,6 +14,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var PageViewOutlet: UIView!
     var pageMenu : CAPSPageMenu?
+    var fm : FormulareleMeleViewController?
+    var ap : AltePersoaneViewController?
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -36,22 +38,26 @@ class HomeViewController: UIViewController {
         // Initialize view controllers to display and place in array
         var controllerArray : [UIViewController] = []
         
+        let fm = UIStoryboard.Main.instantiateFormulareleMeleVC()
+        fm.title = "Formularele mele"
+        controllerArray.append(fm)
+        
+        let ap = UIStoryboard.Main.instantiateAltePersoaneVc()
+        ap.title = "Alte Persoane"
+        controllerArray.append(ap)
+        
         /*
-        let controller3 : TestViewController = TestViewController(nibName: "TestViewController", bundle: nil)
-        controller3.title = "Formularele mele"
-        controllerArray.append(controller3)
-        let controller4 : TestViewController = TestViewController(nibName: "TestViewController", bundle: nil)
-        controller4.title = "Alte persoane"
-        controllerArray.append(controller4)
-        */
         let controller3 : UIViewController = UIViewController.init()
         controller3.view.backgroundColor = UIColor(red: 248.0/255.0, green: 247.0/255.0, blue: 248.0/255.0, alpha: 1.0)
                controller3.title = "Formularele mele"
                controllerArray.append(controller3)
+        
         let controller4 : UIViewController = UIViewController.init()
         controller4.view.backgroundColor = UIColor(red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 1.0)
                controller4.title = "Alte Persoane"
                controllerArray.append(controller4)
+        */
+        
         
         // Customize menu (Optional)
         let parameters: [CAPSPageMenuOption] = [

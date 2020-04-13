@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		922CCDDF2444A52500BCE4FA /* FormulareleMeleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CCDDE2444A52500BCE4FA /* FormulareleMeleViewController.swift */; };
+		922CCDE12444A5D200BCE4FA /* AltePersoaneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CCDE02444A5D200BCE4FA /* AltePersoaneViewController.swift */; };
 		925D250524425A8900521E4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D250424425A8900521E4E /* HomeViewController.swift */; };
 		925D250D24425B7D00521E4E /* CAPSPageMenuConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D250724425B7C00521E4E /* CAPSPageMenuConfiguration.swift */; };
 		925D250E24425B7D00521E4E /* CAPSPageMenu+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D250824425B7C00521E4E /* CAPSPageMenu+Options.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		922CCDDE2444A52500BCE4FA /* FormulareleMeleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulareleMeleViewController.swift; sourceTree = "<group>"; };
+		922CCDE02444A5D200BCE4FA /* AltePersoaneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltePersoaneViewController.swift; sourceTree = "<group>"; };
 		925D250424425A8900521E4E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		925D250624425B7C00521E4E /* CAPSPageMenu+UIScrollViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIScrollViewDelegate.swift"; sourceTree = "<group>"; };
 		925D250724425B7C00521E4E /* CAPSPageMenuConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAPSPageMenuConfiguration.swift; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 				927F4874243E0868009CFC40 /* FlowStepViewController.swift */,
 				FA5524CB243CC21E000B8DA8 /* ViewController.swift */,
 				FAB926CB2440EED300862313 /* ProfilCompletViewController.swift */,
+				922CCDDE2444A52500BCE4FA /* FormulareleMeleViewController.swift */,
+				922CCDE02444A5D200BCE4FA /* AltePersoaneViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 				FA1E0581243F35A4008B276E /* AnswerView.swift in Sources */,
 				FA1E057D243F3487008B276E /* SectionView.swift in Sources */,
 				927F48A9243F436D009CFC40 /* iOSDropDown.swift in Sources */,
+				922CCDDF2444A52500BCE4FA /* FormulareleMeleViewController.swift in Sources */,
 				925D250E24425B7D00521E4E /* CAPSPageMenu+Options.swift in Sources */,
 				FAB926CC2440EED300862313 /* ProfilCompletViewController.swift in Sources */,
 				927F4883243E4639009CFC40 /* LocalitatiStruct.swift in Sources */,
@@ -268,6 +275,7 @@
 				925D250524425A8900521E4E /* HomeViewController.swift in Sources */,
 				925D250F24425B7D00521E4E /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
 				FADC4FBF243F39DC00F37D4E /* PageControlView.swift in Sources */,
+				922CCDE12444A5D200BCE4FA /* AltePersoaneViewController.swift in Sources */,
 				FA02B46C243E0CEE00F47DC2 /* UIStoryboard.swift in Sources */,
 				927F4875243E0868009CFC40 /* FlowStepViewController.swift in Sources */,
 				FA5524F8243DAEA3000B8DA8 /* MyData.swift in Sources */,

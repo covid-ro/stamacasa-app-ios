@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zI7-HF-e5b">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,29 +12,29 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Stam_Acasa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LcE-YH-VrM">
-                                <rect key="frame" x="0.0" y="119" width="375" height="659"/>
+                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aos-hQ-ZPU">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="832.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="833"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bine ai venit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okX-gM-WBc">
-                                                <rect key="frame" x="124.66666666666666" y="130" width="125.66666666666666" height="30"/>
+                                                <rect key="frame" x="124.5" y="130" width="126" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                                 <color key="textColor" red="0.1106250957" green="0.064914636309999996" blue="0.50292336940000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cum functioneaza?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8l-Ju-QOI">
-                                                <rect key="frame" x="20" y="324.66666666666669" width="335" height="24"/>
+                                                <rect key="frame" x="20" y="325" width="335" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgL-5U-qMG">
-                                                <rect key="frame" x="20" y="368.66666666666674" width="335" height="344"/>
+                                                <rect key="frame" x="20" y="369" width="335" height="344"/>
                                                 <string key="text">Folosind cele trei optiuni de mai jos vei putea sa iti construiesti un profil pentru tine, respectiv membrii familiei tale sau alte persoane pe care le ai in grija, cu ajutorul unui set initial de intrebari.
 
 In fiecare zi vei primi notificare sa completezi un chestionar de evaluare menit sa te ajute sa monitorizezi riscul unei potentiale infectii. Vei putea de asemenea sa mentii un istoric al tuturor iesirilor din domiciliu ale tale sau ale membrilor familiei.
@@ -45,13 +45,13 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8W7-hj-Ogo">
-                                                <rect key="frame" x="20" y="742.66666666666663" width="335" height="60"/>
+                                                <rect key="frame" x="20" y="743" width="335" height="60"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="taD-tS-LKI">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TeW-UK-9xE">
-                                                                <rect key="frame" x="22.666666666666664" y="23.666666666666742" width="15" height="13.666666666666671"/>
+                                                                <rect key="frame" x="22.5" y="23" width="15" height="14"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="15" id="BNU-HG-HBf"/>
@@ -67,7 +67,7 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profilul Tau" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXM-Q5-gXD">
-                                                        <rect key="frame" x="90" y="20.333333333333371" width="84.666666666666686" height="19.666666666666671"/>
+                                                        <rect key="frame" x="90" y="20" width="84.5" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -84,7 +84,7 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOm-A8-gWd">
-                                                <rect key="frame" x="20" y="190" width="335" height="114.66666666666669"/>
+                                                <rect key="frame" x="20" y="190" width="335" height="115"/>
                                                 <string key="text">Aplicatia Stam Acasa te va ajuta sa iti monitorizezi starea de sanatate pentru tine si pentru cei dragi care nu au acces la tehnologie sau nu sunt atat de prietenosi cu ea.
 </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -95,7 +95,7 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In parteneriat cu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prH-z8-RD2">
-                                                        <rect key="frame" x="76.333333333333314" y="14.666666666666657" width="120.66666666666669" height="21"/>
+                                                        <rect key="frame" x="76" y="14.5" width="121" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -141,7 +141,7 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
                                                 <rect key="frame" x="0.0" y="50" width="375" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dezvoltat de" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Tw-hS-4hg">
-                                                        <rect key="frame" x="154.66666666666666" y="14.666666666666657" width="92.333333333333343" height="21"/>
+                                                        <rect key="frame" x="154.5" y="14.5" width="92.5" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -212,10 +212,10 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Akm-IO-PYk" userLabel="StamAcasaVIew">
-                                <rect key="frame" x="0.0" y="44" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bBK-vF-w53" userLabel="logo">
-                                        <rect key="frame" x="20" y="17.666666666666664" width="40" height="40"/>
+                                        <rect key="frame" x="20" y="17.5" width="40" height="40"/>
                                         <color key="backgroundColor" red="0.95007473229999995" green="0.78989005089999997" blue="0.29654079680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="89f-08-3VG"/>
@@ -244,7 +244,7 @@ STAM ACASA</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2j6-Xy-OjT">
-                                        <rect key="frame" x="306" y="22.666666666666671" width="59" height="30"/>
+                                        <rect key="frame" x="306" y="22.5" width="59" height="30"/>
                                         <state key="normal" title="home -&gt;"/>
                                         <connections>
                                             <segue destination="6yb-O1-8UU" kind="show" id="jqy-FG-FVB"/>
@@ -293,23 +293,23 @@ STAM ACASA</string>
             <objects>
                 <viewController storyboardIdentifier="profilCompletVc" id="Xga-lg-Em8" customClass="ProfilCompletViewController" customModule="Stam_Acasa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o9F-2r-Noe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4F-XP-m9t">
-                                <rect key="frame" x="0.0" y="219" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="175" width="375" height="492"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k9I-xA-JRA">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="790.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="790.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profil complet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xD6-vx-Uey">
-                                                <rect key="frame" x="115.66666666666667" y="30" width="143.66666666666663" height="30"/>
+                                                <rect key="frame" x="115.5" y="30" width="144" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                                 <color key="textColor" red="0.1106250957" green="0.064914636309999996" blue="0.50292336940000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Woc-Ly-wmO">
-                                                <rect key="frame" x="20" y="89.999999999999972" width="335" height="420.33333333333326"/>
+                                                <rect key="frame" x="20" y="90" width="335" height="420.5"/>
                                                 <string key="text">Iti multumim ca ai finalizat completarea profilului tau. Foloseste optiunile de mai jos pentru a adauga in aplicatie alte persoane pe care le ai in grija. Va trebui sa completezi si pentru ele profiluri similare.
 
 Chiar daca nu locuiesti cu aceste persoane, dar tii legatura recurent cu ele, le poti ajuta monitorizandu-le sanatatea telefonic si marcand raspunsurile in aplicatie.
@@ -323,13 +323,13 @@ Daca nu ai alte persoane in grija, poti intra in aplicatie. Poti oricand sa adau
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2p3-pc-Gk5">
-                                                <rect key="frame" x="20" y="540.33333333333337" width="335" height="60"/>
+                                                <rect key="frame" x="20" y="540.5" width="335" height="60"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m9N-dn-Dq8">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FzJ-rs-Trt">
-                                                                <rect key="frame" x="22.666666666666664" y="23.666666666666629" width="15" height="13.666666666666671"/>
+                                                                <rect key="frame" x="22.5" y="23" width="15" height="14"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="15" id="MGA-mC-UUb"/>
@@ -345,7 +345,7 @@ Daca nu ai alte persoane in grija, poti intra in aplicatie. Poti oricand sa adau
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profilul Tau" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkO-lq-VwZ">
-                                                        <rect key="frame" x="90" y="20.333333333333258" width="84.666666666666686" height="19.333333333333329"/>
+                                                        <rect key="frame" x="90" y="20.5" width="84.5" height="19"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -362,13 +362,13 @@ Daca nu ai alte persoane in grija, poti intra in aplicatie. Poti oricand sa adau
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jEl-Ys-LJd">
-                                                <rect key="frame" x="20" y="620.33333333333337" width="335" height="60"/>
+                                                <rect key="frame" x="20" y="620.5" width="335" height="60"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYT-mf-Gk5">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BcR-Gy-f8y">
-                                                                <rect key="frame" x="22.666666666666664" y="23.666666666666629" width="15" height="13.666666666666671"/>
+                                                                <rect key="frame" x="22.5" y="23" width="15" height="14"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="15" id="5xO-Ma-rgb"/>
@@ -384,7 +384,7 @@ Daca nu ai alte persoane in grija, poti intra in aplicatie. Poti oricand sa adau
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adauga alte persoane in contul tau" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJG-B1-3Y8">
-                                                        <rect key="frame" x="90" y="20.333333333333258" width="261.66666666666669" height="19.333333333333329"/>
+                                                        <rect key="frame" x="90" y="20.5" width="261.5" height="19"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -401,13 +401,13 @@ Daca nu ai alte persoane in grija, poti intra in aplicatie. Poti oricand sa adau
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6Z-Q9-JLk">
-                                                <rect key="frame" x="20" y="700.33333333333337" width="335" height="60"/>
+                                                <rect key="frame" x="20" y="700.5" width="335" height="60"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPe-z2-lPg">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="le3-nc-Bkl">
-                                                                <rect key="frame" x="22.666666666666664" y="23.666666666666629" width="15" height="13.666666666666671"/>
+                                                                <rect key="frame" x="22.5" y="23" width="15" height="14"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="15" id="48n-Cc-vEi"/>
@@ -423,7 +423,7 @@ Daca nu ai alte persoane in grija, poti intra in aplicatie. Poti oricand sa adau
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completeaza formularul de evaluare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGS-S3-F2v">
-                                                        <rect key="frame" x="90" y="20.333333333333258" width="273" height="19.333333333333329"/>
+                                                        <rect key="frame" x="90" y="20.5" width="273" height="19"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -470,10 +470,10 @@ Daca nu ai alte persoane in grija, poti intra in aplicatie. Poti oricand sa adau
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0D-sz-F9P" userLabel="StamAcasaVIew">
-                                <rect key="frame" x="0.0" y="44" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8TB-b3-5PE" userLabel="logo">
-                                        <rect key="frame" x="20" y="17.666666666666664" width="40" height="40"/>
+                                        <rect key="frame" x="20" y="17.5" width="40" height="40"/>
                                         <color key="backgroundColor" red="0.95007473229999995" green="0.78989005089999997" blue="0.29654079680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="GB1-IT-nJv"/>
@@ -516,10 +516,10 @@ STAM ACASA</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Wo-w2-wRR" userLabel="ParteneriatView">
-                                <rect key="frame" x="0.0" y="119" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="75" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In parteneriat cu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCk-Ri-8j7">
-                                        <rect key="frame" x="76.333333333333314" y="14.666666666666657" width="120.66666666666669" height="21"/>
+                                        <rect key="frame" x="76" y="14.5" width="121" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -562,10 +562,10 @@ STAM ACASA</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7oC-8B-dIN" userLabel="DezvoltatView">
-                                <rect key="frame" x="0.0" y="169" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="125" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dezvoltat de" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xt-3Q-M8h">
-                                        <rect key="frame" x="154.66666666666666" y="14.666666666666657" width="92.333333333333343" height="21"/>
+                                        <rect key="frame" x="154.5" y="14.5" width="92.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -628,14 +628,14 @@ STAM ACASA</string>
             <objects>
                 <viewController id="6yb-O1-8UU" customClass="HomeViewController" customModule="Stam_Acasa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7QA-hc-Tai">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HfT-Dq-QQZ" userLabel="StamAcasaVIew">
-                                <rect key="frame" x="0.0" y="44" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Cc-3w-WcH" userLabel="logo">
-                                        <rect key="frame" x="20" y="17.666666666666664" width="40" height="40"/>
+                                        <rect key="frame" x="20" y="17.5" width="40" height="40"/>
                                         <color key="backgroundColor" red="0.95007473230361938" green="0.78989005088806152" blue="0.29654079675674438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="7PH-ge-QwJ"/>
@@ -678,10 +678,10 @@ STAM ACASA</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qna-PC-Bok" userLabel="ParteneriatView">
-                                <rect key="frame" x="0.0" y="119" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="75" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In parteneriat cu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVl-ek-Joe">
-                                        <rect key="frame" x="76.333333333333314" y="14.666666666666657" width="120.66666666666669" height="21"/>
+                                        <rect key="frame" x="76" y="14.5" width="121" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -724,10 +724,10 @@ STAM ACASA</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5c4-TK-SYi" userLabel="DezvoltatView">
-                                <rect key="frame" x="0.0" y="169" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="125" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dezvoltat de" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eM3-Y9-GeM">
-                                        <rect key="frame" x="154.66666666666666" y="14.666666666666657" width="92.333333333333343" height="21"/>
+                                        <rect key="frame" x="154.5" y="14.5" width="92.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -762,7 +762,7 @@ STAM ACASA</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5aC-BQ-6RA" userLabel="PageViewOutlet">
-                                <rect key="frame" x="0.0" y="219" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="175" width="375" height="492"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -793,6 +793,77 @@ STAM ACASA</string>
             </objects>
             <point key="canvasLocation" x="1047" y="913"/>
         </scene>
+        <!--Formularele Mele View Controller-->
+        <scene sceneID="N3m-Od-pkN">
+            <objects>
+                <viewController storyboardIdentifier="formulareleMeleVc" id="M9E-bC-k7l" customClass="FormulareleMeleViewController" customModule="Stam_Acasa" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vbf-d9-Mis">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGn-Aa-oP9">
+                                <rect key="frame" x="20" y="30" width="335" height="115"/>
+                                <string key="text">Urmatorul formular te ajuta sa mentii un istoric a simptomelor sau al absentei acestora in perioada in care stai in izolare. Parcurge intrebarile si raspunde cu atentie. Pe masura ce completezi, acesta pagina se va popula cu istoricul raspunsurilor tale.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5v-jN-OFo">
+                                <rect key="frame" x="20" y="255" width="335" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.74117647060000003" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="01p-LY-YO8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Formular deplasari">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0b-x4-Ul8">
+                                <rect key="frame" x="20" y="335" width="335" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.74117647060000003" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="5vU-gf-aSf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Istoric complet">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTk-ur-agp">
+                                <rect key="frame" x="20" y="175" width="335" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.74117647058823533" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="MrZ-Oh-Wpt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Formular evaluare">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="z5v-jN-OFo" firstAttribute="leading" secondItem="NMN-Uw-qpl" secondAttribute="leading" constant="20" id="0G3-5d-mED"/>
+                            <constraint firstItem="gGn-Aa-oP9" firstAttribute="leading" secondItem="NMN-Uw-qpl" secondAttribute="leading" constant="20" id="AZh-yX-9XQ"/>
+                            <constraint firstItem="NMN-Uw-qpl" firstAttribute="trailing" secondItem="TTk-ur-agp" secondAttribute="trailing" constant="20" id="K31-hY-VJ5"/>
+                            <constraint firstItem="TTk-ur-agp" firstAttribute="top" secondItem="gGn-Aa-oP9" secondAttribute="bottom" constant="30" id="OIN-eP-Bha"/>
+                            <constraint firstItem="NMN-Uw-qpl" firstAttribute="trailing" secondItem="g0b-x4-Ul8" secondAttribute="trailing" constant="20" id="OpZ-dy-VUI"/>
+                            <constraint firstAttribute="trailing" secondItem="gGn-Aa-oP9" secondAttribute="trailing" constant="20" id="Ql4-wU-u7j"/>
+                            <constraint firstItem="g0b-x4-Ul8" firstAttribute="leading" secondItem="NMN-Uw-qpl" secondAttribute="leading" constant="20" id="UJL-Ty-eLR"/>
+                            <constraint firstItem="NMN-Uw-qpl" firstAttribute="trailing" secondItem="z5v-jN-OFo" secondAttribute="trailing" constant="20" id="VtW-eM-EEp"/>
+                            <constraint firstItem="gGn-Aa-oP9" firstAttribute="top" secondItem="NMN-Uw-qpl" secondAttribute="top" constant="30" id="arr-vx-hCH"/>
+                            <constraint firstItem="TTk-ur-agp" firstAttribute="leading" secondItem="NMN-Uw-qpl" secondAttribute="leading" constant="20" id="nr7-bf-zYu"/>
+                            <constraint firstItem="z5v-jN-OFo" firstAttribute="top" secondItem="TTk-ur-agp" secondAttribute="bottom" constant="20" id="wam-lx-VgC"/>
+                            <constraint firstItem="g0b-x4-Ul8" firstAttribute="top" secondItem="z5v-jN-OFo" secondAttribute="bottom" constant="20" id="ywx-0B-IGV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NMN-Uw-qpl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K6Y-Oj-WWu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1965.5999999999999" y="913.49325337331345"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="51o-E0-okP">
             <objects>
@@ -815,11 +886,11 @@ STAM ACASA</string>
             <objects>
                 <viewController storyboardIdentifier="flowStepVc" id="PNf-lp-uy2" customClass="FlowStepViewController" customModule="Stam_Acasa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hTB-oU-hpr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xvm-dS-ugI" userLabel="StamAcasaold">
-                                <rect key="frame" x="0.0" y="44" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StamAcasa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXF-Yn-xx5">
                                         <rect key="frame" x="20" y="38" width="108" height="24"/>
@@ -837,10 +908,10 @@ STAM ACASA</string>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9U8-e5-Wvn">
-                                <rect key="frame" x="0.0" y="119" width="375" height="659"/>
+                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJl-a6-YtD">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="659"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="592"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
@@ -854,10 +925,10 @@ STAM ACASA</string>
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYd-4S-QP0" userLabel="StamAcasaVIew">
-                                <rect key="frame" x="0.0" y="44" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D5s-b1-Olo" userLabel="logo">
-                                        <rect key="frame" x="20" y="17.666666666666664" width="40" height="40"/>
+                                        <rect key="frame" x="20" y="17.5" width="40" height="40"/>
                                         <color key="backgroundColor" red="0.95007473229999995" green="0.78989005089999997" blue="0.29654079680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="O2L-RF-F9K"/>
@@ -924,6 +995,49 @@ STAM ACASA</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJf-A7-UyZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2092" y="95.320197044334975"/>
+        </scene>
+        <!--Alte Persoane View Controller-->
+        <scene sceneID="xeB-sy-SVV">
+            <objects>
+                <viewController storyboardIdentifier="altePersoaneVc" id="ugP-Bh-U7v" customClass="AltePersoaneViewController" customModule="Stam_Acasa" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jxG-5g-Lav">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgH-sV-ve2">
+                                <rect key="frame" x="20" y="30" width="335" height="115"/>
+                                <string key="text">Urmatorul formular te ajuta sa mentii un istoric a simptomelor sau al absentei acestora in perioada in care stai in izolare. Parcurge intrebarile si raspunde cu atentie. Pe masura ce completezi, acesta pagina se va popula cu istoricul raspunsurilor tale.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cf-cq-cNF">
+                                <rect key="frame" x="20" y="175" width="335" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.74117647060000003" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="iiL-Dq-as3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Adauga alte persoane">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0Cf-cq-cNF" firstAttribute="leading" secondItem="hbJ-Cv-tJS" secondAttribute="leading" constant="20" id="Jt4-0u-3VL"/>
+                            <constraint firstItem="vgH-sV-ve2" firstAttribute="top" secondItem="hbJ-Cv-tJS" secondAttribute="top" constant="30" id="Wo3-s5-X99"/>
+                            <constraint firstAttribute="trailing" secondItem="vgH-sV-ve2" secondAttribute="trailing" constant="20" id="Zbv-PR-C3N"/>
+                            <constraint firstItem="hbJ-Cv-tJS" firstAttribute="trailing" secondItem="0Cf-cq-cNF" secondAttribute="trailing" constant="20" id="eA4-zO-YFy"/>
+                            <constraint firstItem="vgH-sV-ve2" firstAttribute="leading" secondItem="hbJ-Cv-tJS" secondAttribute="leading" constant="20" id="gTk-IW-hdo"/>
+                            <constraint firstItem="0Cf-cq-cNF" firstAttribute="top" secondItem="vgH-sV-ve2" secondAttribute="bottom" constant="30" id="msh-cB-Iwb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hbJ-Cv-tJS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8jb-IQ-P1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3142" y="913"/>
         </scene>
     </scenes>
     <resources>
