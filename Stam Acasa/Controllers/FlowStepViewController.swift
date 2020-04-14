@@ -24,8 +24,9 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         
         // Do any additional setup after loading the view.
         let datePersonale = Bundle.main.loadNibNamed("DatePersonale", owner: self, options: nil)?.first as! DatePersonale
+        datePersonale.translatesAutoresizingMaskIntoConstraints = true
         
-        datePersonale.frame = CGRect(x: 0, y: 0.0, width: self.contentView.frame.size.width, height: 550)
+        datePersonale.frame = CGRect(x: 0, y: 0.0, width: self.view.frame.size.width, height: 550)
         datePersonale.delegate = self
         contentView.addSubview(datePersonale)
         
@@ -47,8 +48,8 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                         let labelFlow = UILabel(frame: CGRect(x: 30, y: yPositionOfAddingInContentView, width: self.view.frame.size.width - 60.0, height: 60))
                         labelFlow.textAlignment = .left
                         labelFlow.font = labelFlow.font.withSize(24)
-                        labelFlow.text = flow.flow_name
                         labelFlow.numberOfLines = 0
+                        labelFlow.text = flow.flow_name
                         let hlblF = labelFlow.frame.size.height
 
                         yPositionOfAddingInContentView += hlblF + 20.0
@@ -57,8 +58,8 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                         //section info text
                         let labelInfo = UILabel(frame: CGRect(x: 30, y: yPositionOfAddingInContentView, width: self.view.frame.size.width - 60.0, height: 80))
                         labelInfo.textAlignment = .center
-                        labelInfo.text = section.section_text
                         labelInfo.numberOfLines = 0
+                        labelInfo.text = section.section_text
                         let hlblN = labelInfo.frame.size.height
 
                         yPositionOfAddingInContentView += hlblN + 20.0
@@ -66,6 +67,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
 
                         //position indicator
                         let pageControlView = Bundle.main.loadNibNamed("PageControlView", owner: self, options: nil)?.first as! PageControlView
+                        pageControlView.translatesAutoresizingMaskIntoConstraints = true
                         pageControlView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.view.frame.size.width - 40.0, height: 50.0)
                         contentView.addSubview(pageControlView)
                         yPositionOfAddingInContentView += pageControlView.frame.size.height + 20.0
@@ -77,14 +79,15 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
 
                         //section name
                         let sectionNameView = Bundle.main.loadNibNamed("SectionView", owner: self, options: nil)?.first as! SectionView
+                        
+                        sectionNameView.translatesAutoresizingMaskIntoConstraints = true
                         sectionNameView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.view.frame.size.width - 40.0, height: 30.0)
                         sectionNameView.textLabel.text = section.section_name
                         sectionNameView.textLabel.numberOfLines = 0
-                        let hlblS = sectionNameView.textLabel.frame.size.height
+                        let hlblS = sectionNameView.textLabel.labelHeight()
                         sectionNameView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.view.frame.size.width - 40.0, height: hlblS + 30.0)
                         contentView.addSubview(sectionNameView)
-                        yPositionOfAddingInContentView += sectionNameView.frame.size.height + 20.0
-                        sectionNameView.translatesAutoresizingMaskIntoConstraints = true
+                        yPositionOfAddingInContentView += sectionNameView.frame.size.height + 30.0
 
                         //questions
                         for question in section.questions ?? []{
@@ -95,13 +98,13 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                             questionView.textLabel.text = question.question_text
 
                             questionView.textLabel.numberOfLines = 0
-                            let hlbl = questionView.textLabel.frame.size.height
+                            let hlbl = questionView.textLabel.labelHeight()
 
                             questionView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.view.frame.size.width - 40.0, height: hlbl+30)
 
+                                questionView.translatesAutoresizingMaskIntoConstraints = true
                             contentView.addSubview(questionView)
-                            yPositionOfAddingInContentView += questionView.frame.size.height + 20.0
-                            questionView.translatesAutoresizingMaskIntoConstraints = true
+                            yPositionOfAddingInContentView += questionView.frame.size.height + 30.0
 
                             var totalAnswersPerQuestion: [AnswerView] = []
                             for answer in question.question_answers ?? [] {
@@ -110,12 +113,13 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                                 answerView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.view.frame.size.width - 40.0, height: 30.0)
                                 answerView.textLabel.numberOfLines = 0
                                 answerView.textLabel.text = answer.answer_text
-                                let hlba = answerView.textLabel.frame.size.height
+                                let hlba = answerView.textLabel.labelHeight()
 
                                 answerView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.view.frame.size.width - 40.0, height: hlba+20)
-                                contentView.addSubview(answerView)
-                                yPositionOfAddingInContentView += answerView.frame.size.height + 20.0
+                                
                                 answerView.translatesAutoresizingMaskIntoConstraints = true
+                                contentView.addSubview(answerView)
+                                yPositionOfAddingInContentView += answerView.frame.size.height + 10.0
                                 
                                 var ids = (flow.flow_id ?? "flow_id_null") + " " + (section.section_id ?? "section_id_null") + " "
                                 ids += "\((question.question_id ?? 0))" + " "
@@ -155,7 +159,6 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         index += 1
     }
     
-    
     @objc func answerViewTapped(_ sender: Any){
         let view = (sender as? UITapGestureRecognizer)?.view as? AnswerView
         
@@ -180,6 +183,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         } else{
             view?.backgroundColor = UIColor.white
         }
+        
         
     }
     
@@ -214,7 +218,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
             for questionView in questionsViews{
                 if question.question_id == Int(questionView.accessibilityIdentifier ?? "0"){
 
-                    if !isQuestionAnswered {
+                    if !isQuestionAnswered && question.question_type == "single-choice" {
                         questionView.backgroundColor = UIColor.red
                         formValidated = false
                         validationFormAlert()

@@ -28,6 +28,7 @@
 		FA02B46A243E00DA00F47DC2 /* json_stam_acasa_alternativa.json in Resources */ = {isa = PBXBuildFile; fileRef = FA02B469243E00DA00F47DC2 /* json_stam_acasa_alternativa.json */; };
 		FA02B46C243E0CEE00F47DC2 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */; };
 		FA08248A2444519200F2AACD /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0824892444519200F2AACD /* Answer.swift */; };
+		FA08248C2446053D00F2AACD /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08248B2446053D00F2AACD /* UILabel.swift */; };
 		FA1E057B243F3469008B276E /* SectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1E057A243F3469008B276E /* SectionView.xib */; };
 		FA1E057D243F3487008B276E /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E057C243F3487008B276E /* SectionView.swift */; };
 		FA1E057F243F358E008B276E /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1E057E243F358E008B276E /* AnswerView.xib */; };
@@ -66,6 +67,7 @@
 		FA02B469243E00DA00F47DC2 /* json_stam_acasa_alternativa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = json_stam_acasa_alternativa.json; sourceTree = "<group>"; };
 		FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		FA0824892444519200F2AACD /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		FA08248B2446053D00F2AACD /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		FA1E057A243F3469008B276E /* SectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionView.xib; sourceTree = "<group>"; };
 		FA1E057C243F3487008B276E /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		FA1E057E243F358E008B276E /* AnswerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerView.xib; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */,
+				FA08248B2446053D00F2AACD /* UILabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				925D251324425B7D00521E4E /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */,
 				FA02B466243DFEF200F47DC2 /* StamAcasaSingleton.swift in Sources */,
 				925D251224425B7D00521E4E /* MenuItemView.swift in Sources */,
+				FA08248C2446053D00F2AACD /* UILabel.swift in Sources */,
 				925D251124425B7D00521E4E /* CAPSPageMenu.swift in Sources */,
 				FA1E0581243F35A4008B276E /* AnswerView.swift in Sources */,
 				FA1E057D243F3487008B276E /* SectionView.swift in Sources */,

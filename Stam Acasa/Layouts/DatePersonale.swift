@@ -177,9 +177,9 @@ class DatePersonale: UIView {
             dropDownGen.backgroundColor = UIColor.white
         }
         
-        if formValidated{
+        //if formValidated{
             delegate?.dateNecesareContinueTapped()
-        }
+        //}
     }
     
 }
