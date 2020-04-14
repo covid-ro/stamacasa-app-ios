@@ -235,8 +235,8 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                         let ids = view.accessibilityIdentifier?.components(separatedBy: " ")
                         //answer.flow_id = ids![0]
                         answer.section_id = ids![1]
-                        answer.question_id = ids![2]
-                        answer.answer_id = ids![3]
+                        answer.question_id = Int(ids![2])
+                        answer.answer_id = Int(ids![3])
                         answersToStore.append(answer)
                     }
                 }
