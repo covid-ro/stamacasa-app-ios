@@ -27,9 +27,9 @@ class FormulareleMeleViewController: UIViewController {
         drawIstoric()
         
         //scrollView.contentSize = CGSize(width: 375, height: 1057)
-        scrollviewHeight.constant = 1057
-        scrollviewHeight.priority = .defaultHigh
-        self.view.layoutIfNeeded()
+        //scrollviewHeight.constant = 1057
+        //scrollviewHeight.priority = .defaultHigh
+        //self.view.layoutIfNeeded()
     }
     
     func drawIstoric() {
