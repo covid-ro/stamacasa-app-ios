@@ -15,7 +15,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     //var yPositionOfAddingInContentView: CGFloat = 20.0
     @IBOutlet weak var scrollView: UIScrollView!
-    var answersToStore: [Answer] = []
+    var answersToStore: [ResponseData.Answer] = []
     var questionDataAnswersViewsDictionary: [MyData.Data.Flow.FlowSection.Question : [AnswerView]] = [:]
     var questionsViews: [SectionView] = []
     
@@ -231,12 +231,12 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
             for view in contentView.subviews{
                 if view is AnswerView{
                     if view.backgroundColor == UIColor.gray{
-                        let answer = Answer()
+                        var answer = ResponseData.Answer()
                         let ids = view.accessibilityIdentifier?.components(separatedBy: " ")
-                        answer.flow_id = ids![0]
+                        //answer.flow_id = ids![0]
                         answer.section_id = ids![1]
-                        answer.question_id = Int(ids![2])
-                        answer.answer_id = Int(ids![3])
+                        answer.question_id = ids![2]
+                        answer.answer_id = ids![3]
                         answersToStore.append(answer)
                     }
                 }

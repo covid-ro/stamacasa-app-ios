@@ -20,6 +20,76 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        
+        
+        //test encode - decode
+        var answersToStore: [ResponseData.Answer] = []
+        var answer = ResponseData.Answer()
+       let ids = view.accessibilityIdentifier?.components(separatedBy: " ")
+       //answer.flow_id = ids![0]
+       answer.section_id = "tra la la"
+       answer.question_id = "pu pu pu"
+       answer.answer_id = "la la la"
+       answersToStore.append(answer)
+
+        
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        
+        let newResponseData = ResponseData(date:  formatter.string(from: date), flow_id: "registration", responses: StamAcasaSingleton.sharedInstance.questionAnswers)
+        let respArray = [newResponseData] as [ResponseData]
+        
+        print(respArray)
+        
+        /*
+        UserDefaults.standard.set(try? PropertyListEncoder().encode([newResponseData]), forKey:"resp")
+        UserDefaults.standard.synchronize()
+        */
+        
+        
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(newResponseData) {
+            let defaults = UserDefaults.standard
+            defaults.set(encoded, forKey: "resps")
+        }
+        
+        UserDefaults.standard.synchronize()
+        print("decode:")
+        
+        
+        /*let json = StamAcasaSingleton.sharedInstance.readJSONFromFile(fileName: "json_stam_acasa_alternativa")
+                do {
+                    let data = try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
+                    do{
+                        decodedData = try JSONDecoder().decode(MyData.self,from: data)
+                        }
+                    catch let jsonError{
+                        print(jsonError)
+                    }
+                } catch var myJSONError {
+                    print(myJSONError)
+                }*/
+        
+        
+        /*
+        if let encodedData = UserDefaults.standard.object(forKey: "resps") as? Data {
+            let decoder = JSONDecoder()
+            if let loadedPerson = try? decoder.decode([ResponseData.self], from: encodedData) {
+                print(loadedPerson)
+            }
+        }*/
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         // MARK: - UI Setup
         
         self.title = "PAGE MENU"
