@@ -805,7 +805,7 @@ STAM ACASA</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ov-DP-atK">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1135.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1085.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGn-Aa-oP9">
                                                 <rect key="frame" x="20" y="30" width="335" height="115"/>
@@ -947,7 +947,7 @@ STAM ACASA</string>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qr-nj-6Y1">
-                                                <rect key="frame" x="0.0" y="1085" width="42" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="1035" width="42" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -963,7 +963,7 @@ STAM ACASA</string>
                                             <constraint firstItem="z5v-jN-OFo" firstAttribute="leading" secondItem="2Ov-DP-atK" secondAttribute="leading" constant="20" id="J7R-fY-2Nz"/>
                                             <constraint firstAttribute="trailing" secondItem="g0b-x4-Ul8" secondAttribute="trailing" constant="20" id="Ju7-n6-Cfb"/>
                                             <constraint firstAttribute="height" priority="200" constant="1057" id="Ydh-6a-oB8"/>
-                                            <constraint firstItem="0qr-nj-6Y1" firstAttribute="top" secondItem="7vX-Pz-Ktl" secondAttribute="bottom" constant="250" id="aa5-n4-M1a"/>
+                                            <constraint firstItem="0qr-nj-6Y1" firstAttribute="top" secondItem="7vX-Pz-Ktl" secondAttribute="bottom" constant="200" id="aa5-n4-M1a"/>
                                             <constraint firstAttribute="trailing" secondItem="7vX-Pz-Ktl" secondAttribute="trailing" constant="20" id="acg-9u-fbZ"/>
                                             <constraint firstItem="7vX-Pz-Ktl" firstAttribute="leading" secondItem="2Ov-DP-atK" secondAttribute="leading" constant="20" id="awI-h5-sOU"/>
                                             <constraint firstItem="z5v-jN-OFo" firstAttribute="top" secondItem="TTk-ur-agp" secondAttribute="bottom" constant="20" id="be2-6e-bbw"/>
