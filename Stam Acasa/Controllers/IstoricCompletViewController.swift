@@ -13,7 +13,7 @@ class IstoricCompletViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("aici")
         // Do any additional setup after loading the view.
     }
 
