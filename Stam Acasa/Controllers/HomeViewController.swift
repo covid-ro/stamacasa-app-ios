@@ -62,8 +62,9 @@ class HomeViewController: UIViewController {
         
         if let encodedData = UserDefaults.standard.object(forKey: "resps") as? Data {
             let decoder = JSONDecoder()
-            if let loadedPerson = try? decoder.decode(ResponseData.self[], from: encodedData) {
+            if let loadedPerson = try? decoder.decode([ResponseData].self, from: encodedData) {
                 print(loadedPerson)
+                print(loadedPerson.count)
             }
         }
         
