@@ -31,14 +31,15 @@ class HomeViewController: UIViewController {
        answer.question_id = "pu pu pu"
        answer.answer_id = "la la la"
        answersToStore.append(answer)
-
+        print(answer)
+        
         
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         
-        let newResponseData = ResponseData(date:  formatter.string(from: date), flow_id: "registration", responses: StamAcasaSingleton.sharedInstance.questionAnswers)
-        let respArray = [newResponseData] as [ResponseData]
+        let newResponseData = ResponseData(date:  formatter.string(from: date), flow_id: "registration", responses: answersToStore)
+        let respArray = [newResponseData,newResponseData] as [ResponseData]
         
         print(respArray)
         
@@ -49,7 +50,7 @@ class HomeViewController: UIViewController {
         
         
         let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(newResponseData) {
+        if let encoded = try? encoder.encode(respArray) { //newResponseData    //respArray
             let defaults = UserDefaults.standard
             defaults.set(encoded, forKey: "resps")
         }
@@ -58,7 +59,18 @@ class HomeViewController: UIViewController {
         print("decode:")
         
         
-        /*let json = StamAcasaSingleton.sharedInstance.readJSONFromFile(fileName: "json_stam_acasa_alternativa")
+        
+        if let encodedData = UserDefaults.standard.object(forKey: "resps") as? Data {
+            let decoder = JSONDecoder()
+            if let loadedPerson = try? decoder.decode(ResponseData.self[], from: encodedData) {
+                print(loadedPerson)
+            }
+        }
+        
+        
+        
+        /*
+         let json = StamAcasaSingleton.sharedInstance.readJSONFromFile(fileName: "json_stam_acasa_alternativa")
                 do {
                     let data = try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
                     do{
@@ -70,16 +82,6 @@ class HomeViewController: UIViewController {
                 } catch var myJSONError {
                     print(myJSONError)
                 }*/
-        
-        
-        /*
-        if let encodedData = UserDefaults.standard.object(forKey: "resps") as? Data {
-            let decoder = JSONDecoder()
-            if let loadedPerson = try? decoder.decode([ResponseData.self], from: encodedData) {
-                print(loadedPerson)
-            }
-        }*/
-        
         
         
         
