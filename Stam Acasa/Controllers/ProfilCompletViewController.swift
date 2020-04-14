@@ -12,7 +12,8 @@ class ProfilCompletViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print(StamAcasaSingleton.sharedInstance.questionAnswers)
         // Do any additional setup after loading the view.
     }
 

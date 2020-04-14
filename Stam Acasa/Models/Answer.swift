@@ -17,9 +17,9 @@ public struct ResponseData: Codable,Hashable {
 
     public struct Answer: Codable,Hashable {
         var section_id: String?
-        var question_id: String?
+        var question_id: Int?
         var question_text: String?
-        var answer_id: String?
+        var answer_id: Int?
         var answer_text: String?
         var answer_extra: String?
         

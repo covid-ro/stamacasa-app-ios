@@ -1406,6 +1406,78 @@ STAM ACASA</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ixt-NP-C1e" userLabel="Stack intrebari">
+                                <rect key="frame" x="20" y="139" width="160" height="420"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcY-Qv-IdV">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="SIR-1B-esE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperatura" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duV-aH-Vjx">
+                                        <rect key="frame" x="0.0" y="60" width="160" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="GH4-ip-Hsf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Durere in gat si/sau dificultate in a inghitii" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3H-yo-ad6">
+                                        <rect key="frame" x="0.0" y="120" width="160" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="NP2-df-g57"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuse intensa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugo-dl-UVU">
+                                        <rect key="frame" x="0.0" y="180" width="160" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="gOv-i8-2zd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dificultate in a respira" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdB-t2-u25">
+                                        <rect key="frame" x="0.0" y="240" width="160" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="wie-C1-twb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iti curge nasul" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbW-ag-vpJ">
+                                        <rect key="frame" x="0.0" y="300" width="160" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="PGm-5C-Ygy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alte simptome" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bE1-br-ulK">
+                                        <rect key="frame" x="0.0" y="360" width="160" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="1b0-5X-2NX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="GlE-Wp-iVT"/>
+                                    <constraint firstAttribute="height" constant="420" id="Su6-Kw-58U"/>
+                                </constraints>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2J-zi-JZp" userLabel="StamAcasaVIew">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <subviews>
@@ -1452,65 +1524,42 @@ STAM ACASA</string>
                                     <constraint firstItem="HxB-c4-TQ9" firstAttribute="centerY" secondItem="p2J-zi-JZp" secondAttribute="centerY" id="olM-dV-nIK"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTK-Wd-yuN">
-                                <rect key="frame" x="0.0" y="75" width="375" height="572"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYC-eY-yxW">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="572"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Bine ai venit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVT-py-QvR">
-                                                <rect key="frame" x="124.5" y="130" width="126" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
-                                                <color key="textColor" red="0.1106250957" green="0.064914636309999996" blue="0.50292336940000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afC-7h-vK0">
-                                                <rect key="frame" x="20" y="190" width="335" height="115"/>
-                                                <string key="text">Aplicatia Stam Acasa te va ajuta sa iti monitorizezi starea de sanatate pentru tine si pentru cei dragi care nu au acces la tehnologie sau nu sunt atat de prietenosi cu ea.
-</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.97226566079999999" green="0.96864122149999998" blue="0.97280269860000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="afC-7h-vK0" firstAttribute="top" secondItem="vVT-py-QvR" secondAttribute="bottom" constant="30" id="0m7-6h-epe"/>
-                                            <constraint firstItem="vVT-py-QvR" firstAttribute="centerX" secondItem="NYC-eY-yxW" secondAttribute="centerX" id="FTb-LA-3UM"/>
-                                            <constraint firstItem="afC-7h-vK0" firstAttribute="leading" secondItem="NYC-eY-yxW" secondAttribute="leading" constant="20" id="JPA-Aw-vn2"/>
-                                            <constraint firstAttribute="trailing" secondItem="afC-7h-vK0" secondAttribute="trailing" constant="20" id="uwn-BY-Duf"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="NYC-eY-yxW" firstAttribute="top" secondItem="QTK-Wd-yuN" secondAttribute="top" id="3sx-nM-jdt"/>
-                                    <constraint firstAttribute="trailing" secondItem="NYC-eY-yxW" secondAttribute="trailing" id="HcV-yz-hQP"/>
-                                    <constraint firstItem="NYC-eY-yxW" firstAttribute="width" secondItem="QTK-Wd-yuN" secondAttribute="width" id="J0M-Du-xbE"/>
-                                    <constraint firstItem="NYC-eY-yxW" firstAttribute="height" secondItem="QTK-Wd-yuN" secondAttribute="height" priority="249" id="OSI-Oh-HlR"/>
-                                    <constraint firstAttribute="trailing" secondItem="NYC-eY-yxW" secondAttribute="trailing" id="T27-EP-cOd"/>
-                                    <constraint firstItem="NYC-eY-yxW" firstAttribute="leading" secondItem="QTK-Wd-yuN" secondAttribute="leading" id="iC0-yD-Djj"/>
-                                    <constraint firstAttribute="bottom" secondItem="NYC-eY-yxW" secondAttribute="bottom" id="iyg-9l-5PL"/>
-                                    <constraint firstItem="NYC-eY-yxW" firstAttribute="leading" secondItem="QTK-Wd-yuN" secondAttribute="leading" id="xC8-zf-FUt"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Istoric simptome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhF-Re-WWN">
+                                <rect key="frame" x="20" y="95" width="335" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QTK-Wd-yuN">
+                                <rect key="frame" x="181" y="127" width="194" height="520"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.97226566076278687" green="0.96864122152328491" blue="0.97280269861221313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="p2J-zi-JZp" firstAttribute="trailing" secondItem="aJq-gF-X7D" secondAttribute="trailing" id="2Re-h2-Ar0"/>
-                            <constraint firstItem="QTK-Wd-yuN" firstAttribute="top" secondItem="p2J-zi-JZp" secondAttribute="bottom" id="8bd-qT-JxK"/>
+                            <constraint firstItem="QTK-Wd-yuN" firstAttribute="top" secondItem="HhF-Re-WWN" secondAttribute="bottom" constant="20" id="8bd-qT-JxK"/>
                             <constraint firstItem="p2J-zi-JZp" firstAttribute="leading" secondItem="aJq-gF-X7D" secondAttribute="leading" id="De3-5x-0cR"/>
+                            <constraint firstItem="aJq-gF-X7D" firstAttribute="trailing" secondItem="HhF-Re-WWN" secondAttribute="trailing" constant="20" id="Eai-bR-nX3"/>
                             <constraint firstItem="p2J-zi-JZp" firstAttribute="top" secondItem="aJq-gF-X7D" secondAttribute="top" id="Itv-zK-m9s"/>
+                            <constraint firstItem="HhF-Re-WWN" firstAttribute="top" secondItem="p2J-zi-JZp" secondAttribute="bottom" constant="20" id="SIX-UH-gGZ"/>
                             <constraint firstItem="QTK-Wd-yuN" firstAttribute="trailing" secondItem="aJq-gF-X7D" secondAttribute="trailing" id="lVG-RV-cHI"/>
                             <constraint firstItem="QTK-Wd-yuN" firstAttribute="bottom" secondItem="aJq-gF-X7D" secondAttribute="bottom" id="mpN-hY-679"/>
-                            <constraint firstItem="QTK-Wd-yuN" firstAttribute="leading" secondItem="aJq-gF-X7D" secondAttribute="leading" id="rdI-ou-PnH"/>
+                            <constraint firstItem="QTK-Wd-yuN" firstAttribute="leading" secondItem="Ixt-NP-C1e" secondAttribute="trailing" id="rdI-ou-PnH"/>
+                            <constraint firstItem="Ixt-NP-C1e" firstAttribute="leading" secondItem="aJq-gF-X7D" secondAttribute="leading" constant="20" id="uxk-Xb-uqH"/>
+                            <constraint firstItem="Ixt-NP-C1e" firstAttribute="top" secondItem="HhF-Re-WWN" secondAttribute="bottom" constant="20" id="wAt-qw-luW"/>
+                            <constraint firstItem="HhF-Re-WWN" firstAttribute="leading" secondItem="aJq-gF-X7D" secondAttribute="leading" constant="20" id="zN9-Ze-Ez3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aJq-gF-X7D"/>
                     </view>
                     <navigationItem key="navigationItem" id="dWu-MU-sLu"/>
+                    <connections>
+                        <outlet property="scrollView" destination="QTK-Wd-yuN" id="ojg-gq-abu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dks-ud-hxW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3191" y="913"/>
+            <point key="canvasLocation" x="3189.5999999999999" y="912.5937031484259"/>
         </scene>
     </scenes>
     <resources>

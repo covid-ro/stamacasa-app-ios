@@ -20,46 +20,29 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        
-        
-        //test encode - decode
+        //begin sample data:
         var answersToStore: [ResponseData.Answer] = []
-        var answer = ResponseData.Answer()
-       let ids = view.accessibilityIdentifier?.components(separatedBy: " ")
-       //answer.flow_id = ids![0]
-       answer.section_id = "tra la la"
-       answer.question_id = "pu pu pu"
-       answer.answer_id = "la la la"
-       answersToStore.append(answer)
-        print(answer)
+        var answer = ResponseData.Answer.init(section_id: "tra la la", question_id: 10, question_text: "Ati avut vreunul dintre simptomele de mai jos?", answer_id: 1, answer_text: "Febra 38 sau mai mare", answer_extra: nil)
+        answersToStore.append(answer)
+        answer = ResponseData.Answer.init(section_id: "tra la la", question_id: 10, question_text: "Ati avut vreunul dintre simptomele de mai jos?", answer_id: 5, answer_text: "Iti curge nasul", answer_extra: nil)
+        answersToStore.append(answer)
+        answer = ResponseData.Answer.init(section_id: "tra la la", question_id: 10, question_text: "Ati avut vreunul dintre simptomele de mai jos?", answer_id: 3, answer_text: "Tuse intensa", answer_extra: nil)
+        answersToStore.append(answer)
         
         
         let date = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
-        
+        formatter.dateFormat = "dd.MM"
+
         let newResponseData = ResponseData(date:  formatter.string(from: date), flow_id: "registration", responses: answersToStore)
-        let respArray = [newResponseData,newResponseData] as [ResponseData]
-        
-        print(respArray)
-        
-        /*
-        UserDefaults.standard.set(try? PropertyListEncoder().encode([newResponseData]), forKey:"resp")
-        UserDefaults.standard.synchronize()
-        */
-        
-        
         let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(respArray) { //newResponseData    //respArray
+        if let encoded = try? encoder.encode([newResponseData,newResponseData,newResponseData,newResponseData,newResponseData]) {
             let defaults = UserDefaults.standard
             defaults.set(encoded, forKey: "resps")
         }
-        
         UserDefaults.standard.synchronize()
-        print("decode:")
         
-        
-        
+        /*
         if let encodedData = UserDefaults.standard.object(forKey: "resps") as? Data {
             let decoder = JSONDecoder()
             if let loadedPerson = try? decoder.decode([ResponseData].self, from: encodedData) {
@@ -67,28 +50,8 @@ class HomeViewController: UIViewController {
                 print(loadedPerson.count)
             }
         }
-        
-        
-        
-        /*
-         let json = StamAcasaSingleton.sharedInstance.readJSONFromFile(fileName: "json_stam_acasa_alternativa")
-                do {
-                    let data = try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
-                    do{
-                        decodedData = try JSONDecoder().decode(MyData.self,from: data)
-                        }
-                    catch let jsonError{
-                        print(jsonError)
-                    }
-                } catch var myJSONError {
-                    print(myJSONError)
-                }*/
-        
-        
-        
-        
-        
-        
+        */
+        //finish sample data
         
         
         
