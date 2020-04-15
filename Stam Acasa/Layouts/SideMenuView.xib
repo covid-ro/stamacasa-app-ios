@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SideMenuView" customModule="Stam_Acasa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWT-7h-0aw">
+                    <rect key="frame" x="0.0" y="44" width="290" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YqZ-hp-Xkr">
+                            <rect key="frame" x="0.0" y="0.0" width="290" height="100"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StamAcasa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfh-GN-S07">
+                                    <rect key="frame" x="20" y="39.5" width="95.5" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.31099456549999999" green="0.2309500277" blue="0.39243170620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="rfh-GN-S07" firstAttribute="leading" secondItem="YqZ-hp-Xkr" secondAttribute="leading" constant="20" id="JDx-Lo-Idh"/>
+                                <constraint firstAttribute="height" constant="100" id="Xe3-ds-U21"/>
+                                <constraint firstItem="rfh-GN-S07" firstAttribute="centerY" secondItem="YqZ-hp-Xkr" secondAttribute="centerY" id="bNe-Av-wG8"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaS-aI-pHP">
+                            <rect key="frame" x="20" y="120" width="250" height="30"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                            <state key="normal" title="Profilul meu">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="profilulMeuTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="fK1-F9-Tiy"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33j-yT-xnH">
+                            <rect key="frame" x="20" y="170" width="250" height="30"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                            <state key="normal" title="Profile alte persoane">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="profileAltePersoaneTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="bf1-6Y-2Xj"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="re8-wj-eol">
+                            <rect key="frame" x="20" y="220" width="250" height="30"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                            <state key="normal" title="Istoric personal">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="istoricPersonalTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Bcr-B9-ysr"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rah-5n-DIt">
+                            <rect key="frame" x="20" y="270" width="250" height="30"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                            <state key="normal" title="Setari">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="setariTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="L8B-0P-gsB"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGy-5C-Gkh">
+                            <rect key="frame" x="20" y="320" width="250" height="30"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                            <state key="normal" title="Despre">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="despreTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="vA1-c9-234"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="aGy-5C-Gkh" firstAttribute="top" secondItem="rah-5n-DIt" secondAttribute="bottom" constant="20" id="IaN-mw-00b"/>
+                        <constraint firstItem="33j-yT-xnH" firstAttribute="top" secondItem="JaS-aI-pHP" secondAttribute="bottom" constant="20" id="RAr-mW-hQM"/>
+                        <constraint firstAttribute="trailing" secondItem="YqZ-hp-Xkr" secondAttribute="trailing" id="Rp2-wS-Bq2"/>
+                        <constraint firstItem="YqZ-hp-Xkr" firstAttribute="top" secondItem="RWT-7h-0aw" secondAttribute="top" id="Sq0-r7-4vt"/>
+                        <constraint firstItem="re8-wj-eol" firstAttribute="trailing" secondItem="33j-yT-xnH" secondAttribute="trailing" id="THh-nE-T2G"/>
+                        <constraint firstItem="JaS-aI-pHP" firstAttribute="top" secondItem="YqZ-hp-Xkr" secondAttribute="bottom" constant="20" id="TS6-Ww-Zye"/>
+                        <constraint firstItem="33j-yT-xnH" firstAttribute="trailing" secondItem="JaS-aI-pHP" secondAttribute="trailing" id="Vn8-Wb-D87"/>
+                        <constraint firstItem="YqZ-hp-Xkr" firstAttribute="leading" secondItem="RWT-7h-0aw" secondAttribute="leading" id="Wno-5T-UZh"/>
+                        <constraint firstItem="aGy-5C-Gkh" firstAttribute="trailing" secondItem="rah-5n-DIt" secondAttribute="trailing" id="XqX-pD-2AX"/>
+                        <constraint firstItem="re8-wj-eol" firstAttribute="leading" secondItem="33j-yT-xnH" secondAttribute="leading" id="aJF-S6-X4E"/>
+                        <constraint firstItem="rah-5n-DIt" firstAttribute="leading" secondItem="re8-wj-eol" secondAttribute="leading" id="cUg-UW-Tfr"/>
+                        <constraint firstItem="aGy-5C-Gkh" firstAttribute="leading" secondItem="rah-5n-DIt" secondAttribute="leading" id="f71-00-j18"/>
+                        <constraint firstAttribute="trailing" secondItem="JaS-aI-pHP" secondAttribute="trailing" constant="20" id="h9F-gO-pub"/>
+                        <constraint firstItem="rah-5n-DIt" firstAttribute="trailing" secondItem="re8-wj-eol" secondAttribute="trailing" id="k6u-2M-kb4"/>
+                        <constraint firstItem="33j-yT-xnH" firstAttribute="leading" secondItem="JaS-aI-pHP" secondAttribute="leading" id="nDw-m5-PI0"/>
+                        <constraint firstItem="rah-5n-DIt" firstAttribute="top" secondItem="re8-wj-eol" secondAttribute="bottom" constant="20" id="qt3-bW-ZSJ"/>
+                        <constraint firstItem="JaS-aI-pHP" firstAttribute="leading" secondItem="RWT-7h-0aw" secondAttribute="leading" constant="20" id="yyB-mh-qIA"/>
+                        <constraint firstItem="JaS-aI-pHP" firstAttribute="top" secondItem="YqZ-hp-Xkr" secondAttribute="bottom" constant="20" id="zDz-Er-gIy"/>
+                        <constraint firstItem="re8-wj-eol" firstAttribute="top" secondItem="33j-yT-xnH" secondAttribute="bottom" constant="20" id="zJ9-CN-ANG"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zkl-3d-Uug">
+                    <rect key="frame" x="290" y="44" width="124" height="818"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="RWT-7h-0aw" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.7" id="1zz-Rm-jNK"/>
+                <constraint firstItem="zkl-3d-Uug" firstAttribute="leading" secondItem="RWT-7h-0aw" secondAttribute="trailing" id="bzF-CC-vdC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="RWT-7h-0aw" secondAttribute="bottom" id="dYn-27-1yN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="zkl-3d-Uug" secondAttribute="bottom" id="fJS-Kv-7SU"/>
+                <constraint firstItem="RWT-7h-0aw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="iZv-2u-zLB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zkl-3d-Uug" secondAttribute="trailing" id="kq4-Vt-NqM"/>
+                <constraint firstItem="zkl-3d-Uug" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="oVZ-Vd-8ic"/>
+                <constraint firstItem="RWT-7h-0aw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="w5H-2S-9BX"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="exitView" destination="zkl-3d-Uug" id="IyI-3c-nNO"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
+        </view>
+    </objects>
+</document>

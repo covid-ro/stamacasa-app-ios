@@ -11,13 +11,15 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    let notificationCenter = UNUserNotificationCenter.current()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        notificationCenter.delegate = self
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -51,3 +53,60 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        completionHandler([.alert, .sound])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        if response.notification.request.identifier == "Local Notification" {
+            var navigationController: UINavigationController? = (self.window?.rootViewController as? UINavigationController)
+            let vc = UIStoryboard.Main.instantiateFormulareleMeleVC()
+            navigationController?.pushViewController(vc, animated: true)
+            
+        }
+        
+        completionHandler()
+    }
+    
+    func scheduleNotification(notificationType: String) {
+        
+        let content = UNMutableNotificationContent() // Содержимое уведомления
+        let categoryIdentifire = "Open FormulareleMeleVc"
+        
+        content.title = notificationType
+        content.body = "Este timpul sa completati formularul de evaluare!"
+        content.sound = UNNotificationSound.default
+        content.badge = 1
+        content.categoryIdentifier = categoryIdentifire
+        
+        let date = Calendar.current.date(bySettingHour: 20, minute: 0, second: 0, of: Date())!
+        let triggerDaily = Calendar.current.dateComponents([.hour,.minute,.second,], from: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
+        
+        let identifier = "Local Notification"
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        notificationCenter.add(request) { (error) in
+            if let error = error {
+                print("Error \(error.localizedDescription)")
+            }
+        }
+        
+//        let snoozeAction = UNNotificationAction(identifier: "Snooze", title: "Snooze", options: [])
+//        let deleteAction = UNNotificationAction(identifier: "DeleteAction", title: "Delete", options: [.destructive])
+//        let category = UNNotificationCategory(identifier: categoryIdentifire,
+//                                              actions: [snoozeAction, deleteAction],
+//                                              intentIdentifiers: [],
+//                                              options: [])
+//
+//        notificationCenter.setNotificationCategories([category])
+    }
+}
