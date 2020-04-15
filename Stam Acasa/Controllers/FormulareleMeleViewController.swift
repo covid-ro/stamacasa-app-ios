@@ -15,6 +15,7 @@ class FormulareleMeleViewController: UIViewController {
     @IBOutlet weak var istoricView: UIView!
     @IBOutlet weak var columnsView: UIView!
     @IBOutlet weak var istoricHeight: NSLayoutConstraint!
+    @IBOutlet weak var contentView: UIView!
     
     @IBOutlet weak var scrollviewHeight: NSLayoutConstraint!
     
@@ -26,8 +27,10 @@ class FormulareleMeleViewController: UIViewController {
         //istoricView.removeFromSuperview()
         drawIstoric()
         
-        //scrollView.contentSize = CGSize(width: 375, height: 1057)
-        //scrollviewHeight.constant = 1057
+        //scrollView.contentSize.height = 1070
+        contentView.translatesAutoresizingMaskIntoConstraints = true
+        scrollviewHeight.constant = 1070
+        contentView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: scrollviewHeight.constant)
         //scrollviewHeight.priority = .defaultHigh
         //self.view.layoutIfNeeded()
     }
