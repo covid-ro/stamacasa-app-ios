@@ -86,5 +86,20 @@ class FormulareleMeleViewController: UIViewController {
            }
            //scrollView.contentSize = CGSize.init(width: responses!.count * 60, height: 420)
        }
+    
+    @IBAction func formulareEvaluareTapped(_ sender: Any) {
+        let vc = UIStoryboard.Main.instantiateFlowStepVc()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func formulareDeplasariTapped(_ sender: Any) {
+        let vc = UIStoryboard.Main.instantiateFormularDeplasariVc()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func istoricCompletTapped(_ sender: Any) {
+        let vc = UIStoryboard.Main.instantiateIstoricCompletVc()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 

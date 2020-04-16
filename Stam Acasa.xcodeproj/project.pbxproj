@@ -46,6 +46,7 @@
 		FA5524D1243CC220000B8DA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5524D0243CC220000B8DA8 /* Assets.xcassets */; };
 		FA5524D4243CC220000B8DA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5524D2243CC220000B8DA8 /* LaunchScreen.storyboard */; };
 		FA5524F8243DAEA3000B8DA8 /* MyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5524F7243DAEA3000B8DA8 /* MyData.swift */; };
+		FA6F2320244847210022F361 /* FormularDeplasariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F231F244847210022F361 /* FormularDeplasariViewController.swift */; };
 		FAB926CC2440EED300862313 /* ProfilCompletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB926CB2440EED300862313 /* ProfilCompletViewController.swift */; };
 		FADC4FBD243F39D400F37D4E /* PageControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADC4FBC243F39D400F37D4E /* PageControlView.xib */; };
 		FADC4FBF243F39DC00F37D4E /* PageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC4FBE243F39DC00F37D4E /* PageControlView.swift */; };
@@ -93,6 +94,7 @@
 		FA5524D3243CC220000B8DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA5524D5243CC220000B8DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA5524F7243DAEA3000B8DA8 /* MyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyData.swift; sourceTree = "<group>"; };
+		FA6F231F244847210022F361 /* FormularDeplasariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormularDeplasariViewController.swift; sourceTree = "<group>"; };
 		FAB926CB2440EED300862313 /* ProfilCompletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilCompletViewController.swift; sourceTree = "<group>"; };
 		FADC4FBC243F39D400F37D4E /* PageControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageControlView.xib; sourceTree = "<group>"; };
 		FADC4FBE243F39DC00F37D4E /* PageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlView.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				9253958A2445C41F00329C6A /* IstoricCompletViewController.swift */,
 				FA082495244756A100F2AACD /* DespreViewController.swift */,
 				FA082497244759DF00F2AACD /* SetariViewController.swift */,
+				FA6F231F244847210022F361 /* FormularDeplasariViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				FA5524CA243CC21E000B8DA8 /* SceneDelegate.swift in Sources */,
 				925D250524425A8900521E4E /* HomeViewController.swift in Sources */,
 				925D250F24425B7D00521E4E /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
+				FA6F2320244847210022F361 /* FormularDeplasariViewController.swift in Sources */,
 				FADC4FBF243F39DC00F37D4E /* PageControlView.swift in Sources */,
 				FA08248E244711F300F2AACD /* SideMenuView.swift in Sources */,
 				922CCDE12444A5D200BCE4FA /* AltePersoaneViewController.swift in Sources */,

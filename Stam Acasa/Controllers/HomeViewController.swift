@@ -142,20 +142,6 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate{
             pageMenu!.moveToPage(currentIndex + 1)
         }
     }
-    
-    @IBAction func btnEvaluare(_ sender: Any) {
-        let eval = UIStoryboard.Main.instantiateFlowStepVc()
-        //fm.flow_id
-        //fm.flow_section
-        
-        navigationController?.pushViewController(eval, animated: true)
-    }
-    
-    @IBAction func btnDeplasri(_ sender: Any) {
-        //let eval = UIStoryboard.Main.instantiateFlowStepVc()
-        //navigationController?.pushViewController(eval, animated: true)
-    }
-    
     // MARK: - Container View Controller
 
     //COULD NOT RESOLVE
