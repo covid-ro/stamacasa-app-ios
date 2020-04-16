@@ -460,7 +460,7 @@
                     "answer_id":6,
                     "answer_text":"Alte simptome",
                     "answer_decision":{
-                      "answer_hint":null,
+                      "answer_hint":"Te rugam sa descri simptomele",
                       "answer_input":"text-area",
                       "answer_question_id":null
                     }
