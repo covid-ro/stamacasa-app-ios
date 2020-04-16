@@ -10,16 +10,21 @@ import Foundation
 import UIKit
 
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UIGestureRecognizerDelegate{
     
     @IBOutlet weak var PageViewOutlet: UIView!
     var pageMenu : CAPSPageMenu?
     var fm : FormulareleMeleViewController?
     var ap : AltePersoaneViewController?
+    @IBOutlet weak var stamAcasaLogo: UIImageView!
+    @IBOutlet weak var stamAcasaView: UIView!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        stamAcasaLogo.isUserInteractionEnabled = true
+        let menuTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.menuTapped(_:)))
+        stamAcasaLogo.addGestureRecognizer(menuTapGesture)
         //begin sample data:
         var answersToStore: [ResponseData.Answer] = []
         var answer = ResponseData.Answer.init(section_id: "tra la la", question_id: 10, question_text: "Ati avut vreunul dintre simptomele de mai jos?", answer_id: 1, answer_text: "Febra 38 sau mai mare", answer_extra: nil)
@@ -118,6 +123,10 @@ class HomeViewController: UIViewController {
         pageMenu!.didMove(toParent: self)
     }
     
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
     func didTapGoToLeft() {
         let currentIndex = pageMenu!.currentPageIndex
         
@@ -144,6 +153,53 @@ class HomeViewController: UIViewController {
     override func shouldAutomaticallyForwardRotationMethods() -> Bool {
         return true
     }
+    
+    @objc func menuTapped(_ sender : UITapGestureRecognizer){
+           let menuView = Bundle.main.loadNibNamed("SideMenuView", owner: self, options: nil)?.first as! SideMenuView
+           menuView.frame.size.width = self.view.frame.size.width
+           menuView.frame.size.height = self.view.frame.size.height
+           menuView.frame.origin.y = 0.0
+           menuView.frame.origin.x = -UIScreen.main.bounds.width
+           menuView.delegate = self
+           self.view.addSubview(menuView)
+           UIView.animate(withDuration: 1.0, animations: {
+               menuView.frame.origin.x = 0.0
+           })
+       }
+}
+
+extension HomeViewController: SideMenu{
+    func profilulMeuTapped() {
+         pageMenu!.moveToPage(0)
+    }
+    
+    func profileAltePersoaneTapped() {
+         pageMenu!.moveToPage(1)
+    }
+    
+    func istoricPersonalTapped() {
+        let vc = UIStoryboard.Main.instantiateIstoricCompletVc()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func despreTapped(){
+        let vc = UIStoryboard.Main.instantiateDespreVc()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func setariTapped(){
+        let vc = UIStoryboard.Main.instantiateSetariVc()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+
+protocol SideMenu{
+    func profilulMeuTapped()
+    func profileAltePersoaneTapped()
+    func istoricPersonalTapped()
+    func despreTapped()
+    func setariTapped()
 }
 
 

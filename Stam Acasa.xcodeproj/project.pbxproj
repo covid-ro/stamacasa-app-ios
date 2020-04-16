@@ -30,6 +30,11 @@
 		FA02B46C243E0CEE00F47DC2 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */; };
 		FA08248A2444519200F2AACD /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0824892444519200F2AACD /* Answer.swift */; };
 		FA08248C2446053D00F2AACD /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08248B2446053D00F2AACD /* UILabel.swift */; };
+		FA08248E244711F300F2AACD /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08248D244711F300F2AACD /* SideMenuView.swift */; };
+		FA082490244711FD00F2AACD /* SideMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA08248F244711FD00F2AACD /* SideMenuView.xib */; };
+		FA082496244756A100F2AACD /* DespreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA082495244756A100F2AACD /* DespreViewController.swift */; };
+		FA082498244759DF00F2AACD /* SetariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA082497244759DF00F2AACD /* SetariViewController.swift */; };
+		FA08249A24476D1800F2AACD /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08249924476D1700F2AACD /* Date.swift */; };
 		FA1E057B243F3469008B276E /* SectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1E057A243F3469008B276E /* SectionView.xib */; };
 		FA1E057D243F3487008B276E /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1E057C243F3487008B276E /* SectionView.swift */; };
 		FA1E057F243F358E008B276E /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1E057E243F358E008B276E /* AnswerView.xib */; };
@@ -70,6 +75,11 @@
 		FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		FA0824892444519200F2AACD /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		FA08248B2446053D00F2AACD /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		FA08248D244711F300F2AACD /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		FA08248F244711FD00F2AACD /* SideMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuView.xib; sourceTree = "<group>"; };
+		FA082495244756A100F2AACD /* DespreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DespreViewController.swift; sourceTree = "<group>"; };
+		FA082497244759DF00F2AACD /* SetariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetariViewController.swift; sourceTree = "<group>"; };
+		FA08249924476D1700F2AACD /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FA1E057A243F3469008B276E /* SectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionView.xib; sourceTree = "<group>"; };
 		FA1E057C243F3487008B276E /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		FA1E057E243F358E008B276E /* AnswerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerView.xib; sourceTree = "<group>"; };
@@ -133,6 +143,8 @@
 				927F487E243E1425009CFC40 /* DatePersonale.xib */,
 				927F487C243E13FE009CFC40 /* DatePersonale.swift */,
 				9253958C24473F9A00329C6A /* QuestionPanelView.swift */,
+				FA08248D244711F300F2AACD /* SideMenuView.swift */,
+				FA08248F244711FD00F2AACD /* SideMenuView.xib */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -187,6 +199,8 @@
 				922CCDDE2444A52500BCE4FA /* FormulareleMeleViewController.swift */,
 				922CCDE02444A5D200BCE4FA /* AltePersoaneViewController.swift */,
 				9253958A2445C41F00329C6A /* IstoricCompletViewController.swift */,
+				FA082495244756A100F2AACD /* DespreViewController.swift */,
+				FA082497244759DF00F2AACD /* SetariViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -196,6 +210,7 @@
 			children = (
 				FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */,
 				FA08248B2446053D00F2AACD /* UILabel.swift */,
+				FA08249924476D1700F2AACD /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -265,6 +280,7 @@
 				FA5524D4243CC220000B8DA8 /* LaunchScreen.storyboard in Resources */,
 				FA1E057F243F358E008B276E /* AnswerView.xib in Resources */,
 				927F487F243E1425009CFC40 /* DatePersonale.xib in Resources */,
+				FA082490244711FD00F2AACD /* SideMenuView.xib in Resources */,
 				FA5524D1243CC220000B8DA8 /* Assets.xcassets in Resources */,
 				FA5524CF243CC21E000B8DA8 /* Main.storyboard in Resources */,
 			);
@@ -284,7 +300,9 @@
 				FA08248C2446053D00F2AACD /* UILabel.swift in Sources */,
 				9253958D24473F9A00329C6A /* QuestionPanelView.swift in Sources */,
 				925D251124425B7D00521E4E /* CAPSPageMenu.swift in Sources */,
+				FA082496244756A100F2AACD /* DespreViewController.swift in Sources */,
 				FA1E0581243F35A4008B276E /* AnswerView.swift in Sources */,
+				FA082498244759DF00F2AACD /* SetariViewController.swift in Sources */,
 				FA1E057D243F3487008B276E /* SectionView.swift in Sources */,
 				927F48A9243F436D009CFC40 /* iOSDropDown.swift in Sources */,
 				922CCDDF2444A52500BCE4FA /* FormulareleMeleViewController.swift in Sources */,
@@ -299,9 +317,11 @@
 				925D250524425A8900521E4E /* HomeViewController.swift in Sources */,
 				925D250F24425B7D00521E4E /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
 				FADC4FBF243F39DC00F37D4E /* PageControlView.swift in Sources */,
+				FA08248E244711F300F2AACD /* SideMenuView.swift in Sources */,
 				922CCDE12444A5D200BCE4FA /* AltePersoaneViewController.swift in Sources */,
 				FA02B46C243E0CEE00F47DC2 /* UIStoryboard.swift in Sources */,
 				927F4875243E0868009CFC40 /* FlowStepViewController.swift in Sources */,
+				FA08249A24476D1800F2AACD /* Date.swift in Sources */,
 				FA5524F8243DAEA3000B8DA8 /* MyData.swift in Sources */,
 				925D250D24425B7D00521E4E /* CAPSPageMenuConfiguration.swift in Sources */,
 				925D251024425B7D00521E4E /* CAPSPageMenu+UIConfiguration.swift in Sources */,

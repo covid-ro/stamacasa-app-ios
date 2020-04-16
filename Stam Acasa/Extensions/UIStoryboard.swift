@@ -35,5 +35,29 @@ extension UIStoryboard {
             let controller = storyboard.instantiateViewController(withIdentifier: "altePersoaneVc") as! AltePersoaneViewController
             return controller
         }
+        
+        static func instantiateDespreVc() -> DespreViewController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "despreVc") as! DespreViewController
+            return controller
+        }
+        
+        static func instantiateSetariVc() -> SetariViewController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "setariVc") as! SetariViewController
+            return controller
+        }
+        
+        static func instantiateIstoricCompletVc() -> IstoricCompletViewController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "istoricCompletVc") as! IstoricCompletViewController
+            return controller
+        }
+        
+        static func instantiateHomeVc() -> HomeViewController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "homeVc") as! HomeViewController
+            return controller
+        }
     }
 }
