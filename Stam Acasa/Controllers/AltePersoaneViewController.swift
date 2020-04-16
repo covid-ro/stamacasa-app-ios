@@ -11,6 +11,16 @@ import UIKit
 
 class AltePersoaneViewController: UIViewController {
 
+    @IBAction func adaugaAltePersoaneTapped(_ sender: Any) {
+        
+        let vc = UIStoryboard.Main.instantiateFlowStepVc()
+        
+        vc.passedFlowId = "registration"
+        vc.passedSectionId = "date_personale"
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
