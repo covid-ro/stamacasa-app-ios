@@ -12,6 +12,17 @@ import UIKit
 
 class HomeViewController: UIViewController, UIGestureRecognizerDelegate{
     
+    @IBAction func btnEvaluare(_ sender: Any) {
+        let fm = UIStoryboard.Main.instantiateFlowStepVc()
+        //fm.flow_id
+        //fm.flow_section
+        
+        controllerArray.append(fm)
+    }
+    
+    @IBAction func btnDeplasri(_ sender: Any) {
+    }
+    
     @IBOutlet weak var PageViewOutlet: UIView!
     var pageMenu : CAPSPageMenu?
     var fm : FormulareleMeleViewController?
