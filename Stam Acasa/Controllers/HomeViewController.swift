@@ -18,6 +18,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate{
     var ap : AltePersoaneViewController?
     @IBOutlet weak var stamAcasaLogo: UIImageView!
     @IBOutlet weak var stamAcasaView: UIView!
+    var movementFormsFromUserDefaults: [ResponseData.Movement]?
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -121,6 +122,8 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate{
         PageViewOutlet.addSubview(pageMenu!.view)
         
         pageMenu!.didMove(toParent: self)
+        
+        populateMovementForms()
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -140,6 +143,15 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate{
         
         if currentIndex < pageMenu!.controllerArray.count {
             pageMenu!.moveToPage(currentIndex + 1)
+        }
+    }
+    
+    func populateMovementForms(){
+        if let encodedData = UserDefaults.standard.object(forKey: "movementForms") as? Data {
+            let decoder = JSONDecoder()
+            if let movementForms = try? decoder.decode([ResponseData.Movement].self, from: encodedData) {
+                movementFormsFromUserDefaults = movementForms
+            }
         }
     }
     // MARK: - Container View Controller

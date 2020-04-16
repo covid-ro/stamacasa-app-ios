@@ -27,6 +27,15 @@ public struct ResponseData: Codable,Hashable {
             return left.section_id == right.section_id && left.question_id == right.question_id && left.question_text == right.question_text && left.answer_id == right.answer_id && left.answer_text == right.answer_text && left.answer_extra == right.answer_extra
         }
     }
+    
+    public struct Movement: Codable, Hashable{
+        var date: String!
+        var leaveTime: String!
+        var arriveTime: String!
+        var reason: String!
+        var directContact: Bool!
+        
+    }
 }
 
 
