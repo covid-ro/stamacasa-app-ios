@@ -40,8 +40,8 @@ class ViewController: UIViewController {
         let vc = UIStoryboard.Main.instantiateFlowStepVc()
         
         vc.passedFlowId = "registration"
-        //vc.passedSectionId = "date_personale"
-        vc.passedSectionId = "stare_sanatate"
+        vc.passedSectionId = "date_personale"
+        //vc.passedSectionId = "stare_sanatate"
         
         self.navigationController?.pushViewController(vc, animated: true)
         
