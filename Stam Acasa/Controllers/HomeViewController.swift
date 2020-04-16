@@ -37,38 +37,6 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate{
         stamAcasaLogo.addGestureRecognizer(menuTapGesture)
         
         
-        /*
-        //begin sample data:
-        var answersToStore: [ResponseData.Answer] = []
-        var answer = ResponseData.Answer.init(section_id: "tra la la", question_id: 10, question_text: "Ati avut vreunul dintre simptomele de mai jos?", answer_id: 1, answer_text: "Febra 38 sau mai mare", answer_extra: nil)
-        answersToStore.append(answer)
-        answer = ResponseData.Answer.init(section_id: "tra la la", question_id: 10, question_text: "Ati avut vreunul dintre simptomele de mai jos?", answer_id: 5, answer_text: "Iti curge nasul", answer_extra: nil)
-        answersToStore.append(answer)
-        answer = ResponseData.Answer.init(section_id: "tra la la", question_id: 10, question_text: "Ati avut vreunul dintre simptomele de mai jos?", answer_id: 3, answer_text: "Tuse intensa", answer_extra: nil)
-        answersToStore.append(answer)
-        
-        let newResponseData = ResponseData(date:  "30.03", flow_id: "registration", responses: answersToStore)
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode([newResponseData,newResponseData,newResponseData,newResponseData,newResponseData]) {
-            let defaults = UserDefaults.standard
-            defaults.set(encoded, forKey: "resps")
-        }
-        UserDefaults.standard.synchronize()
-        */
-        
-        if let encodedData = UserDefaults.standard.object(forKey: "resps") as? Data {
-            let decoder = JSONDecoder()
-            if let loadedPerson = try? decoder.decode([ResponseData].self, from: encodedData) {
-                print(loadedPerson)
-                print(loadedPerson.count)
-            }
-        }
-        
-        //finish sample data
-        
-        
-        
-        
         // MARK: - UI Setup
         
         self.title = "PAGE MENU"
