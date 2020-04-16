@@ -211,11 +211,11 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         }
 
         
-        if yPositionOfAddingInContentView > contentView.frame.size.height{
+        //if yPositionOfAddingInContentView > contentView.frame.size.height{
 
             contentViewHeight.constant = yPositionOfAddingInContentView
             contentView.frame.size.height = yPositionOfAddingInContentView
-        }
+        //}
         index += 1
     }
     
