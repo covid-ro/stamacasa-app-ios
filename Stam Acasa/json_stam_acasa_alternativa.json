@@ -35,13 +35,58 @@
                     "answer_text":"Da",
                     "answer_decision":{
                       "answer_hint":null,
-                      "answer_input":null,
-                      "answer_question_id":null
+                      "answer_input":"question-activate",
+                      "answer_question_id":999
                     }
                   },
                   {
                     "answer_id":1,
                     "answer_text":"Nu",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  }
+                ]
+              },
+              {
+                "question_id":999,
+                "question_order":1,
+                "question_hidden":true,
+                "question_type":"single-choice",
+                "question_text":"Cate tigari fumati pe zi",
+                "question_answers":[
+                  {
+                    "answer_id":1,
+                    "answer_text":"1-5",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":2,
+                    "answer_text":"5-10",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":3,
+                    "answer_text":"10-20",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":4,
+                    "answer_text":"peste 20",
                     "answer_decision":{
                       "answer_hint":null,
                       "answer_input":null,
