@@ -258,6 +258,10 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
             insertQuestion(idQuestion: (responseDecisionObj?.answer_question_id)!)
         }
         
+        if view?.backgroundColor == .white && responseDecisionObj?.answer_input == "question-activate" {
+            removeQuestion(idQuestion: (responseDecisionObj?.answer_question_id)!)
+        }
+        
     }
     
     func removeQuestion(idQuestion: Int){
