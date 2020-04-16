@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zI7-HF-e5b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zI7-HF-e5b">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -509,6 +509,9 @@ STAM ACASA</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bFB-sP-xxP"/>
                     </view>
+                    <connections>
+                        <outlet property="stamAcasaLogo" destination="8TB-b3-5PE" id="8BZ-t7-xow"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6i-bK-jf8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1167,6 +1170,7 @@ STAM ACASA</string>
                         <outlet property="contentView" destination="mJl-a6-YtD" id="rgy-FK-8Er"/>
                         <outlet property="contentViewHeight" destination="bx0-tv-s34" id="s47-qR-hRd"/>
                         <outlet property="scrollView" destination="9U8-e5-Wvn" id="Xcv-ib-yWk"/>
+                        <outlet property="stamAcasaLogo" destination="D5s-b1-Olo" id="kdp-QY-qpu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJf-A7-UyZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1377,6 +1381,7 @@ STAM ACASA</string>
                     <connections>
                         <outlet property="menuLogoButton" destination="Gfv-6a-f36" id="l17-Js-zHm"/>
                         <outlet property="scrollView" destination="QTK-Wd-yuN" id="ojg-gq-abu"/>
+                        <outlet property="stamAcasaLogo" destination="Gfv-6a-f36" id="tot-6M-WEy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dks-ud-hxW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1646,8 +1651,8 @@ STAM ACASA</string>
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.left" catalog="system" width="128" height="98"/>
-        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
+        <image name="arrow.left" catalog="system" width="64" height="48"/>
+        <image name="checkmark.circle" catalog="system" width="64" height="60"/>
         <image name="logoDIGI" width="53.333332061767578" height="10"/>
         <image name="logoGOV" width="76.666664123535156" height="21.333333969116211"/>
         <image name="logoSTS" width="21.333333969116211" height="21.333333969116211"/>

@@ -13,6 +13,7 @@ class IstoricCompletViewController: UIViewController{
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var menuLogoButton: UIImageView!
+    @IBOutlet weak var stamAcasaLogo: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
