@@ -368,11 +368,11 @@
                 "question_order":3,
                 "question_hidden":true,
                 "question_type":"single-choice",
-                "question_text":"",
+                "question_text":"Cu cate persoane imparti locuinta?",
                 "question_answers":[
                   {
                     "answer_id":1,
-                    "answer_text":"Da",
+                    "answer_text":"1 sau 2 persoane",
                     "answer_decision":{
                       "answer_hint":null,
                       "answer_input":null,
@@ -381,7 +381,7 @@
                   },
                   {
                     "answer_id":2,
-                    "answer_text":"Nu",
+                    "answer_text":"3 sau mai multe",
                     "answer_decision":{
                       "answer_hint":null,
                       "answer_input":null,

@@ -19,47 +19,23 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate{
     @IBOutlet weak var stamAcasaLogo: UIImageView!
     @IBOutlet weak var stamAcasaView: UIView!
     var movementFormsFromUserDefaults: [ResponseData.Movement]?
+    var message: String?
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        if (message?.count ?? 0 )>0 {
+            let alert = UIAlertController(title: message, message: "", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_: UIAlertAction) in
+                self.message=""
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
         stamAcasaLogo.isUserInteractionEnabled = true
         let menuTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.menuTapped(_:)))
         stamAcasaLogo.addGestureRecognizer(menuTapGesture)
-        //begin sample data:
-        var answersToStore: [ResponseData.Answer] = []
-        var answer = ResponseData.Answer.init(section_id: "tra la la", question_id: 10, question_text: "Ati avut vreunul dintre simptomele de mai jos?", answer_id: 1, answer_text: "Febra 38 sau mai mare", answer_extra: nil)
-        answersToStore.append(answer)
-        answer = ResponseData.Answer.init(section_id: "tra la la", question_id: 10, question_text: "Ati avut vreunul dintre simptomele de mai jos?", answer_id: 5, answer_text: "Iti curge nasul", answer_extra: nil)
-        answersToStore.append(answer)
-        answer = ResponseData.Answer.init(section_id: "tra la la", question_id: 10, question_text: "Ati avut vreunul dintre simptomele de mai jos?", answer_id: 3, answer_text: "Tuse intensa", answer_extra: nil)
-        answersToStore.append(answer)
-        
-        
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM"
-
-        let newResponseData = ResponseData(date:  formatter.string(from: date), flow_id: "registration", responses: answersToStore)
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode([newResponseData,newResponseData,newResponseData,newResponseData,newResponseData]) {
-            let defaults = UserDefaults.standard
-            defaults.set(encoded, forKey: "resps")
-        }
-        UserDefaults.standard.synchronize()
-        
-        /*
-        if let encodedData = UserDefaults.standard.object(forKey: "resps") as? Data {
-            let decoder = JSONDecoder()
-            if let loadedPerson = try? decoder.decode([ResponseData].self, from: encodedData) {
-                print(loadedPerson)
-                print(loadedPerson.count)
-            }
-        }
-        */
-        //finish sample data
-        
-        
         
         
         // MARK: - UI Setup

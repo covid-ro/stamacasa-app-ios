@@ -20,21 +20,29 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     
     var questionsPanelViews: [QuestionPanelView] = []
     
+    var account : AccountData?
+    
+    var passedFlowId: String?
+    var passedSectionId: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        decodedData = StamAcasaSingleton.sharedInstance.decodedData
         
-        populateScrollViewWithFlowSection(flowId: "registration", sectionId: "stare_sanatate")
+        if passedFlowId == "registration" && passedSectionId == "date_personale"{
+            let datePersonale = Bundle.main.loadNibNamed("DatePersonale", owner: self, options: nil)?.first as! DatePersonale
+            datePersonale.translatesAutoresizingMaskIntoConstraints = true
+            
+            datePersonale.frame = CGRect(x: 0, y: 0.0, width: self.view.frame.size.width, height: 550)
+            datePersonale.delegate = self
+            contentView.addSubview(datePersonale)
         
-        /*
-        // Do any additional setup after loading the view.
-        let datePersonale = Bundle.main.loadNibNamed("DatePersonale", owner: self, options: nil)?.first as! DatePersonale
-        datePersonale.translatesAutoresizingMaskIntoConstraints = true
+        } else {
+            
+            populateScrollViewWithFlowSection(flowId: passedFlowId!, sectionId: passedSectionId!)
+        }
         
-        datePersonale.frame = CGRect(x: 0, y: 0.0, width: self.view.frame.size.width, height: 550)
-        datePersonale.delegate = self
-        contentView.addSubview(datePersonale)
-        */
     }
     var index: Int = 0
     func populateScrollViewWithFlowSection(flowId: String,sectionId: String){
@@ -77,6 +85,16 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                         pageControlView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.view.frame.size.width - 40.0, height: 50.0)
                         contentView.addSubview(pageControlView)
                         yPositionOfAddingInContentView += pageControlView.frame.size.height + 20.0
+                        
+                        var nrs = 0 as Int
+                        for step in pageControlView.controlSteps{
+                            step.backgroundColor = UIColor.gray
+                            nrs+=1
+                            if nrs > flow.flow_sections!.count {
+                                step.removeFromSuperview()
+                            }
+                        }
+                        
                         for step in pageControlView.controlSteps{
                             step.backgroundColor = UIColor.gray
                         }
@@ -118,7 +136,6 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
 
                             questionView.frame = CGRect(x: 20.0, y: 0, width: self.view.frame.size.width - 40.0, height: hlbl+30)
 
-                            //print(questionView.frame)
                             
                             questionView.translatesAutoresizingMaskIntoConstraints = true
                             //contentView.addSubview(questionView)
@@ -194,11 +211,11 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         }
 
         
-        if yPositionOfAddingInContentView > contentView.frame.size.height{
+        //if yPositionOfAddingInContentView > contentView.frame.size.height{
 
             contentViewHeight.constant = yPositionOfAddingInContentView
             contentView.frame.size.height = yPositionOfAddingInContentView
-        }
+        //}
         index += 1
     }
     
@@ -206,8 +223,6 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     
     @objc func answerViewTapped(_ sender: Any){
         let view = (sender as? UITapGestureRecognizer)?.view as? AnswerView
-        
-        print("tap pe accessibilityIdentifier:\(view?.accessibilityIdentifier)")
         
         var answeredForThisQuestion = MyData.Data.Flow.FlowSection.Question()
         for (question,answers) in questionDataAnswersViewsDictionary{
@@ -225,7 +240,6 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
             for answer in questionDataAnswersViewsDictionary[answeredForThisQuestion] ?? []{
                 answer.backgroundColor = UIColor.white
                 if answer.decision?.answer_input == "question-activate" {
-                    print(answer.decision)
                     removeQuestion(idQuestion: (answer.decision?.answer_question_id)!)
                 }
             }
@@ -244,10 +258,13 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
             insertQuestion(idQuestion: (responseDecisionObj?.answer_question_id)!)
         }
         
+        if view?.backgroundColor == .white && responseDecisionObj?.answer_input == "question-activate" {
+            removeQuestion(idQuestion: (responseDecisionObj?.answer_question_id)!)
+        }
+        
     }
     
     func removeQuestion(idQuestion: Int){
-        print("removing \(idQuestion)")
         
         var moveLayoutFrom = 5000 as CGFloat
         var increment = 0 as CGFloat
@@ -255,19 +272,14 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         for view in contentView.subviews{
             
             if view.frame.origin.y > moveLayoutFrom {
-                print(view.frame)
                 view.frame.origin.y -= increment
-                print(view.frame)
             }
             
             if view is QuestionPanelView{
                 
-                print("QuestionPanelView frame:\(view.frame)")
                 let thisView = view as! QuestionPanelView
                 
                 if thisView.question_id == idQuestion && thisView.isHidden == false{
-                    
-                    //print("bingo frame:\(thisView.frame)")
                     
                     thisView.isHidden = true
                     
@@ -282,7 +294,6 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     }
     
     func insertQuestion(idQuestion: Int){
-        print("inserting \(idQuestion)")
         
         var moveLayoutFrom = 5000 as CGFloat
         var increment = 0 as CGFloat
@@ -290,19 +301,14 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         for view in contentView.subviews{
             
             if view.frame.origin.y > moveLayoutFrom {
-                print(view.frame)
                 view.frame.origin.y += increment
-                print(view.frame)
             }
             
             if view is QuestionPanelView{
                 
-                print("QuestionPanelView frame:\(view.frame)")
                 let thisView = view as! QuestionPanelView
                 
                 if thisView.question_id == idQuestion && thisView.isHidden == true{
-                    
-                    //print("bingo frame:\(thisView.frame)")
                     
                     thisView.isHidden = false
                     
@@ -318,7 +324,37 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     
     
     func dateNecesareContinueTapped(){
-        for view in contentView.subviews{
+        
+        /*
+         public struct AccountData: Codable,Hashable {
+             var primary:Bool?
+             var accountId:Int?
+             var numePrenume: String?
+             var numarTelefon: String?
+             var judet: String?
+             var localitate: String?
+             var varsta: String?
+             var gen: String?
+             var accountCreationResponses: [ResponseData]?
+         }
+
+         @IBOutlet weak var textNumePrenume: UITextField!
+            @IBOutlet weak var textNumarTelefon: UITextField!
+            @IBOutlet weak var dropDownJudet: DropDown!
+            @IBOutlet weak var dropDownLocalitate: DropDown!
+            @IBOutlet weak var dropDownVarsta: DropDown!
+            @IBOutlet weak var dropDownGen: DropDown!
+         */
+        
+        
+        for view in contentView.subviews.filter{$0 is DatePersonale}{
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
+                                               
+            let dpv = view as! DatePersonale
+            account = AccountData(primary: false, accountId: Int.random(in: 1..<100000), numePrenume: dpv.textNumePrenume.text, numarTelefon: dpv.textNumarTelefon.text, judet: dpv.dropDownJudet.text, localitate: dpv.dropDownLocalitate.text, varsta: dpv.dropDownVarsta.text, gen: dpv.dropDownGen.text, accountCreationResponses:nil, registrationDate: formatter.string(from: date))
+            
             view.removeFromSuperview()
         }
         populateScrollViewWithFlowSection(flowId: "registration", sectionId: "stare_sanatate")
@@ -365,30 +401,104 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         if formValidated{
             
             let sectionId = (sender as! UIButton).accessibilityIdentifier ?? ""
-            for view in contentView.subviews{
-                if view is AnswerView{
-                    if view.backgroundColor == UIColor.gray{
+            for viewLevel1 in contentView.subviews{
+                for viewLevel2 in viewLevel1.subviews.filter{$0 is AnswerView}{
+                    
+                    if viewLevel2.backgroundColor == UIColor.gray{
                         var answer = ResponseData.Answer()
-                        let ids = view.accessibilityIdentifier?.components(separatedBy: " ")
+                        let ids = viewLevel2.accessibilityIdentifier?.components(separatedBy: " ")
                         //answer.flow_id = ids![0]
                         answer.section_id = ids![1]
                         answer.question_id = Int(ids![2])
                         answer.answer_id = Int(ids![3])
                         answersToStore.append(answer)
+                        
                     }
+                    
                 }
-                view.removeFromSuperview()
+                viewLevel1.removeFromSuperview()
             }
             
             scrollView.setContentOffset(CGPoint.zero, animated: false)
             if sectionId != "stop"{
-                populateScrollViewWithFlowSection(flowId: "registration", sectionId: sectionId)
+                populateScrollViewWithFlowSection(flowId: passedFlowId!, sectionId: sectionId)
             } else {
-                StamAcasaSingleton.sharedInstance.questionAnswers = answersToStore
-                let vc = UIStoryboard.Main.instantiateProfilCompletVc()
-                self.navigationController?.pushViewController(vc, animated: true)
+                
+                if passedFlowId == "registration" {
+                    
+                    saveAccount(answersToStore: answersToStore)
+                    saveData(answersToStore: answersToStore)
+                    
+                    let vc = UIStoryboard.Main.instantiateProfilCompletVc()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    saveData(answersToStore: answersToStore)
+                    let vc = UIStoryboard.Main.instantiateHomeVc()
+                    vc.message = "Raport evaluare complet"
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             }
         }
+    }
+    
+     func saveAccount(answersToStore:[ResponseData.Answer]) {
+        var accounts = [] as [AccountData]?
+        
+        if let encodedData = UserDefaults.standard.object(forKey: "accounts") as? Data {
+            let decoder = JSONDecoder()
+            if let acx = try? decoder.decode([AccountData].self, from: encodedData) {
+                accounts = acx
+            }
+        }
+        
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM\nHH:mm"
+        let newResponseData = ResponseData(date:  formatter.string(from: date), flow_id: passedFlowId, responses: answersToStore)
+        
+        account?.accountCreationResponses = newResponseData
+        
+        if accounts?.count == 0 {
+            account?.primary = true
+        }
+        accounts?.append(account!)
+        print(accounts)
+        
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(accounts) {
+            let defaults = UserDefaults.standard
+            defaults.set(encoded, forKey: "accounts")
+        }
+        UserDefaults.standard.synchronize()
+    
+    }
+    
+    func saveData(answersToStore:[ResponseData.Answer]) {
+        
+        var responses : [ResponseData]?
+        responses = []
+        
+        if let encodedData = UserDefaults.standard.object(forKey: "resps") as? Data {
+            let decoder = JSONDecoder()
+            if let rsx = try? decoder.decode([ResponseData].self, from: encodedData) {
+                responses = rsx
+            }
+        }
+        
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM\nHH:mm"
+
+        let newResponseData = ResponseData(date:  formatter.string(from: date), flow_id: passedFlowId, responses: answersToStore)
+        //responses?.append(newResponseData)
+        responses?.insert(newResponseData, at: 0)
+        
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(responses) {
+            let defaults = UserDefaults.standard
+            defaults.set(encoded, forKey: "resps")
+        }
+        UserDefaults.standard.synchronize()
     }
 }
 

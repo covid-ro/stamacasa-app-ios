@@ -31,7 +31,7 @@ class IstoricCompletViewController: UIViewController{
             }
         }
         
-        for report in 0...responses!.count-1  {
+        for report in 0..<responses!.count  {
             
             var columnView = UIView.init(frame: CGRect.init(x: report*60, y: 0, width: 60, height: 420))
             
