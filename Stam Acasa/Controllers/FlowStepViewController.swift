@@ -20,21 +20,27 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     
     var questionsPanelViews: [QuestionPanelView] = []
     
+    var passedFlowId: String?
+    var passedSectionId: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        decodedData = StamAcasaSingleton.sharedInstance.decodedData
         
-        populateScrollViewWithFlowSection(flowId: "registration", sectionId: "stare_sanatate")
+        if passedFlowId == "registration" && passedSectionId == "date_personale"{
+            let datePersonale = Bundle.main.loadNibNamed("DatePersonale", owner: self, options: nil)?.first as! DatePersonale
+            datePersonale.translatesAutoresizingMaskIntoConstraints = true
+            
+            datePersonale.frame = CGRect(x: 0, y: 0.0, width: self.view.frame.size.width, height: 550)
+            datePersonale.delegate = self
+            contentView.addSubview(datePersonale)
         
-        /*
-        // Do any additional setup after loading the view.
-        let datePersonale = Bundle.main.loadNibNamed("DatePersonale", owner: self, options: nil)?.first as! DatePersonale
-        datePersonale.translatesAutoresizingMaskIntoConstraints = true
+        } else {
+            
+            populateScrollViewWithFlowSection(flowId: passedFlowId!, sectionId: passedSectionId!)
+        }
         
-        datePersonale.frame = CGRect(x: 0, y: 0.0, width: self.view.frame.size.width, height: 550)
-        datePersonale.delegate = self
-        contentView.addSubview(datePersonale)
-        */
     }
     var index: Int = 0
     func populateScrollViewWithFlowSection(flowId: String,sectionId: String){
@@ -365,30 +371,73 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         if formValidated{
             
             let sectionId = (sender as! UIButton).accessibilityIdentifier ?? ""
-            for view in contentView.subviews{
-                if view is AnswerView{
-                    if view.backgroundColor == UIColor.gray{
+            for viewLevel1 in contentView.subviews{
+                for viewLevel2 in viewLevel1.subviews.filter{$0 is AnswerView}{
+                    //print("gasit AnswerView")
+                    
+                    if viewLevel2.backgroundColor == UIColor.gray{
                         var answer = ResponseData.Answer()
-                        let ids = view.accessibilityIdentifier?.components(separatedBy: " ")
+                        let ids = viewLevel2.accessibilityIdentifier?.components(separatedBy: " ")
                         //answer.flow_id = ids![0]
                         answer.section_id = ids![1]
                         answer.question_id = Int(ids![2])
                         answer.answer_id = Int(ids![3])
                         answersToStore.append(answer)
+                        
+                        print("storing")
                     }
+                    
                 }
-                view.removeFromSuperview()
+                viewLevel1.removeFromSuperview()
             }
             
             scrollView.setContentOffset(CGPoint.zero, animated: false)
             if sectionId != "stop"{
-                populateScrollViewWithFlowSection(flowId: "registration", sectionId: sectionId)
+                populateScrollViewWithFlowSection(flowId: passedFlowId!, sectionId: sectionId)
             } else {
-                StamAcasaSingleton.sharedInstance.questionAnswers = answersToStore
-                let vc = UIStoryboard.Main.instantiateProfilCompletVc()
-                self.navigationController?.pushViewController(vc, animated: true)
+                
+                print("answersToStore:\(answersToStore)")
+                
+                if passedFlowId == "registration" {
+                    StamAcasaSingleton.sharedInstance.questionAnswers = answersToStore
+                    let vc = UIStoryboard.Main.instantiateProfilCompletVc()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                } else {
+                    saveData(answersToStore: answersToStore)
+                    let vc = UIStoryboard.Main.instantiateHomeVc()
+                    vc.message = "Raport evaluare complet"
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             }
         }
+    }
+    
+    func saveData(answersToStore:[ResponseData.Answer]) {
+        
+        var responses : [ResponseData]?
+        responses = []
+        
+        if let encodedData = UserDefaults.standard.object(forKey: "resps") as? Data {
+            let decoder = JSONDecoder()
+            if let rsx = try? decoder.decode([ResponseData].self, from: encodedData) {
+                responses = rsx
+            }
+        }
+        
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM\nHH:mm"
+
+        let newResponseData = ResponseData(date:  formatter.string(from: date), flow_id: passedFlowId, responses: answersToStore)
+        //responses?.append(newResponseData)
+        responses?.insert(newResponseData, at: 0)
+        
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(responses) {
+            let defaults = UserDefaults.standard
+            defaults.set(encoded, forKey: "resps")
+        }
+        UserDefaults.standard.synchronize()
     }
 }
 

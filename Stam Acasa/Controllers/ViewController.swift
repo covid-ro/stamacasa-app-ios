@@ -29,6 +29,8 @@ class ViewController: UIViewController {
         } catch var myJSONError {
             print(myJSONError)
         }
+        
+        StamAcasaSingleton.sharedInstance.decodedData = decodedData
      
         let profilulTauTapGesture = UITapGestureRecognizer(target: self, action: #selector(profilulTauTapped(sender:)))
         profilulTauView.addGestureRecognizer(profilulTauTapGesture)
@@ -36,7 +38,11 @@ class ViewController: UIViewController {
     
     @objc func profilulTauTapped(sender: UITapGestureRecognizer) {
         let vc = UIStoryboard.Main.instantiateFlowStepVc()
-        vc.decodedData = decodedData
+        
+        vc.passedFlowId = "registration"
+        //vc.passedSectionId = "date_personale"
+        vc.passedSectionId = "stare_sanatate"
+        
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

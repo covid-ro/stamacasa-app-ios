@@ -11,6 +11,7 @@ import Foundation
 final class StamAcasaSingleton {
     static let sharedInstance = StamAcasaSingleton()
     var questionAnswers: [ResponseData.Answer]?
+    var decodedData: MyData?
     
     func saveToUserDefaults(_ key:String,value: String) {
         let userDefaults = UserDefaults.standard
