@@ -10,6 +10,7 @@
 		922CCDDF2444A52500BCE4FA /* FormulareleMeleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CCDDE2444A52500BCE4FA /* FormulareleMeleViewController.swift */; };
 		922CCDE12444A5D200BCE4FA /* AltePersoaneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CCDE02444A5D200BCE4FA /* AltePersoaneViewController.swift */; };
 		9253958B2445C41F00329C6A /* IstoricCompletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9253958A2445C41F00329C6A /* IstoricCompletViewController.swift */; };
+		9253958D24473F9A00329C6A /* QuestionPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9253958C24473F9A00329C6A /* QuestionPanelView.swift */; };
 		925D250524425A8900521E4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D250424425A8900521E4E /* HomeViewController.swift */; };
 		925D250D24425B7D00521E4E /* CAPSPageMenuConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D250724425B7C00521E4E /* CAPSPageMenuConfiguration.swift */; };
 		925D250E24425B7D00521E4E /* CAPSPageMenu+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925D250824425B7C00521E4E /* CAPSPageMenu+Options.swift */; };
@@ -49,6 +50,7 @@
 		922CCDDE2444A52500BCE4FA /* FormulareleMeleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulareleMeleViewController.swift; sourceTree = "<group>"; };
 		922CCDE02444A5D200BCE4FA /* AltePersoaneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltePersoaneViewController.swift; sourceTree = "<group>"; };
 		9253958A2445C41F00329C6A /* IstoricCompletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IstoricCompletViewController.swift; sourceTree = "<group>"; };
+		9253958C24473F9A00329C6A /* QuestionPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPanelView.swift; sourceTree = "<group>"; };
 		925D250424425A8900521E4E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		925D250624425B7C00521E4E /* CAPSPageMenu+UIScrollViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIScrollViewDelegate.swift"; sourceTree = "<group>"; };
 		925D250724425B7C00521E4E /* CAPSPageMenuConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAPSPageMenuConfiguration.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				FADC4FBE243F39DC00F37D4E /* PageControlView.swift */,
 				927F487E243E1425009CFC40 /* DatePersonale.xib */,
 				927F487C243E13FE009CFC40 /* DatePersonale.swift */,
+				9253958C24473F9A00329C6A /* QuestionPanelView.swift */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				FA02B466243DFEF200F47DC2 /* StamAcasaSingleton.swift in Sources */,
 				925D251224425B7D00521E4E /* MenuItemView.swift in Sources */,
 				FA08248C2446053D00F2AACD /* UILabel.swift in Sources */,
+				9253958D24473F9A00329C6A /* QuestionPanelView.swift in Sources */,
 				925D251124425B7D00521E4E /* CAPSPageMenu.swift in Sources */,
 				FA1E0581243F35A4008B276E /* AnswerView.swift in Sources */,
 				FA1E057D243F3487008B276E /* SectionView.swift in Sources */,

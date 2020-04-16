@@ -17,11 +17,16 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     @IBOutlet weak var scrollView: UIScrollView!
     var answersToStore: [ResponseData.Answer] = []
     var questionDataAnswersViewsDictionary: [MyData.Data.Flow.FlowSection.Question : [AnswerView]] = [:]
-    var questionsViews: [SectionView] = []
+    
+    var questionsPanelViews: [QuestionPanelView] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        populateScrollViewWithFlowSection(flowId: "registration", sectionId: "stare_sanatate")
+        
+        /*
         // Do any additional setup after loading the view.
         let datePersonale = Bundle.main.loadNibNamed("DatePersonale", owner: self, options: nil)?.first as! DatePersonale
         datePersonale.translatesAutoresizingMaskIntoConstraints = true
@@ -29,7 +34,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         datePersonale.frame = CGRect(x: 0, y: 0.0, width: self.view.frame.size.width, height: 550)
         datePersonale.delegate = self
         contentView.addSubview(datePersonale)
-        
+        */
     }
     var index: Int = 0
     func populateScrollViewWithFlowSection(flowId: String,sectionId: String){
@@ -38,6 +43,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         guard let flows = decodedData?.data?.flows else {
             return
         }
+        
         contentView.translatesAutoresizingMaskIntoConstraints = true
         for flow in flows ?? []{
             if(flow.flow_id == flowId){
@@ -91,35 +97,54 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
 
                         //questions
                         for question in section.questions ?? []{
-                            if !(question.question_hidden ?? true) {
+                        //    if !(question.question_hidden ?? true) {
+                            
+                            let qView = QuestionPanelView.init(frame: CGRect.init(x: 0, y: yPositionOfAddingInContentView, width: self.view.frame.size.width, height: 500))
+                            qView.translatesAutoresizingMaskIntoConstraints = true
+                            qView.question_id = question.question_id!
+                            qView.ascuns = question.question_hidden
+                            
+                            var qYPosition : CGFloat
+                            
                             let questionView = Bundle.main.loadNibNamed("SectionView", owner: self, options: nil)?.first as! SectionView
 
-                            questionView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.view.frame.size.width - 40.0, height: 50.0)
+                            questionView.frame = CGRect(x: 20.0, y: 0, width: self.view.frame.size.width - 40.0, height: 50.0)
                             questionView.textLabel.text = question.question_text
-
+                            
+                            qView.addSubview(questionView)
+                            
                             questionView.textLabel.numberOfLines = 0
                             let hlbl = questionView.textLabel.labelHeight()
 
-                            questionView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.view.frame.size.width - 40.0, height: hlbl+30)
+                            questionView.frame = CGRect(x: 20.0, y: 0, width: self.view.frame.size.width - 40.0, height: hlbl+30)
 
-                                questionView.translatesAutoresizingMaskIntoConstraints = true
-                            contentView.addSubview(questionView)
-                            yPositionOfAddingInContentView += questionView.frame.size.height + 30.0
-
+                            //print(questionView.frame)
+                            
+                            questionView.translatesAutoresizingMaskIntoConstraints = true
+                            //contentView.addSubview(questionView)
+                            //yPositionOfAddingInContentView += questionView.frame.size.height + 30.0
+                            
+                            qYPosition = questionView.frame.size.height + 20.0
+                            qView.intrebareView = questionView
+                            
                             var totalAnswersPerQuestion: [AnswerView] = []
                             for answer in question.question_answers ?? [] {
                                 let answerView = Bundle.main.loadNibNamed("AnswerView", owner: self, options: nil)?.first as! AnswerView
-
-                                answerView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.view.frame.size.width - 40.0, height: 30.0)
+                                
+                                answerView.decision = answer.answer_decision
+                                answerView.frame = CGRect(x: 20.0, y: qYPosition, width: self.view.frame.size.width - 40.0, height: 30.0)
                                 answerView.textLabel.numberOfLines = 0
                                 answerView.textLabel.text = answer.answer_text
+                                answerView.backgroundColor = .white
                                 let hlba = answerView.textLabel.labelHeight()
 
-                                answerView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.view.frame.size.width - 40.0, height: hlba+20)
+                                answerView.frame = CGRect(x: 20.0, y: qYPosition, width: self.view.frame.size.width - 40.0, height: hlba+20)
                                 
                                 answerView.translatesAutoresizingMaskIntoConstraints = true
-                                contentView.addSubview(answerView)
-                                yPositionOfAddingInContentView += answerView.frame.size.height + 10.0
+                                qView.addSubview(answerView)
+                                
+                                //yPositionOfAddingInContentView += answerView.frame.size.height + 10.0
+                                qYPosition += answerView.frame.size.height + 10.0
                                 
                                 var ids = (flow.flow_id ?? "flow_id_null") + " " + (section.section_id ?? "section_id_null") + " "
                                 ids += "\((question.question_id ?? 0))" + " "
@@ -130,11 +155,30 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                                 let tapTouchUpInside = UITapGestureRecognizer(target: self, action: #selector(answerViewTapped(_:)))
                                 answerView.addGestureRecognizer(tapTouchUpInside)
                             }
-                                questionDataAnswersViewsDictionary[question] = totalAnswersPerQuestion
-                                questionView.accessibilityIdentifier = "\((question.question_id ?? 0))"
-                                questionsViews.append(questionView)
+                            
+                            questionDataAnswersViewsDictionary[question] = totalAnswersPerQuestion
+                            questionView.accessibilityIdentifier = "\((question.question_id ?? 0))"
+                            
+                            questionsPanelViews.append(qView)
+                            
+                            
+                            qYPosition += 20
+                            
+                            
+                            qView.totalHeight = qYPosition
+                            //qView.frame.size.height = 300
+                            //qView.layoutSubviews()
+                            
+                            contentView.addSubview(qView)
+                            
+                            if !(question.question_hidden ?? true) {
+                                yPositionOfAddingInContentView += qYPosition
+                            } else {
+                                yPositionOfAddingInContentView += 1
+                                qView.isHidden = true
+                            }
                         }
-                        }
+                        
                         let continueButton = UIButton()
                         continueButton.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.view.frame.size.width - 40.0, height: 40.0)
                         continueButton.backgroundColor = UIColor(red: 255.0/255.0, green: 189.0/255.0, blue: 89.0/255.0, alpha: 1.0)
@@ -150,7 +194,6 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         }
 
         
-
         if yPositionOfAddingInContentView > contentView.frame.size.height{
 
             contentViewHeight.constant = yPositionOfAddingInContentView
@@ -159,33 +202,120 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         index += 1
     }
     
+    
+    
     @objc func answerViewTapped(_ sender: Any){
         let view = (sender as? UITapGestureRecognizer)?.view as? AnswerView
+        
+        print("tap pe accessibilityIdentifier:\(view?.accessibilityIdentifier)")
         
         var answeredForThisQuestion = MyData.Data.Flow.FlowSection.Question()
         for (question,answers) in questionDataAnswersViewsDictionary{
             for answer in answers{
                 if answer.accessibilityIdentifier == view?.accessibilityIdentifier{
                     answeredForThisQuestion = question
+                    
                     break
                 }
             }
         }
         
+        
         if answeredForThisQuestion.question_type == "single-choice"{
             for answer in questionDataAnswersViewsDictionary[answeredForThisQuestion] ?? []{
                 answer.backgroundColor = UIColor.white
+                if answer.decision?.answer_input == "question-activate" {
+                    print(answer.decision)
+                    removeQuestion(idQuestion: (answer.decision?.answer_question_id)!)
+                }
             }
         }
         
-        if view?.backgroundColor == UIColor.white{
-            view?.backgroundColor = UIColor.gray
+        
+        if view?.backgroundColor == .white{
+            view?.backgroundColor = .gray
         } else{
-            view?.backgroundColor = UIColor.white
+            view?.backgroundColor = .white
         }
         
         
+        var responseDecisionObj = view?.decision
+        if view?.backgroundColor == .gray && responseDecisionObj?.answer_input == "question-activate" {
+            insertQuestion(idQuestion: (responseDecisionObj?.answer_question_id)!)
+        }
+        
     }
+    
+    func removeQuestion(idQuestion: Int){
+        print("removing \(idQuestion)")
+        
+        var moveLayoutFrom = 5000 as CGFloat
+        var increment = 0 as CGFloat
+        
+        for view in contentView.subviews{
+            
+            if view.frame.origin.y > moveLayoutFrom {
+                print(view.frame)
+                view.frame.origin.y -= increment
+                print(view.frame)
+            }
+            
+            if view is QuestionPanelView{
+                
+                print("QuestionPanelView frame:\(view.frame)")
+                let thisView = view as! QuestionPanelView
+                
+                if thisView.question_id == idQuestion && thisView.isHidden == false{
+                    
+                    //print("bingo frame:\(thisView.frame)")
+                    
+                    thisView.isHidden = true
+                    
+                    moveLayoutFrom = thisView.frame.origin.y
+                    increment = thisView.totalHeight!
+                    
+                    contentView.frame.size.height -= thisView.totalHeight!
+                }
+                
+            }
+        }
+    }
+    
+    func insertQuestion(idQuestion: Int){
+        print("inserting \(idQuestion)")
+        
+        var moveLayoutFrom = 5000 as CGFloat
+        var increment = 0 as CGFloat
+        
+        for view in contentView.subviews{
+            
+            if view.frame.origin.y > moveLayoutFrom {
+                print(view.frame)
+                view.frame.origin.y += increment
+                print(view.frame)
+            }
+            
+            if view is QuestionPanelView{
+                
+                print("QuestionPanelView frame:\(view.frame)")
+                let thisView = view as! QuestionPanelView
+                
+                if thisView.question_id == idQuestion && thisView.isHidden == true{
+                    
+                    //print("bingo frame:\(thisView.frame)")
+                    
+                    thisView.isHidden = false
+                    
+                    moveLayoutFrom = thisView.frame.origin.y
+                    increment = thisView.totalHeight!
+                    
+                    contentView.frame.size.height += thisView.totalHeight!
+                }
+            }
+        }
+    }
+    
+    
     
     func dateNecesareContinueTapped(){
         for view in contentView.subviews{
@@ -215,18 +345,21 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                 }
             }
             
-            for questionView in questionsViews{
-                if question.question_id == Int(questionView.accessibilityIdentifier ?? "0"){
-
-                    if !isQuestionAnswered && question.question_type == "single-choice" {
-                        questionView.backgroundColor = UIColor.red
+            for qView in questionsPanelViews{
+                if question.question_id == Int(qView.intrebareView!.accessibilityIdentifier ?? "0"){
+                    if !isQuestionAnswered && question.question_type == "single-choice"  && !qView.isHidden {
+                        qView.intrebareView!.backgroundColor = UIColor.red
                         formValidated = false
                         validationFormAlert()
-                    } else{
-                        questionView.backgroundColor = UIColor(red: 79.0/255.0, green: 59.0/255.0, blue: 100.0/255.0, alpha: 1.0)
+                    } else {
+                        qView.intrebareView!.backgroundColor = UIColor(red: 79.0/255.0, green: 59.0/255.0, blue: 100.0/255.0, alpha: 1.0)
                     }
                 }
+                
             }
+            
+            
+            
         }     // validate that questions have been answered
         
         if formValidated{
