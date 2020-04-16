@@ -32,11 +32,14 @@ public struct ResponseData: Codable,Hashable {
 
 public struct AccountData: Codable,Hashable {
     var primary:Bool?
+    var accountId:Int?
     var numePrenume: String?
     var numarTelefon: String?
     var judet: String?
     var localitate: String?
     var varsta: String?
     var gen: String?
+    var accountCreationResponses: ResponseData?
+    var registrationDate: String?
     
 }

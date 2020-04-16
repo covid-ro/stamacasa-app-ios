@@ -31,7 +31,24 @@ class ViewController: UIViewController {
         }
         
         StamAcasaSingleton.sharedInstance.decodedData = decodedData
-     
+        
+        
+        var accounts = [] as [AccountData]?
+        
+        if let encodedData = UserDefaults.standard.object(forKey: "accounts") as? Data {
+            let decoder = JSONDecoder()
+            if let acx = try? decoder.decode([AccountData].self, from: encodedData) {
+                accounts = acx
+            }
+        }
+        
+        //print(accounts)
+        
+        if accounts!.count > 0 {
+            let vc = UIStoryboard.Main.instantiateHomeVc()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
         let profilulTauTapGesture = UITapGestureRecognizer(target: self, action: #selector(profilulTauTapped(sender:)))
         profilulTauView.addGestureRecognizer(profilulTauTapGesture)
     }
