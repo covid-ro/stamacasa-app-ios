@@ -113,9 +113,9 @@ class FormularDeplasariViewController: UIViewController {
             storeMovement.reason = motivulDeplasariInputField.text
             
             if daView.backgroundColor == UIColor.gray{
-                storeMovement.directContact = true
+                storeMovement.directContact = "DA"
             } else{
-                storeMovement.directContact = false
+                storeMovement.directContact = "NU"
             }
             
             var movementFormsFromUserDefaults: [ResponseData.Movement] = []

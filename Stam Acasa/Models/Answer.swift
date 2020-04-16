@@ -33,11 +33,10 @@ public struct ResponseData: Codable,Hashable {
         var leaveTime: String!
         var arriveTime: String!
         var reason: String!
-        var directContact: Bool!
+        var directContact: String!
         
     }
 }
-
 
 public struct AccountData: Codable,Hashable {
     var primary:Bool?
