@@ -167,6 +167,13 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                             for answer in question.question_answers ?? [] {
                                 let answerView = Bundle.main.loadNibNamed("AnswerView", owner: self, options: nil)?.first as! AnswerView
                                 
+                                
+                                answerView.section_id = section.section_id
+                                answerView.question_id = question.question_id
+                                answerView.question_text = question.question_text
+                                answerView.answer_id = answer.answer_id
+                                answerView.answer_text = answer.answer_text
+                                
                                 answerView.decision = answer.answer_decision
                                 answerView.frame = CGRect(x: 20.0, y: qYPosition, width: self.view.frame.size.width - 40.0, height: 30.0)
                                 answerView.textLabel.numberOfLines = 0
@@ -277,11 +284,49 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
             insertQuestion(idQuestion: (responseDecisionObj?.answer_question_id)!)
         }
         
+        if view?.backgroundColor == .gray && responseDecisionObj?.answer_input == "text-area" {
+            
+            let alertController = UIAlertController(title: responseDecisionObj?.answer_hint, message: "", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { alert -> Void in
+                let textField = alertController.textFields![0] as UITextField
+                view?.answer_extra = textField.text
+                //print(textField.text)
+            }))
+            alertController.addAction(UIAlertAction(title: "Anuleaza", style: .cancel, handler: { alert -> Void in
+                view?.backgroundColor = .white
+            }))
+            alertController.addTextField(configurationHandler: {(textField : UITextField!) -> Void in
+                //textField.placeholder = "hint"
+            })
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
+        
+        if view?.backgroundColor == .gray && responseDecisionObj?.answer_input == "text-input-numeric" {
+            
+            let alertController = UIAlertController(title: responseDecisionObj?.answer_hint, message: "", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { alert -> Void in
+                let textField = alertController.textFields![0] as UITextField
+                view?.answer_extra = textField.text
+                //print(textField.text)
+            }))
+            alertController.addAction(UIAlertAction(title: "Anuleaza", style: .cancel, handler: { alert -> Void in
+                view?.backgroundColor = .white
+            }))
+            alertController.addTextField(configurationHandler: {(textField : UITextField!) -> Void in
+                //textField.placeholder = "hint"
+                textField.keyboardType = UIKeyboardType.decimalPad
+            })
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
+        
         if view?.backgroundColor == .white && responseDecisionObj?.answer_input == "question-activate" {
             removeQuestion(idQuestion: (responseDecisionObj?.answer_question_id)!)
         }
         
     }
+    
     
     func removeQuestion(idQuestion: Int){
         
@@ -422,14 +467,22 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
             let sectionId = (sender as! UIButton).accessibilityIdentifier ?? ""
             for viewLevel1 in contentView.subviews{
                 for viewLevel2 in viewLevel1.subviews.filter({$0 is AnswerView}){
-                    
                     if viewLevel2.backgroundColor == UIColor.gray{
+                        let ansv = viewLevel2 as? AnswerView
+                        
                         var answer = ResponseData.Answer()
                         let ids = viewLevel2.accessibilityIdentifier?.components(separatedBy: " ")
                         //answer.flow_id = ids![0]
-                        answer.section_id = ids![1]
-                        answer.question_id = Int(ids![2])
-                        answer.answer_id = Int(ids![3])
+                        //answer.section_id = ids![1]
+                        //answer.question_id = Int(ids![2])
+                        //answer.answer_id = Int(ids![3])
+                        answer.section_id = ansv?.section_id
+                        answer.question_id = ansv?.question_id
+                        answer.question_text = ansv?.question_text
+                        answer.answer_id = ansv?.answer_id
+                        answer.answer_text = ansv?.answer_text
+                        answer.answer_extra = ansv?.answer_extra
+                        
                         answersToStore.append(answer)
                         
                     }
@@ -481,7 +534,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
             account?.primary = true
         }
         accounts?.append(account!)
-        print(accounts)
+        //print(accounts)
         
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(accounts) {

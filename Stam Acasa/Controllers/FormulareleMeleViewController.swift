@@ -51,7 +51,7 @@ class FormulareleMeleViewController: UIViewController {
            var dataLabel = UILabel(frame: CGRect(x:0, y:0, width:60, height:60))
            dataLabel.textAlignment = NSTextAlignment.center
            dataLabel.text = responses![report].date
-           dataLabel.numberOfLines = 2
+           dataLabel.numberOfLines = 1
            columnView.addSubview(dataLabel)
            
            var separator = UIView.init(frame: CGRect.init(x: 0, y: 59, width: 60, height: 1))
