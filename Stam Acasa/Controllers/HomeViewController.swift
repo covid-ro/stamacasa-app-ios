@@ -12,17 +12,6 @@ import UIKit
 
 class HomeViewController: UIViewController, UIGestureRecognizerDelegate{
     
-    @IBAction func btnEvaluare(_ sender: Any) {
-        let fm = UIStoryboard.Main.instantiateFlowStepVc()
-        //fm.flow_id
-        //fm.flow_section
-        
-        controllerArray.append(fm)
-    }
-    
-    @IBAction func btnDeplasri(_ sender: Any) {
-    }
-    
     @IBOutlet weak var PageViewOutlet: UIView!
     var pageMenu : CAPSPageMenu?
     var fm : FormulareleMeleViewController?
@@ -152,6 +141,19 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate{
         if currentIndex < pageMenu!.controllerArray.count {
             pageMenu!.moveToPage(currentIndex + 1)
         }
+    }
+    
+    @IBAction func btnEvaluare(_ sender: Any) {
+        let eval = UIStoryboard.Main.instantiateFlowStepVc()
+        //fm.flow_id
+        //fm.flow_section
+        
+        navigationController?.pushViewController(eval, animated: true)
+    }
+    
+    @IBAction func btnDeplasri(_ sender: Any) {
+        //let eval = UIStoryboard.Main.instantiateFlowStepVc()
+        //navigationController?.pushViewController(eval, animated: true)
     }
     
     // MARK: - Container View Controller
