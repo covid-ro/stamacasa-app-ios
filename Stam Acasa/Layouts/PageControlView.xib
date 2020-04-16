@@ -13,28 +13,27 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="hIu-Qr-nzN">
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hIu-Qr-nzN">
                     <rect key="frame" x="20" y="64" width="374" height="12"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4q-SZ-tQx">
-                            <rect key="frame" x="0.0" y="0.0" width="75" height="12"/>
+                            <rect key="frame" x="0.0" y="0.0" width="82.5" height="12"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ztC-5x-D8J">
-                            <rect key="frame" x="99.5" y="0.0" width="75" height="12"/>
+                            <rect key="frame" x="97.5" y="0.0" width="82" height="12"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMy-2l-mXW">
-                            <rect key="frame" x="199.5" y="0.0" width="75" height="12"/>
+                            <rect key="frame" x="194.5" y="0.0" width="82.5" height="12"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IeY-S9-e9e">
-                            <rect key="frame" x="299" y="0.0" width="75" height="12"/>
+                            <rect key="frame" x="292" y="0.0" width="82" height="12"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="J4q-SZ-tQx" firstAttribute="width" secondItem="hIu-Qr-nzN" secondAttribute="width" multiplier="0.2" id="SFU-BS-kfL"/>
                         <constraint firstItem="EMy-2l-mXW" firstAttribute="width" secondItem="ztC-5x-D8J" secondAttribute="width" id="aDs-9w-zip"/>
                         <constraint firstItem="ztC-5x-D8J" firstAttribute="width" secondItem="J4q-SZ-tQx" secondAttribute="width" id="kbb-ed-iIg"/>
                         <constraint firstItem="IeY-S9-e9e" firstAttribute="width" secondItem="EMy-2l-mXW" secondAttribute="width" id="n6m-X1-kaN"/>

@@ -347,7 +347,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
          */
         
         
-        for view in contentView.subviews.filter{$0 is DatePersonale}{
+        for view in contentView.subviews.filter({$0 is DatePersonale}){
             let date = Date()
             let formatter = DateFormatter()
             formatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
@@ -402,7 +402,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
             
             let sectionId = (sender as! UIButton).accessibilityIdentifier ?? ""
             for viewLevel1 in contentView.subviews{
-                for viewLevel2 in viewLevel1.subviews.filter{$0 is AnswerView}{
+                for viewLevel2 in viewLevel1.subviews.filter({$0 is AnswerView}){
                     
                     if viewLevel2.backgroundColor == UIColor.gray{
                         var answer = ResponseData.Answer()
