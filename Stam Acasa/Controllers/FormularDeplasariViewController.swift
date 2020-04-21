@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FormularDeplasariViewController: UIViewController {
+class FormularDeplasariViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var motivulDeplasariInputField: UITextField!
     @IBOutlet weak var daView: UIView!
     @IBOutlet weak var nuView: UIView!
@@ -35,7 +35,15 @@ class FormularDeplasariViewController: UIViewController {
         
         applyShadowForLabel(view: daView)
         applyShadowForLabel(view: nuView)
+        
+        motivulDeplasariInputField.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        motivulDeplasariInputField.resignFirstResponder()
+        
+        return true
     }
     
     func applyShadowForLabel(view: UIView){
