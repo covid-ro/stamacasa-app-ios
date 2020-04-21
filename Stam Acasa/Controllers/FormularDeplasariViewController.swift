@@ -101,7 +101,7 @@ class FormularDeplasariViewController: UIViewController, UITextFieldDelegate {
         }
         
         if formValidated{
-            validationFormAlert(title: "SUCCES", message: "Formularul dumneavoastra a fost inregistrat cu succes!")
+            //validationFormAlert(title: "SUCCES", message: "Formularul dumneavoastra a fost inregistrat cu succes!")
             
             var storeMovement = ResponseData.Movement()
             
@@ -142,6 +142,10 @@ class FormularDeplasariViewController: UIViewController, UITextFieldDelegate {
                 defaults.set(encoded, forKey: "movementForms")
             }
             UserDefaults.standard.synchronize()
+            
+            let vc = UIStoryboard.Main.instantiateHomeVc()
+            vc.message = "Formularul dumneavoastra a fost inregistrat cu succes!"
+            self.navigationController?.pushViewController(vc, animated: true)
             
         } else{
             validationFormAlert(title: "EROARE", message: "Formularul nu este valid")
