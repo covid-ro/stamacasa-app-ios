@@ -24,10 +24,13 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     
     var passedFlowId: String?
     var passedSectionId: String?
+    var selectedColor: UIColor?
     @IBOutlet weak var stamAcasaLogo: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        selectedColor = UIColor(red: 189.0/255.0, green: 146.0/255.0, blue: 190.0/255.0, alpha: 1.0)
         
         stamAcasaLogo.isUserInteractionEnabled = true
         let menuTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.menuTapped(_:)))
@@ -107,7 +110,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                         
                         var nrs = 0 as Int
                         for step in pageControlView.controlSteps{
-                            step.backgroundColor = UIColor.gray
+                            step.backgroundColor = selectedColor
                             nrs+=1
                             if nrs > flow.flow_sections!.count {
                                 step.removeFromSuperview()
@@ -115,7 +118,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                         }
                         
                         for step in pageControlView.controlSteps{
-                            step.backgroundColor = UIColor.gray
+                            step.backgroundColor = selectedColor
                         }
                         pageControlView.controlSteps?[index].backgroundColor = UIColor(red: 79.0/255.0, green: 59.0/255.0, blue: 100.0/255.0, alpha: 1.0)
                         pageControlView.translatesAutoresizingMaskIntoConstraints = true
@@ -273,18 +276,18 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         
         
         if view?.backgroundColor == .white{
-            view?.backgroundColor = .gray
+            view?.backgroundColor = selectedColor
         } else{
             view?.backgroundColor = .white
         }
         
         
         var responseDecisionObj = view?.decision
-        if view?.backgroundColor == .gray && responseDecisionObj?.answer_input == "question-activate" {
+        if view?.backgroundColor == selectedColor && responseDecisionObj?.answer_input == "question-activate" {
             insertQuestion(idQuestion: (responseDecisionObj?.answer_question_id)!)
         }
         
-        if view?.backgroundColor == .gray && responseDecisionObj?.answer_input == "text-area" {
+        if view?.backgroundColor == selectedColor && responseDecisionObj?.answer_input == "text-area" {
             
             let alertController = UIAlertController(title: responseDecisionObj?.answer_hint, message: "", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { alert -> Void in
@@ -302,7 +305,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
             
         }
         
-        if view?.backgroundColor == .gray && responseDecisionObj?.answer_input == "text-input-numeric" {
+        if view?.backgroundColor == selectedColor && responseDecisionObj?.answer_input == "text-input-numeric" {
             
             let alertController = UIAlertController(title: responseDecisionObj?.answer_hint, message: "", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { alert -> Void in
@@ -439,7 +442,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         for (question,answers) in questionDataAnswersViewsDictionary{
             var isQuestionAnswered = false
             for answer in answers{
-                if answer.backgroundColor == UIColor.gray{
+                if answer.backgroundColor == selectedColor{
                     isQuestionAnswered = true
                     break
                 }
@@ -467,7 +470,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
             let sectionId = (sender as! UIButton).accessibilityIdentifier ?? ""
             for viewLevel1 in contentView.subviews{
                 for viewLevel2 in viewLevel1.subviews.filter({$0 is AnswerView}){
-                    if viewLevel2.backgroundColor == UIColor.gray{
+                    if viewLevel2.backgroundColor == selectedColor{
                         let ansv = viewLevel2 as? AnswerView
                         
                         var answer = ResponseData.Answer()
