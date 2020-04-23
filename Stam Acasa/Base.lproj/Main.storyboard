@@ -2045,7 +2045,6 @@ STAM ACASA</string>
                     </view>
                     <navigationItem key="navigationItem" id="mwo-q1-R4z"/>
                     <connections>
-                        <outlet property="menuLogoButton" destination="5eQ-ke-n0o" id="Ne5-cq-yye"/>
                         <outlet property="scrollView" destination="xpz-nX-Z9O" id="XvC-Dd-beO"/>
                         <outlet property="stamAcasaLogo" destination="5eQ-ke-n0o" id="B4S-Pm-Aeb"/>
                     </connections>

@@ -18,8 +18,12 @@ class DetaliiContViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        stamAcasaLogo.isUserInteractionEnabled = true
+        let menuTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.menuTapped(_:)))
+        stamAcasaLogo.addGestureRecognizer(menuTapGesture)
+        
         ///de sters urmatoarea linie:
-        StamAcasaSingleton.sharedInstance.actualAccountId = 0
+        StamAcasaSingleton.sharedInstance.actualAccountId = 1
         
         let titleAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: UIColor.init(red: 60.0/255, green: 38.0/255, blue: 83.0/255, alpha: 1),
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25)]
@@ -48,7 +52,7 @@ class DetaliiContViewController: UIViewController {
             if accounts![i].accountId == StamAcasaSingleton.sharedInstance.actualAccountId{
                 
                 let datePersonale = NSAttributedString(string:
-                    "\nNume: "+accounts![i].numePrenume!+"\nNumar Telefon:"+accounts![i].numarTelefon!+"\nJudet:"+accounts![i].judet!+"\nLocalitate:"+accounts![i].localitate!+"\nVarsta:"+accounts![i].varsta!+"\nGen:"+accounts![i].gen!+"\n\n"
+                    "\nNume: "+accounts![i].numePrenume!+"\nNumar Telefon:"+accounts![i].numarTelefon!+"\nJudet:"+accounts![i].judet!+"\nLocalitate:"+accounts![i].localitate!+"\nVarsta:"+accounts![i].varsta!+"\nGen:"+accounts![i].gen!+"\n"
                 
                 )
                 carnat.append(datePersonale)
@@ -64,7 +68,7 @@ class DetaliiContViewController: UIViewController {
                         var rsps = accounts![i].responses![report].responses! as [ResponseData.Answer]
                         for ans in 0...rsps.count-1{
                             if rsps[ans].section_id != lastSectionId {
-                                let sectiune = NSMutableAttributedString(string: "\n " + "\n " + rsps[ans].section_name!+"\n ", attributes: titleAttributes)
+                                let sectiune = NSMutableAttributedString(string: "\n\n " + rsps[ans].section_name!+"\n ", attributes: titleAttributes)
                                 carnat.append(sectiune)
                             }
                             
@@ -96,14 +100,54 @@ class DetaliiContViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @objc func menuTapped(_ sender : UITapGestureRecognizer){
+        let menuView = Bundle.main.loadNibNamed("SideMenuView", owner: self, options: nil)?.first as! SideMenuView
+        menuView.frame.size.width = self.view.frame.size.width
+        menuView.frame.size.height = self.view.frame.size.height
+        menuView.frame.origin.y = 0.0
+        menuView.frame.origin.x = -UIScreen.main.bounds.width
+        menuView.delegate = self
+        self.view.addSubview(menuView)
+        UIView.animate(withDuration: 1.0, animations: {
+            menuView.frame.origin.x = 0.0
+        })
     }
-    */
+        
 
+}
+
+
+extension DetaliiContViewController: SideMenu{
+    func profilulMeuTapped() {
+        let vc = UIStoryboard.Main.instantiateHomeVc()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            vc.pageMenu!.moveToPage(0)
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func profileAltePersoaneTapped() {
+        let vc = UIStoryboard.Main.instantiateHomeVc()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            vc.pageMenu!.moveToPage(1)
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func istoricPersonalTapped() {
+        
+    }
+    
+    func despreTapped() {
+        let vc = UIStoryboard.Main.instantiateDespreVc()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func setariTapped() {
+        let vc = UIStoryboard.Main.instantiateSetariVc()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
 }

@@ -11,7 +11,6 @@ import UIKit
 class IstoricAltePersoaneViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var menuLogoButton: UIImageView!
     @IBOutlet weak var stamAcasaLogo: UIImageView!
     
     override func viewDidLoad() {
@@ -19,9 +18,9 @@ class IstoricAltePersoaneViewController: UIViewController {
         
         StamAcasaSingleton.sharedInstance.actualAccountId = 1
         
-        menuLogoButton.isUserInteractionEnabled = true
+        stamAcasaLogo.isUserInteractionEnabled = true
         let menuTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.menuTapped(_:)))
-        menuLogoButton.addGestureRecognizer(menuTapGesture)
+        stamAcasaLogo.addGestureRecognizer(menuTapGesture)
         
         
         var accounts = [] as [AccountData]?
