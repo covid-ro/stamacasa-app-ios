@@ -88,6 +88,8 @@ class AltePersoaneViewController: UIViewController, ProfileActionButton {
      func adaugareInfoEvaluareTapped(accountId: Int) {
          StamAcasaSingleton.sharedInstance.actualAccountId = accountId
         let vc = UIStoryboard.Main.instantiateFlowStepVc()
+        vc.passedFlowId = "evaluare"
+        vc.passedSectionId = "simptome"
          self.navigationController?.pushViewController(vc, animated: true)
      }
      
