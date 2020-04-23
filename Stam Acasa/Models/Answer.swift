@@ -47,7 +47,7 @@ public struct AccountData: Codable,Hashable {
     var localitate: String?
     var varsta: String?
     var gen: String?
-    var accountCreationResponses: ResponseData?
+    var accountCreationResponses: [ResponseData]?
     var registrationDate: String?
     
 }

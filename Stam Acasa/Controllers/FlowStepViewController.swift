@@ -531,7 +531,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         formatter.dateFormat = "dd.MM\nHH:mm"
         let newResponseData = ResponseData(date:  formatter.string(from: date), flow_id: passedFlowId, responses: answersToStore)
         
-        account?.accountCreationResponses = newResponseData
+        account?.accountCreationResponses?.append(newResponseData)
         
         if accounts?.count == 0 {
             account?.primary = true
@@ -549,17 +549,17 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     }
     
     func saveData(answersToStore:[ResponseData.Answer]) {
-        
+
         var responses : [ResponseData]?
         responses = []
-        
+
         if let encodedData = UserDefaults.standard.object(forKey: "resps") as? Data {
             let decoder = JSONDecoder()
             if let rsx = try? decoder.decode([ResponseData].self, from: encodedData) {
                 responses = rsx
             }
         }
-        
+
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM\nHH:mm"
@@ -567,7 +567,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         let newResponseData = ResponseData(date:  formatter.string(from: date), flow_id: passedFlowId, responses: answersToStore)
         //responses?.append(newResponseData)
         responses?.insert(newResponseData, at: 0)
-        
+
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(responses) {
             let defaults = UserDefaults.standard
