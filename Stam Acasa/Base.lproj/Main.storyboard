@@ -2047,6 +2047,7 @@ STAM ACASA</string>
                                             <constraint firstItem="xpz-nX-Z9O" firstAttribute="leading" secondItem="O5T-0X-4cd" secondAttribute="trailing" id="adV-h5-8dQ"/>
                                             <constraint firstItem="xpz-nX-Z9O" firstAttribute="leading" secondItem="O5T-0X-4cd" secondAttribute="trailing" id="gQP-Fk-5md"/>
                                             <constraint firstItem="GDH-nB-DoN" firstAttribute="top" secondItem="10g-eX-sMD" secondAttribute="top" constant="20" id="i8C-J7-DPJ"/>
+                                            <constraint firstAttribute="height" priority="200" constant="592" id="loa-ZO-1Nh"/>
                                             <constraint firstItem="O5T-0X-4cd" firstAttribute="leading" secondItem="10g-eX-sMD" secondAttribute="leading" constant="20" id="p4t-bc-a32"/>
                                         </constraints>
                                     </view>
@@ -2077,7 +2078,10 @@ STAM ACASA</string>
                     </view>
                     <navigationItem key="navigationItem" id="mwo-q1-R4z"/>
                     <connections>
+                        <outlet property="contentView" destination="10g-eX-sMD" id="69c-ed-GJ6"/>
+                        <outlet property="scrollView" destination="SX8-jr-YOp" id="mps-an-BNa"/>
                         <outlet property="scrollViewSimptome" destination="xpz-nX-Z9O" id="X3f-wg-O1q"/>
+                        <outlet property="scrollviewHeight" destination="loa-ZO-1Nh" id="aDo-Ec-BIo"/>
                         <outlet property="stamAcasaLogo" destination="5eQ-ke-n0o" id="B4S-Pm-Aeb"/>
                     </connections>
                 </viewController>
