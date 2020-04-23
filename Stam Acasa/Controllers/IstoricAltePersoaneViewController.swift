@@ -1,5 +1,5 @@
 //
-//  DetaliiContViewController.swift
+//  IstoricAltePersoaneViewController.swift
 //  Stam Acasa
 //
 //  Created by Sebi on 23/04/2020.
@@ -8,24 +8,11 @@
 
 import UIKit
 
-class DetaliiContViewController: UIViewController {
-    
-    var passedAccountId: String?
-    
-    @IBOutlet weak var lbNumePrenume: UILabel!
-    @IBOutlet weak var lbTelefon: UILabel!
-    @IBOutlet weak var lbLocalitateJudet: UILabel!
-    @IBOutlet weak var lbVarsta: UILabel!
-    @IBOutlet weak var lbSex: UILabel!
-    
-    @IBOutlet weak var stamAcasaLogo: UIImageView!
-    
+class IstoricAltePersoaneViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        StamAcasaSingleton.sharedInstance.actualAccountId = 1
-        
-        
+
         // Do any additional setup after loading the view.
     }
     

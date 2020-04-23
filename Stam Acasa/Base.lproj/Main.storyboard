@@ -1968,10 +1968,10 @@ STAM ACASA</string>
             </objects>
             <point key="canvasLocation" x="3992.8000000000002" y="97.601199400299862"/>
         </scene>
-        <!--Istoric Complet View Controller-->
+        <!--Istoric Alte Persoane View Controller-->
         <scene sceneID="EWu-1c-Jd8">
             <objects>
-                <viewController storyboardIdentifier="istoricCompletAltePersoaneVc" id="Mnt-mj-32p" customClass="IstoricCompletViewController" customModule="Stam_Acasa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="istoricAltePersoaneVc" id="Mnt-mj-32p" customClass="IstoricAltePersoaneViewController" customModule="Stam_Acasa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vf5-qi-PLR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
