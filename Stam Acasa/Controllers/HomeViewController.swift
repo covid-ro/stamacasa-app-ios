@@ -18,7 +18,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate{
     var ap : AltePersoaneViewController?
     @IBOutlet weak var stamAcasaLogo: UIImageView!
     @IBOutlet weak var stamAcasaView: UIView!
-    var movementFormsFromUserDefaults: [ResponseData.Movement]?
+    var movementFormsFromUserDefaults: [AccountData.Movement]?
     var message: String?
     
     
@@ -125,7 +125,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate{
     func populateMovementForms(){
         if let encodedData = UserDefaults.standard.object(forKey: "movementForms") as? Data {
             let decoder = JSONDecoder()
-            if let movementForms = try? decoder.decode([ResponseData.Movement].self, from: encodedData) {
+            if let movementForms = try? decoder.decode([AccountData.Movement].self, from: encodedData) {
                 movementFormsFromUserDefaults = movementForms
             }
         }

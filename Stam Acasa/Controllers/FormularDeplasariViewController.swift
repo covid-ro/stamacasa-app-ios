@@ -103,7 +103,7 @@ class FormularDeplasariViewController: UIViewController, UITextFieldDelegate {
         if formValidated{
             //validationFormAlert(title: "SUCCES", message: "Formularul dumneavoastra a fost inregistrat cu succes!")
             
-            var storeMovement = ResponseData.Movement()
+            var storeMovement = AccountData.Movement()
             
             let dateFormatterDate : DateFormatter = DateFormatter()
             dateFormatterDate.dateFormat = "dd.MM"
@@ -126,10 +126,10 @@ class FormularDeplasariViewController: UIViewController, UITextFieldDelegate {
                 storeMovement.directContact = "NU"
             }
             
-            var movementFormsFromUserDefaults: [ResponseData.Movement] = []
+            var movementFormsFromUserDefaults: [AccountData.Movement] = []
             if let encodedData = UserDefaults.standard.object(forKey: "movementForms") as? Data {
                 let decoder = JSONDecoder()
-                if let movementForms = try? decoder.decode([ResponseData.Movement].self, from: encodedData) {
+                if let movementForms = try? decoder.decode([AccountData.Movement].self, from: encodedData) {
                     movementFormsFromUserDefaults = movementForms
                 }
             }

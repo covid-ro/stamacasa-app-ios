@@ -420,11 +420,27 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
             formatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
                                                
             let dpv = view as! DatePersonale
-            account = AccountData(primary: false, accountId: Int.random(in: 1..<100000), numePrenume: dpv.textNumePrenume.text, numarTelefon: dpv.textNumarTelefon.text, judet: dpv.dropDownJudet.text, localitate: dpv.dropDownLocalitate.text, varsta: dpv.dropDownVarsta.text, gen: dpv.dropDownGen.text, accountCreationResponses:nil, registrationDate: formatter.string(from: date))
+            
+            account = AccountData(accountId: getMaxId(), numePrenume: dpv.textNumePrenume.text, numarTelefon: dpv.textNumarTelefon.text, judet: dpv.dropDownJudet.text, localitate: dpv.dropDownLocalitate.text, varsta: dpv.dropDownVarsta.text, gen: dpv.dropDownGen.text, responses:[], registrationDate: formatter.string(from: date),movements: [])
             
             view.removeFromSuperview()
         }
         populateScrollViewWithFlowSection(flowId: "registration", sectionId: "stare_sanatate")
+    }
+    
+    func getMaxId() -> Int{
+        var accounts: [AccountData]?
+        if let encodedData = UserDefaults.standard.object(forKey: "accounts") as? Data {
+            let decoder = JSONDecoder()
+            if let acx = try? decoder.decode([AccountData].self, from: encodedData) {
+                accounts = acx
+            }
+        }
+        if (accounts?.count ?? 0) > 0{
+            return accounts!.count
+        } else{
+            return 0
+        }
     }
     
     func validationFormAlert(){
@@ -502,12 +518,11 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                 if passedFlowId == "registration" {
                     
                     saveAccount(answersToStore: answersToStore)
-                    saveData(answersToStore: answersToStore)
                     
                     let vc = UIStoryboard.Main.instantiateProfilCompletVc()
                     self.navigationController?.pushViewController(vc, animated: true)
                 } else {
-                    saveData(answersToStore: answersToStore)
+                    saveResponseData(answersToStore: answersToStore)
                     let vc = UIStoryboard.Main.instantiateHomeVc()
                     vc.message = "Raport evaluare complet"
                     self.navigationController?.pushViewController(vc, animated: true)
@@ -531,11 +546,8 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         formatter.dateFormat = "dd.MM\nHH:mm"
         let newResponseData = ResponseData(date:  formatter.string(from: date), flow_id: passedFlowId, responses: answersToStore)
         
-        account?.accountCreationResponses?.append(newResponseData)
-        
-        if accounts?.count == 0 {
-            account?.primary = true
-        }
+        account?.responses?.append(newResponseData)
+ 
         accounts?.append(account!)
         //print(accounts)
         
@@ -548,32 +560,39 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     
     }
     
-    func saveData(answersToStore:[ResponseData.Answer]) {
-
+    func saveResponseData(answersToStore:[ResponseData.Answer]) {
+        var accounts = [] as [AccountData]?
         var responses : [ResponseData]?
         responses = []
-
-        if let encodedData = UserDefaults.standard.object(forKey: "resps") as? Data {
+        
+        if let encodedData = UserDefaults.standard.object(forKey: "accounts") as? Data {
             let decoder = JSONDecoder()
-            if let rsx = try? decoder.decode([ResponseData].self, from: encodedData) {
-                responses = rsx
+            if let acx = try? decoder.decode([AccountData].self, from: encodedData) {
+                accounts = acx
             }
         }
+        
+        for i in 0..<(accounts?.count ?? 0){
+            if accounts![i].accountId == StamAcasaSingleton.sharedInstance.actualAccountId{
+                    
+                    let date = Date()
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "dd.MM\nHH:mm"
 
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM\nHH:mm"
-
-        let newResponseData = ResponseData(date:  formatter.string(from: date), flow_id: passedFlowId, responses: answersToStore)
-        //responses?.append(newResponseData)
-        responses?.insert(newResponseData, at: 0)
-
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(responses) {
-            let defaults = UserDefaults.standard
-            defaults.set(encoded, forKey: "resps")
-        }
-        UserDefaults.standard.synchronize()
+                    let newResponseData = ResponseData(date:  formatter.string(from: date), flow_id: passedFlowId, responses: answersToStore)
+                    //responses?.append(newResponseData)
+                    accounts![i].responses?.insert(newResponseData, at: 0)
+                    
+                    let encoder = JSONEncoder()
+                    if let encoded = try? encoder.encode(accounts) {
+                        let defaults = UserDefaults.standard
+                        defaults.set(encoded, forKey: "accounts")
+                    }
+                    UserDefaults.standard.synchronize()
+                    
+                    break
+                }
+            }
     }
 }
 

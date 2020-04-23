@@ -34,13 +34,6 @@ class AltePersoaneViewController: UIViewController {
                 accounts = acx
             }
         }
-        
-        if let encodedData = UserDefaults.standard.object(forKey: "resps") as? Data {
-            let decoder = JSONDecoder()
-            if let rsx = try? decoder.decode([ResponseData].self, from: encodedData) {
-                forms = rsx
-            }
-        }
         // Do any additional setup after loading the view.
     }
 

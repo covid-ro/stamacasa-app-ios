@@ -86,10 +86,10 @@ class FormulareleMeleViewController: UIViewController {
     }
     
     func populateIstoricDeplasari(){
-        var movementFormsFromUserDefaults: [ResponseData.Movement] = []
+        var movementFormsFromUserDefaults: [AccountData.Movement] = []
         if let encodedData = UserDefaults.standard.object(forKey: "movementForms") as? Data {
             let decoder = JSONDecoder()
-            if let movementForms = try? decoder.decode([ResponseData.Movement].self, from: encodedData) {
+            if let movementForms = try? decoder.decode([AccountData.Movement].self, from: encodedData) {
                 movementFormsFromUserDefaults = movementForms
             }
         }
