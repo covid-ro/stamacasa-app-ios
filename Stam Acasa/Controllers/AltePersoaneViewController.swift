@@ -10,7 +10,11 @@ import Foundation
 import UIKit
 
 class AltePersoaneViewController: UIViewController {
-
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
+    var accounts: [AccountData] = []
+    var forms: [ResponseData] = []
+    
     @IBAction func adaugaAltePersoaneTapped(_ sender: Any) {
         
         let vc = UIStoryboard.Main.instantiateFlowStepVc()
@@ -23,7 +27,20 @@ class AltePersoaneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+       if let encodedData = UserDefaults.standard.object(forKey: "accounts") as? Data {
+            let decoder = JSONDecoder()
+            if let acx = try? decoder.decode([AccountData].self, from: encodedData) {
+                accounts = acx
+            }
+        }
+        
+        if let encodedData = UserDefaults.standard.object(forKey: "resps") as? Data {
+            let decoder = JSONDecoder()
+            if let rsx = try? decoder.decode([ResponseData].self, from: encodedData) {
+                forms = rsx
+            }
+        }
         // Do any additional setup after loading the view.
     }
 
