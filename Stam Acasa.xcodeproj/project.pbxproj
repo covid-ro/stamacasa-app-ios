@@ -26,7 +26,7 @@
 		927F4883243E4639009CFC40 /* LocalitatiStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F4882243E4639009CFC40 /* LocalitatiStruct.swift */; };
 		927F48A9243F436D009CFC40 /* iOSDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F48A8243F436D009CFC40 /* iOSDropDown.swift */; };
 		928E85962451962000CB390C /* DetaliiContViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E85952451962000CB390C /* DetaliiContViewController.swift */; };
-		928E85982451C64700CB390C /* IstoricCompletAltePersoaneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E85972451C64700CB390C /* IstoricCompletAltePersoaneViewController.swift */; };
+		928E859A2451CF4400CB390C /* IstoricAltePersoaneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E85992451CF4400CB390C /* IstoricAltePersoaneViewController.swift */; };
 		FA02B466243DFEF200F47DC2 /* StamAcasaSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B465243DFEF200F47DC2 /* StamAcasaSingleton.swift */; };
 		FA02B46A243E00DA00F47DC2 /* json_stam_acasa_alternativa.json in Resources */ = {isa = PBXBuildFile; fileRef = FA02B469243E00DA00F47DC2 /* json_stam_acasa_alternativa.json */; };
 		FA02B46C243E0CEE00F47DC2 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */; };
@@ -81,7 +81,7 @@
 		927F4882243E4639009CFC40 /* LocalitatiStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalitatiStruct.swift; sourceTree = "<group>"; };
 		927F48A8243F436D009CFC40 /* iOSDropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSDropDown.swift; sourceTree = "<group>"; };
 		928E85952451962000CB390C /* DetaliiContViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaliiContViewController.swift; sourceTree = "<group>"; };
-		928E85972451C64700CB390C /* IstoricCompletAltePersoaneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IstoricCompletAltePersoaneViewController.swift; sourceTree = "<group>"; };
+		928E85992451CF4400CB390C /* IstoricAltePersoaneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IstoricAltePersoaneViewController.swift; sourceTree = "<group>"; };
 		FA02B465243DFEF200F47DC2 /* StamAcasaSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StamAcasaSingleton.swift; sourceTree = "<group>"; };
 		FA02B469243E00DA00F47DC2 /* json_stam_acasa_alternativa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = json_stam_acasa_alternativa.json; sourceTree = "<group>"; };
 		FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
@@ -225,11 +225,11 @@
 				922CCDDE2444A52500BCE4FA /* FormulareleMeleViewController.swift */,
 				922CCDE02444A5D200BCE4FA /* AltePersoaneViewController.swift */,
 				9253958A2445C41F00329C6A /* IstoricCompletViewController.swift */,
-				928E85972451C64700CB390C /* IstoricCompletAltePersoaneViewController.swift */,
 				FA082495244756A100F2AACD /* DespreViewController.swift */,
 				FA082497244759DF00F2AACD /* SetariViewController.swift */,
 				FA6F231F244847210022F361 /* FormularDeplasariViewController.swift */,
 				928E85952451962000CB390C /* DetaliiContViewController.swift */,
+				928E85992451CF4400CB390C /* IstoricAltePersoaneViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -347,9 +347,9 @@
 				927F4883243E4639009CFC40 /* LocalitatiStruct.swift in Sources */,
 				9253958B2445C41F00329C6A /* IstoricCompletViewController.swift in Sources */,
 				FA5524C8243CC21E000B8DA8 /* AppDelegate.swift in Sources */,
+				928E859A2451CF4400CB390C /* IstoricAltePersoaneViewController.swift in Sources */,
 				927F487D243E13FE009CFC40 /* DatePersonale.swift in Sources */,
 				FA5524CA243CC21E000B8DA8 /* SceneDelegate.swift in Sources */,
-				928E85982451C64700CB390C /* IstoricCompletAltePersoaneViewController.swift in Sources */,
 				FA6F23282448DA510022F361 /* IstoricDeplasariRow.swift in Sources */,
 				925D250524425A8900521E4E /* HomeViewController.swift in Sources */,
 				925D250F24425B7D00521E4E /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,

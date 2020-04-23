@@ -16,6 +16,7 @@ public struct ResponseData: Codable,Hashable {
 
     public struct Answer: Codable,Hashable {
         var section_id: String?
+        var section_name: String?
         var question_id: Int?
         var question_text: String?
         var answer_id: Int?
@@ -23,7 +24,7 @@ public struct ResponseData: Codable,Hashable {
         var answer_extra: String?
         
         public static func ==(left:Answer, right:Answer) -> Bool {
-            return left.section_id == right.section_id && left.question_id == right.question_id && left.question_text == right.question_text && left.answer_id == right.answer_id && left.answer_text == right.answer_text && left.answer_extra == right.answer_extra
+            return left.section_id == right.section_id && left.section_name == right.section_name && left.question_id == right.question_id && left.question_text == right.question_text && left.answer_id == right.answer_id && left.answer_text == right.answer_text && left.answer_extra == right.answer_extra
         }
     }
 }

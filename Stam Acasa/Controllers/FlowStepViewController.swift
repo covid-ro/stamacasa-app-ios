@@ -170,8 +170,8 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                             for answer in question.question_answers ?? [] {
                                 let answerView = Bundle.main.loadNibNamed("AnswerView", owner: self, options: nil)?.first as! AnswerView
                                 
-                                
                                 answerView.section_id = section.section_id
+                                answerView.section_name = section.section_name
                                 answerView.question_id = question.question_id
                                 answerView.question_text = question.question_text
                                 answerView.answer_id = answer.answer_id
@@ -491,11 +491,9 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                         
                         var answer = ResponseData.Answer()
                         let ids = viewLevel2.accessibilityIdentifier?.components(separatedBy: " ")
-                        //answer.flow_id = ids![0]
-                        //answer.section_id = ids![1]
-                        //answer.question_id = Int(ids![2])
-                        //answer.answer_id = Int(ids![3])
+                        
                         answer.section_id = ansv?.section_id
+                        answer.section_name = ansv?.section_name
                         answer.question_id = ansv?.question_id
                         answer.question_text = ansv?.question_text
                         answer.answer_id = ansv?.answer_id

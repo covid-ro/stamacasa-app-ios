@@ -1,26 +1,39 @@
 //
-//  IstoricCompletViewController.swift
+//  IstoricAltePersoaneViewController.swift
 //  Stam Acasa
 //
-//  Created by Sebi on 14/04/2020.
+//  Created by Sebi on 23/04/2020.
 //  Copyright © 2020 IOs apps. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class IstoricCompletViewController: UIViewController{
+class IstoricAltePersoaneViewController: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var menuLogoButton: UIImageView!
+    //@IBOutlet weak var scrollViewSimptome: UIScrollView!
     @IBOutlet weak var stamAcasaLogo: UIImageView!
+    @IBOutlet weak var scrollViewSimptome: UIScrollView!
+    
+    
+    /*
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var istoricView: UIView!
+    @IBOutlet weak var columnsView: UIView!
+    @IBOutlet weak var istoricHeight: NSLayoutConstraint!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var scrollviewHeight: NSLayoutConstraint!
+    */
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        menuLogoButton.isUserInteractionEnabled = true
+        StamAcasaSingleton.sharedInstance.actualAccountId = 0
+        
+        stamAcasaLogo.isUserInteractionEnabled = true
         let menuTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.menuTapped(_:)))
-        menuLogoButton.addGestureRecognizer(menuTapGesture)
+        stamAcasaLogo.addGestureRecognizer(menuTapGesture)
         
         
         var accounts = [] as [AccountData]?
@@ -69,9 +82,9 @@ class IstoricCompletViewController: UIViewController{
                         }
                         columnView.addSubview(label)
                     }
-                    scrollView.addSubview(columnView)
+                    scrollViewSimptome.addSubview(columnView)
                 }
-                scrollView.contentSize = CGSize.init(width: accounts![i].responses!.count * 60, height: 420)
+                scrollViewSimptome.contentSize = CGSize.init(width: accounts![i].responses!.count * 60, height: 420)
                 
                 break
             }
@@ -79,6 +92,62 @@ class IstoricCompletViewController: UIViewController{
         
         
     }
+    
+    
+    /*
+       func populateIstoricDeplasari(){
+        var accounts: [AccountData] = []
+        if let encodedData = UserDefaults.standard.object(forKey: "accounts") as? Data {
+            let decoder = JSONDecoder()
+            if let accs = try? decoder.decode([AccountData].self, from: encodedData) {
+                accounts = accs
+            }
+        }
+        
+        for account in accounts{
+            if StamAcasaSingleton.sharedInstance.actualAccountId == account.accountId{
+                
+                var yPositionInContentView: CGFloat = 890.0
+                
+                let istoricDeplasariRow = Bundle.main.loadNibNamed("IstoricDeplasariRow", owner: self, options: nil)?.first as! IstoricDeplasariRow
+                istoricDeplasariRow.translatesAutoresizingMaskIntoConstraints = true
+                istoricDeplasariRow.frame = CGRect(x: 20.0, y: yPositionInContentView, width: UIScreen.main.bounds.width - 40.0, height: 60.0)
+                istoricDeplasariRow.separatorView.isHidden = false
+                istoricDeplasariRow.dateLabel.text = "Data"
+                istoricDeplasariRow.leaveLabel.text = "Plecare"
+                istoricDeplasariRow.arrivalLabel.text = "Sosire"
+                istoricDeplasariRow.reasonLabel.text = "Motiv"
+                istoricDeplasariRow.contactLabel.text = "Contact"
+                contentView.addSubview(istoricDeplasariRow)
+                
+                yPositionInContentView += istoricDeplasariRow.frame.size.height
+
+                for movement in account.movements ?? []{
+                    
+                    let istoricDeplasariRow = Bundle.main.loadNibNamed("IstoricDeplasariRow", owner: self, options: nil)?.first as! IstoricDeplasariRow
+                    
+                    istoricDeplasariRow.translatesAutoresizingMaskIntoConstraints = true
+                    
+                    istoricDeplasariRow.frame = CGRect(x: 20.0, y: yPositionInContentView, width: UIScreen.main.bounds.width - 40.0, height: 60.0)
+                    istoricDeplasariRow.separatorView.isHidden = true
+                    istoricDeplasariRow.dateLabel.text = movement.date
+                    istoricDeplasariRow.leaveLabel.text = movement.leaveTime
+                    istoricDeplasariRow.arrivalLabel.text = movement.arriveTime
+                    istoricDeplasariRow.reasonLabel.text = movement.reason
+                    istoricDeplasariRow.contactLabel.text = movement.directContact
+                    contentView.addSubview(istoricDeplasariRow)
+                    
+                    yPositionInContentView += istoricDeplasariRow.frame.size.height
+                    
+                    scrollviewHeight.constant += istoricDeplasariRow.frame.size.height
+                    contentView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: scrollviewHeight.constant)
+                }
+                break
+            }
+        }
+        
+    }
+    */
     
     @objc func menuTapped(_ sender : UITapGestureRecognizer){
         let menuView = Bundle.main.loadNibNamed("SideMenuView", owner: self, options: nil)?.first as! SideMenuView
@@ -95,7 +164,7 @@ class IstoricCompletViewController: UIViewController{
     
 }
 
-extension IstoricCompletViewController: SideMenu{
+extension IstoricAltePersoaneViewController: SideMenu{
     func profilulMeuTapped() {
         let vc = UIStoryboard.Main.instantiateHomeVc()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -126,5 +195,5 @@ extension IstoricCompletViewController: SideMenu{
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
-    
+
 }

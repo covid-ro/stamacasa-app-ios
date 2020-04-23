@@ -35,54 +35,61 @@ class FormulareleMeleViewController: UIViewController {
     func drawIstoric() {
        super.viewDidLoad()
        
-       var responses : [ResponseData]?
-       responses = []
        
-       if let encodedData = UserDefaults.standard.object(forKey: "resps") as? Data {
-           let decoder = JSONDecoder()
-           if let rsx = try? decoder.decode([ResponseData].self, from: encodedData) {
-               responses = rsx
-           }
-       }
-       
-       
-       for report in 0..<responses!.count where report < 3 {
-           
-           var columnView = UIView.init(frame: CGRect.init(x: report*60, y: 0, width: 60, height: 420))
-           
-           var dataLabel = UILabel(frame: CGRect(x:0, y:0, width:60, height:60))
-           dataLabel.textAlignment = NSTextAlignment.center
-           dataLabel.text = responses![report].date
-           dataLabel.numberOfLines = 1
-           columnView.addSubview(dataLabel)
-           
-           var separator = UIView.init(frame: CGRect.init(x: 0, y: 59, width: 60, height: 1))
-           separator.backgroundColor = .lightGray
-           columnView.addSubview(separator)
-           
-           var rsps = responses![report].responses! as [ResponseData.Answer]
-           
-           for i in 1...6 {
-               var field = "NU" as String
-               
-               for ans in 0...rsps.count-1{
-                   if rsps[ans].question_id == 10 && rsps[ans].answer_id == i {
-                       field = "DA"
-                   }
-               }
-               
-               var label = UILabel(frame: CGRect(x:0, y:i*60, width:60, height:60))
-               label.textAlignment = NSTextAlignment.center
-               label.font = UIFont.italicSystemFont(ofSize: 14)
-               label.text = field
-               if field=="DA" {
-                   label.textColor = UIColor.red
-               }
-               columnView.addSubview(label)
-           }
-           columnsView.addSubview(columnView)
-       }
-       //scrollView.contentSize = CGSize.init(width: responses!.count * 60, height: 420)
+        
+        
+        var accounts = [] as [AccountData]?
+        
+        if let encodedData = UserDefaults.standard.object(forKey: "accounts") as? Data {
+            let decoder = JSONDecoder()
+            if let acx = try? decoder.decode([AccountData].self, from: encodedData) {
+                accounts = acx
+            }
+        }
+        
+        for i in 0..<(accounts?.count ?? 0){
+            if accounts![i].accountId == StamAcasaSingleton.sharedInstance.actualAccountId{
+                
+                for report in 0..<accounts![i].responses!.count where report < 3 {
+                    
+                    var columnView = UIView.init(frame: CGRect.init(x: report*60, y: 0, width: 60, height: 420))
+                    
+                    var dataLabel = UILabel(frame: CGRect(x:0, y:0, width:60, height:60))
+                    dataLabel.textAlignment = NSTextAlignment.center
+                    dataLabel.text = accounts![i].responses![report].date
+                    dataLabel.numberOfLines = 1
+                    columnView.addSubview(dataLabel)
+                    
+                    var separator = UIView.init(frame: CGRect.init(x: 0, y: 59, width: 60, height: 1))
+                    separator.backgroundColor = .lightGray
+                    columnView.addSubview(separator)
+                    
+                    var rsps = accounts![i].responses![report].responses! as [ResponseData.Answer]
+                    
+                    for i in 1...6 {
+                        var field = "NU" as String
+                        
+                        for ans in 0...rsps.count-1{
+                            if rsps[ans].question_id == 10 && rsps[ans].answer_id == i {
+                                field = "DA"
+                            }
+                        }
+                        
+                        var label = UILabel(frame: CGRect(x:0, y:i*60, width:60, height:60))
+                        label.textAlignment = NSTextAlignment.center
+                        label.font = UIFont.italicSystemFont(ofSize: 14)
+                        label.text = field
+                        if field=="DA" {
+                            label.textColor = UIColor.red
+                        }
+                        columnView.addSubview(label)
+                    }
+                    columnsView.addSubview(columnView)
+                }
+                break
+            }
+        }
+        
     }
     
     func populateIstoricDeplasari(){
