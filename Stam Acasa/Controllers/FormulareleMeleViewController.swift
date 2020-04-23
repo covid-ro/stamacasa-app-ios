@@ -86,52 +86,57 @@ class FormulareleMeleViewController: UIViewController {
     }
     
     func populateIstoricDeplasari(){
-        var movementFormsFromUserDefaults: [AccountData.Movement] = []
-        if let encodedData = UserDefaults.standard.object(forKey: "movementForms") as? Data {
+        var accounts: [AccountData] = []
+        if let encodedData = UserDefaults.standard.object(forKey: "accounts") as? Data {
             let decoder = JSONDecoder()
-            if let movementForms = try? decoder.decode([AccountData.Movement].self, from: encodedData) {
-                movementFormsFromUserDefaults = movementForms
+            if let accs = try? decoder.decode([AccountData].self, from: encodedData) {
+                accounts = accs
             }
         }
         
-        var yPositionInContentView: CGFloat = 890.0
-        
-        let istoricDeplasariRow = Bundle.main.loadNibNamed("IstoricDeplasariRow", owner: self, options: nil)?.first as! IstoricDeplasariRow
-        istoricDeplasariRow.translatesAutoresizingMaskIntoConstraints = true
-        istoricDeplasariRow.frame = CGRect(x: 20.0, y: yPositionInContentView, width: UIScreen.main.bounds.width - 40.0, height: 60.0)
-        istoricDeplasariRow.separatorView.isHidden = false
-        istoricDeplasariRow.dateLabel.text = "Data"
-        istoricDeplasariRow.leaveLabel.text = "Plecare"
-        istoricDeplasariRow.arrivalLabel.text = "Sosire"
-        istoricDeplasariRow.reasonLabel.text = "Motiv"
-        istoricDeplasariRow.contactLabel.text = "Contact"
-        contentView.addSubview(istoricDeplasariRow)
-        
-        yPositionInContentView += istoricDeplasariRow.frame.size.height
+        for account in accounts{
+            if StamAcasaSingleton.sharedInstance.actualAccountId == account.accountId{
+                
+                var yPositionInContentView: CGFloat = 890.0
+                
+                let istoricDeplasariRow = Bundle.main.loadNibNamed("IstoricDeplasariRow", owner: self, options: nil)?.first as! IstoricDeplasariRow
+                istoricDeplasariRow.translatesAutoresizingMaskIntoConstraints = true
+                istoricDeplasariRow.frame = CGRect(x: 20.0, y: yPositionInContentView, width: UIScreen.main.bounds.width - 40.0, height: 60.0)
+                istoricDeplasariRow.separatorView.isHidden = false
+                istoricDeplasariRow.dateLabel.text = "Data"
+                istoricDeplasariRow.leaveLabel.text = "Plecare"
+                istoricDeplasariRow.arrivalLabel.text = "Sosire"
+                istoricDeplasariRow.reasonLabel.text = "Motiv"
+                istoricDeplasariRow.contactLabel.text = "Contact"
+                contentView.addSubview(istoricDeplasariRow)
+                
+                yPositionInContentView += istoricDeplasariRow.frame.size.height
 
-        var counter: Int = 0
-        for movement in movementFormsFromUserDefaults{
-            
-            let istoricDeplasariRow = Bundle.main.loadNibNamed("IstoricDeplasariRow", owner: self, options: nil)?.first as! IstoricDeplasariRow
-            
-            istoricDeplasariRow.translatesAutoresizingMaskIntoConstraints = true
-            
-            istoricDeplasariRow.frame = CGRect(x: 20.0, y: yPositionInContentView, width: UIScreen.main.bounds.width - 40.0, height: 60.0)
-            istoricDeplasariRow.separatorView.isHidden = true
-            istoricDeplasariRow.dateLabel.text = movementFormsFromUserDefaults[counter].date
-            istoricDeplasariRow.leaveLabel.text = movementFormsFromUserDefaults[counter].leaveTime
-            istoricDeplasariRow.arrivalLabel.text = movementFormsFromUserDefaults[counter].arriveTime
-            istoricDeplasariRow.reasonLabel.text = movementFormsFromUserDefaults[counter].reason
-            istoricDeplasariRow.contactLabel.text = movementFormsFromUserDefaults[counter].directContact
-            contentView.addSubview(istoricDeplasariRow)
-            
-            yPositionInContentView += istoricDeplasariRow.frame.size.height
-            counter += 1
-            
-            scrollviewHeight.constant += istoricDeplasariRow.frame.size.height
-            contentView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: scrollviewHeight.constant)
+                for movement in account.movements ?? []{
+                    
+                    let istoricDeplasariRow = Bundle.main.loadNibNamed("IstoricDeplasariRow", owner: self, options: nil)?.first as! IstoricDeplasariRow
+                    
+                    istoricDeplasariRow.translatesAutoresizingMaskIntoConstraints = true
+                    
+                    istoricDeplasariRow.frame = CGRect(x: 20.0, y: yPositionInContentView, width: UIScreen.main.bounds.width - 40.0, height: 60.0)
+                    istoricDeplasariRow.separatorView.isHidden = true
+                    istoricDeplasariRow.dateLabel.text = movement.date
+                    istoricDeplasariRow.leaveLabel.text = movement.leaveTime
+                    istoricDeplasariRow.arrivalLabel.text = movement.arriveTime
+                    istoricDeplasariRow.reasonLabel.text = movement.reason
+                    istoricDeplasariRow.contactLabel.text = movement.directContact
+                    contentView.addSubview(istoricDeplasariRow)
+                    
+                    yPositionInContentView += istoricDeplasariRow.frame.size.height
+                    
+                    scrollviewHeight.constant += istoricDeplasariRow.frame.size.height
+                    contentView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: scrollviewHeight.constant)
+                }
+                break
+            }
         }
-    }
+        
+}
 
     @IBAction func formulareEvaluareTapped(_ sender: Any) {
         let vc = UIStoryboard.Main.instantiateFlowStepVc()
