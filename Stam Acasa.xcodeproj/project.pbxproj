@@ -25,6 +25,7 @@
 		927F4881243E4282009CFC40 /* localitati.json in Resources */ = {isa = PBXBuildFile; fileRef = 927F4880243E4282009CFC40 /* localitati.json */; };
 		927F4883243E4639009CFC40 /* LocalitatiStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F4882243E4639009CFC40 /* LocalitatiStruct.swift */; };
 		927F48A9243F436D009CFC40 /* iOSDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927F48A8243F436D009CFC40 /* iOSDropDown.swift */; };
+		928E85962451962000CB390C /* DetaliiContViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928E85952451962000CB390C /* DetaliiContViewController.swift */; };
 		FA02B466243DFEF200F47DC2 /* StamAcasaSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B465243DFEF200F47DC2 /* StamAcasaSingleton.swift */; };
 		FA02B46A243E00DA00F47DC2 /* json_stam_acasa_alternativa.json in Resources */ = {isa = PBXBuildFile; fileRef = FA02B469243E00DA00F47DC2 /* json_stam_acasa_alternativa.json */; };
 		FA02B46C243E0CEE00F47DC2 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */; };
@@ -74,6 +75,7 @@
 		927F4880243E4282009CFC40 /* localitati.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = localitati.json; sourceTree = "<group>"; };
 		927F4882243E4639009CFC40 /* LocalitatiStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalitatiStruct.swift; sourceTree = "<group>"; };
 		927F48A8243F436D009CFC40 /* iOSDropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSDropDown.swift; sourceTree = "<group>"; };
+		928E85952451962000CB390C /* DetaliiContViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetaliiContViewController.swift; sourceTree = "<group>"; };
 		FA02B465243DFEF200F47DC2 /* StamAcasaSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StamAcasaSingleton.swift; sourceTree = "<group>"; };
 		FA02B469243E00DA00F47DC2 /* json_stam_acasa_alternativa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = json_stam_acasa_alternativa.json; sourceTree = "<group>"; };
 		FA02B46B243E0CEE00F47DC2 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				FA082495244756A100F2AACD /* DespreViewController.swift */,
 				FA082497244759DF00F2AACD /* SetariViewController.swift */,
 				FA6F231F244847210022F361 /* FormularDeplasariViewController.swift */,
+				928E85952451962000CB390C /* DetaliiContViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				FA08248E244711F300F2AACD /* SideMenuView.swift in Sources */,
 				922CCDE12444A5D200BCE4FA /* AltePersoaneViewController.swift in Sources */,
 				FA02B46C243E0CEE00F47DC2 /* UIStoryboard.swift in Sources */,
+				928E85962451962000CB390C /* DetaliiContViewController.swift in Sources */,
 				FA6F2322244881490022F361 /* PaddingLabel.swift in Sources */,
 				927F4875243E0868009CFC40 /* FlowStepViewController.swift in Sources */,
 				FA08249A24476D1800F2AACD /* Date.swift in Sources */,
