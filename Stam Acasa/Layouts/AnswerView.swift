@@ -14,6 +14,7 @@ class AnswerView: UIView {
     var decision: MyData.Data.Flow.FlowSection.Question.QuestionAnswer.AnswerDecision?
     
     var section_id: String?
+    var section_name: String?
     var question_id: Int?
     var question_text: String?
     var answer_id: Int?
