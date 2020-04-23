@@ -541,11 +541,15 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         
         let date = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM HH:mm"
-        let newResponseData = ResponseData(date:  formatter.string(from: date), flow_id: passedFlowId, responses: answersToStore)
+        formatter.dateFormat = "dd.MM"
+        
+        let formatterHour = DateFormatter()
+        formatterHour.dateFormat = "dd.MM HH:mm"
+        
+        let newResponseData = ResponseData(date:  formatter.string(from: date),dateWithHour: formatterHour.string(from: date), flow_id: passedFlowId, responses: answersToStore)
         
         account?.responses?.append(newResponseData)
- 
+        
         accounts?.append(account!)
         //print(accounts)
         
@@ -572,15 +576,18 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         
         for i in 0..<(accounts?.count ?? 0){
             if accounts![i].accountId == StamAcasaSingleton.sharedInstance.actualAccountId{
-                    
-                    let date = Date()
-                    let formatter = DateFormatter()
-                    formatter.dateFormat = "dd.MM HH:mm"
-
-                    let newResponseData = ResponseData(date:  formatter.string(from: date), flow_id: passedFlowId, responses: answersToStore)
-                    //responses?.append(newResponseData)
-                    accounts![i].responses?.insert(newResponseData, at: 0)
-                    
+                
+                let date = Date()
+                let formatter = DateFormatter()
+                formatter.dateFormat = "dd.MM"
+                
+                let formatterHour = DateFormatter()
+                formatterHour.dateFormat = "dd.MM HH:mm"
+                
+                let newResponseData = ResponseData(date:  formatter.string(from: date),dateWithHour: formatterHour.string(from: date), flow_id: passedFlowId, responses: answersToStore)
+                //responses?.append(newResponseData)
+                accounts![i].responses?.insert(newResponseData, at: 0)
+                
                     let encoder = JSONEncoder()
                     if let encoded = try? encoder.encode(accounts) {
                         let defaults = UserDefaults.standard

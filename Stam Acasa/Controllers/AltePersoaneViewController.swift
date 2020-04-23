@@ -57,7 +57,7 @@ class AltePersoaneViewController: UIViewController, ProfileActionButton {
             
             profileView.profileName.text = account.numePrenume
             profileView.profileLocation.text = account.localitate
-            profileView.lastFormDate.text = account.responses?.last?.date
+            profileView.lastFormDate.text = account.responses?.last?.dateWithHour
             
             profileView.delegate = self
             
