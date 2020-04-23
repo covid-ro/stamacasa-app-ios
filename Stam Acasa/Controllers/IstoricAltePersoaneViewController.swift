@@ -10,20 +10,12 @@ import UIKit
 
 class IstoricAltePersoaneViewController: UIViewController {
 
-    //@IBOutlet weak var scrollViewSimptome: UIScrollView!
     @IBOutlet weak var stamAcasaLogo: UIImageView!
     @IBOutlet weak var scrollViewSimptome: UIScrollView!
     
-    
-    /*
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var istoricView: UIView!
-    @IBOutlet weak var columnsView: UIView!
-    @IBOutlet weak var istoricHeight: NSLayoutConstraint!
-    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var scrollviewHeight: NSLayoutConstraint!
-    */
-    
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     
     override func viewDidLoad() {
@@ -36,6 +28,17 @@ class IstoricAltePersoaneViewController: UIViewController {
         stamAcasaLogo.addGestureRecognizer(menuTapGesture)
         
         
+        populateIstoricSimptome()
+        
+        contentView.translatesAutoresizingMaskIntoConstraints = true
+        scrollviewHeight.constant = 700
+        contentView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: scrollviewHeight.constant)
+        
+        populateIstoricDeplasari()
+        
+    }
+    
+    func populateIstoricSimptome(){
         var accounts = [] as [AccountData]?
         
         if let encodedData = UserDefaults.standard.object(forKey: "accounts") as? Data {
@@ -68,6 +71,7 @@ class IstoricAltePersoaneViewController: UIViewController {
                         var field = "NU" as String
                         
                         for ans in 0...rsps.count-1{
+                            //print(ans)
                             if rsps[ans].question_id == 10 && rsps[ans].answer_id == i {
                                 field = "DA"
                             }
@@ -89,12 +93,8 @@ class IstoricAltePersoaneViewController: UIViewController {
                 break
             }
         }
-        
-        
     }
     
-    
-    /*
        func populateIstoricDeplasari(){
         var accounts: [AccountData] = []
         if let encodedData = UserDefaults.standard.object(forKey: "accounts") as? Data {
@@ -107,7 +107,7 @@ class IstoricAltePersoaneViewController: UIViewController {
         for account in accounts{
             if StamAcasaSingleton.sharedInstance.actualAccountId == account.accountId{
                 
-                var yPositionInContentView: CGFloat = 890.0
+                var yPositionInContentView: CGFloat = 545.0
                 
                 let istoricDeplasariRow = Bundle.main.loadNibNamed("IstoricDeplasariRow", owner: self, options: nil)?.first as! IstoricDeplasariRow
                 istoricDeplasariRow.translatesAutoresizingMaskIntoConstraints = true
@@ -123,6 +123,8 @@ class IstoricAltePersoaneViewController: UIViewController {
                 yPositionInContentView += istoricDeplasariRow.frame.size.height
 
                 for movement in account.movements ?? []{
+                    
+                    print(movement)
                     
                     let istoricDeplasariRow = Bundle.main.loadNibNamed("IstoricDeplasariRow", owner: self, options: nil)?.first as! IstoricDeplasariRow
                     
@@ -147,7 +149,7 @@ class IstoricAltePersoaneViewController: UIViewController {
         }
         
     }
-    */
+    
     
     @objc func menuTapped(_ sender : UITapGestureRecognizer){
         let menuView = Bundle.main.loadNibNamed("SideMenuView", owner: self, options: nil)?.first as! SideMenuView
