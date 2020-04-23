@@ -543,7 +543,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         
         let date = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM\nHH:mm"
+        formatter.dateFormat = "dd.MM HH:mm"
         let newResponseData = ResponseData(date:  formatter.string(from: date), flow_id: passedFlowId, responses: answersToStore)
         
         account?.responses?.append(newResponseData)
@@ -577,7 +577,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                     
                     let date = Date()
                     let formatter = DateFormatter()
-                    formatter.dateFormat = "dd.MM\nHH:mm"
+                    formatter.dateFormat = "dd.MM HH:mm"
 
                     let newResponseData = ResponseData(date:  formatter.string(from: date), flow_id: passedFlowId, responses: answersToStore)
                     //responses?.append(newResponseData)

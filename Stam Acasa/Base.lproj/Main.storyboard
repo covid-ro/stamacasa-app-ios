@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zI7-HF-e5b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zI7-HF-e5b">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1186,7 +1186,7 @@ STAM ACASA</string>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04j-zI-892">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBU-J1-vLB">
+                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBU-J1-vLB">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgH-sV-ve2">
@@ -1216,18 +1216,18 @@ STAM ACASA</string>
                                             <constraint firstItem="vgH-sV-ve2" firstAttribute="top" secondItem="UBU-J1-vLB" secondAttribute="top" constant="30" id="9me-UO-XN2"/>
                                             <constraint firstItem="0Cf-cq-cNF" firstAttribute="leading" secondItem="UBU-J1-vLB" secondAttribute="leading" constant="20" id="QIO-oI-U9f"/>
                                             <constraint firstItem="0Cf-cq-cNF" firstAttribute="top" secondItem="vgH-sV-ve2" secondAttribute="bottom" constant="30" id="dVC-ix-ggs"/>
-                                            <constraint firstAttribute="trailing" secondItem="vgH-sV-ve2" secondAttribute="trailing" constant="20" id="fYq-UC-qnP"/>
-                                            <constraint firstItem="vgH-sV-ve2" firstAttribute="leading" secondItem="UBU-J1-vLB" secondAttribute="leading" constant="20" id="nzF-IP-1we"/>
+                                            <constraint firstAttribute="trailing" secondItem="vgH-sV-ve2" secondAttribute="trailing" constant="20" id="k1A-ib-bfZ"/>
                                             <constraint firstAttribute="trailing" secondItem="0Cf-cq-cNF" secondAttribute="trailing" constant="20" id="xhq-VL-u8G"/>
+                                            <constraint firstItem="vgH-sV-ve2" firstAttribute="leading" secondItem="UBU-J1-vLB" secondAttribute="leading" constant="20" id="zaC-UY-cpq"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="UBU-J1-vLB" firstAttribute="top" secondItem="04j-zI-892" secondAttribute="top" id="A9Y-oM-Qx0"/>
-                                    <constraint firstAttribute="trailing" secondItem="UBU-J1-vLB" secondAttribute="trailing" id="Cg8-Qj-Wtc"/>
-                                    <constraint firstItem="UBU-J1-vLB" firstAttribute="leading" secondItem="04j-zI-892" secondAttribute="leading" id="k7v-2D-kdm"/>
                                     <constraint firstItem="UBU-J1-vLB" firstAttribute="width" secondItem="04j-zI-892" secondAttribute="width" id="osf-G7-rIo"/>
+                                    <constraint firstItem="UBU-J1-vLB" firstAttribute="leading" secondItem="04j-zI-892" secondAttribute="leading" id="pFo-QY-6X4"/>
                                     <constraint firstItem="UBU-J1-vLB" firstAttribute="height" secondItem="04j-zI-892" secondAttribute="height" priority="249" id="sNl-23-630"/>
+                                    <constraint firstAttribute="trailing" secondItem="UBU-J1-vLB" secondAttribute="trailing" id="www-6x-bYI"/>
                                     <constraint firstAttribute="bottom" secondItem="UBU-J1-vLB" secondAttribute="bottom" id="yi6-9H-iHd"/>
                                 </constraints>
                             </scrollView>
@@ -1235,20 +1235,22 @@ STAM ACASA</string>
                         <color key="backgroundColor" red="0.97226566076278687" green="0.96864122152328491" blue="0.97280269861221313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="04j-zI-892" firstAttribute="top" secondItem="jxG-5g-Lav" secondAttribute="topMargin" id="6st-Uo-VfK"/>
-                            <constraint firstItem="hbJ-Cv-tJS" firstAttribute="trailing" secondItem="04j-zI-892" secondAttribute="trailing" id="Wqb-ux-ZZD"/>
-                            <constraint firstItem="04j-zI-892" firstAttribute="leading" secondItem="hbJ-Cv-tJS" secondAttribute="leading" id="olP-5u-Gbu"/>
+                            <constraint firstAttribute="trailing" secondItem="04j-zI-892" secondAttribute="trailing" id="T9e-jP-mzc"/>
+                            <constraint firstItem="04j-zI-892" firstAttribute="leading" secondItem="jxG-5g-Lav" secondAttribute="leading" id="q7d-48-i0V"/>
                             <constraint firstItem="hbJ-Cv-tJS" firstAttribute="bottom" secondItem="04j-zI-892" secondAttribute="bottom" id="zFd-am-as0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hbJ-Cv-tJS"/>
                     </view>
                     <connections>
+                        <outlet property="adaugaAltePersoaneButton" destination="0Cf-cq-cNF" id="8yO-Fw-SGf"/>
                         <outlet property="contentView" destination="UBU-J1-vLB" id="aTp-Xs-xHH"/>
                         <outlet property="contentViewHeight" destination="sNl-23-630" id="ZRm-f4-wTK"/>
+                        <outlet property="scrollView" destination="04j-zI-892" id="SII-Xb-Ks0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jb-IQ-P1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1762" y="913"/>
+            <point key="canvasLocation" x="1760.8" y="912.5937031484259"/>
         </scene>
         <!--Istoric Complet View Controller-->
         <scene sceneID="1Kc-Z5-xge">
@@ -2135,8 +2137,8 @@ STAM ACASA</string>
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.left" catalog="system" width="128" height="98"/>
-        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
+        <image name="arrow.left" catalog="system" width="64" height="48"/>
+        <image name="checkmark.circle" catalog="system" width="64" height="60"/>
         <image name="logoDIGI" width="53.333332061767578" height="10"/>
         <image name="logoGOV" width="76.666664123535156" height="21.333333969116211"/>
         <image name="logoSTS" width="21.333333969116211" height="21.333333969116211"/>
