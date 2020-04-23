@@ -23,11 +23,7 @@ class IstoricCompletViewController: UIViewController{
         menuLogoButton.addGestureRecognizer(menuTapGesture)
         
         
-        
-        
         var accounts = [] as [AccountData]?
-        var responses : [ResponseData]?
-        responses = []
         
         if let encodedData = UserDefaults.standard.object(forKey: "accounts") as? Data {
             let decoder = JSONDecoder()
@@ -38,12 +34,6 @@ class IstoricCompletViewController: UIViewController{
         
         for i in 0..<(accounts?.count ?? 0){
             if accounts![i].accountId == StamAcasaSingleton.sharedInstance.actualAccountId{
-                
-                //accounts![i].responses?.insert(newResponseData, at: 0)
-
-                //var responses : [ResponseData]?
-                //responses = []
-                //for report in 0..<responses!.count  {
                 
                 for report in 0..<accounts![i].responses!.count  {
                     
@@ -81,12 +71,13 @@ class IstoricCompletViewController: UIViewController{
                     }
                     scrollView.addSubview(columnView)
                 }
-            
+                scrollView.contentSize = CGSize.init(width: accounts![i].responses!.count * 60, height: 420)
+                
                 break
             }
         }
         
-        scrollView.contentSize = CGSize.init(width: responses!.count * 60, height: 420)
+        
     }
     
     @objc func menuTapped(_ sender : UITapGestureRecognizer){
