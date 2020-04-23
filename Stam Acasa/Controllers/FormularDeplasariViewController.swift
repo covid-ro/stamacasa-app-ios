@@ -126,20 +126,26 @@ class FormularDeplasariViewController: UIViewController, UITextFieldDelegate {
                 storeMovement.directContact = "NU"
             }
             
-            var movementFormsFromUserDefaults: [AccountData.Movement] = []
-            if let encodedData = UserDefaults.standard.object(forKey: "movementForms") as? Data {
+            var accounts: [AccountData] = []
+            if let encodedData = UserDefaults.standard.object(forKey: "accounts") as? Data {
                 let decoder = JSONDecoder()
-                if let movementForms = try? decoder.decode([AccountData.Movement].self, from: encodedData) {
-                    movementFormsFromUserDefaults = movementForms
+                if let accs = try? decoder.decode([AccountData].self, from: encodedData) {
+                    accounts = accs
                 }
             }
             
-            movementFormsFromUserDefaults.append(storeMovement)
+            for i in 0..<(accounts.count ?? 0){
+                if accounts[i].accountId == StamAcasaSingleton.sharedInstance.actualAccountId{
+                    accounts[i].movements?.insert(storeMovement, at: 0)
+                    break
+                }
+                
+            }
             
             let encoder = JSONEncoder()
-            if let encoded = try? encoder.encode(movementFormsFromUserDefaults) {
+            if let encoded = try? encoder.encode(accounts) {
                 let defaults = UserDefaults.standard
-                defaults.set(encoded, forKey: "movementForms")
+                defaults.set(encoded, forKey: "accounts")
             }
             UserDefaults.standard.synchronize()
             
