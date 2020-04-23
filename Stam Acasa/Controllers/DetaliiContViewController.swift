@@ -23,7 +23,7 @@ class DetaliiContViewController: UIViewController {
         stamAcasaLogo.addGestureRecognizer(menuTapGesture)
         
         ///de sters urmatoarea linie:
-        StamAcasaSingleton.sharedInstance.actualAccountId = 1
+        StamAcasaSingleton.sharedInstance.actualAccountId = 0
         
         let titleAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: UIColor.init(red: 60.0/255, green: 38.0/255, blue: 83.0/255, alpha: 1),
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25)]

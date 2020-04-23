@@ -11,6 +11,7 @@ import UIKit
 
 public struct ResponseData: Codable,Hashable {
     var date: String?
+    var dateWithHour: String?
     var flow_id: String?
     var responses: [Answer]?
 
