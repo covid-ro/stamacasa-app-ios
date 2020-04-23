@@ -97,12 +97,12 @@ class AltePersoaneViewController: UIViewController, ProfileActionButton {
          self.navigationController?.pushViewController(vc, animated: true)
      }
      
-     func istoricRaportariTapped(accountId: Int) {
-//         StamAcasaSingleton.sharedInstance.actualAccountId = accountId
-//        let vc = UIStoryboard.Main.instantia
-//         self.navigationController?.pushViewController(vc, animated: true)
-     }
-     
+    func istoricRaportariTapped(accountId: Int) {
+        StamAcasaSingleton.sharedInstance.actualAccountId = accountId
+        let vc = UIStoryboard.Main.instantiateIstoricAltePersoaneVc()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
 }
 

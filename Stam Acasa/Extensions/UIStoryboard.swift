@@ -71,5 +71,11 @@ extension UIStoryboard {
             let controller = storyboard.instantiateViewController(withIdentifier: "detaliiContVc") as! DetaliiContViewController
             return controller
         }
+        
+        static func instantiateIstoricAltePersoaneVc() -> IstoricAltePersoaneViewController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "istoricAltePersoaneVc") as! IstoricAltePersoaneViewController
+            return controller
+        }
     }
 }
