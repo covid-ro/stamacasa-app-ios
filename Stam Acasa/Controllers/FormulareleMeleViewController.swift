@@ -70,6 +70,9 @@ class FormulareleMeleViewController: UIViewController {
                         var field = "NU" as String
                         
                         for ans in 0...rsps.count-1{
+                            
+                            print(ans)
+                            
                             if rsps[ans].question_id == 10 && rsps[ans].answer_id == i {
                                 field = "DA"
                             }
