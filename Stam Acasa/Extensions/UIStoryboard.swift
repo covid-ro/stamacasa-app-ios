@@ -65,5 +65,11 @@ extension UIStoryboard {
             let controller = storyboard.instantiateViewController(withIdentifier: "formularDeplasariVc") as! FormularDeplasariViewController
             return controller
         }
+        
+        static func instantiateDetaliiContViewController() -> DetaliiContViewController {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "detaliiContVc") as! DetaliiContViewController
+            return controller
+        }
     }
 }

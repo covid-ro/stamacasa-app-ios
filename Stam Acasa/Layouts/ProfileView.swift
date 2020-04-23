@@ -25,6 +25,6 @@ public class ProfileView: UIView{
     }
     
     @IBAction func actionButtonTapped(_ sender: Any) {
-        delegate?.actionButtonTapped(tag: self.tag)
+        delegate?.actionButtonTapped(accountId: self.tag)
     }
 }

@@ -43,44 +43,73 @@ class AltePersoaneViewController: UIViewController, ProfileActionButton {
             let decoder = JSONDecoder()
             if let acx = try? decoder.decode([AccountData].self, from: encodedData) {
                 accounts = acx
-            }
+        }
         }
         
-        var idCounter = 0
         for account in accounts{
-            let profileView = Bundle.main.loadNibNamed("ProfileView", owner: self, options: nil)?.first as! ProfileView
-            profileView.translatesAutoresizingMaskIntoConstraints = true
-            profileView.tag = idCounter
-            
-            profileView.frame = CGRect(x: 20.0, y: yPositionToAddViews, width: self.view.frame.size.width - 40.0, height: 140.0)
-            yPositionToAddViews += profileView.frame.size.height + 30.0
-            
-            profileView.profileName.text = account.numePrenume
-            profileView.profileLocation.text = account.localitate
-            profileView.lastFormDate.text = account.responses?.last?.dateWithHour
-            
-            profileView.delegate = self
-            
-            self.contentView.addSubview(profileView)
-            
-            idCounter += 1
-            
-            contentView.frame.size.height += profileView.frame.size.height + 30.0
-            contentViewHeight.constant = contentView.frame.size.height
-            
+            if account.accountId != 0{
+                let profileView = Bundle.main.loadNibNamed("ProfileView", owner: self, options: nil)?.first as! ProfileView
+                profileView.translatesAutoresizingMaskIntoConstraints = true
+                profileView.tag = account.accountId ?? 0
+                
+                profileView.frame = CGRect(x: 20.0, y: yPositionToAddViews, width: self.view.frame.size.width - 40.0, height: 140.0)
+                yPositionToAddViews += profileView.frame.size.height + 30.0
+                
+                profileView.profileName.text = account.numePrenume
+                profileView.profileLocation.text = account.localitate
+                profileView.lastFormDate.text = account.responses?.last?.dateWithHour
+                
+                profileView.delegate = self
+                
+                self.contentView.addSubview(profileView)
+                
+                contentView.frame.size.height += profileView.frame.size.height + 30.0
+                contentViewHeight.constant = contentView.frame.size.height
+            }
         }
         // Do any additional setup after loading the view.
     }
     
-    func actionButtonTapped(tag: Int) {
+    func actionButtonTapped(accountId: Int) {
         let profileViewActionView = Bundle.main.loadNibNamed("ProfileViewActionView", owner: self, options: nil)?.first as! ProfileViewActionView
         profileViewActionView.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height - 175.0)
+        profileViewActionView.accountId = accountId
+        profileViewActionView.delegate = self
         
         self.view.addSubview(profileViewActionView)
     }
     
+    func detaliiProfilTapped(accountId: Int) {
+        StamAcasaSingleton.sharedInstance.actualAccountId = accountId
+        let vc = UIStoryboard.Main.instantiateDetaliiContViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+     }
+     
+     func adaugareInfoEvaluareTapped(accountId: Int) {
+         StamAcasaSingleton.sharedInstance.actualAccountId = accountId
+        let vc = UIStoryboard.Main.instantiateFlowStepVc()
+         self.navigationController?.pushViewController(vc, animated: true)
+     }
+     
+     func adaugareInformatiiDeplasariTapped(accountId: Int) {
+         StamAcasaSingleton.sharedInstance.actualAccountId = accountId
+        let vc = UIStoryboard.Main.instantiateFormularDeplasariVc()
+         self.navigationController?.pushViewController(vc, animated: true)
+     }
+     
+     func istoricRaportariTapped(accountId: Int) {
+//         StamAcasaSingleton.sharedInstance.actualAccountId = accountId
+//        let vc = UIStoryboard.Main.instantia
+//         self.navigationController?.pushViewController(vc, animated: true)
+     }
+     
+    
 }
 
 protocol ProfileActionButton{
-    func actionButtonTapped(tag: Int)
+    func actionButtonTapped(accountId: Int)
+    func detaliiProfilTapped(accountId: Int)
+    func adaugareInfoEvaluareTapped(accountId: Int)
+    func adaugareInformatiiDeplasariTapped(accountId: Int)
+    func istoricRaportariTapped(accountId: Int)
 }
