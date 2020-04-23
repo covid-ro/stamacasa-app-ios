@@ -68,7 +68,7 @@ class FormularDeplasariViewController: UIViewController, UITextFieldDelegate {
         daView.backgroundColor = UIColor.white
         nuView.backgroundColor = UIColor.white
         
-        view?.backgroundColor = UIColor.gray
+        view?.backgroundColor = UIColor(red: 189.0/255.0, green: 146.0/255.0, blue: 190.0/255.0, alpha: 1.0)
     }
     
     @objc func menuTapped(_ sender : UITapGestureRecognizer){
@@ -120,7 +120,7 @@ class FormularDeplasariViewController: UIViewController, UITextFieldDelegate {
             storeMovement.arriveTime = arrivalTimeString
             storeMovement.reason = motivulDeplasariInputField.text
             
-            if daView.backgroundColor == UIColor.gray{
+            if daView.backgroundColor == UIColor(red: 189.0/255.0, green: 146.0/255.0, blue: 190.0/255.0, alpha: 1.0){
                 storeMovement.directContact = "DA"
             } else{
                 storeMovement.directContact = "NU"

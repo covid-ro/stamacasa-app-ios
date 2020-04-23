@@ -1219,7 +1219,7 @@ STAM ACASA</string>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="vgH-sV-ve2" firstAttribute="top" secondItem="UBU-J1-vLB" secondAttribute="top" constant="30" id="9me-UO-XN2"/>
                                             <constraint firstItem="0Cf-cq-cNF" firstAttribute="leading" secondItem="UBU-J1-vLB" secondAttribute="leading" constant="20" id="QIO-oI-U9f"/>
@@ -1707,7 +1707,7 @@ STAM ACASA</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" red="0.97226566076278687" green="0.96864122152328491" blue="0.97280269861221313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Hv2-bQ-coA" secondAttribute="trailing" constant="15" id="auQ-AV-hGr"/>
                                             <constraint firstAttribute="bottom" secondItem="Hv2-bQ-coA" secondAttribute="bottom" constant="20" id="axZ-zb-h4v"/>
@@ -2036,7 +2036,7 @@ STAM ACASA</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" red="0.97226566076278687" green="0.96864122152328491" blue="0.97280269861221313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="xpz-nX-Z9O" firstAttribute="top" secondItem="GDH-nB-DoN" secondAttribute="bottom" constant="20" id="1md-hI-1nH"/>
                                             <constraint firstItem="Dwi-Ce-8Rj" firstAttribute="leading" secondItem="10g-eX-sMD" secondAttribute="leading" constant="20" id="27F-1B-Qsg"/>

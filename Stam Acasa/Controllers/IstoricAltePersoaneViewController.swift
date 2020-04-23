@@ -21,7 +21,7 @@ class IstoricAltePersoaneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        StamAcasaSingleton.sharedInstance.actualAccountId = 0
+        //StamAcasaSingleton.sharedInstance.actualAccountId = 0
         
         stamAcasaLogo.isUserInteractionEnabled = true
         let menuTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.menuTapped(_:)))
@@ -31,7 +31,7 @@ class IstoricAltePersoaneViewController: UIViewController {
         populateIstoricSimptome()
         
         contentView.translatesAutoresizingMaskIntoConstraints = true
-        scrollviewHeight.constant = 700
+        scrollviewHeight.constant = 630
         contentView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: scrollviewHeight.constant)
         
         populateIstoricDeplasari()
@@ -107,7 +107,7 @@ class IstoricAltePersoaneViewController: UIViewController {
         for account in accounts{
             if StamAcasaSingleton.sharedInstance.actualAccountId == account.accountId{
                 
-                var yPositionInContentView: CGFloat = 545.0
+                var yPositionInContentView: CGFloat = 565.0
                 
                 let istoricDeplasariRow = Bundle.main.loadNibNamed("IstoricDeplasariRow", owner: self, options: nil)?.first as! IstoricDeplasariRow
                 istoricDeplasariRow.translatesAutoresizingMaskIntoConstraints = true
