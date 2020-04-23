@@ -170,7 +170,6 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                             for answer in question.question_answers ?? [] {
                                 let answerView = Bundle.main.loadNibNamed("AnswerView", owner: self, options: nil)?.first as! AnswerView
                                 
-                                print(section.section_name)
                                 answerView.section_id = section.section_id
                                 answerView.section_name = section.section_name
                                 answerView.question_id = question.question_id
