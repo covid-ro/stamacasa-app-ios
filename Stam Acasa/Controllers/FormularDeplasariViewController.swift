@@ -151,7 +151,14 @@ class FormularDeplasariViewController: UIViewController, UITextFieldDelegate {
             
             let vc = UIStoryboard.Main.instantiateHomeVc()
             vc.message = "Formularul dumneavoastra a fost inregistrat cu succes!"
+            if StamAcasaSingleton.sharedInstance.actualAccountId > 0{
+                StamAcasaSingleton.sharedInstance.actualAccountId = 0
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    vc.pageMenu!.moveToPage(1)
+                }
+            }
             self.navigationController?.pushViewController(vc, animated: true)
+            
             
         } else{
             validationFormAlert(title: "EROARE", message: "Formularul nu este valid")

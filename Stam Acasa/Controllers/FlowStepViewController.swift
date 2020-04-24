@@ -517,12 +517,19 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                     
                     saveAccount(answersToStore: answersToStore)
                     
+                    StamAcasaSingleton.sharedInstance.actualAccountId = 0
                     let vc = UIStoryboard.Main.instantiateProfilCompletVc()
                     self.navigationController?.pushViewController(vc, animated: true)
                 } else {
                     saveResponseData(answersToStore: answersToStore)
                     let vc = UIStoryboard.Main.instantiateHomeVc()
                     vc.message = "Raport evaluare complet"
+                    if StamAcasaSingleton.sharedInstance.actualAccountId > 0{
+                        StamAcasaSingleton.sharedInstance.actualAccountId = 0
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            vc.pageMenu!.moveToPage(1)
+                        }
+                    }
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             }
