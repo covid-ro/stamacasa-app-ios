@@ -12,11 +12,6 @@ struct MyData: Decodable,Hashable,Encodable {
     let meta: Meta?
     let data: Data?
     
-    init(){
-        meta = Meta()
-        data = Data()
-    }
-    
     static func ==(left:MyData, right:MyData) -> Bool {
         return left.meta == right.meta &&
             left.data == right.data
@@ -134,6 +129,28 @@ struct MyData: Decodable,Hashable,Encodable {
                     }
                 }
             }
+        }
+    }
+}
+
+struct ForceUpdate:Decodable,Hashable,Encodable {
+    var meta: Meta?
+    var data: Data?
+    
+    struct Meta:Decodable,Hashable,Encodable {
+        var updated_ts: String?
+    }
+    
+    struct Data:Decodable,Hashable,Encodable {
+        var ios: Ios?
+        var android: Android?
+        
+        struct Ios:Decodable,Hashable,Encodable {
+            var allowedversions: [String]?
+        }
+        
+        struct Android:Decodable,Hashable,Encodable {
+            var allowedversions: [String]?
         }
     }
 }

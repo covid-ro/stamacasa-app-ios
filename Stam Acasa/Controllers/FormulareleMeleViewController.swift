@@ -116,7 +116,7 @@ class FormulareleMeleViewController: UIViewController {
         for account in accounts{
             if StamAcasaSingleton.sharedInstance.actualAccountId == account.accountId && account.movements!.count > 0 {
                 
-                var yPositionInContentView: CGFloat = istoricDeplasariLabel.frame.origin.y + istoricDeplasariLabel.frame.size.height + 20.0
+                var yPositionInContentView: CGFloat = istoricDeplasariLabel.frame.origin.y + istoricDeplasariLabel.frame.size.height + 10.0
                 
                 let istoricDeplasariRow = Bundle.main.loadNibNamed("IstoricDeplasariRow", owner: self, options: nil)?.first as! IstoricDeplasariRow
                 istoricDeplasariRow.translatesAutoresizingMaskIntoConstraints = true
