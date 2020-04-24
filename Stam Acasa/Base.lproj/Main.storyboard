@@ -243,22 +243,13 @@ STAM ACASA</string>
                                         <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2j6-Xy-OjT">
-                                        <rect key="frame" x="306" y="22.5" width="59" height="30"/>
-                                        <state key="normal" title="home -&gt;"/>
-                                        <connections>
-                                            <segue destination="6yb-O1-8UU" kind="show" id="jqy-FG-FVB"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96836704019999997" green="0.96484512089999996" blue="0.96022242310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="tOT-6n-Avk" firstAttribute="centerY" secondItem="Akm-IO-PYk" secondAttribute="centerY" id="7fK-tm-Ykh"/>
                                     <constraint firstAttribute="bottom" secondItem="wto-Gk-eeD" secondAttribute="bottom" id="DJc-ac-OR0"/>
                                     <constraint firstItem="tOT-6n-Avk" firstAttribute="leading" secondItem="bBK-vF-w53" secondAttribute="trailing" constant="10" id="Fcv-aX-60I"/>
-                                    <constraint firstItem="2j6-Xy-OjT" firstAttribute="centerY" secondItem="Akm-IO-PYk" secondAttribute="centerY" id="Mrb-tK-WiF"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tOT-6n-Avk" secondAttribute="trailing" constant="20" symbolic="YES" id="R3U-K3-2pa"/>
-                                    <constraint firstAttribute="trailing" secondItem="2j6-Xy-OjT" secondAttribute="trailing" constant="10" id="Ttg-Tn-yqN"/>
                                     <constraint firstItem="wto-Gk-eeD" firstAttribute="leading" secondItem="Akm-IO-PYk" secondAttribute="leading" id="Z1b-if-Wby"/>
                                     <constraint firstItem="bBK-vF-w53" firstAttribute="leading" secondItem="Akm-IO-PYk" secondAttribute="leading" constant="20" id="e1T-gX-ych"/>
                                     <constraint firstAttribute="trailing" secondItem="wto-Gk-eeD" secondAttribute="trailing" id="k2y-dI-mZl"/>
@@ -557,22 +548,6 @@ STAM ACASA</string>
                                         <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljN-Wk-HeF">
-                                        <rect key="frame" x="295" y="36" width="63" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="istoric -&gt;"/>
-                                        <connections>
-                                            <segue destination="Mnt-mj-32p" kind="show" id="g1C-NY-CS3"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZ5-3v-UAz">
-                                        <rect key="frame" x="295" y="4" width="63" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="detalii -&gt;"/>
-                                        <connections>
-                                            <segue destination="bZZ-a9-XrE" kind="show" id="MP3-ys-SfI"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96836704019999997" green="0.96484512089999996" blue="0.96022242310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -894,7 +869,7 @@ STAM ACASA</string>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7vX-Pz-Ktl" userLabel="tabel">
-                                                <rect key="frame" x="20" y="415" width="335" height="420"/>
+                                                <rect key="frame" x="20" y="469" width="335" height="420"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Ee-W6-YfA" userLabel="Stack intrebari">
                                                         <rect key="frame" x="0.0" y="0.0" width="135" height="420"/>
@@ -987,9 +962,15 @@ STAM ACASA</string>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Istoric deplasari" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNB-Ce-bg7">
-                                                <rect key="frame" x="20" y="855" width="335" height="23"/>
+                                                <rect key="frame" x="20" y="929" width="335" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                 <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Istoric simptome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufh-Ba-3bl">
+                                                <rect key="frame" x="20" y="435" width="335" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -1000,16 +981,19 @@ STAM ACASA</string>
                                             <constraint firstAttribute="trailing" secondItem="z5v-jN-OFo" secondAttribute="trailing" constant="20" id="8yA-5u-a4M"/>
                                             <constraint firstItem="gGn-Aa-oP9" firstAttribute="leading" secondItem="2Ov-DP-atK" secondAttribute="leading" constant="20" id="ANs-PO-PXv"/>
                                             <constraint firstItem="g0b-x4-Ul8" firstAttribute="top" secondItem="z5v-jN-OFo" secondAttribute="bottom" constant="20" id="C3P-aZ-bk2"/>
-                                            <constraint firstItem="SNB-Ce-bg7" firstAttribute="top" secondItem="7vX-Pz-Ktl" secondAttribute="bottom" constant="20" id="Hca-Bi-5Ut"/>
+                                            <constraint firstItem="Ufh-Ba-3bl" firstAttribute="leading" secondItem="2Ov-DP-atK" secondAttribute="leading" constant="20" id="Fw7-Pq-2i5"/>
+                                            <constraint firstItem="SNB-Ce-bg7" firstAttribute="top" secondItem="7vX-Pz-Ktl" secondAttribute="bottom" constant="40" id="Hca-Bi-5Ut"/>
                                             <constraint firstItem="z5v-jN-OFo" firstAttribute="leading" secondItem="2Ov-DP-atK" secondAttribute="leading" constant="20" id="J7R-fY-2Nz"/>
                                             <constraint firstAttribute="trailing" secondItem="g0b-x4-Ul8" secondAttribute="trailing" constant="20" id="Ju7-n6-Cfb"/>
+                                            <constraint firstItem="Ufh-Ba-3bl" firstAttribute="top" secondItem="g0b-x4-Ul8" secondAttribute="bottom" constant="40" id="Uam-Rb-ofz"/>
                                             <constraint firstAttribute="height" priority="200" constant="1057" id="Ydh-6a-oB8"/>
                                             <constraint firstAttribute="trailing" secondItem="7vX-Pz-Ktl" secondAttribute="trailing" constant="20" id="acg-9u-fbZ"/>
                                             <constraint firstItem="7vX-Pz-Ktl" firstAttribute="leading" secondItem="2Ov-DP-atK" secondAttribute="leading" constant="20" id="awI-h5-sOU"/>
                                             <constraint firstItem="z5v-jN-OFo" firstAttribute="top" secondItem="TTk-ur-agp" secondAttribute="bottom" constant="20" id="be2-6e-bbw"/>
-                                            <constraint firstItem="7vX-Pz-Ktl" firstAttribute="top" secondItem="g0b-x4-Ul8" secondAttribute="bottom" constant="20" id="dbo-pG-Uva"/>
                                             <constraint firstItem="TTk-ur-agp" firstAttribute="top" secondItem="gGn-Aa-oP9" secondAttribute="bottom" constant="30" id="eo6-nW-iA5"/>
+                                            <constraint firstItem="7vX-Pz-Ktl" firstAttribute="top" secondItem="Ufh-Ba-3bl" secondAttribute="bottom" constant="10" id="h8N-hX-K6N"/>
                                             <constraint firstItem="SNB-Ce-bg7" firstAttribute="leading" secondItem="2Ov-DP-atK" secondAttribute="leading" constant="20" id="ho6-im-DzF"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ufh-Ba-3bl" secondAttribute="trailing" constant="20" id="nTz-fq-EZC"/>
                                             <constraint firstAttribute="trailing" secondItem="SNB-Ce-bg7" secondAttribute="trailing" constant="20" id="pW6-kY-gPV"/>
                                             <constraint firstItem="gGn-Aa-oP9" firstAttribute="top" secondItem="2Ov-DP-atK" secondAttribute="top" constant="30" id="pjI-Ah-wT1"/>
                                             <constraint firstItem="TTk-ur-agp" firstAttribute="leading" secondItem="2Ov-DP-atK" secondAttribute="leading" constant="20" id="zgt-5L-G7K"/>

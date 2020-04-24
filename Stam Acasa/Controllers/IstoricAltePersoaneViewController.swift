@@ -105,7 +105,7 @@ class IstoricAltePersoaneViewController: UIViewController {
         }
         
         for account in accounts{
-            if StamAcasaSingleton.sharedInstance.actualAccountId == account.accountId{
+            if StamAcasaSingleton.sharedInstance.actualAccountId == account.accountId && account.movements!.count > 0 {
                 
                 var yPositionInContentView: CGFloat = 565.0
                 

@@ -71,7 +71,7 @@ class FormulareleMeleViewController: UIViewController {
                         
                         for ans in 0...rsps.count-1{
                             
-                            print(ans)
+                            //print(ans)
                             
                             if rsps[ans].question_id == 10 && rsps[ans].answer_id == i {
                                 field = "DA"
@@ -105,9 +105,9 @@ class FormulareleMeleViewController: UIViewController {
         }
         
         for account in accounts{
-            if StamAcasaSingleton.sharedInstance.actualAccountId == account.accountId{
+            if StamAcasaSingleton.sharedInstance.actualAccountId == account.accountId && account.movements!.count > 0 {
                 
-                var yPositionInContentView: CGFloat = 890.0
+                var yPositionInContentView: CGFloat = 940.0
                 
                 let istoricDeplasariRow = Bundle.main.loadNibNamed("IstoricDeplasariRow", owner: self, options: nil)?.first as! IstoricDeplasariRow
                 istoricDeplasariRow.translatesAutoresizingMaskIntoConstraints = true
