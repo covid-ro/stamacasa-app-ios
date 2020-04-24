@@ -22,6 +22,8 @@ class FormulareleMeleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        StamAcasaSingleton.sharedInstance.actualAccountId = 0
+        
         drawIstoric()
         
         //scrollView.contentSize.height = 1070
@@ -32,6 +34,10 @@ class FormulareleMeleViewController: UIViewController {
         populateIstoricDeplasari()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        StamAcasaSingleton.sharedInstance.actualAccountId = 0
+    }
+
     func drawIstoric() {
        super.viewDidLoad()
        

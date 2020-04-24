@@ -184,7 +184,8 @@ extension IstoricAltePersoaneViewController: SideMenu{
     }
     
     func istoricPersonalTapped() {
-        
+        let vc = UIStoryboard.Main.instantiateIstoricCompletVc()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func despreTapped() {

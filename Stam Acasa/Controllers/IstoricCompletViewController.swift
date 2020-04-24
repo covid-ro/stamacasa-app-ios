@@ -18,6 +18,8 @@ class IstoricCompletViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        StamAcasaSingleton.sharedInstance.actualAccountId = 0
+        
         menuLogoButton.isUserInteractionEnabled = true
         let menuTapGesture = UITapGestureRecognizer(target: self, action: #selector(self.menuTapped(_:)))
         menuLogoButton.addGestureRecognizer(menuTapGesture)
@@ -78,6 +80,10 @@ class IstoricCompletViewController: UIViewController{
         }
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        StamAcasaSingleton.sharedInstance.actualAccountId = 0
     }
     
     @objc func menuTapped(_ sender : UITapGestureRecognizer){
