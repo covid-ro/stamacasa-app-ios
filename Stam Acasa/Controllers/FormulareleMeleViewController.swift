@@ -24,11 +24,6 @@ class FormulareleMeleViewController: UIViewController {
         
         drawIstoric()
         
-        //scrollView.contentSize.height = 1070
-        contentView.translatesAutoresizingMaskIntoConstraints = true
-        scrollviewHeight.constant = 1200
-        contentView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: scrollviewHeight.constant)
-        
         populateIstoricDeplasari()
     }
     
@@ -96,6 +91,13 @@ class FormulareleMeleViewController: UIViewController {
     }
     
     func populateIstoricDeplasari(){
+        
+        //scrollView.contentSize.height = 1070
+        contentView.translatesAutoresizingMaskIntoConstraints = true
+        scrollviewHeight.constant = 1200
+        contentView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: scrollviewHeight.constant)
+        
+        
         var accounts: [AccountData] = []
         if let encodedData = UserDefaults.standard.object(forKey: "accounts") as? Data {
             let decoder = JSONDecoder()

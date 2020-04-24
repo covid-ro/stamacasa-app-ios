@@ -523,6 +523,9 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                     saveResponseData(answersToStore: answersToStore)
                     let vc = UIStoryboard.Main.instantiateHomeVc()
                     vc.message = "Raport evaluare complet"
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        vc.pageMenu!.moveToPage(1)
+                    }
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             }
