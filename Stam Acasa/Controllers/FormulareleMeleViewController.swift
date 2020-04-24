@@ -18,6 +18,7 @@ class FormulareleMeleViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     
     @IBOutlet weak var scrollviewHeight: NSLayoutConstraint!
+    @IBOutlet weak var istoricDeplasariLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,7 +116,7 @@ class FormulareleMeleViewController: UIViewController {
         for account in accounts{
             if StamAcasaSingleton.sharedInstance.actualAccountId == account.accountId && account.movements!.count > 0 {
                 
-                var yPositionInContentView: CGFloat = 940.0
+                var yPositionInContentView: CGFloat = istoricDeplasariLabel.frame.origin.y + istoricDeplasariLabel.frame.size.height + 20.0
                 
                 let istoricDeplasariRow = Bundle.main.loadNibNamed("IstoricDeplasariRow", owner: self, options: nil)?.first as! IstoricDeplasariRow
                 istoricDeplasariRow.translatesAutoresizingMaskIntoConstraints = true
@@ -129,6 +130,8 @@ class FormulareleMeleViewController: UIViewController {
                 contentView.addSubview(istoricDeplasariRow)
                 
                 yPositionInContentView += istoricDeplasariRow.frame.size.height
+                scrollviewHeight.constant += istoricDeplasariRow.frame.size.height
+                contentView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: scrollviewHeight.constant)
 
                 for movement in account.movements ?? []{
                     

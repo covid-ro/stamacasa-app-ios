@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zI7-HF-e5b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zI7-HF-e5b">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1023,6 +1023,7 @@ STAM ACASA</string>
                     <connections>
                         <outlet property="columnsView" destination="Exu-eO-kM1" id="I2O-ku-AhM"/>
                         <outlet property="contentView" destination="2Ov-DP-atK" id="V2y-r2-vhT"/>
+                        <outlet property="istoricDeplasariLabel" destination="SNB-Ce-bg7" id="hAQ-LJ-LVE"/>
                         <outlet property="istoricHeight" destination="ezg-G9-NjH" id="dZB-Ok-c2f"/>
                         <outlet property="istoricView" destination="7vX-Pz-Ktl" id="KaW-gN-c13"/>
                         <outlet property="scrollView" destination="UVb-WH-7cU" id="rAj-Ru-Lxb"/>
@@ -2077,8 +2078,8 @@ STAM ACASA</string>
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.left" catalog="system" width="128" height="98"/>
-        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
+        <image name="arrow.left" catalog="system" width="64" height="48"/>
+        <image name="checkmark.circle" catalog="system" width="64" height="60"/>
         <image name="logoDIGI" width="53.333332061767578" height="10"/>
         <image name="logoGOV" width="76.666664123535156" height="21.333333969116211"/>
         <image name="logoSTS" width="21.333333969116211" height="21.333333969116211"/>
