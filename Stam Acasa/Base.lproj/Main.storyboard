@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zI7-HF-e5b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zI7-HF-e5b">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,22 +19,22 @@
                                 <rect key="frame" x="0.0" y="75" width="375" height="592"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aos-hQ-ZPU">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="833"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="733"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bine ai venit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okX-gM-WBc">
-                                                <rect key="frame" x="124.5" y="130" width="126" height="30"/>
+                                                <rect key="frame" x="124.5" y="30" width="126" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                                 <color key="textColor" red="0.1106250957" green="0.064914636309999996" blue="0.50292336940000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cum functioneaza?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8l-Ju-QOI">
-                                                <rect key="frame" x="20" y="325" width="335" height="24"/>
+                                                <rect key="frame" x="20" y="225" width="335" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgL-5U-qMG">
-                                                <rect key="frame" x="20" y="369" width="335" height="344"/>
+                                                <rect key="frame" x="20" y="269" width="335" height="344"/>
                                                 <string key="text">Folosind cele trei optiuni de mai jos vei putea sa iti construiesti un profil pentru tine, respectiv membrii familiei tale sau alte persoane pe care le ai in grija, cu ajutorul unui set initial de intrebari.
 
 In fiecare zi vei primi notificare sa completezi un chestionar de evaluare menit sa te ajute sa monitorizezi riscul unei potentiale infectii. Vei putea de asemenea sa mentii un istoric al tuturor iesirilor din domiciliu ale tale sau ale membrilor familiei.
@@ -45,7 +45,7 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8W7-hj-Ogo">
-                                                <rect key="frame" x="20" y="743" width="335" height="60"/>
+                                                <rect key="frame" x="20" y="643" width="335" height="60"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="taD-tS-LKI">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -84,37 +84,37 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOm-A8-gWd">
-                                                <rect key="frame" x="20" y="190" width="335" height="115"/>
+                                                <rect key="frame" x="20" y="90" width="335" height="115"/>
                                                 <string key="text">Aplicatia Stam Acasa te va ajuta sa iti monitorizezi starea de sanatate pentru tine si pentru cei dragi care nu au acces la tehnologie sau nu sunt atat de prietenosi cu ea.
 </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHp-WQ-yPH" userLabel="ParteneriatView">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHp-WQ-yPH" userLabel="ParteneriatView">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In parteneriat cu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prH-z8-RD2">
-                                                        <rect key="frame" x="76" y="14.5" width="121" height="21"/>
+                                                        <rect key="frame" x="76" y="-10.5" width="121" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iKy-md-amo" userLabel="SeparatorView">
-                                                        <rect key="frame" x="0.0" y="49" width="375" height="1"/>
+                                                        <rect key="frame" x="0.0" y="-1" width="375" height="1"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="lt6-yl-2MR"/>
                                                         </constraints>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoSTS" translatesAutoresizingMaskIntoConstraints="NO" id="hhv-IH-tb3">
-                                                        <rect key="frame" x="212" y="10" width="30" height="30"/>
+                                                        <rect key="frame" x="212" y="10" width="30" height="21.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="2Em-hr-Gbi"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoGOV" translatesAutoresizingMaskIntoConstraints="NO" id="rH6-Rn-Sqb">
-                                                        <rect key="frame" x="257" y="10" width="108" height="30"/>
+                                                        <rect key="frame" x="257" y="10" width="108" height="21.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="108" id="dcr-Ll-eIt"/>
                                                         </constraints>
@@ -130,24 +130,24 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
                                                     <constraint firstItem="iKy-md-amo" firstAttribute="leading" secondItem="UHp-WQ-yPH" secondAttribute="leading" id="R6a-Dp-B8T"/>
                                                     <constraint firstItem="rH6-Rn-Sqb" firstAttribute="leading" secondItem="hhv-IH-tb3" secondAttribute="trailing" constant="15" id="UUq-YE-bsp"/>
                                                     <constraint firstItem="hhv-IH-tb3" firstAttribute="bottom" secondItem="rH6-Rn-Sqb" secondAttribute="bottom" id="Vts-29-dma"/>
-                                                    <constraint firstAttribute="height" constant="50" id="aKs-ar-CHG"/>
+                                                    <constraint firstAttribute="height" id="aKs-ar-CHG"/>
                                                     <constraint firstAttribute="trailing" secondItem="rH6-Rn-Sqb" secondAttribute="trailing" constant="10" id="d1A-jM-9il"/>
                                                     <constraint firstItem="prH-z8-RD2" firstAttribute="centerY" secondItem="UHp-WQ-yPH" secondAttribute="centerY" id="eCb-Uz-C4M"/>
                                                     <constraint firstItem="rH6-Rn-Sqb" firstAttribute="top" secondItem="UHp-WQ-yPH" secondAttribute="top" constant="10" id="idZ-la-QEg"/>
                                                     <constraint firstItem="prH-z8-RD2" firstAttribute="trailing" secondItem="hhv-IH-tb3" secondAttribute="leading" constant="-15" id="myu-45-7Bh"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehA-KU-PEM" userLabel="DezvoltatView">
-                                                <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehA-KU-PEM" userLabel="DezvoltatView">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dezvoltat de" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Tw-hS-4hg">
-                                                        <rect key="frame" x="154.5" y="14.5" width="92.5" height="21"/>
+                                                        <rect key="frame" x="154.5" y="-10.5" width="92.5" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjF-H0-4wF" userLabel="SeparatorView">
-                                                        <rect key="frame" x="0.0" y="49" width="375" height="1"/>
+                                                        <rect key="frame" x="0.0" y="30" width="375" height="1"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="9eG-1h-Zfi"/>
@@ -155,7 +155,7 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
                                                         </constraints>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoDIGI" translatesAutoresizingMaskIntoConstraints="NO" id="1zM-IY-wjf">
-                                                        <rect key="frame" x="257" y="10" width="108" height="29"/>
+                                                        <rect key="frame" x="257" y="10" width="108" height="10"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="108" id="h4P-CE-PCU"/>
                                                         </constraints>
@@ -166,7 +166,7 @@ Datele completate de toti utilizatorii aplicatiei sunt de asemenea monitorizate 
                                                     <constraint firstAttribute="trailing" secondItem="1zM-IY-wjf" secondAttribute="trailing" constant="10" id="9g5-Ak-WnA"/>
                                                     <constraint firstItem="FjF-H0-4wF" firstAttribute="top" secondItem="1zM-IY-wjf" secondAttribute="bottom" constant="10" id="CGe-IT-0fL"/>
                                                     <constraint firstItem="1zM-IY-wjf" firstAttribute="top" secondItem="ehA-KU-PEM" secondAttribute="top" constant="10" id="ISJ-eZ-5nv"/>
-                                                    <constraint firstAttribute="height" constant="50" id="IpG-dZ-cNq"/>
+                                                    <constraint firstAttribute="height" id="IpG-dZ-cNq"/>
                                                     <constraint firstAttribute="bottom" secondItem="FjF-H0-4wF" secondAttribute="bottom" id="JZm-BF-mvD"/>
                                                     <constraint firstItem="1Tw-hS-4hg" firstAttribute="centerY" secondItem="ehA-KU-PEM" secondAttribute="centerY" id="jms-vB-5Pu"/>
                                                     <constraint firstItem="1zM-IY-wjf" firstAttribute="leading" secondItem="1Tw-hS-4hg" secondAttribute="trailing" constant="10" id="lje-n5-Lqs"/>
@@ -288,7 +288,7 @@ STAM ACASA</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4F-XP-m9t">
-                                <rect key="frame" x="0.0" y="175" width="375" height="492"/>
+                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k9I-xA-JRA">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="630.5"/>
@@ -397,30 +397,30 @@ STAM ACASA</string>
                                     <constraint firstItem="8TB-b3-5PE" firstAttribute="centerY" secondItem="U0D-sz-F9P" secondAttribute="centerY" id="xBk-Qb-aUd"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Wo-w2-wRR" userLabel="ParteneriatView">
-                                <rect key="frame" x="0.0" y="75" width="375" height="50"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Wo-w2-wRR" userLabel="ParteneriatView">
+                                <rect key="frame" x="0.0" y="75" width="375" height="0.0"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In parteneriat cu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCk-Ri-8j7">
-                                        <rect key="frame" x="76" y="14.5" width="121" height="21"/>
+                                        <rect key="frame" x="76" y="-10.5" width="121" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mwp-m7-bDq" userLabel="SeparatorView">
-                                        <rect key="frame" x="0.0" y="49" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="-1" width="375" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="kVX-ZN-ACM"/>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoSTS" translatesAutoresizingMaskIntoConstraints="NO" id="i7X-pE-Xlq">
-                                        <rect key="frame" x="212" y="10" width="30" height="30"/>
+                                        <rect key="frame" x="212" y="10" width="30" height="21.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="7AK-10-2rU"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoGOV" translatesAutoresizingMaskIntoConstraints="NO" id="AnZ-xe-Kaj">
-                                        <rect key="frame" x="257" y="10" width="108" height="30"/>
+                                        <rect key="frame" x="257" y="10" width="108" height="21.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="108" id="hY0-2z-qye"/>
                                         </constraints>
@@ -438,22 +438,22 @@ STAM ACASA</string>
                                     <constraint firstItem="rCk-Ri-8j7" firstAttribute="trailing" secondItem="i7X-pE-Xlq" secondAttribute="leading" constant="-15" id="ghY-2x-nER"/>
                                     <constraint firstItem="AnZ-xe-Kaj" firstAttribute="top" secondItem="2Wo-w2-wRR" secondAttribute="top" constant="10" id="gsa-zO-1w6"/>
                                     <constraint firstAttribute="trailing" secondItem="Mwp-m7-bDq" secondAttribute="trailing" id="lgB-fE-ETU"/>
-                                    <constraint firstAttribute="height" constant="50" id="nkU-0b-Nwm"/>
+                                    <constraint firstAttribute="height" id="nkU-0b-Nwm"/>
                                     <constraint firstItem="rCk-Ri-8j7" firstAttribute="centerY" secondItem="2Wo-w2-wRR" secondAttribute="centerY" id="s7u-yi-0gS"/>
                                     <constraint firstItem="i7X-pE-Xlq" firstAttribute="bottom" secondItem="AnZ-xe-Kaj" secondAttribute="bottom" id="zQ9-xs-FWl"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7oC-8B-dIN" userLabel="DezvoltatView">
-                                <rect key="frame" x="0.0" y="125" width="375" height="50"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7oC-8B-dIN" userLabel="DezvoltatView">
+                                <rect key="frame" x="0.0" y="75" width="375" height="0.0"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dezvoltat de" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xt-3Q-M8h">
-                                        <rect key="frame" x="154.5" y="14.5" width="92.5" height="21"/>
+                                        <rect key="frame" x="154.5" y="-10.5" width="92.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZ8-1k-T0g" userLabel="SeparatorView">
-                                        <rect key="frame" x="0.0" y="49" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="30" width="375" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="ZMj-dW-lTL"/>
@@ -461,7 +461,7 @@ STAM ACASA</string>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoDIGI" translatesAutoresizingMaskIntoConstraints="NO" id="k7s-sG-h4o">
-                                        <rect key="frame" x="257" y="10" width="108" height="29"/>
+                                        <rect key="frame" x="257" y="10" width="108" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="108" id="PcZ-kD-1YA"/>
                                         </constraints>
@@ -473,7 +473,7 @@ STAM ACASA</string>
                                     <constraint firstItem="k7s-sG-h4o" firstAttribute="top" secondItem="7oC-8B-dIN" secondAttribute="top" constant="10" id="O9x-Mc-7sv"/>
                                     <constraint firstItem="4Xt-3Q-M8h" firstAttribute="centerY" secondItem="7oC-8B-dIN" secondAttribute="centerY" id="Y5M-It-ikI"/>
                                     <constraint firstItem="bZ8-1k-T0g" firstAttribute="top" secondItem="k7s-sG-h4o" secondAttribute="bottom" constant="10" id="a90-rI-rHS"/>
-                                    <constraint firstAttribute="height" constant="50" id="dcr-ti-wRR"/>
+                                    <constraint firstAttribute="height" id="dcr-ti-wRR"/>
                                     <constraint firstItem="k7s-sG-h4o" firstAttribute="leading" secondItem="4Xt-3Q-M8h" secondAttribute="trailing" constant="10" id="eLP-U5-Iel"/>
                                     <constraint firstAttribute="trailing" secondItem="bZ8-1k-T0g" secondAttribute="trailing" id="jQ2-d3-NWm"/>
                                     <constraint firstAttribute="trailing" secondItem="k7s-sG-h4o" secondAttribute="trailing" constant="10" id="w8d-UI-mLY"/>
@@ -562,30 +562,30 @@ STAM ACASA</string>
                                     <constraint firstItem="8Cc-3w-WcH" firstAttribute="leading" secondItem="HfT-Dq-QQZ" secondAttribute="leading" constant="20" id="xRa-e8-uOZ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qna-PC-Bok" userLabel="ParteneriatView">
-                                <rect key="frame" x="0.0" y="75" width="375" height="50"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qna-PC-Bok" userLabel="ParteneriatView">
+                                <rect key="frame" x="0.0" y="75" width="375" height="0.0"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In parteneriat cu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVl-ek-Joe">
-                                        <rect key="frame" x="76" y="14.5" width="121" height="21"/>
+                                        <rect key="frame" x="76" y="-10.5" width="121" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CfG-bf-M52" userLabel="SeparatorView">
-                                        <rect key="frame" x="0.0" y="49" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="-1" width="375" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="KZz-QV-RWa"/>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoSTS" translatesAutoresizingMaskIntoConstraints="NO" id="ePx-VQ-4tZ">
-                                        <rect key="frame" x="212" y="10" width="30" height="30"/>
+                                        <rect key="frame" x="212" y="10" width="30" height="21.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="GWN-16-8Ol"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoGOV" translatesAutoresizingMaskIntoConstraints="NO" id="s8m-ip-7DS">
-                                        <rect key="frame" x="257" y="10" width="108" height="30"/>
+                                        <rect key="frame" x="257" y="10" width="108" height="21.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="108" id="u5e-En-hhf"/>
                                         </constraints>
@@ -596,7 +596,7 @@ STAM ACASA</string>
                                     <constraint firstAttribute="trailing" secondItem="CfG-bf-M52" secondAttribute="trailing" id="1uH-UZ-OFK"/>
                                     <constraint firstItem="s8m-ip-7DS" firstAttribute="top" secondItem="qna-PC-Bok" secondAttribute="top" constant="10" id="9rL-kj-Zob"/>
                                     <constraint firstItem="EVl-ek-Joe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qna-PC-Bok" secondAttribute="leading" constant="20" symbolic="YES" id="AxI-np-EG2"/>
-                                    <constraint firstAttribute="height" constant="50" id="IbI-L2-hu0"/>
+                                    <constraint firstAttribute="height" id="IbI-L2-hu0"/>
                                     <constraint firstItem="s8m-ip-7DS" firstAttribute="leading" secondItem="ePx-VQ-4tZ" secondAttribute="trailing" constant="15" id="Mca-Cb-eFL"/>
                                     <constraint firstAttribute="bottom" secondItem="s8m-ip-7DS" secondAttribute="bottom" constant="10" id="NXc-lc-O9j"/>
                                     <constraint firstItem="ePx-VQ-4tZ" firstAttribute="top" secondItem="s8m-ip-7DS" secondAttribute="top" id="Q6q-aL-PPM"/>
@@ -608,17 +608,17 @@ STAM ACASA</string>
                                     <constraint firstItem="CfG-bf-M52" firstAttribute="leading" secondItem="qna-PC-Bok" secondAttribute="leading" id="i4P-3L-EI5"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5c4-TK-SYi" userLabel="DezvoltatView">
-                                <rect key="frame" x="0.0" y="125" width="375" height="50"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5c4-TK-SYi" userLabel="DezvoltatView">
+                                <rect key="frame" x="0.0" y="75" width="375" height="0.0"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dezvoltat de" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eM3-Y9-GeM">
-                                        <rect key="frame" x="154.5" y="14.5" width="92.5" height="21"/>
+                                        <rect key="frame" x="154.5" y="-10.5" width="92.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3q-nJ-rZp" userLabel="SeparatorView">
-                                        <rect key="frame" x="0.0" y="49" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="30" width="375" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="Ay3-Pz-gcd"/>
@@ -626,7 +626,7 @@ STAM ACASA</string>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoDIGI" translatesAutoresizingMaskIntoConstraints="NO" id="fhj-py-tbU">
-                                        <rect key="frame" x="257" y="10" width="108" height="29"/>
+                                        <rect key="frame" x="257" y="10" width="108" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="108" id="db5-cN-OFs"/>
                                         </constraints>
@@ -640,14 +640,14 @@ STAM ACASA</string>
                                     <constraint firstAttribute="trailing" secondItem="b3q-nJ-rZp" secondAttribute="trailing" id="NFn-w7-cBd"/>
                                     <constraint firstItem="fhj-py-tbU" firstAttribute="leading" secondItem="eM3-Y9-GeM" secondAttribute="trailing" constant="10" id="Ryz-5E-Dve"/>
                                     <constraint firstAttribute="trailing" secondItem="fhj-py-tbU" secondAttribute="trailing" constant="10" id="ajJ-m4-KZu"/>
-                                    <constraint firstAttribute="height" constant="50" id="j41-bZ-hBP"/>
+                                    <constraint firstAttribute="height" id="j41-bZ-hBP"/>
                                     <constraint firstAttribute="bottom" secondItem="b3q-nJ-rZp" secondAttribute="bottom" id="lzv-1o-tbg"/>
                                     <constraint firstItem="b3q-nJ-rZp" firstAttribute="top" secondItem="fhj-py-tbU" secondAttribute="bottom" constant="10" id="mTd-dx-Q95"/>
                                     <constraint firstItem="b3q-nJ-rZp" firstAttribute="leading" secondItem="5c4-TK-SYi" secondAttribute="leading" id="wHY-sQ-HdN"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5aC-BQ-6RA" userLabel="PageViewOutlet">
-                                <rect key="frame" x="0.0" y="175" width="375" height="492"/>
+                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -1680,7 +1680,7 @@ STAM ACASA</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CSR-TU-itJ">
-                                <rect key="frame" x="0.0" y="175" width="375" height="492"/>
+                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0IG-wl-JhL">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
@@ -1756,30 +1756,30 @@ STAM ACASA</string>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lMF-eK-dgM" secondAttribute="trailing" constant="20" symbolic="YES" id="zyo-SL-PdF"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUU-Xd-OaJ" userLabel="ParteneriatView">
-                                <rect key="frame" x="0.0" y="75" width="375" height="50"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUU-Xd-OaJ" userLabel="ParteneriatView">
+                                <rect key="frame" x="0.0" y="75" width="375" height="0.0"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In parteneriat cu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hya-6A-eZG">
-                                        <rect key="frame" x="76" y="14.5" width="121" height="21"/>
+                                        <rect key="frame" x="76" y="-10.5" width="121" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ko2-mU-34i" userLabel="SeparatorView">
-                                        <rect key="frame" x="0.0" y="49" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="-1" width="375" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="CDI-Id-ys8"/>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoSTS" translatesAutoresizingMaskIntoConstraints="NO" id="2b6-oB-0Sg">
-                                        <rect key="frame" x="212" y="10" width="30" height="30"/>
+                                        <rect key="frame" x="212" y="10" width="30" height="21.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="FRY-ai-Xhs"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoGOV" translatesAutoresizingMaskIntoConstraints="NO" id="SvT-G9-YzS">
-                                        <rect key="frame" x="257" y="10" width="108" height="30"/>
+                                        <rect key="frame" x="257" y="10" width="108" height="21.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="108" id="iyX-LN-izS"/>
                                         </constraints>
@@ -1792,7 +1792,7 @@ STAM ACASA</string>
                                     <constraint firstItem="hya-6A-eZG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MUU-Xd-OaJ" secondAttribute="leading" constant="20" symbolic="YES" id="JXb-jl-UJB"/>
                                     <constraint firstItem="2b6-oB-0Sg" firstAttribute="bottom" secondItem="SvT-G9-YzS" secondAttribute="bottom" id="Lbu-XR-LnP"/>
                                     <constraint firstItem="hya-6A-eZG" firstAttribute="centerY" secondItem="MUU-Xd-OaJ" secondAttribute="centerY" id="OhD-kW-Md1"/>
-                                    <constraint firstAttribute="height" constant="50" id="TUl-Rm-P3b"/>
+                                    <constraint firstAttribute="height" id="TUl-Rm-P3b"/>
                                     <constraint firstAttribute="bottom" secondItem="SvT-G9-YzS" secondAttribute="bottom" constant="10" id="Vac-E9-27e"/>
                                     <constraint firstAttribute="trailing" secondItem="SvT-G9-YzS" secondAttribute="trailing" constant="10" id="fei-QV-5e6"/>
                                     <constraint firstItem="ko2-mU-34i" firstAttribute="leading" secondItem="MUU-Xd-OaJ" secondAttribute="leading" id="hVT-wX-dwo"/>
@@ -1802,17 +1802,17 @@ STAM ACASA</string>
                                     <constraint firstItem="2b6-oB-0Sg" firstAttribute="top" secondItem="SvT-G9-YzS" secondAttribute="top" id="ymN-hm-g0M"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RR4-0y-8mC" userLabel="DezvoltatView">
-                                <rect key="frame" x="0.0" y="125" width="375" height="50"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RR4-0y-8mC" userLabel="DezvoltatView">
+                                <rect key="frame" x="0.0" y="75" width="375" height="0.0"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dezvoltat de" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNw-Uf-eoe">
-                                        <rect key="frame" x="154.5" y="14.5" width="92.5" height="21"/>
+                                        <rect key="frame" x="154.5" y="-10.5" width="92.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpd-Hq-Dam" userLabel="SeparatorView">
-                                        <rect key="frame" x="0.0" y="49" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="30" width="375" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="8r7-eU-mJL"/>
@@ -1820,7 +1820,7 @@ STAM ACASA</string>
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoDIGI" translatesAutoresizingMaskIntoConstraints="NO" id="FWu-4q-Fkm">
-                                        <rect key="frame" x="257" y="10" width="108" height="29"/>
+                                        <rect key="frame" x="257" y="10" width="108" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="108" id="z1F-Sf-7Mn"/>
                                         </constraints>
@@ -1834,7 +1834,7 @@ STAM ACASA</string>
                                     <constraint firstItem="lpd-Hq-Dam" firstAttribute="top" secondItem="FWu-4q-Fkm" secondAttribute="bottom" constant="10" id="BK8-TQ-Ao5"/>
                                     <constraint firstItem="vNw-Uf-eoe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RR4-0y-8mC" secondAttribute="leading" constant="20" symbolic="YES" id="CiC-Q2-aC0"/>
                                     <constraint firstItem="lpd-Hq-Dam" firstAttribute="leading" secondItem="RR4-0y-8mC" secondAttribute="leading" id="ZtN-ZR-6m6"/>
-                                    <constraint firstAttribute="height" constant="50" id="aea-qU-Xqp"/>
+                                    <constraint firstAttribute="height" id="aea-qU-Xqp"/>
                                     <constraint firstAttribute="trailing" secondItem="FWu-4q-Fkm" secondAttribute="trailing" constant="10" id="kLF-uR-Lys"/>
                                     <constraint firstAttribute="bottom" secondItem="lpd-Hq-Dam" secondAttribute="bottom" id="wSF-k8-nlR"/>
                                     <constraint firstItem="FWu-4q-Fkm" firstAttribute="top" secondItem="RR4-0y-8mC" secondAttribute="top" constant="10" id="yNz-5B-HGF"/>
@@ -2078,8 +2078,8 @@ STAM ACASA</string>
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.left" catalog="system" width="64" height="48"/>
-        <image name="checkmark.circle" catalog="system" width="64" height="60"/>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="logoDIGI" width="53.333332061767578" height="10"/>
         <image name="logoGOV" width="76.666664123535156" height="21.333333969116211"/>
         <image name="logoSTS" width="21.333333969116211" height="21.333333969116211"/>
