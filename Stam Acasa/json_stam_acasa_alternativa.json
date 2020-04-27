@@ -35,58 +35,13 @@
                     "answer_text":"Da",
                     "answer_decision":{
                       "answer_hint":null,
-                      "answer_input":"question-activate",
-                      "answer_question_id":999
-                    }
-                  },
-                  {
-                    "answer_id":1,
-                    "answer_text":"Nu",
-                    "answer_decision":{
-                      "answer_hint":null,
-                      "answer_input":null,
-                      "answer_question_id":null
-                    }
-                  }
-                ]
-              },
-              {
-                "question_id":999,
-                "question_order":1,
-                "question_hidden":true,
-                "question_type":"single-choice",
-                "question_text":"Cate tigari fumati pe zi",
-                "question_answers":[
-                  {
-                    "answer_id":1,
-                    "answer_text":"1-5",
-                    "answer_decision":{
-                      "answer_hint":null,
                       "answer_input":null,
                       "answer_question_id":null
                     }
                   },
                   {
                     "answer_id":2,
-                    "answer_text":"5-10",
-                    "answer_decision":{
-                      "answer_hint":null,
-                      "answer_input":null,
-                      "answer_question_id":null
-                    }
-                  },
-                  {
-                    "answer_id":3,
-                    "answer_text":"10-20",
-                    "answer_decision":{
-                      "answer_hint":null,
-                      "answer_input":null,
-                      "answer_question_id":null
-                    }
-                  },
-                  {
-                    "answer_id":4,
-                    "answer_text":"peste 20",
+                    "answer_text":"Nu",
                     "answer_decision":{
                       "answer_hint":null,
                       "answer_input":null,
@@ -153,7 +108,7 @@
           },
           {
             "section_id":"simptome",
-            "section_name":"Evaluate Simptome",
+            "section_name":"Prima Evaluare a Simptomelor",
             "section_text":"Intrebarile de mai jos sunt relevante pentru a putea monitoriza starea ta de sanatate",
             "section_next_id":"domiciliu",
             "questions":[
@@ -286,7 +241,7 @@
             ]
           },
           {
-            "section_id":"domiciliu",
+            "section_id":"domiciuliu",
             "section_name":"Date despre contextul in care te afli",
             "section_text":"Intrebarile de mai jos sunt relevante pentru a putea stabili daca ...",
             "section_next_id":"stop",
@@ -368,11 +323,11 @@
                 "question_order":3,
                 "question_hidden":true,
                 "question_type":"single-choice",
-                "question_text":"Cu cate persoane imparti locuinta?",
+                "question_text":"Celelalte persoane se afla in izolare la domiciliu?",
                 "question_answers":[
                   {
                     "answer_id":1,
-                    "answer_text":"1 sau 2 persoane",
+                    "answer_text":"Da, sunt in izolare, nu ies deloc din locuinta",
                     "answer_decision":{
                       "answer_hint":null,
                       "answer_input":null,
@@ -381,7 +336,25 @@
                   },
                   {
                     "answer_id":2,
-                    "answer_text":"3 sau mai multe",
+                    "answer_text":"Stau mai mult pe acasa, dar mai ies atunci cand este nevoie",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":3,
+                    "answer_text":"Nu sunt in izolare si ies din locuinta dupa program normal",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":4,
+                    "answer_text":"Alta situatie",
                     "answer_decision":{
                       "answer_hint":null,
                       "answer_input":null,
@@ -400,7 +373,7 @@
         "flow_sections":[
           {
             "section_id":"simptome",
-            "section_name":"Evaluate Simptome",
+            "section_name":"Evaluare Simptome",
             "section_text":"Intrebarile de mai jos sunt relevante pentru a putea monitoriza de la distanta starea ta de sanatate",
             "section_next_id":"domiciliu",
             "questions":[
@@ -460,7 +433,7 @@
                     "answer_id":6,
                     "answer_text":"Alte simptome",
                     "answer_decision":{
-                      "answer_hint":"Te rugam sa descri simptomele",
+                      "answer_hint":null,
                       "answer_input":"text-area",
                       "answer_question_id":null
                     }
@@ -470,7 +443,7 @@
             ]
           },
           {
-            "section_id":"domiciliu",
+            "section_id":"domiciuliu",
             "section_name":"Date despre contextul in care te afli",
             "section_text":"Intrebarile de mai jos sunt relevante pentru a putea stabili daca ...",
             "section_next_id":"stop",
@@ -532,13 +505,58 @@
                     "answer_text":"Da",
                     "answer_decision":{
                       "answer_hint":null,
+                      "answer_input":"question-activate",
+                      "answer_question_id":102
+                    }
+                  },
+                  {
+                    "answer_id":2,
+                    "answer_text":"Nu",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  }
+                ]
+              },
+              {
+                "question_id":102,
+                "question_order":3,
+                "question_hidden":true,
+                "question_type":"single-choice",
+                "question_text":"Celelalte persoane se afla in izolare la domiciliu?",
+                "question_answers":[
+                  {
+                    "answer_id":1,
+                    "answer_text":"Da, sunt in izolare, nu ies deloc din locuinta",
+                    "answer_decision":{
+                      "answer_hint":null,
                       "answer_input":null,
                       "answer_question_id":null
                     }
                   },
                   {
                     "answer_id":2,
-                    "answer_text":"Nu",
+                    "answer_text":"Stau mai mult pe acasa, dar mai ies atunci cand este nevoie",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":3,
+                    "answer_text":"Nu sunt in izolare si ies din locuinta dupa program normal",
+                    "answer_decision":{
+                      "answer_hint":null,
+                      "answer_input":null,
+                      "answer_question_id":null
+                    }
+                  },
+                  {
+                    "answer_id":4,
+                    "answer_text":"Alta situatie",
                     "answer_decision":{
                       "answer_hint":null,
                       "answer_input":null,
