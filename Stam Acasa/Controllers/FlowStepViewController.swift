@@ -540,30 +540,69 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     func sentDataToServer(answers: [ResponseData.Answer]){
         var questionAnswers: [QuestionAnswers] = []
         var currentQuestionId = -1
+
         
-        var auxQuestionAnswer = QuestionAnswers()
         for answer in answersToStore{
-            
-            //questionAnswers.question_id = answer.question_id
-            
-            
-            if answer.question_id != currentQuestionId{
+            if answer.question_id != currentQuestionId {
                 currentQuestionId = answer.question_id!
                 
-                if auxQuestionAnswer.question_id != nil {
-                    questionAnswers.append(auxQuestionAnswer)
-                }
-                
-                //var auxQuestionAnswer = QuestionAnswers()
+                var auxQuestionAnswer = QuestionAnswers()
                 auxQuestionAnswer.question_id = answer.question_id
-                auxQuestionAnswer.answers = [String(answer.answer_id!)]
-            } else {
-                auxQuestionAnswer.answers?.append(String(answer.answer_id!))
+                auxQuestionAnswer.answers = []
+                
+                for raspuns in answersToStore{
+                    if raspuns.question_id == answer.question_id {
+                        auxQuestionAnswer.answers?.append(String(raspuns.answer_id!))
+                    }
+                }
+                questionAnswers.append(auxQuestionAnswer)
+            }
+        
+        }
+        
+        print(questionAnswers)
+        
+        var accounts = [] as [AccountData]
+        
+        if let encodedData = UserDefaults.standard.object(forKey: "accounts") as? Data {
+            let decoder = JSONDecoder()
+            if let acx = try? decoder.decode([AccountData].self, from: encodedData) {
+                accounts = acx
             }
         }
         
+        var registrationAnswers: [QuestionAnswers] = []
+        currentQuestionId = -1
         
-        print(questionAnswers)
+        for account in accounts{
+            if account.accountId == StamAcasaSingleton.sharedInstance.actualAccountId{
+                for flows in account.responses!{
+                    if flows.flow_id == "registration"{
+                        
+                        for answer in flows.responses!  {
+                        
+                            if answer.question_id != currentQuestionId {
+                                currentQuestionId = answer.question_id!
+                                
+                                var auxQuestionAnswer = QuestionAnswers()
+                                auxQuestionAnswer.question_id = answer.question_id
+                                auxQuestionAnswer.answers = []
+                                
+                                for raspuns in flows.responses!{
+                                    if raspuns.question_id == answer.question_id{
+                                        auxQuestionAnswer.answers?.append(String(raspuns.answer_id!))
+                                    }
+                                }
+                                registrationAnswers.append(auxQuestionAnswer)
+                            }
+                                
+                        }
+                    }
+                }
+                
+            }
+        }
+        
         
         
 
