@@ -626,14 +626,14 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
             if error != nil {
                 print(error!.localizedDescription)
                 DispatchQueue.main.async {
-                    self.createDateSalvateAlert()
+                    self.createDateSalvateAlert(message: "Date salvate cu succes!")
                 }
                 return
             }
             
             guard let data = data else {
                 DispatchQueue.main.async {
-                    self.createDateSalvateAlert()
+                    self.createDateSalvateAlert(message: "Date salvate cu succes!")
                 }
                 return
             }
@@ -642,20 +642,12 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                 let jsonData = try JSONDecoder().decode(ServerResponse.self, from: data)
                 
                 DispatchQueue.main.async {
-                    let vc = UIStoryboard.Main.instantiateHomeVc()
-                    vc.message = jsonData.data?.evaluation?.message
-                    if StamAcasaSingleton.sharedInstance.actualAccountId > 0{
-                        StamAcasaSingleton.sharedInstance.actualAccountId = 0
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            vc.pageMenu!.moveToPage(1)
-                        }
-                    }
-                    self.navigationController?.pushViewController(vc, animated: true)
+                    self.createDateSalvateAlert(message: jsonData.data?.evaluation?.message ?? "Date salvate cu succes!")
                 }
             } catch let jsonError {
                 print(jsonError)
                 DispatchQueue.main.async {
-                    self.createDateSalvateAlert()
+                    self.createDateSalvateAlert(message: "Date salvate cu succes!")
                 }
             }
         }
@@ -665,9 +657,9 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         
     }
     
-    func createDateSalvateAlert(){
+    func createDateSalvateAlert(message: String){
         let vc = UIStoryboard.Main.instantiateHomeVc()
-        vc.message = "Date salvate cu succes!"
+        vc.message = message
         if StamAcasaSingleton.sharedInstance.actualAccountId > 0{
             StamAcasaSingleton.sharedInstance.actualAccountId = 0
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
