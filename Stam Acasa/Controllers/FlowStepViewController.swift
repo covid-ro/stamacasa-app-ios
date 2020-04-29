@@ -521,17 +521,8 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                     let vc = UIStoryboard.Main.instantiateProfilCompletVc()
                     self.navigationController?.pushViewController(vc, animated: true)
                 } else {
-                    sentDataToServer(answers: answersToStore)
                     saveResponseData(answersToStore: answersToStore)
-                    let vc = UIStoryboard.Main.instantiateHomeVc()
-                    vc.message = "Raport evaluare complet"
-                    if StamAcasaSingleton.sharedInstance.actualAccountId > 0{
-                        StamAcasaSingleton.sharedInstance.actualAccountId = 0
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            vc.pageMenu!.moveToPage(1)
-                        }
-                    }
-                    self.navigationController?.pushViewController(vc, animated: true)
+                    sentDataToServer(answers: answersToStore)
                 }
             }
         }
@@ -540,7 +531,6 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     func sentDataToServer(answers: [ResponseData.Answer]){
         var questionAnswers: [QuestionAnswers] = []
         var currentQuestionId = -1
-
         
         for answer in answersToStore{
             if answer.question_id != currentQuestionId {
@@ -551,13 +541,13 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                 auxQuestionAnswer.answers = []
                 
                 for raspuns in answersToStore{
-                    if raspuns.question_id == answer.question_id {
+                    if raspuns.question_id == answer.question_id{
                         auxQuestionAnswer.answers?.append(String(raspuns.answer_id!))
                     }
                 }
                 questionAnswers.append(auxQuestionAnswer)
             }
-        
+            
         }
         
         print(questionAnswers)
@@ -574,14 +564,16 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         var registrationAnswers: [QuestionAnswers] = []
         currentQuestionId = -1
         
+        var userAge: String!
         for account in accounts{
             if account.accountId == StamAcasaSingleton.sharedInstance.actualAccountId{
+                userAge = account.varsta
                 for flows in account.responses!{
                     if flows.flow_id == "registration"{
                         
                         for answer in flows.responses!  {
-                        
-                            if answer.question_id != currentQuestionId {
+                            
+                            if answer.question_id != currentQuestionId && answer.section_id == "stare_sanatate"{
                                 currentQuestionId = answer.question_id!
                                 
                                 var auxQuestionAnswer = QuestionAnswers()
@@ -595,86 +587,96 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                                 }
                                 registrationAnswers.append(auxQuestionAnswer)
                             }
-                                
+                            
                         }
                     }
                 }
                 
             }
         }
-        
-        
-        
 
-                /*
-                guard let sUrl = URL(string: "http://95.216.200.50/AUTOEVAL/evaluate.php") else {return}
-                
-                if(task != nil) {
-                    task.cancel()
+        var dataToSave = ServerDataToSave()
+        dataToSave.form?.question_answers = questionAnswers
+        dataToSave.profile?.health_status?.question_answers = registrationAnswers
+        dataToSave.profile?.health_status?.section_id = "stare_sanatate"
+        dataToSave.profile?.user_age = Int(userAge) ?? 0
+        
+        guard let sUrl = URL(string: "http://95.216.200.50/AUTOEVAL/evaluate.php") else {return}
+        
+        if(task != nil) {
+            task.cancel()
+        }
+        
+        let session = URLSessionConfiguration.default
+        session.timeoutIntervalForRequest = 15
+        session.timeoutIntervalForResource = 15
+        
+        var urlRequest = URLRequest(url: sUrl)
+        urlRequest.httpMethod = "POST"
+        
+        do {
+            urlRequest.httpBody = try JSONEncoder().encode(dataToSave)
+
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+        task = URLSession(configuration: session).dataTask(with: urlRequest) { (data,response,error)     in
+            self.task = nil
+            if error != nil {
+                print(error!.localizedDescription)
+                DispatchQueue.main.async {
+                    self.createDateSalvateAlert()
                 }
-                
-                let session = URLSessionConfiguration.default
-                session.timeoutIntervalForRequest = 15
-                session.timeoutIntervalForResource = 15
-                
-                var urlRequest = URLRequest(url: sUrl)
-                //urlRequest.httpMethod = HTTPMethod.post.rawValue
-                urlRequest.httpMethod = "GET"
-                var parameterDictionary = [
-                    "form" :
-                
-                
-                ]
-                
-                
-                
-                guard let httpBodyData = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
-                    return
+                return
+            }
+            
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    self.createDateSalvateAlert()
                 }
+                return
+            }
+            
+            do {
+                let jsonData = try JSONDecoder().decode(ServerResponse.self, from: data)
                 
-                urlRequest.httpBody = (parameterDictionary.percentEscaped).data(using: .utf8)
-                
-                NSLog("\(parameterDictionary)")
-                
-                
-                task = URLSession(configuration: session).dataTask(with: urlRequest) { (data,response,error)     in
-                    self.task = nil
-                    if error != nil {
-                        print(error!.localizedDescription)
-                        DispatchQueue.main.async {
-                            //self.avc.updateUI(data: nil,articleId: nil)
-                        }
-                        return
-                    }
-                    
-                    guard let data = data else {
-                        DispatchQueue.main.async {
-                            //self.avc.updateUI(data: nil,articleId: nil)
-                        }
-                        return
-                    }
-                    
-                    do {
-                        let datax: NSDictionary = try JSONSerialization.jsonObject(with: data, options: []) as! NSDictionary
-                        
-                        DispatchQueue.main.async {
-        //                    NSLog("raspuns: \(datax)")
-        //                    self.vox.updateUI(raspuns: datax)
-                        }
-                    } catch let jsonError {
-                        print(jsonError)
-                        DispatchQueue.main.async {
-                            //self.avc.updateUI(data: nil,articleId: nil)
+                DispatchQueue.main.async {
+                    let vc = UIStoryboard.Main.instantiateHomeVc()
+                    vc.message = jsonData.data?.evaluation?.message
+                    if StamAcasaSingleton.sharedInstance.actualAccountId > 0{
+                        StamAcasaSingleton.sharedInstance.actualAccountId = 0
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            vc.pageMenu!.moveToPage(1)
                         }
                     }
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
-                
-                task.resume()
-                */
+            } catch let jsonError {
+                print(jsonError)
+                DispatchQueue.main.async {
+                    self.createDateSalvateAlert()
+                }
+            }
+        }
+        
+        task.resume()
+        
         
     }
     
-
+    func createDateSalvateAlert(){
+        let vc = UIStoryboard.Main.instantiateHomeVc()
+        vc.message = "Date salvate cu succes!"
+        if StamAcasaSingleton.sharedInstance.actualAccountId > 0{
+            StamAcasaSingleton.sharedInstance.actualAccountId = 0
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                vc.pageMenu!.moveToPage(1)
+            }
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func saveAccount(answersToStore:[ResponseData.Answer]) {
         var accounts = [] as [AccountData]?
         
@@ -748,42 +750,42 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     }
 }
 
-    extension FlowStepViewController: SideMenu{
-        func profilulMeuTapped() {
-            let vc = UIStoryboard.Main.instantiateHomeVc()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                vc.pageMenu!.moveToPage(0)
-            }
-            self.navigationController?.pushViewController(vc, animated: true)
+extension FlowStepViewController: SideMenu{
+    func profilulMeuTapped() {
+        let vc = UIStoryboard.Main.instantiateHomeVc()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            vc.pageMenu!.moveToPage(0)
         }
-        
-        func profileAltePersoaneTapped() {
-            let vc = UIStoryboard.Main.instantiateHomeVc()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                vc.pageMenu!.moveToPage(1)
-            }
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        
-        func istoricPersonalTapped() {
-            let vc = UIStoryboard.Main.instantiateIstoricCompletVc()
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        
-        func despreTapped() {
-            let vc = UIStoryboard.Main.instantiateDespreVc()
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        
-        func setariTapped() {
-            let vc = UIStoryboard.Main.instantiateSetariVc()
-            self.navigationController?.pushViewController(vc, animated: true)
-            
-        }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func profileAltePersoaneTapped() {
+        let vc = UIStoryboard.Main.instantiateHomeVc()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            vc.pageMenu!.moveToPage(1)
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
-    protocol DateNecesareContinue{
-        func dateNecesareContinueTapped()
-        func validationFormAlert()
+    func istoricPersonalTapped() {
+        let vc = UIStoryboard.Main.instantiateIstoricCompletVc()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func despreTapped() {
+        let vc = UIStoryboard.Main.instantiateDespreVc()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func setariTapped() {
+        let vc = UIStoryboard.Main.instantiateSetariVc()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+}
+
+
+protocol DateNecesareContinue{
+    func dateNecesareContinueTapped()
+    func validationFormAlert()
 }

@@ -155,7 +155,67 @@ struct ForceUpdate:Decodable,Hashable,Encodable {
     }
 }
 
-struct QuestionAnswers{
+struct QuestionAnswers: Decodable,Hashable,Encodable{
     var answers: [String]?
     var question_id: Int?
+}
+
+
+struct ServerResponse:Decodable,Hashable,Encodable {
+    var meta: Meta?
+    var data: Data?
+    
+    struct Meta:Decodable,Hashable,Encodable {
+        var id: String?
+        var now_ts: Double?
+        var now_dt: String?
+    }
+    
+    struct Data:Decodable,Hashable,Encodable {
+        var evaluation: Evaluation?
+        
+        struct Evaluation:Decodable,Hashable,Encodable {
+            var rating: String?
+            var message: String?
+        }
+    }
+}
+
+
+struct ServerDataToSave: Decodable,Hashable,Encodable{
+    var form: Form?
+    var profile: Profile?
+    
+    init(){
+        form = Form()
+        profile = Profile()
+    }
+    
+    struct Form:Decodable,Hashable,Encodable {
+        var question_answers: [QuestionAnswers]?
+        
+        init(){
+            question_answers = []
+        }
+    }
+    
+    struct Profile:Decodable,Hashable,Encodable {
+        var health_status: HealthStatus?
+        var user_age: Int?
+        
+        init(){
+            health_status = HealthStatus()
+            user_age = 0
+        }
+        
+        struct HealthStatus:Decodable,Hashable,Encodable {
+            var question_answers: [QuestionAnswers]?
+            var section_id: String?
+            
+            init(){
+                question_answers = []
+                section_id = ""
+            }
+        }
+    }
 }
