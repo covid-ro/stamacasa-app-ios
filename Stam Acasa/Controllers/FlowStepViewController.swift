@@ -540,80 +540,103 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     func sentDataToServer(answers: [ResponseData.Answer]){
         var questionAnswers: [QuestionAnswers] = []
         var currentQuestionId = -1
+        
+        
         for answer in answersToStore{
-            questionAnswers.question_id = answer.question_id
+            
+            //questionAnswers.question_id = answer.question_id
+            var auxQuestionAnswer = QuestionAnswers()
+            
             if answer.question_id != currentQuestionId{
+                currentQuestionId = answer.question_id
+                
+                if auxQuestionAnswer.question_id != nil {
+                    questionAnswers.append(auxQuestionAnswer)
+                }
+                
                 var auxQuestionAnswer = QuestionAnswers()
                 auxQuestionAnswer.question_id = answer.question_id
-            }
-        }
-        
-        guard let sUrl = URL(string: "http://95.216.200.50/AUTOEVAL/evaluate.php") else {return}
-        
-        if(task != nil) {
-            task.cancel()
-        }
-        
-        let session = URLSessionConfiguration.default
-        session.timeoutIntervalForRequest = 15
-        session.timeoutIntervalForResource = 15
-        
-        var urlRequest = URLRequest(url: sUrl)
-        //urlRequest.httpMethod = HTTPMethod.post.rawValue
-        urlRequest.httpMethod = "GET"
-        var parameterDictionary = [
-            "form" :
-        
-        
-        ]
-        
-        
-        
-        guard let httpBodyData = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
-            return
-        }
-        
-        urlRequest.httpBody = (parameterDictionary.percentEscaped).data(using: .utf8)
-        
-        NSLog("\(parameterDictionary)")
-        
-        
-        task = URLSession(configuration: session).dataTask(with: urlRequest) { (data,response,error)     in
-            self.task = nil
-            if error != nil {
-                print(error!.localizedDescription)
-                DispatchQueue.main.async {
-                    //self.avc.updateUI(data: nil,articleId: nil)
-                }
-                return
-            }
-            
-            guard let data = data else {
-                DispatchQueue.main.async {
-                    //self.avc.updateUI(data: nil,articleId: nil)
-                }
-                return
-            }
-            
-            do {
-                let datax: NSDictionary = try JSONSerialization.jsonObject(with: data, options: []) as! NSDictionary
+                //auxQuestionAnswer.answers = [String(answer.answer_id)]
+            } else {
+                //auxQuestionAnswer.answers?.append(String(answer.answer_id))
                 
-                DispatchQueue.main.async {
-//                    NSLog("raspuns: \(datax)")
-//                    self.vox.updateUI(raspuns: datax)
-                }
-            } catch let jsonError {
-                print(jsonError)
-                DispatchQueue.main.async {
-                    //self.avc.updateUI(data: nil,articleId: nil)
-                }
             }
         }
         
-        task.resume()
+        
+        print(questionAnswers)
+        
+        
+
+                /*
+                guard let sUrl = URL(string: "http://95.216.200.50/AUTOEVAL/evaluate.php") else {return}
+                
+                if(task != nil) {
+                    task.cancel()
+                }
+                
+                let session = URLSessionConfiguration.default
+                session.timeoutIntervalForRequest = 15
+                session.timeoutIntervalForResource = 15
+                
+                var urlRequest = URLRequest(url: sUrl)
+                //urlRequest.httpMethod = HTTPMethod.post.rawValue
+                urlRequest.httpMethod = "GET"
+                var parameterDictionary = [
+                    "form" :
+                
+                
+                ]
+                
+                
+                
+                guard let httpBodyData = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
+                    return
+                }
+                
+                urlRequest.httpBody = (parameterDictionary.percentEscaped).data(using: .utf8)
+                
+                NSLog("\(parameterDictionary)")
+                
+                
+                task = URLSession(configuration: session).dataTask(with: urlRequest) { (data,response,error)     in
+                    self.task = nil
+                    if error != nil {
+                        print(error!.localizedDescription)
+                        DispatchQueue.main.async {
+                            //self.avc.updateUI(data: nil,articleId: nil)
+                        }
+                        return
+                    }
+                    
+                    guard let data = data else {
+                        DispatchQueue.main.async {
+                            //self.avc.updateUI(data: nil,articleId: nil)
+                        }
+                        return
+                    }
+                    
+                    do {
+                        let datax: NSDictionary = try JSONSerialization.jsonObject(with: data, options: []) as! NSDictionary
+                        
+                        DispatchQueue.main.async {
+        //                    NSLog("raspuns: \(datax)")
+        //                    self.vox.updateUI(raspuns: datax)
+                        }
+                    } catch let jsonError {
+                        print(jsonError)
+                        DispatchQueue.main.async {
+                            //self.avc.updateUI(data: nil,articleId: nil)
+                        }
+                    }
+                }
+                
+                task.resume()
+                */
         
     }
     
+
     func saveAccount(answersToStore:[ResponseData.Answer]) {
         var accounts = [] as [AccountData]?
         
@@ -685,7 +708,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
             
         }
     }
-    
+
     extension FlowStepViewController: SideMenu{
         func profilulMeuTapped() {
             let vc = UIStoryboard.Main.instantiateHomeVc()
