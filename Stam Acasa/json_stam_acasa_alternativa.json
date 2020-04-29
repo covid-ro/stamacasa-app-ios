@@ -241,7 +241,7 @@
             ]
           },
           {
-            "section_id":"domiciuliu",
+            "section_id":"domiciliu",
             "section_name":"Date despre contextul in care te afli",
             "section_text":"Intrebarile de mai jos sunt relevante pentru a putea stabili daca ...",
             "section_next_id":"stop",
@@ -433,7 +433,7 @@
                     "answer_id":6,
                     "answer_text":"Alte simptome",
                     "answer_decision":{
-                      "answer_hint":null,
+                      "answer_hint":"Ce simptome ati avut?",
                       "answer_input":"text-area",
                       "answer_question_id":null
                     }
@@ -443,7 +443,7 @@
             ]
           },
           {
-            "section_id":"domiciuliu",
+            "section_id":"domiciliu",
             "section_name":"Date despre contextul in care te afli",
             "section_text":"Intrebarile de mai jos sunt relevante pentru a putea stabili daca ...",
             "section_next_id":"stop",

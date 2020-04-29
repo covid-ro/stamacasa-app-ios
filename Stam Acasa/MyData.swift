@@ -154,3 +154,8 @@ struct ForceUpdate:Decodable,Hashable,Encodable {
         }
     }
 }
+
+struct QuestionAnswers{
+    var answers: [String]?
+    var question_id: Int?
+}

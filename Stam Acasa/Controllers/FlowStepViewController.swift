@@ -17,7 +17,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     @IBOutlet weak var scrollView: UIScrollView!
     var answersToStore: [ResponseData.Answer] = []
     var questionDataAnswersViewsDictionary: [MyData.Data.Flow.FlowSection.Question : [AnswerView]] = [:]
-    
+    var task: URLSessionDataTask!
     var questionsPanelViews: [QuestionPanelView] = []
     
     var account : AccountData?
@@ -45,7 +45,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
             datePersonale.frame = CGRect(x: 0, y: 0.0, width: self.view.frame.size.width, height: 550)
             datePersonale.delegate = self
             contentView.addSubview(datePersonale)
-        
+            
         } else {
             
             populateScrollViewWithFlowSection(flowId: passedFlowId!, sectionId: passedSectionId!)
@@ -69,7 +69,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
     var index: Int = 0
     func populateScrollViewWithFlowSection(flowId: String,sectionId: String){
         var yPositionOfAddingInContentView: CGFloat = 20.0
-
+        
         guard let flows = decodedData?.data?.flows else {
             return
         }
@@ -87,20 +87,20 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                         labelFlow.numberOfLines = 0
                         labelFlow.text = flow.flow_name
                         let hlblF = labelFlow.frame.size.height
-
+                        
                         yPositionOfAddingInContentView += hlblF + 20.0
                         contentView.addSubview(labelFlow)
-
+                        
                         //section info text
                         let labelInfo = UILabel(frame: CGRect(x: 30, y: yPositionOfAddingInContentView, width: self.view.frame.size.width - 60.0, height: 80))
                         labelInfo.textAlignment = .center
                         labelInfo.numberOfLines = 0
                         labelInfo.text = section.section_text
                         let hlblN = labelInfo.frame.size.height
-
+                        
                         yPositionOfAddingInContentView += hlblN + 20.0
                         contentView.addSubview(labelInfo)
-
+                        
                         //position indicator
                         let pageControlView = Bundle.main.loadNibNamed("PageControlView", owner: self, options: nil)?.first as! PageControlView
                         pageControlView.translatesAutoresizingMaskIntoConstraints = true
@@ -122,7 +122,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                         }
                         pageControlView.controlSteps?[index].backgroundColor = UIColor(red: 79.0/255.0, green: 59.0/255.0, blue: 100.0/255.0, alpha: 1.0)
                         pageControlView.translatesAutoresizingMaskIntoConstraints = true
-
+                        
                         //section name
                         let sectionNameView = Bundle.main.loadNibNamed("SectionView", owner: self, options: nil)?.first as! SectionView
                         
@@ -134,10 +134,10 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                         sectionNameView.frame = CGRect(x: 20.0, y: yPositionOfAddingInContentView, width: self.view.frame.size.width - 40.0, height: hlblS + 30.0)
                         contentView.addSubview(sectionNameView)
                         yPositionOfAddingInContentView += sectionNameView.frame.size.height + 30.0
-
+                        
                         //questions
                         for question in section.questions ?? []{
-                        //    if !(question.question_hidden ?? true) {
+                            //    if !(question.question_hidden ?? true) {
                             
                             let qView = QuestionPanelView.init(frame: CGRect.init(x: 0, y: yPositionOfAddingInContentView, width: self.view.frame.size.width, height: 500))
                             qView.translatesAutoresizingMaskIntoConstraints = true
@@ -147,7 +147,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                             var qYPosition : CGFloat
                             
                             let questionView = Bundle.main.loadNibNamed("SectionView", owner: self, options: nil)?.first as! SectionView
-
+                            
                             questionView.frame = CGRect(x: 20.0, y: 0, width: self.view.frame.size.width - 40.0, height: 50.0)
                             questionView.textLabel.text = question.question_text
                             
@@ -155,9 +155,9 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                             
                             questionView.textLabel.numberOfLines = 0
                             let hlbl = questionView.textLabel.labelHeight()
-
+                            
                             questionView.frame = CGRect(x: 20.0, y: 0, width: self.view.frame.size.width - 40.0, height: hlbl+30)
-
+                            
                             
                             questionView.translatesAutoresizingMaskIntoConstraints = true
                             //contentView.addSubview(questionView)
@@ -183,7 +183,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                                 answerView.textLabel.text = answer.answer_text
                                 answerView.backgroundColor = .white
                                 let hlba = answerView.textLabel.labelHeight()
-
+                                
                                 answerView.frame = CGRect(x: 20.0, y: qYPosition, width: self.view.frame.size.width - 40.0, height: hlba+20)
                                 
                                 answerView.translatesAutoresizingMaskIntoConstraints = true
@@ -238,12 +238,12 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                 }
             }
         }
-
+        
         
         //if yPositionOfAddingInContentView > contentView.frame.size.height{
-
-            contentViewHeight.constant = yPositionOfAddingInContentView
-            contentView.frame.size.height = yPositionOfAddingInContentView
+        
+        contentViewHeight.constant = yPositionOfAddingInContentView
+        contentView.frame.size.height = yPositionOfAddingInContentView
         //}
         index += 1
     }
@@ -394,23 +394,23 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         
         /*
          public struct AccountData: Codable,Hashable {
-             var primary:Bool?
-             var accountId:Int?
-             var numePrenume: String?
-             var numarTelefon: String?
-             var judet: String?
-             var localitate: String?
-             var varsta: String?
-             var gen: String?
-             var accountCreationResponses: [ResponseData]?
+         var primary:Bool?
+         var accountId:Int?
+         var numePrenume: String?
+         var numarTelefon: String?
+         var judet: String?
+         var localitate: String?
+         var varsta: String?
+         var gen: String?
+         var accountCreationResponses: [ResponseData]?
          }
-
+         
          @IBOutlet weak var textNumePrenume: UITextField!
-            @IBOutlet weak var textNumarTelefon: UITextField!
-            @IBOutlet weak var dropDownJudet: DropDown!
-            @IBOutlet weak var dropDownLocalitate: DropDown!
-            @IBOutlet weak var dropDownVarsta: DropDown!
-            @IBOutlet weak var dropDownGen: DropDown!
+         @IBOutlet weak var textNumarTelefon: UITextField!
+         @IBOutlet weak var dropDownJudet: DropDown!
+         @IBOutlet weak var dropDownLocalitate: DropDown!
+         @IBOutlet weak var dropDownVarsta: DropDown!
+         @IBOutlet weak var dropDownGen: DropDown!
          */
         
         
@@ -418,7 +418,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
             let date = Date()
             let formatter = DateFormatter()
             formatter.dateFormat = "dd.MM.yyyy HH:mm:ss"
-                                               
+            
             let dpv = view as! DatePersonale
             
             account = AccountData(accountId: getMaxId(), numePrenume: dpv.textNumePrenume.text, numarTelefon: dpv.textNumarTelefon.text, judet: dpv.dropDownJudet.text, localitate: dpv.dropDownLocalitate.text, varsta: dpv.dropDownVarsta.text, gen: dpv.dropDownGen.text, responses:[], registrationDate: formatter.string(from: date),movements: [])
@@ -521,6 +521,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                     let vc = UIStoryboard.Main.instantiateProfilCompletVc()
                     self.navigationController?.pushViewController(vc, animated: true)
                 } else {
+                    sentDataToServer(answers: answersToStore)
                     saveResponseData(answersToStore: answersToStore)
                     let vc = UIStoryboard.Main.instantiateHomeVc()
                     vc.message = "Raport evaluare complet"
@@ -536,7 +537,84 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         }
     }
     
-     func saveAccount(answersToStore:[ResponseData.Answer]) {
+    func sentDataToServer(answers: [ResponseData.Answer]){
+        var questionAnswers: [QuestionAnswers] = []
+        var currentQuestionId = -1
+        for answer in answersToStore{
+            questionAnswers.question_id = answer.question_id
+            if answer.question_id != currentQuestionId{
+                var auxQuestionAnswer = QuestionAnswers()
+                auxQuestionAnswer.question_id = answer.question_id
+            }
+        }
+        
+        guard let sUrl = URL(string: "http://95.216.200.50/AUTOEVAL/evaluate.php") else {return}
+        
+        if(task != nil) {
+            task.cancel()
+        }
+        
+        let session = URLSessionConfiguration.default
+        session.timeoutIntervalForRequest = 15
+        session.timeoutIntervalForResource = 15
+        
+        var urlRequest = URLRequest(url: sUrl)
+        //urlRequest.httpMethod = HTTPMethod.post.rawValue
+        urlRequest.httpMethod = "GET"
+        var parameterDictionary = [
+            "form" :
+        
+        
+        ]
+        
+        
+        
+        guard let httpBodyData = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
+            return
+        }
+        
+        urlRequest.httpBody = (parameterDictionary.percentEscaped).data(using: .utf8)
+        
+        NSLog("\(parameterDictionary)")
+        
+        
+        task = URLSession(configuration: session).dataTask(with: urlRequest) { (data,response,error)     in
+            self.task = nil
+            if error != nil {
+                print(error!.localizedDescription)
+                DispatchQueue.main.async {
+                    //self.avc.updateUI(data: nil,articleId: nil)
+                }
+                return
+            }
+            
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    //self.avc.updateUI(data: nil,articleId: nil)
+                }
+                return
+            }
+            
+            do {
+                let datax: NSDictionary = try JSONSerialization.jsonObject(with: data, options: []) as! NSDictionary
+                
+                DispatchQueue.main.async {
+//                    NSLog("raspuns: \(datax)")
+//                    self.vox.updateUI(raspuns: datax)
+                }
+            } catch let jsonError {
+                print(jsonError)
+                DispatchQueue.main.async {
+                    //self.avc.updateUI(data: nil,articleId: nil)
+                }
+            }
+        }
+        
+        task.resume()
+        
+    }
+    
+    func saveAccount(answersToStore:[ResponseData.Answer]) {
         var accounts = [] as [AccountData]?
         
         if let encodedData = UserDefaults.standard.object(forKey: "accounts") as? Data {
@@ -566,7 +644,7 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
             defaults.set(encoded, forKey: "accounts")
         }
         UserDefaults.standard.synchronize()
-    
+        
     }
     
     func saveResponseData(answersToStore:[ResponseData.Answer]) {
@@ -595,55 +673,55 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
                 //responses?.append(newResponseData)
                 accounts![i].responses?.insert(newResponseData, at: 0)
                 
-                    let encoder = JSONEncoder()
-                    if let encoded = try? encoder.encode(accounts) {
-                        let defaults = UserDefaults.standard
-                        defaults.set(encoded, forKey: "accounts")
-                    }
-                    UserDefaults.standard.synchronize()
-                    
-                    break
+                let encoder = JSONEncoder()
+                if let encoded = try? encoder.encode(accounts) {
+                    let defaults = UserDefaults.standard
+                    defaults.set(encoded, forKey: "accounts")
                 }
+                UserDefaults.standard.synchronize()
+                
+                break
             }
-    }
-}
-
-extension FlowStepViewController: SideMenu{
-    func profilulMeuTapped() {
-        let vc = UIStoryboard.Main.instantiateHomeVc()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            vc.pageMenu!.moveToPage(0)
+            
         }
-        self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func profileAltePersoaneTapped() {
-        let vc = UIStoryboard.Main.instantiateHomeVc()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            vc.pageMenu!.moveToPage(1)
+    extension FlowStepViewController: SideMenu{
+        func profilulMeuTapped() {
+            let vc = UIStoryboard.Main.instantiateHomeVc()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                vc.pageMenu!.moveToPage(0)
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
         }
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func istoricPersonalTapped() {
-        let vc = UIStoryboard.Main.instantiateIstoricCompletVc()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func despreTapped() {
-        let vc = UIStoryboard.Main.instantiateDespreVc()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func setariTapped() {
-        let vc = UIStoryboard.Main.instantiateSetariVc()
-        self.navigationController?.pushViewController(vc, animated: true)
         
+        func profileAltePersoaneTapped() {
+            let vc = UIStoryboard.Main.instantiateHomeVc()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                vc.pageMenu!.moveToPage(1)
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        func istoricPersonalTapped() {
+            let vc = UIStoryboard.Main.instantiateIstoricCompletVc()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        func despreTapped() {
+            let vc = UIStoryboard.Main.instantiateDespreVc()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        func setariTapped() {
+            let vc = UIStoryboard.Main.instantiateSetariVc()
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
     }
-}
-
-
-protocol DateNecesareContinue{
-    func dateNecesareContinueTapped()
-    func validationFormAlert()
+    
+    
+    protocol DateNecesareContinue{
+        func dateNecesareContinueTapped()
+        func validationFormAlert()
 }
