@@ -20,6 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         notificationCenter.delegate = self
         
+        setLocalNotification()
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -55,6 +57,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate: UNUserNotificationCenterDelegate {
     
+    func setLocalNotification(){
+        if StamAcasaSingleton.sharedInstance.getFromUserDefaults("switch") ?? false{
+            self.scheduleNotification(notificationType: "Notificare")
+        } else{
+            UNUserNotificationCenter.current().getPendingNotificationRequests { (notificationRequests) in
+                var identifiers: [String] = []
+                for notification:UNNotificationRequest in notificationRequests {
+                    if notification.identifier == "Local Notification" {
+                        identifiers.append(notification.identifier)
+                    }
+                }
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
+            }
+        }
+    }
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
@@ -86,6 +104,10 @@ extension SceneDelegate: UNUserNotificationCenterDelegate {
         content.sound = UNNotificationSound.default
         content.badge = 1
         content.categoryIdentifier = categoryIdentifire
+
+//        let attachement = try? UNNotificationAttachment(identifier: "attachment", url: AssetExtractor.createLocalUrl(forImageNamed: "logoSTS")!, options: nil)
+//        content.attachments = [attachement!]
+        
         
         let date = Calendar.current.date(bySettingHour: 20, minute: 0, second: 0, of: Date())!
         let triggerDaily = Calendar.current.dateComponents([.hour,.minute,.second,], from: date)
@@ -93,7 +115,7 @@ extension SceneDelegate: UNUserNotificationCenterDelegate {
         
         let identifier = "Local Notification"
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        
+
         notificationCenter.add(request) { (error) in
             if let error = error {
                 print("Error \(error.localizedDescription)")

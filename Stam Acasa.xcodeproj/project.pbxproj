@@ -52,6 +52,7 @@
 		FA5524D1243CC220000B8DA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5524D0243CC220000B8DA8 /* Assets.xcassets */; };
 		FA5524D4243CC220000B8DA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5524D2243CC220000B8DA8 /* LaunchScreen.storyboard */; };
 		FA5524F8243DAEA3000B8DA8 /* MyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5524F7243DAEA3000B8DA8 /* MyData.swift */; };
+		FA6DB70E245AC2D4004EEE8A /* AssetExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DB70D245AC2D4004EEE8A /* AssetExtractor.swift */; };
 		FA6F2320244847210022F361 /* FormularDeplasariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F231F244847210022F361 /* FormularDeplasariViewController.swift */; };
 		FA6F2322244881490022F361 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6F2321244881490022F361 /* PaddingLabel.swift */; };
 		FA6F23262448DA460022F361 /* IstoricDeplasariRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6F23252448DA460022F361 /* IstoricDeplasariRow.xib */; };
@@ -109,6 +110,7 @@
 		FA5524D3243CC220000B8DA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA5524D5243CC220000B8DA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA5524F7243DAEA3000B8DA8 /* MyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyData.swift; sourceTree = "<group>"; };
+		FA6DB70D245AC2D4004EEE8A /* AssetExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetExtractor.swift; sourceTree = "<group>"; };
 		FA6F231F244847210022F361 /* FormularDeplasariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormularDeplasariViewController.swift; sourceTree = "<group>"; };
 		FA6F2321244881490022F361 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		FA6F23252448DA460022F361 /* IstoricDeplasariRow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IstoricDeplasariRow.xib; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				FA5524F7243DAEA3000B8DA8 /* MyData.swift */,
 				FA02B469243E00DA00F47DC2 /* json_stam_acasa_alternativa.json */,
 				FA02B465243DFEF200F47DC2 /* StamAcasaSingleton.swift */,
+				FA6DB70D245AC2D4004EEE8A /* AssetExtractor.swift */,
 			);
 			path = "Stam Acasa";
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				928E85962451962000CB390C /* DetaliiContViewController.swift in Sources */,
 				FA6F2322244881490022F361 /* PaddingLabel.swift in Sources */,
 				927F4875243E0868009CFC40 /* FlowStepViewController.swift in Sources */,
+				FA6DB70E245AC2D4004EEE8A /* AssetExtractor.swift in Sources */,
 				FA08249A24476D1800F2AACD /* Date.swift in Sources */,
 				FA5524F8243DAEA3000B8DA8 /* MyData.swift in Sources */,
 				925D250D24425B7D00521E4E /* CAPSPageMenuConfiguration.swift in Sources */,

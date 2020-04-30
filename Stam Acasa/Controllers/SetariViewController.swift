@@ -17,24 +17,29 @@ class SetariViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        setariSwitchLabel.isOn = StamAcasaSingleton.sharedInstance.getFromUserDefaults("switch") ?? false
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func setariSwitchTapped(_ sender: Any) {
+    func setLocalNotification(){
         if setariSwitchLabel.isOn{
             self.sceneDelegate.scheduleNotification(notificationType: "Notificare")
         } else{
             UNUserNotificationCenter.current().getPendingNotificationRequests { (notificationRequests) in
-               var identifiers: [String] = []
-               for notification:UNNotificationRequest in notificationRequests {
-                   if notification.identifier == "Local Notification" {
-                      identifiers.append(notification.identifier)
-                   }
-               }
-               UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
+                var identifiers: [String] = []
+                for notification:UNNotificationRequest in notificationRequests {
+                    if notification.identifier == "Local Notification" {
+                        identifiers.append(notification.identifier)
+                    }
+                }
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
             }
-            }
+        }
+    }
+    
+    @IBAction func setariSwitchTapped(_ sender: Any) {
+        StamAcasaSingleton.sharedInstance.saveToUserDefaults("switch", value: setariSwitchLabel.isOn)
+        setLocalNotification()
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
