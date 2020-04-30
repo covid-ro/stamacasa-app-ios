@@ -20,6 +20,8 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate{
     @IBOutlet weak var stamAcasaView: UIView!
     var movementFormsFromUserDefaults: [AccountData.Movement]?
     var message: String?
+    var formulareleMele: Bool = true
+    var altePersoane: Bool = false
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -100,6 +102,16 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate{
         pageMenu!.didMove(toParent: self)
         
         populateMovementForms()
+        
+        
+        if formulareleMele{
+            pageMenu?.moveToPage(0)
+        } else{
+            if altePersoane{
+                pageMenu?.moveToPage(1)
+            }
+        }
+        
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {

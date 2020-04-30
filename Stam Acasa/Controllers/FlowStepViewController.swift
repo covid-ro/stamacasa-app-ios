@@ -662,9 +662,8 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
         vc.message = message
         if StamAcasaSingleton.sharedInstance.actualAccountId > 0{
             StamAcasaSingleton.sharedInstance.actualAccountId = 0
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                vc.pageMenu!.moveToPage(1)
-            }
+            vc.formulareleMele = false
+            vc.altePersoane = true
         }
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -745,17 +744,15 @@ class FlowStepViewController: UIViewController , DateNecesareContinue{
 extension FlowStepViewController: SideMenu{
     func profilulMeuTapped() {
         let vc = UIStoryboard.Main.instantiateHomeVc()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            vc.pageMenu!.moveToPage(0)
-        }
+        vc.formulareleMele = true
+        vc.altePersoane = false
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func profileAltePersoaneTapped() {
         let vc = UIStoryboard.Main.instantiateHomeVc()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            vc.pageMenu!.moveToPage(1)
-        }
+        vc.formulareleMele = false
+        vc.altePersoane = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

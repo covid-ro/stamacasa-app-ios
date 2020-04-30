@@ -104,17 +104,15 @@ class IstoricCompletViewController: UIViewController{
 extension IstoricCompletViewController: SideMenu{
     func profilulMeuTapped() {
         let vc = UIStoryboard.Main.instantiateHomeVc()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            vc.pageMenu!.moveToPage(0)
-        }
+        vc.formulareleMele = true
+        vc.altePersoane = false
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func profileAltePersoaneTapped() {
         let vc = UIStoryboard.Main.instantiateHomeVc()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            vc.pageMenu!.moveToPage(1)
-        }
+        vc.formulareleMele = false
+        vc.altePersoane = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
